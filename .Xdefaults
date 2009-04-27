@@ -1,0 +1,71 @@
+URxvt*scrollBar: false
+URxvt*saveLines: 10000
+#URxvt*font: xft:monospace:pixelsize=9
+#URxvt*font: xft:profont:pixelsize=12
+URxvt*font: xft:Anonymous:pixelsize=9
+URxvt*foreground: white
+!URxvt*background: #222222
+URxvt*background: #080808
+
+###colorscheme 1
+!black
+!URxvt*color0:           #000000
+!URxvt*color8:           #505050
+!red
+!URxvt*color1:           #b04020
+!URxvt*color9:           #dd4010
+!green
+!URxvt*color2:           #afd700
+!URxvt*color10:          #daff30
+!yellow
+!URxvt*color3:           #f7cf0a
+!URxvt*color11:          #fce70d
+!blue
+!URxvt*color4:           #3060aa
+!URxvt*color12:          #6099dd
+!magenta
+!URxvt*color5:           #d6156c
+!URxvt*color13:          #fe4365
+!cyan
+!URxvt*color6:           #a0c2de
+!URxvt*color14:          #c9dee8
+!white
+!URxvt*color7:           #ffffff
+!!URxvt*color15:          #b0b0b0
+################
+
+###colorscheme 2
+
+urxvt*color0: #000000
+urxvt*color1: #ff6565
+
+urxvt*color2: #93d44f
+
+urxvt*color3: #eab93d
+urxvt*color4: #204a87
+urxvt*color5: #ce5c00
+urxvt*color6: #89b6e2
+urxvt*color7: #cccccc
+urxvt*color8: #555753
+urxvt*color9: #ff8d8d
+urxvt*color10: #c8e7a8
+urxvt*color11: #ffc123
+
+
+urxvt*color12: #3465a4
+urxvt*color13: #f57900
+urxvt*color14: #46a4ff
+urxvt*color15: #ffffff
+
+!!url stuff
+URxvt.perl-ext-common:	default,matcher
+URxvt.urlLauncher: firefox
+#URxvt*transparent: true
+URxvt*cutchars: `"()'*<>[]{|}
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt.matcher.button: 1
+Xft.antialias:true
+Xft.dpi:100
+Xft.hinting:true
+Xft.hintstyle:hintslight
+Xft.rgba:none

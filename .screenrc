@@ -1,4 +1,3 @@
-#caption always "%{rw} * | %H * $LOGNAME | %{bw}%c %D | %{-}%-Lw%{rw}%50>%{rW}%n%f* %t %{-}%+Lw%<"
 hardstatus alwayslastline 
 #hardstatus string '[%H] %Lw%=%u %d.%m.%y %c '
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%Y-%m-%d %{W}%c %{g}]'
@@ -14,7 +13,5 @@ startup_message off
 ##keybindings
 bind -k k1 prev
 bind -k k2 next
-bind v screen -t 'vim' 5 vim
 bind r screen -t 'rtorrent' 8 rtorrent
 bind i screen -t 'irc' 9 irssi
-

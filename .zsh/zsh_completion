@@ -1,6 +1,7 @@
 autoload -Uz compinit
 compinit
 
+# most of it is stolen from flo.server-speed.net
 # correct 7etc/foo to /etc/foo
 # if anyone has a working solution for /etc7foo please contact me
 function _7slash {

@@ -1,0 +1,33 @@
+autoload -Uz compinit
+compinit
+
+# correct 7etc/foo to /etc/foo
+# if anyone has a working solution for /etc7foo please contact me
+function _7slash {
+   if [[ $words[CURRENT] = 7(#b)(*)(#e) ]]
+   then
+     compadd -U -X 'Correct leading 7 to /' -f /$match[1]
+   fi
+}
+
+# show menu when tabbing
+zstyle ':completion:*' menu yes select
+zstyle ':completion:*' file-sort time
+
+# cache results because yaourt is slow
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path $http://HOME/.zsh/cache
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' completer _complete _match _approximate _7slash 
+zstyle ':completion:*:match:*' original only
+
+# allow more mistypes if longer command
+zstyle -e ':completion:*:approximate:*' \
+        max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+
+# ignore case when completing
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# make some stuff look better
+zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
+zstyle ':completion:*:warnings'        format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d'

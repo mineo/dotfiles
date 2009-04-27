@@ -7,7 +7,7 @@
 !.bin/
  
 # GIT stuff
-!.gitignore
+#!.gitignore
  
 # X stuff
 !.xinitrc
@@ -18,10 +18,10 @@
  
 # ZSH stuff
 !.zshrc
-!.zsh/
+!.zsh/*
 
 # Other configs
 !.screenrc
-!.config/openbox/
-!.wmii-hg/
+!.config/openbox/*
+!.wmii-hg/*
 !.vimrc

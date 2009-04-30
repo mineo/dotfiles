@@ -15,9 +15,10 @@ noticetimeout=5
 noticebar=/rbar/!notice
 
 # Colors tuples: "<text> <background> <border>"
-WMII_NORMCOLORS='#000000 #c1c48b #81654f'
-WMII_FOCUSCOLORS='#000000 #81654f #000000'
-
+#WMII_NORMCOLORS='#000000 #c1c48b #81654f'
+#WMII_FOCUSCOLORS='#000000 #81654f #000000'
+WMII_NORMCOLORS='#333333 #000000 #333333'
+WMII_FOCUSCOLORS='#777777 #000000 #333333'
 WMII_BACKGROUND='#333333'
 #WMII_FONT='-*-fixed-medium-r-*-*-13-*-*-*-*-*-*-*'
 WMII_FONT='-*-profont-*-*-*-*-12-*-*-*-*-*-*-*'
@@ -51,7 +52,7 @@ wmiir write /tagrules <<!
 #}
 # Status Bar Info
 status() {
-	echo -n 'MPD:' $(mpc | head -n 1)' | Wlan0:' $(iwconfig ath0 | sed 's/ /\n/g' | grep Quality) '|'  $(acpi) '| Core MHz:' $(cat /proc/cpuinfo | grep 'cpu MHz' | sed 's/.*: //g; s/\..*//g;')
+  echo -n 'MPD:' $(mpc | head -n 1)' | Wlan0:' $(iwconfig ath0 | sed 's/ /\n/g' | grep Quality) '|' $(acpi) '| Core MHz:' $(cat /proc/cpuinfo | grep 'cpu MHz' | sed 's/.*: //g; s/\..*//g;')
 }
 
 local_events() { true;}

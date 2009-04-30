@@ -15,7 +15,7 @@ setopt correct_all
 export PS1="%n@%~: " 
 
 #allow /etc/**/bla
-setopt extendedglob
+#setopt extendedglob
 
 export HISTFILE=~/.zsh_histfile
 

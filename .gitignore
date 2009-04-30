@@ -9,6 +9,13 @@
 # GIT stuff
 #!.gitignore
  
+#irssi
+!.irssi/
+.irssi/config
+.irssi/config.autosave
+.irssi/logs/
+.irssi/p2p-net
+.irssi/config-xdcc
 # X stuff
 !.xinitrc
 !.Xdefaults

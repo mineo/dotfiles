@@ -10,7 +10,7 @@
 #!.gitignore
  
 #irssi
-!.irssi/
+!.irssi/*
 .irssi/config
 .irssi/config.autosave
 .irssi/logs/

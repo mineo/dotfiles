@@ -1,11 +1,11 @@
 URxvt*scrollBar: false
 URxvt*saveLines: 10000
-URxvt*font: xft:monospace:pixelsize=9
+#URxvt*font: xft:monospace:pixelsize=9
 #URxvt*font: xft:profont:pixelsize=12
-#URxvt*font: xft:Anonymous:pixelsize=9
+URxvt*font: xft:Anonymous:pixelsize=9
 URxvt*foreground: white
-URxvt*background: #222222
-#URxvt*background: #080808
+!URxvt*background: #222222
+URxvt*background: #080808
 
 ###colorscheme 1
 !black

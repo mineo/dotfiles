@@ -8,6 +8,7 @@ else
 endif
 
 syntax on
+set showcmd
 set number
 set hlsearch
 set smartindent
@@ -16,3 +17,14 @@ set shiftwidth=4
 set ignorecase
 filetype plugin indent on 
 set showmatch
+
+map <C-q> :quit<CR>
+map <F1> :NERDTreeToggle<CR>
+map <F2> :TlistToggle<CR>
+
+imap { {}<Left>
+imap ( ()<Left>
+imap [ []<Left>
+imap < <><Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>

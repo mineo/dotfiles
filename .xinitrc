@@ -21,7 +21,7 @@ exec /usr/bin/xmodmap /home/wieland/.Xmodmap&
 #exec fbsetbg -l&
 #exec trayer --widthtype request --height 10 --expand true --transparent true --align right --edge top&
 #DEFAULT_SESSION=openbox-session
-DEFAULT_SESSION=wmii
+DEFAULT_SESSION=openbox-session
 case $1 in
 fluxbox)
 	exec fluxbox

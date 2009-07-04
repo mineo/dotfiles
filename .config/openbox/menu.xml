@@ -30,6 +30,18 @@
     </action>
   </item>
 </menu>
+<menu id="spiele" label="Spiele">
+	<item label="Siedler 4">
+		<action name="Execute">
+			<command>wine /home/wieland/.wine/drive_c/BlueByte/Die\ Siedler\ IV/S4.exe</command>
+		</action>
+	</item>
+	<item label="Lego Racers">
+		<action name="Execute">
+			<command>wine /home/wieland/.wine/drive_c/Program\ Files/Lego\ Media/Games/LEGO\ Racers/LEGORacers.exe</command>
+		</action>
+	</item>
+</menu>
 
 <menu id="apps-office-menu" label="Office">
   <item label="OpenOffice Base">
@@ -99,6 +111,7 @@
   <menu id="mein-menu" />
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
+  <menu id="spiele"/>
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
   <menu id="apps-office-menu"/>

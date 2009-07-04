@@ -36,8 +36,8 @@
        the active window is -->
   </placement>
   <theme>
-    <name>Nova-Gold2</name>
-    <titleLayout>L</titleLayout>
+    <name>Mire_v2_blue</name>
+    <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -209,7 +209,7 @@
     <keybind key="W-r">
       <action name="Reconfigure"/>
     </keybind>
-		<keybind key="XF86HomePage">
+    <keybind key="XF86HomePage">
       <action name="execute">
         <command>firefox</command>
         <startupnotify>
@@ -217,11 +217,11 @@
         </startupnotify>
       </action>
     </keybind>
-	<keybind key="W-m">
-		<action name="execute">
-			<command>urxvt -e mc</command>
-		</action>
-	</keybind>
+    <keybind key="W-m">
+      <action name="execute">
+        <command>urxvt -e mc</command>
+      </action>
+    </keybind>
     <keybind key="W-v">
       <action name="execute">
         <command>urxvt -e vim</command>
@@ -233,7 +233,7 @@
     <keybind key="A-m">
       <action name="ToggleMaximizeFull"/>
     </keybind>
-	<!-- <keybind key="A-t">
+    <!-- <keybind key="A-t">
       <action name="ToggleDecorations"/>
   </keybind> -->
     <keybind key="A-s">
@@ -242,12 +242,12 @@
     <keybind key="W-Up">
       <action name="MoveToEdgeNorth"/>
     </keybind>
-	<keybind key="A-Up">
-		<action name="Raise" />
-	</keybind>
-	<keybind key="-Down">
-		<action name="Lower" />
-	</keybind>
+    <keybind key="A-Up">
+      <action name="Raise"/>
+    </keybind>
+    <keybind key="-Down">
+      <action name="Lower"/>
+    </keybind>
     <keybind key="W-Down">
       <action name="MoveToEdgeSouth"/>
     </keybind>
@@ -319,7 +319,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximizeFull"/>
+        <action name="ToggleShade"/>
       </mousebind>
       <mousebind button="Middle" action="Press">
         <action name="Lower"/>

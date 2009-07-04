@@ -1,0 +1,5 @@
+browser "firefox %u"
+show-read-articles no
+notify-screen yes
+mark-as-read-on-hover yes
+keep-articles-days 2

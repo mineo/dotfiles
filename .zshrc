@@ -8,7 +8,7 @@ setopt autocd
 
 setopt correct_all
 
-export PS1="%{$fg[red]%n%} %{$fg[white]%} in %~ %{$fg[red]»%}%{$fg[white]%} " 
+export PS1="%{$fg[red]%n%}%{$fg[white]%} in %~ %{$fg[red]»%}%{$fg[white]%} " 
 
 #allow /etc/**/bla
 

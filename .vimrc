@@ -1,10 +1,10 @@
-"set t_Co=256
+set t_Co=256
 "colorscheme mustang
 "colorscheme slate
 if has('gui_running')
-	colorscheme digerati
+	colorscheme mustang
 else
-	colorscheme digerati
+	colorscheme mustang
 endif
 
 syntax on

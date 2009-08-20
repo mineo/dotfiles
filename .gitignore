@@ -31,4 +31,4 @@
 !.config/openbox/*
 !.wmii-hg/*
 !.vimrc
-
+!.vim/plugin/*

@@ -171,6 +171,6 @@ Irssi::settings_add_str('mpd', 'mpd_timeout', '5');
 Irssi::settings_add_str('mpd', 'mpd_format', 'np: %ARTIST - %TITLE');
 Irssi::settings_add_str('mpd', 'mpd_alt_text', 'np: %FILENAME');
 
-Irssi::command_bind np        => \&np;
+Irssi::command_bind mpd        => \&np;
 Irssi::command_bind 'np help' => \&help;
 

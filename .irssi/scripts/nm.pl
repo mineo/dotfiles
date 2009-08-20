@@ -3,14 +3,14 @@ use strict;
 
 use vars qw($VERSION %IRSSI);
 
-$VERSION="0.3.6";
+$VERSION="0.3.7";
 %IRSSI = (
 	authors=> 'BC-bd',
 	contact=> 'bd@bc-bd.org',
 	name=> 'nm',
 	description=> 'right aligned nicks depending on longest nick',
 	license=> 'GPL v2',
-	url=> 'https://bc-bd.org/svn/repos/irssi/nm',
+	url=> 'git://bc-bd.org/git/irssi.git',
 );
 
 # $Id$
@@ -92,6 +92,10 @@ my $help = "
 ###
 #
 # Changelog
+#
+# Version 0.3.7
+#  - fixed crash when calling /neatcolor without parameters
+#  - fixed url
 #
 # Version 0.3.6
 #  - added option to ignore certain characters from color hash building, see
@@ -579,7 +583,7 @@ sub cmd_neatcolor() {
 
 	if (!exists($commands{$cmd})) {
 		neat_log($witem, "Error: unknown command '$cmd'");
-		&{$commands{"help"}{"func"}} if (exists($commands{"help"}));
+		&{$commands{"help"}{"func"}}($witem) if (exists($commands{"help"}));
 		return;
 	}
 

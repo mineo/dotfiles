@@ -8,6 +8,7 @@ else
 endif
 
 syntax on
+set nobackup
 set showcmd
 set number
 set hlsearch
@@ -17,6 +18,7 @@ set shiftwidth=4
 set ignorecase
 filetype plugin indent on 
 set showmatch
+set foldmethod=indent
 
 map <C-q> :quit<CR>
 map <F1> :NERDTreeToggle<CR>

@@ -1,13 +1,14 @@
-"set t_Co=256
+set t_Co=256
 "colorscheme mustang
 "colorscheme slate
 if has('gui_running')
-	colorscheme digerati
+	colorscheme mustang
 else
-	colorscheme digerati
+	colorscheme mustang
 endif
 
 syntax on
+set nobackup
 set showcmd
 set number
 set hlsearch
@@ -17,6 +18,7 @@ set shiftwidth=4
 set ignorecase
 filetype plugin indent on 
 set showmatch
+set foldmethod=indent
 
 map <C-q> :quit<CR>
 map <F1> :NERDTreeToggle<CR>

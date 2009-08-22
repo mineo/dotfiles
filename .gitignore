@@ -6,8 +6,6 @@
 # Unignore some directories
 !.bin/
  
-# GIT stuff
-#!.gitignore
  
 #irssi
 !.irssi/*
@@ -16,6 +14,7 @@
 .irssi/logs/
 .irssi/p2p-net
 .irssi/config-xdcc
+.irssi/scripts/autorun/
 # X stuff
 !.xinitrc
 !.Xdefaults
@@ -32,3 +31,4 @@
 !.config/openbox/*
 !.wmii-hg/*
 !.vimrc
+!.vim/plugin/*

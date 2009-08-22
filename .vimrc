@@ -4,7 +4,7 @@ set t_Co=256
 if has('gui_running')
 	colorscheme mustang
 else
-	colorscheme mustang
+	colorscheme digerati
 endif
 
 syntax on

@@ -7,7 +7,7 @@
 exec /usr/bin/xmodmap /home/wieland/.Xmodmap&
 exec urxvtd -q -o -f &
 exec xflux -l 51 &
-DEFAULT_SESSION=wmii
+DEFAULT_SESSION=openbox-session
 case $1 in
 fluxbox)
 	exec fluxbox

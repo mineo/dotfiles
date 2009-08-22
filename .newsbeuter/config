@@ -1,5 +1,9 @@
+download-path "/media/crypt/Musik/Podcasts/"
+auto-reload yes
 browser "firefox %u"
-show-read-articles no
-notify-screen yes
+feed-sort-order firsttag
 mark-as-read-on-hover yes
-keep-articles-days 2
+max-items 30
+notify-screen yes
+show-read-feeds no
+show-read-articles no

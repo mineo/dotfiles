@@ -3,6 +3,7 @@ colorscheme mustang
 
 syntax on
 set nobackup
+set directory-=. 
 set showcmd
 set number
 set hlsearch

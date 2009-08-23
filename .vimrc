@@ -1,11 +1,5 @@
 set t_Co=256
-"colorscheme mustang
-"colorscheme slate
-if has('gui_running')
-	colorscheme mustang
-else
-	colorscheme digerati
-endif
+colorscheme mustang
 
 syntax on
 set nobackup

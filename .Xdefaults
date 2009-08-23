@@ -1,6 +1,6 @@
 URxvt*scrollBar: false
 URxvt*saveLines: 10000
-URxvt*font: xft:monospace:pixelsize=12
+URxvt*font: xft:Monaco:size=9
 urxvt*color0: #000000
 urxvt*color1: #ff6565
 urxvt*color2: #93d44f

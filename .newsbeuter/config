@@ -1,6 +1,6 @@
 download-path "/media/crypt/Musik/Podcasts/"
 auto-reload yes
-browser "firefox %u"
+browser "opera %u"
 feed-sort-order firsttag
 mark-as-read-on-hover yes
 max-items 30

@@ -22,7 +22,7 @@ urxvt*background: #1a1a1a
 urxvt*foreground: #fff
 !url stuff
 URxvt.perl-ext-common:	default,matcher
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: opera
 URxvt*cutchars: `"()'*<>[]{|}
 URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 URxvt.matcher.button: 1

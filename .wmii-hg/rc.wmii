@@ -37,9 +37,10 @@ wmiir write /colrules <<!
 
 # Tagging Rules
 wmiir write /tagrules <<!
-/Midori/ -> 2
 /Thunderbird/ -> 3
+/Opera|Shiretoko/ -> 1
 /Zim/ -> 3
+/GMPC/ -> 2
 !
 
 # Status Bar Info

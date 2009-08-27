@@ -39,6 +39,7 @@ wmiir write /colrules <<!
 wmiir write /tagrules <<!
 /Midori/ -> 2
 /Thunderbird/ -> 3
+/Zim/ -> 3
 !
 
 # Status Bar Info

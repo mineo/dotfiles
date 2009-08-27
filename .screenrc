@@ -5,7 +5,7 @@ defutf8 on
 
 
 altscreen on
-vbell off
+bell_msg "bell in window %n "
 startup_message off
 
 

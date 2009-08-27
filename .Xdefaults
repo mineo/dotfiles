@@ -1,3 +1,4 @@
+URxvt*urgentOnBell: true
 URxvt*scrollBar: false
 URxvt*saveLines: 10000
 URxvt*font: xft:Monaco:size=9

@@ -20,8 +20,9 @@ noticebar=/rbar/!notice
 # Theme
 #wmiifont='drift,-*-fixed-*-*-*-*-9-*-*-*-*-*-*-*'
 wmiifont='-*-profont-*-*-*-*-11-*-*-*-*-*-*-*'
-wmiinormcol=`{echo '#5e7175 #222222 #222222'}
-wmiifocuscol=`{echo '#f82571 #222222 #222222'} # text,background, borde, border
+wmiinormcol=`{echo '#edeae2 #5b441c #5b441c'}
+wmiifocuscol=`{echo '#5b441c #edeae2 #edeae2'} # text,background, borde, border
+wmiistatuscol=`{echo '#edeae2 #5b441c #5b441c'} 
 wmiibackground='#333333'
 wmiifloatbackground='#222222'
 fn setbackground { xsetroot -solid $* }
@@ -147,7 +148,7 @@ fn Action-status {
 	flag x -; flag r -
 	if(wmiir remove /rbar/status >[2]/dev/null)
 		sleep 2
-	echo $wmiifocuscol | wmiir create /rbar/status
+	echo $wmiistatuscol | wmiir create /rbar/status
 	while(status | wmiir write /rbar/status)
 		sleep 4
 }

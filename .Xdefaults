@@ -2,7 +2,7 @@ URxvt*urgentOnBell: true
 URxvt*scrollBar: false
 URxvt*saveLines: 10000
 URxvt*font: xft:Monaco:size=9
-urxvt*color0: #000000
+Urxvt*color0: #000000
 urxvt*color1: #ff6565
 urxvt*color2: #93d44f
 urxvt*color3: #eab93d
@@ -19,7 +19,7 @@ urxvt*color13: #f57900
 urxvt*color14: #46a4ff
 urxvt*color15: #ffffff
 urxvt*background: #1a1a1a
-#urxvt*background: #444444
+!urxvt*background: #444444
 urxvt*foreground: #fff
 !url stuff
 URxvt.perl-ext-common:	default,matcher

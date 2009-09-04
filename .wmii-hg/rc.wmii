@@ -304,6 +304,7 @@ wmiir write /ctl <<!
 	font $wmiifont
 	focuscolors $wmiifocuscol
 	normcolors $wmiinormcol
+	bar on top
 !
 setbackground $wmiibackground
 

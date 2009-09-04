@@ -18,15 +18,14 @@ urxvt*color12: #3465a4
 urxvt*color13: #f57900
 urxvt*color14: #46a4ff
 urxvt*color15: #ffffff
-urxvt*background: #1a1a1a
-!urxvt*background: #444444
+urxvt*background: #382910
 urxvt*foreground: #fff
 !url stuff
-URxvt.perl-ext-common:	default,matcher
-URxvt.urlLauncher: opera
+URxvt*perl-ext-common:	default,matcher
+URxvt*urlLauncher: firefox
 URxvt*cutchars: `"()'*<>[]{|}
-URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-URxvt.matcher.button: 1
+URxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+URxvt*matcher.button: 1
 
 Xft.antialias:true
 Xft.dpi:100

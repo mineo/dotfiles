@@ -2,8 +2,7 @@ download-path "/media/crypt/Musik/Podcasts/"
 auto-reload yes
 browser "opera %u"
 feed-sort-order firsttag
-mark-as-read-on-hover yes
-max-items 30
+mark-as-read-on-hover no
 notify-screen yes
 show-read-feeds no
 show-read-articles no

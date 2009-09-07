@@ -18,8 +18,7 @@ noticetimeout=5
 noticebar=/rbar/!notice
 
 # Theme
-#wmiifont='drift,-*-fixed-*-*-*-*-9-*-*-*-*-*-*-*'
-wmiifont='-*-profont-*-*-*-*-11-*-*-*-*-*-*-*'
+wmiifont='xft:Lucida Grande:size=7'
 wmiinormcol=`{echo '#edeae2 #5b441c #5b441c'}
 wmiifocuscol=`{echo '#5b441c #edeae2 #edeae2'} # text,background, borde, border
 wmiistatuscol=`{echo '#edeae2 #5b441c #5b441c'} 

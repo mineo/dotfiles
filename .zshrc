@@ -45,6 +45,10 @@ alias rf='rm -rf'
 alias rs='source ~/.zshrc'
 alias wlzh='sudo netcfg zuhause'
 
+if [[ -x `which fortune` ]]; then
+    fortune -a 2> /dev/null
+fi
+
 ##############
 # completion #
 ##############

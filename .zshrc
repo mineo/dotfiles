@@ -34,10 +34,8 @@ alias shutdown='sudo shutdown -h now'
 alias smblog='tail -n 30 /var/log/samba/log.smbd'
 
 alias fu='yaourt -Rns'
-alias upd='yaourt -Syu --aur '
 alias pkg='yaourt -Qi'
-alias gib='yaourt -S'
-alias sync='yaourt -Sy'
+alias sp='sudo pacman'
 
 alias up='cd ..'
 alias rf='rm -rf'
@@ -46,7 +44,7 @@ alias rs='source ~/.zshrc'
 alias wlzh='sudo netcfg zuhause'
 
 if [[ -x `which fortune` ]]; then
-    fortune -a 2> /dev/null
+    fortune -a 2> /dev/null | cowsay -f three-eyes
 fi
 
 ##############

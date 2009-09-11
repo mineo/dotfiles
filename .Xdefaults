@@ -26,6 +26,9 @@ urxvt*urlLauncher: firefox
 urxvt*cutchars: `"()'*<>[]{|}
 urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt*matcher.button: 1
+urxvt*shading: 40
+urxvt*fading: 60
+urxvt*inheritPixmap: True
 
 Xft.antialias:true
 Xft.dpi:100

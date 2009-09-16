@@ -1,3 +1,4 @@
+set runtimepath+=/usr/share/vim
 set t_Co=256
 colorscheme mustang
 
@@ -14,6 +15,7 @@ set ignorecase
 filetype plugin indent on 
 set showmatch
 set foldmethod=indent
+set backspace=2 "to backspace over linebreaks
 
 map <C-q> :quit<CR>
 map <F1> :NERDTreeToggle<CR>

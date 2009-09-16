@@ -20,8 +20,8 @@ noticebar=/rbar/!notice
 # Theme
 wmiifont='xft:Lucida Grande:size=7'
 wmiinormcol=`{echo '#190404 #f0f0f0 #f0f0f0'}
-wmiifocuscol=`{echo '#ffffff #2d2d2d #2d2d2d'} # text,background, borde, border
-wmiistatuscol=`{echo '#2d2d2d #ffffff #c6c7c7'} 
+wmiifocuscol=`{echo '#ffffff #2d2d2d #f0f0f0'} # text,background, borde, border
+wmiistatuscol=`{echo '#ffffff #2d2d2d #fdfdfd'} 
 wmiibackground='#222222'
 wmiifloatbackground='#222222'
 fn setbackground { }
@@ -41,6 +41,7 @@ wmiir write /tagrules <<!
 /Opera|Shiretoko/ -> 1
 /Zim/ -> 3
 /GMPC/ -> 2
+/Skype|Pidgin/ -> 4
 !
 
 # Status Bar Info

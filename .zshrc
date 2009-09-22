@@ -19,8 +19,6 @@ alias q='exit'
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
 alias mp='mplayer -ass -fs'
 alias mp51='mplayer -ass -ao alsa -channels 3 -af hrtf'
-alias vdp264='mplayer -vo vdpau -vc ffh264vdpau'
-alias vdpmpeg='mplayer -vo vdpau -vc ffmpeg12vdpau'
 
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'

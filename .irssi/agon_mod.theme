@@ -241,7 +241,7 @@ abstracts = {
 };
 formats = {
   "fe-common/core" = {
-    timestamp = "{timestamp %%H:%%M:%%S} ";
+    timestamp = "{timestamp %%H%%M} ";
     own_msg = "{ownmsgnick {ownnick $[-0]0$2}}$1";
     own_msg_channel = "{ownmsgnick {ownnick $[-0]0$3}{msgchannel $1}}$2";
     own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-0]2}}$1";

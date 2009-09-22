@@ -32,6 +32,9 @@ urxvt*matcher.button: 1
 !urxvt*transparent: True
 !urxvt*inheritPixmap: False
 
+Xcursor.theme: DMZ
+Xcursor.size: 32
+
 Xft.antialias:true
 Xft.dpi:100
 Xft.hinting:true

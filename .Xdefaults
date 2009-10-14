@@ -1,7 +1,7 @@
 urxvt*urgentOnBell: true
 urxvt*scrollBar: false
 urxvt*saveLines: 10000
-urxvt*font: xft:terminus:size=9
+urxvt*font: xft:Consolas:pixelsize=15
 urxvt*color0: #000000
 urxvt*color1: #ff6565
 urxvt*color2: #93d44f
@@ -27,16 +27,5 @@ urxvt*urlLauncher: firefox
 urxvt*cutchars: `"()'*<>[]{|}
 urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt*matcher.button: 1
-!urxvt*shading: 40
-!urxvt*fading: 60
-!urxvt*transparent: True
-!urxvt*inheritPixmap: False
 
-Xcursor.theme: DMZ
-Xcursor.size: 32
-
-Xft.antialias:true
-Xft.dpi:100
-Xft.hinting:true
-Xft.hintstyle:hintslight
-Xft.rgba:subpixel
+Xcursor*theme: DMZ

@@ -6,9 +6,9 @@
 
 exec /usr/bin/xmodmap /home/wieland/.Xmodmap&
 exec urxvtd -q -o -f &
-exec xflux -l 51 &
-exec zim &
-exec nitrogen --restore &
+#exec xflux -l 51 &
+#exec zim &
+#exec nitrogen --restore &
 DEFAULT_SESSION=wmii
 case $1 in
 fluxbox)

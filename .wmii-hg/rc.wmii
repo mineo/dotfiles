@@ -242,6 +242,10 @@ key XF86Favorites || fn $key {
 
 key XF86HomePage || fn $key {
 	wi_runcmd firefox &}
+
+key XF86Launch0 || fn $key {
+	wi_runcmd slock &
+	}
 key $MODKEY-v || fn $key{
 	wi_runcmd urxvtc -e vim &
 	}

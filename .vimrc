@@ -17,6 +17,8 @@ set showmatch
 set foldmethod=indent
 set backspace=2 "to backspace over linebreaks
 
+let python_highlight_all = 1
+
 map <C-q> :quit<CR>
 map <F1> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
@@ -27,3 +29,5 @@ imap [ []<Left>
 imap < <><Left>
 inoremap ' ''<Left>
 inoremap " ""<Left>
+
+au FileType python map <F6> :!python %<CR>

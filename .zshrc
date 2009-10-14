@@ -17,8 +17,8 @@ alias yy='ftp_proxy=proxy:3128 yaourt'
 alias q='exit'
 
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
-alias mp='mplayer -ass -fs'
-alias mp51='mplayer -ass -ao alsa -channels 3 -af hrtf'
+alias mp='mplayer'
+alias mp51='mplayer -ao alsa -channels 3 -af hrtf'
 
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'

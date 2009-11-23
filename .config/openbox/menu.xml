@@ -10,35 +10,34 @@
 			</startupnotify>
 		</action>
 	</item>
-</menu>
-<menu id="apps-editors-menu" label="Editors">
-  <item label="GVim">
-    <action name="Execute">
-      <command>gvim</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-        <wmclass>GVim</wmclass>
-      </startupnotify>
-    </action>
-  </item>
- <item label="GEdit">
-    <action name="Execute">
-      <command>gedit</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-</menu>
-<menu id="spiele" label="Spiele">
-	<item label="Siedler 4">
-		<action name="Execute">
-			<command>wine /home/wieland/.wine/drive_c/BlueByte/Die\ Siedler\ IV/S4.exe</command>
+	<item label="Liferea">
+		<action name="execute">
+			<command>liferea</command>
+			<startupnotify>
+				<enabled>yes</enabled>
+			</startupnotify>
 		</action>
 	</item>
-	<item label="Lego Racers">
+</menu>
+<menu id="spiele" label="Spiele">
+	<item label="Hedgewars">
 		<action name="Execute">
-			<command>wine /home/wieland/.wine/drive_c/Program\ Files/Lego\ Media/Games/LEGO\ Racers/LEGORacers.exe</command>
+			<command>hedgewars</command>
+		</action>
+	</item>
+	<item label="HoN">
+		<action name="execute">
+			<command>proxychains /home/wieland/HoN/hon-x86_64</command>
+		</action>
+	</item>
+	<item label="Savage">
+		<action name="execute">
+			<command>/usr/bin/savage</command>
+		</action>
+	</item>
+	<item label="Battle for Wesnoth">
+		<action name="execute">
+			<command>wesnoth</command>
 		</action>
 	</item>
 </menu>
@@ -87,15 +86,6 @@
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
- <item label="Manage Cups Printers">
-    <action name="Execute">
-      <command>xdg-open http://localhost:631/</command>
-      <startupnotify>
-        <enabled>no</enabled>
-        <icon>cups</icon>
-      </startupnotify>
-    </action>
-  </item>
   <separator />
   <item label="Reconfigure Openbox">
     <action name="Reconfigure" />
@@ -123,11 +113,6 @@
     <action name="SessionLogout">
       <prompt>yes</prompt>
     </action>
-  </item>
-  <item label="Shutdown">
-	  <action name="execute">
-		  <command>sudo shutdown -h now</command>
-	  </action>
   </item>
 </menu>
 

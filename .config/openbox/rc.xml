@@ -10,7 +10,7 @@
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>no</followMouse>
+    <followMouse>yes</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
@@ -36,7 +36,7 @@
        the active window is -->
   </placement>
   <theme>
-    <name>Nova-Gold</name>
+    <name>Ganked</name>
     <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -49,12 +49,12 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Lucida Grande</name>
+      <name>Monaco</name>
       <size>7</size>
       <!-- font size in points -->
-      <weight>Bold</weight>
+      <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -180,23 +180,13 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
-      </action>
-    </keybind>
     <!-- meine keybindings -->
     <keybind key="F11">
       <action name="execute">
         <command>bashrun</command>
       </action>
     </keybind>
-    <keybind key="W-s">
+    <keybind key="W-Return">
       <action name="execute">
         <command>urxvt</command>
       </action>
@@ -217,10 +207,13 @@
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="W-m">
+    <keybind key="XF86Mail">
       <action name="execute">
-        <command>urxvt -e mc</command>
+        <command>thunderbird</command>
       </action>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
     </keybind>
     <keybind key="W-v">
       <action name="execute">
@@ -230,13 +223,13 @@
     <keybind key="A-Tab">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="A-m">
+    <keybind key="W-m">
       <action name="ToggleMaximizeFull"/>
     </keybind>
-    <!-- <keybind key="A-t">
+    <keybind key="W-t">
       <action name="ToggleDecorations"/>
-  </keybind> -->
-    <keybind key="A-s">
+    </keybind>
+    <keybind key="W-s">
       <action name="ToggleShade"/>
     </keybind>
     <keybind key="W-Up">
@@ -245,7 +238,7 @@
     <keybind key="A-Up">
       <action name="Raise"/>
     </keybind>
-    <keybind key="-Down">
+    <keybind key="A-Down">
       <action name="Lower"/>
     </keybind>
     <keybind key="W-Down">

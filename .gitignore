@@ -18,17 +18,14 @@
 # X stuff
 !.xinitrc
 !.Xdefaults
-!.Xdefaults.d/
 !.XCompose
-!.XCompose.d/
  
 # ZSH stuff
 !.zshrc
-!.zsh/*
 
 # Other configs
 !.screenrc
 !.config/openbox/*
-!.wmii-hg/*
 !.vimrc
 !.vim/plugin/*
+!.wmii-hg/wmiirc_local.py

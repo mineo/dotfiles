@@ -7,13 +7,11 @@ export PS1="%{$fg[red]%n%}%{$fg[white]%} in %~ %{$fg[red]»%}%{$fg[white]%} "
 ###########
 # aliases #
 ###########
-alias fz='filezilla'
 alias home='cd ~'
 alias rmdir='rm -R'
 alias scr='screen -rx'
 alias v='vim'
 alias sv='sudo vim'
-alias yy='ftp_proxy=proxy:3128 yaourt'
 alias q='exit'
 
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
@@ -23,20 +21,19 @@ alias mp51='mplayer -ao alsa -channels 3 -af hrtf'
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'
-alias tru='sudo truecrypt'
+alias tru='truecrypt'
 
-
-alias ll='ls -lh --color=tty'
+alias ll='ls -lh --color=auto'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias lsg='ls |fgrep'
+alias lsg='ls | grep'
 alias psg='ps -e | grep'
 alias shutdown='sudo shutdown -h now'
-alias smblog='tail -n 30 /var/log/samba/log.smbd'
 
 alias y='yaourt'
-alias fu='yaourt -Rns'
-alias pkg='yaourt -Qi'
+alias yy='ftp_proxy=proxy:3128 yaourt'
+alias fu='sudo pacman -Rns'
+alias pkg='pacman -Qi'
 alias sp='sudo pacman'
 alias p='pacman'
 
@@ -44,7 +41,6 @@ alias up='cd ..'
 alias rf='rm -rf'
 
 alias rs='source ~/.zshrc'
-alias wlzh='sudo netcfg zuhause'
 
 if [[ -x `which fortune` ]]; then
     fortune -a 2> /dev/null | cowsay -f three-eyes

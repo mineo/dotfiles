@@ -16,8 +16,8 @@ alias q='exit'
 
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
 alias mp='mplayer'
-alias mp51='mplayer -ao alsa -channels 3 -af hrtf'
-
+alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1:1'
+# channels:left-fl:right-fl:left-fr:right-fr:left-sl:right-sl:left-sr:right-sr:left-fc:right-fc:left-lfe:right-lfe
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'

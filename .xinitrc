@@ -4,10 +4,13 @@
 # Executed by startx (run your window manager from here)
 #
 
-/usr/bin/xmodmap /home/wieland/.Xmodmap&
+  /usr/bin/xmodmap /home/wieland/.Xmodmap&
 urxvtd -q -o -f &
 nitrogen --restore &
-#exec wmii
+#  exec wmii
 tint2 &
-trayfreq &
-exec openbox-session
+#trayfreq &
+netcfg-tray &
+thunar --daemon &
+exec ck-launch-session openbox-session
+#exec ck-launch-session wmii

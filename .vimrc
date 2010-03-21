@@ -41,6 +41,7 @@ map <F1> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
+map co ,c 
 
 imap { {}<Left>
 imap ( ()<Left>

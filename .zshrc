@@ -2,7 +2,9 @@ autoload colors
 colors
 setopt autocd
 setopt correct_all
-export PS1="%{$fg[red]%n%}%{$fg[white]%} in %~ %{$fg[red]»%}%{$fg[white]%} " 
+
+git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
+PROMPT="%{$fg[red]%}%n %{$fg[white]%}in %{$fg[red]%}%~ %{$fg[white]%}» "
 
 ###########
 # aliases #
@@ -14,6 +16,7 @@ alias v='vim'
 alias sv='sudo vim'
 alias q='exit'
 
+alias q150='ssh wieland@q150'
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
 alias mp='mplayer'
 alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1:1'
@@ -21,7 +24,7 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'
-alias tru='truecrypt'
+alias avdump='wine ~/.wine/drive_c/Programme/avdump/avdump.exe -1230e'
 
 alias ll='ls -lh --color=auto'
 alias ls='ls --color=auto'
@@ -30,12 +33,11 @@ alias lsg='ls | grep'
 alias psg='ps -e | grep'
 alias shutdown='sudo shutdown -h now'
 
-alias y='yaourt'
-alias yy='ftp_proxy=proxy:3128 yaourt'
 alias fu='sudo pacman -Rns'
 alias pkg='pacman -Qi'
 alias sp='sudo pacman'
-alias p='pacman'
+alias pm='pacman'
+alias p='packer'
 
 alias up='cd ..'
 alias rf='rm -rf'

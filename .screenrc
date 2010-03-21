@@ -3,15 +3,8 @@
 #  hardstatus string '%{= M} %H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
 caption always "%{= KW}%-w%{= gW}%n %t%{-}%+w %-="
 defutf8 on
-
-
 altscreen on
-bell_msg "bell in window %n "
+bell_msg "bell in window %n"
+vbell off
 startup_message off
-
-
-##keybindings
-bind -k k1 prev
-bind -k k2 next
-bind r screen -t 'rtorrent' 8 rtorrent
 bind i screen -t 'irc' 9 irssi

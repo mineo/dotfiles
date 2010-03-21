@@ -18,6 +18,11 @@
 			</startupnotify>
 		</action>
 	</item>
+	<item label="JDownloader">
+		<action name="execute">
+			<command>/usr/bin/jdownloader</command>
+		</action>
+	</item>
 </menu>
 <menu id="spiele" label="Spiele">
 	<item label="Hedgewars">
@@ -38,6 +43,11 @@
 	<item label="Battle for Wesnoth">
 		<action name="execute">
 			<command>wesnoth</command>
+		</action>
+	</item>
+	<item label="Blobby Volley 2">
+		<action name="execute">
+			<command>blobby</command>
 		</action>
 	</item>
 </menu>

@@ -20,6 +20,7 @@ urxvt*color14: #46a4ff
 urxvt*color15: #ffffff
 urxvt*background: #1c1c1c
 urxvt*foreground: #fff
+urxvt*transparent: true
 
 !url stuff
 urxvt*perl-ext-common:	default,matcher

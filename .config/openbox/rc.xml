@@ -36,7 +36,7 @@
        the active window is -->
   </placement>
   <theme>
-    <name>Nova-Lime</name>
+    <name>Arkid</name>
     <titleLayout>LIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -188,7 +188,7 @@
     </keybind>
     <keybind key="W-Return">
       <action name="execute">
-        <command>urxvt</command>
+        <command>urxvtc</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -217,8 +217,13 @@
     </keybind>
     <keybind key="W-v">
       <action name="execute">
-        <command>urxvt -e vim</command>
+        <command>urxvtc -e vim</command>
       </action>
+    </keybind>
+    <keybind key="W-i">
+        <action name="execute">
+            <command>urxvtc -tr -e screen -c ~/.screenrc-irc -R -D irc</command>
+        </action>
     </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow"/>

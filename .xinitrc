@@ -8,9 +8,9 @@
 urxvtd -q -o -f &
 nitrogen --restore &
 #  exec wmii
-tint2 &
-#trayfreq &
-netcfg-tray &
+#tint2 &
+#cairo-compmgr &
+#netcfg-tray &
 thunar --daemon &
-exec ck-launch-session openbox-session
-#exec ck-launch-session wmii
+#exec ck-launch-session openbox-session
+exec ck-launch-session i3

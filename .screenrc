@@ -1,0 +1,10 @@
+#  hardstatus alwayslastline 
+#hardstatus string '[%H] %Lw%=%u %d.%m.%y %c '
+#  hardstatus string '%{= M} %H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c '
+caption always "%{= KW}%-w%{= gW}%n %t%{-}%+w %-="
+defutf8 on
+altscreen on
+bell_msg "bell in window %n"
+vbell off
+startup_message off
+bind i screen -t 'irc' 9 irssi

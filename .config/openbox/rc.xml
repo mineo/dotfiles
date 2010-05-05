@@ -196,6 +196,16 @@
         <command>thunar</command>
       </action>
     </keybind>
+    <keybind key="XF86AudioLowerVolume">
+        <action name="execute">
+            <command>ossvol -d</command>
+        </action>
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+        <action name="execute">
+            <command>ossvol -i</command>
+        </action>
+    </keybind>
     <keybind key="W-r">
       <action name="Reconfigure"/>
     </keybind>

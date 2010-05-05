@@ -46,7 +46,18 @@
 		</action>
 	</item>
 </menu>
-
+<menu id="wine-menu" label="Wine">
+    <item label="playonlinux">
+        <action name="execute">
+            <command>playonlinux</command>
+        </action>
+    </item>
+    <item label="Wine-Doors">
+        <action name="execute">
+            <command>wine-doors</command>
+        </action>
+    </item>
+</menu>
 <menu id="apps-office-menu" label="Office">
   <item label="OpenOffice Base">
     <action name="Execute">
@@ -107,6 +118,7 @@
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="spiele"/>
+  <menu id="wine-menu"/>
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
   <menu id="apps-multimedia-menu"/>

@@ -230,6 +230,11 @@
         <command>urxvt -e vim</command>
       </action>
     </keybind>
+    <keybind key="W-i">
+        <action name="execute">
+            <command>urxvtc -tr -e screen -c ~/.screenrc-irc -R -D irc</command>
+        </action>
+    </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow"/>
     </keybind>

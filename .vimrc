@@ -2,7 +2,7 @@ set runtimepath+=/usr/share/vim
 set t_Co=256
 set encoding=utf-8
 
-colorscheme mustang
+colorscheme synic
 set guifont=Monospace\ 13
 " status line
 set laststatus=2
@@ -22,12 +22,14 @@ set number
 set smartindent
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set tw=72
 set ignorecase
 set hlsearch
 set incsearch
 filetype plugin indent on
+" python stuff
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
+autocmd FileType python setlocal tw=79 expandtab tabstop=4
 " Show matching brackets etc
 set showmatch
 set foldmethod=indent
@@ -42,6 +44,14 @@ map <F2> :TlistToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" Use the arrows to something usefull
+map <right> :bn<cr>
+map <left> :bp<cr>
 
 imap { {}<Left>
 imap ( ()<Left>

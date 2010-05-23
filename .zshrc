@@ -5,6 +5,7 @@ setopt correct_all
 
 git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
 PROMPT="%{$fg[red]%}%n %{$fg[white]%}in %{$fg[red]%}%~ %{$fg[white]%}» "
+RPROMPT="«"
 
 ###########
 # aliases #
@@ -24,7 +25,7 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'
-alias avdump='wine ~/.wine/drive_c/Programme/avdump/avdump.exe -1230e'
+alias avdump='wine ~/Downloads/avdump/avdump.exe -1230e'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'

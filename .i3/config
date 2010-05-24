@@ -1,0 +1,162 @@
+# This configuration uses Mod4 and Mod3. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
+
+# ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -*-clean-*-*-*-*-*-*-*-*-*-iso10646-*
+
+# Use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# Fullscreen (Mod4+f)
+bind Mod4+41 f
+
+# Stacking (Mod4+r)
+bind Mod4+Shift+27 s
+
+# Tabbed (Mod4+w)
+bind Mod4+Shift+25 T
+
+# Default (Mod4+e)
+bind Mod4+Shift+26 d
+
+# Toggle tiling/floating of the current window (Mod4+Shift+Space)
+bind Mod4+Shift+65 t
+
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod4+t)
+bind Mod4+28 focus ft
+
+# Focus (Mod4+j/k/l/;)
+bind Mod4+43 h
+bind Mod4+44 j
+bind Mod4+45 k
+bind Mod4+46 l
+# resizing
+bindsym Mod4+Left resize left -10
+bindsym Mod4+Down resize bottom +10
+bindsym Mod4+Up resize top -10
+bindsym Mod4+Right resize right +10
+bindsym Mod4+Shift+Left resize left +10
+bindsym Mod4+Shift+Down resize bottom -10
+bindsym Mod4+Shift+Up resize top +10
+bindsym Mod4+Shift+Right resize right -10
+# Focus Container (Mod3+j/k/l/;)
+bind Mod3+43 wch
+bind Mod3+44 wcj
+bind Mod3+45 wck
+bind Mod3+46 wcl
+# (alternatively, you can use the cursor keys:)
+bindsym Mod3+Left wch
+bindsym Mod3+Down wcj
+bindsym Mod3+Up wck
+bindsym Mod3+Right wcl
+
+# Snap (Mod4+Control+j/k/l/;)
+bind Mod4+Control+43 sh
+bind Mod4+Control+44 sj
+bind Mod4+Control+45 sk
+bind Mod4+Control+46 sl
+# (alternatively, you can use the cursor keys:)
+bindsym Mod4+Control+Left sh
+bindsym Mod4+Control+Down sj
+bindsym Mod4+Control+Up sk
+bindsym Mod4+Control+Right sl
+
+# Move (Mod4+Shift+j/k/l/;)
+bind Mod4+Shift+43 mh
+bind Mod4+Shift+44 mj
+bind Mod4+Shift+45 mk
+bind Mod4+Shift+46 ml
+# (alternatively, you can use the cursor keys:)
+#bindsym Mod4+Shift+Left mh
+#bindsym Mod4+Shift+Down mj
+#bindsym Mod4+Shift+Up mk
+#bindsym Mod4+Shift+Right ml
+
+# Move Container (Mod3+Shift+j/k/l/;)
+bind Mod3+Shift+43 wcmh
+bind Mod3+Shift+44 wcmj
+bind Mod3+Shift+45 wcmk
+bind Mod3+Shift+46 wcml
+
+# Workspaces (Mod4+1/2/…)
+bind Mod4+10 1
+bind Mod4+11 2
+bind Mod4+12 3
+bind Mod4+13 4
+bind Mod4+14 5
+bind Mod4+15 6
+bind Mod4+16 7
+bind Mod4+17 8
+bind Mod4+18 9
+bind Mod4+19 10
+
+# Move to Workspaces
+bind Mod4+Shift+10 m1
+bind Mod4+Shift+11 m2
+bind Mod4+Shift+12 m3
+bind Mod4+Shift+13 m4
+bind Mod4+Shift+14 m5
+bind Mod4+Shift+15 m6
+bind Mod4+Shift+16 m7
+bind Mod4+Shift+17 m8
+bind Mod4+Shift+18 m9
+bind Mod4+Shift+19 m10
+
+# Mod4+Enter starts a new terminal
+bind Mod4+36 exec /usr/bin/urxvtc
+
+# Mod4+Shift+q kills the current client
+bind Mod4+Shift+24 kill
+
+# Mod4+v starts dmenu and launches the selected application
+# for now, we don’t have a launcher of our own.
+bind Mod4+53 exec /usr/bin/dmenu_run
+
+# Mod4+Shift+e exits i3
+bind Mod4+Shift+26 exit
+
+# Mod3+Shift+r restarts i3 inplace
+bind Mod3+Shift+27 restart
+
+# The IPC interface allows programs like an external workspace bar
+# (i3-wsbar) or i3-msg (can be used to "remote-control" i3) to work.
+ipc-socket ~/.i3/ipc.sock
+
+# borders
+bindsym Mod4+b bt
+new_window bb
+new_container tabbed
+#############################################################
+# DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
+#############################################################
+bind 180 exec firefox
+bind Mod4+42 exec gmpc
+bindsym Mod4+e exec thunar
+bindsym Mod4+v exec urxvtc -e vim
+bindsym Mod4+p exec pidgin
+bindsym Mod4+i exec urxvtc -tr -e screen -c ~/.screenrc-irc -R -D irc
+bindsym Mod4+m exec thunderbird
+bindsym Mod4+s exec /home/wieland/.i3/status.sh
+
+assign Firefox → 1
+assign Thunderbird → 3
+assign GMPC → 2
+assign Pidgin → 4
+assign mplayer → ~
+assign Gimp → 5
+
+workspace 1 www
+workspace 2 GMPC
+workspace 3 Mail
+workspace 4 Chat
+
+#workspace_bar no
+client.focused #3A3A3A #3A3A3A #AFAF87
+client.unfocused #3A3A3A #3A3A3A #6E6045
+bar.focused #3A3A3A #3A3A3A #AFAF87
+bar.unfocused #3A3A3A #3A3A3A #6E6045
+bar.urgent #3A3A3A #3A3A3A #DFDFA7
+
+exec /home/wieland/.i3/status.sh

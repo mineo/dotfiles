@@ -4,7 +4,7 @@ setopt autocd
 setopt correct_all
 
 git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
-PROMPT="%{$fg[red]%}%n %{$fg[white]%}in %{$fg[red]%}%~ %{$fg[white]%}» "
+PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~ %{$fg[white]%}» "
 RPROMPT="«"
 
 ###########

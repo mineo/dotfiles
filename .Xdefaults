@@ -5,24 +5,25 @@ urxvt*font: xft:Consolas
 !URxvt.font:xft:envy code r:medium:pixelsize=12
 !URxvt.boldFont:xft:envy code r:medium:pixelsize=12
 
-urxvt*color0: #000000
-urxvt*color1: #ff6565
-urxvt*color2: #93d44f
-urxvt*color3: #eab93d
-urxvt*color4: #204a87
-urxvt*color5: #ce5c00
-urxvt*color6: #89b6e2
-urxvt*color7: #cccccc
-urxvt*color8: #555753
-urxvt*color9: #ff8d8d
-urxvt*color10: #c8e7a8
-urxvt*color11: #ffc123
-urxvt*color12: #3465a4
-urxvt*color13: #f57900
-urxvt*color14: #46a4ff
-urxvt*color15: #ffffff
-urxvt*background: #1c1c1c
-urxvt*foreground: #fff
+URxvt*color0: #000000
+URxvt*color1: #9e1828
+URxvt*color2: #aece92
+URxvt*color3: #968a38
+URxvt*color4: #414171
+URxvt*color5: #963c59
+URxvt*color6: #418179
+URxvt*color7: #bebebe
+URxvt*color8: #666666
+URxvt*color9: #cf6171
+URxvt*color10: #c5f779
+URxvt*color11: #fff796
+URxvt*color12: #4186be
+URxvt*color13: #cf9ebe
+URxvt*color14: #71bebe
+URxvt*color15: #ffffff
+
+urxvt*background: #00010
+urxvt*foreground: Wheat
 
 !url stuff
 urxvt*perl-ext-common:	default,matcher

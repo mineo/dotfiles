@@ -25,7 +25,6 @@ set ignorecase
 set hlsearch
 set incsearch
 filetype plugin indent on
-let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 " Show matching brackets etc
 set showmatch
 set foldmethod=indent
@@ -36,6 +35,22 @@ set backspace=2 "to backspace over linebreaks
 set tw=79
 let NERDTreeWinPos='right'
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/libnet
+set tags+=~/.vim/tags/jni
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 map <F1> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
 map gt :bnext!<CR>
@@ -51,5 +66,6 @@ imap [ []<Left>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 au FileType python map <F6> :!python %<CR>
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

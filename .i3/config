@@ -105,7 +105,7 @@ bind Mod4+Shift+18 m9
 bind Mod4+Shift+19 m10
 
 # Mod4+Enter starts a new terminal
-bind Mod4+36 exec /usr/bin/urxvtc -tr
+bind Mod4+36 exec /usr/bin/urxvtc
 
 # Mod4+Shift+q kills the current client
 bind Mod4+Shift+24 kill
@@ -131,6 +131,9 @@ new_container tabbed
 #############################################################
 # DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
 #############################################################
+bind 83 exec mpc prev
+bind 84 exec mpc toggle
+bind 85 exec mpc next
 bind 180 exec firefox
 bind 163 exec thunderbird
 bind 121 exec ossvol -t
@@ -142,6 +145,7 @@ bindsym Mod4+v exec urxvtc -e vim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -tr -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+m exec thunderbird
+
 
 assign Firefox → 1
 assign Thunderbird → 3
@@ -156,8 +160,10 @@ workspace 3 Mail
 workspace 4 Chat
 
 #workspace_bar no
-client.focused #333333 #333333 #1E80B1
-client.unfocused #333333 #333333 #666666
-bar.focused #000000 #000000 #1E80B1
-bar.unfocused #000000 #000000 #666666
+#border background text
+client.focused #303030 #3a3a3a #afaf87
+client.unfocused #303030 #3a3a3a #686842
+client.focused_inactive #303030 #4f4d4d #afaf87
+bar.focused #303030 #000000 #afaf87
+bar.unfocused #303030 #000000 #686842
 bar.urgent #333333 #1E80B1 #333333

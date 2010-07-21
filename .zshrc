@@ -7,9 +7,19 @@ git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
 PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~ %{$fg[white]%}» "
 RPROMPT="«"
 
+build_aur() {
+        wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
+        tar xf $1.tar.gz || exit 1
+        cd $1 || exit 1 
+        makepkg -csi || exit 1
+        cd ..
+        rm -rf $1 && rm $1.tar.gz || exit 1
+}
+
 ###########
 # aliases #
 ###########
+alias -g L='|less'
 alias home='cd ~'
 alias rmdir='rm -R'
 alias scr='screen -rx'
@@ -25,7 +35,7 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'
-alias avdump='wine ~/Downloads/avdump/avdump.exe -1230e'
+alias avdump='wine ~/Downloads/avdump.exe -1230e'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'

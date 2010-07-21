@@ -4,6 +4,7 @@ nitrogen --restore &
 urxvtd -q -o -f
 #trayfreq &
 #tint2 &
+killall mpdscribble
 mpdscribble &
 gmpc &
 pidgin &

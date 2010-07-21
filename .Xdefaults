@@ -2,9 +2,26 @@ urxvt*urgentOnBell: true
 urxvt*scrollBar: false
 urxvt*saveLines: 10000
 urxvt*font: xft:Consolas
-!URxvt.font:xft:envy code r:medium:pixelsize=12
-!URxvt.boldFont:xft:envy code r:medium:pixelsize=12
-
+!urxvt*color0: #000000
+!urxvt*color1: #ff6565
+!urxvt*color2: #93d44f
+!urxvt*color3: #eab93d
+!urxvt*color4: #204a87
+!urxvt*color5: #ce5c00
+!urxvt*color6: #89b6e2
+!urxvt*color7: #cccccc
+!urxvt*color8: #555753
+!urxvt*color9: #ff8d8d
+!urxvt*color10: #c8e7a8
+!urxvt*color11: #ffc123
+!urxvt*color12: #3465a4
+!urxvt*color13: #f57900
+!urxvt*color14: #46a4ff
+!urxvt*color15: #ffffff
+URxvt*background: #000010
+URxvt*foreground: Wheat
+URxvt*colorUL: #c5f779
+URxvt*underlineColor: #c5f779
 URxvt*color0: #000000
 URxvt*color1: #9e1828
 URxvt*color2: #aece92
@@ -22,8 +39,9 @@ URxvt*color13: #cf9ebe
 URxvt*color14: #71bebe
 URxvt*color15: #ffffff
 
-urxvt*background: #00010
-urxvt*foreground: Wheat
+urxvt*background: #1c1c1c
+urxvt*foreground: #fff
+urxvt*transparent: true
 
 !url stuff
 urxvt*perl-ext-common:	default,matcher
@@ -33,35 +51,3 @@ urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt*matcher.button: 1
 
 Xcursor*theme: DMZ
-! author:   jason ryan - http://jasonwryan.com/    
-! -------------------------------------------------
-
-!! jwr dark
-
-!black
-!urxvt*color0:  #333333
-!urxvt*color8:  #3D3D3D
-!red
-!urxvt*color1:  #8C4665
-!urxvt*color9:  #BF4D80
-!green
-!urxvt*color2:  #287373
-!urxvt*color10: #53A6A6
-!yellow
-!urxvt*color3:  #7C7C99
-!urxvt*color11: #9E9ECB
-!blue
-!urxvt*color4:  #395573
-!urxvt*color12: #477AB3
-!magenta
-!urxvt*color5:  #5E468C
-!urxvt*color13: #7E62B3
-!cyan
-!urxvt*color6:  #31658C
-!urxvt*color14: #6096BF
-!white
-!urxvt*color7:  #899CA1
-!urxvt*color15: #C0C0C0
-!URxvt.background: #1A1A1A
-!URxvt.foreground: #999999
-

@@ -6,7 +6,7 @@ urxvtd -q -o -f
 #tint2 &
 killall mpdscribble
 mpdscribble &
-gmpc &
+mpdnotify -s &
 pidgin &
 #exec ck-launch-session openbox-session
 exec ck-launch-session i3 --force-xinerama

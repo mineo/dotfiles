@@ -149,6 +149,7 @@ bindsym Mod4+m exec thunderbird
 
 assign Firefox → 1
 assign Thunderbird → 3
+assign Lanikai → 3
 assign GMPC → 2
 assign Pidgin → 4
 assign mplayer → ~

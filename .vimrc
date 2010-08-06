@@ -51,7 +51,7 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-map <F1> :NERDTreeToggle<CR>
+map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
@@ -66,6 +66,7 @@ imap [ []<Left>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 au FileType python map <F6> :!python %<CR>
+au FileType python map <F1> \pw
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

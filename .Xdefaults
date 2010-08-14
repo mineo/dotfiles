@@ -45,7 +45,8 @@ urxvt*shading: 50
 
 !url stuff
 urxvt*perl-ext-common:	default,matcher
-urxvt*urlLauncher: firefox
+!urxvt*urlLauncher: firefox
+urxvt*urlLauncher: chromium-dev
 urxvt*cutchars: `"()'*<>[]{|}
 urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt*matcher.button: 1

@@ -134,7 +134,8 @@ new_container tabbed
 bind 83 exec mpc prev
 bind 84 exec mpc toggle
 bind 85 exec mpc next
-bind 180 exec firefox
+#bind 180 exec firefox
+bind 180 exec chromium-dev
 bind 163 exec thunderbird
 bind 121 exec ossvol -t
 bind 122 exec ossvol -d
@@ -148,6 +149,7 @@ bindsym Mod4+m exec thunderbird
 
 
 assign Firefox → 1
+assign Chromium → 1
 assign Thunderbird → 3
 assign Lanikai → 3
 assign GMPC → 2

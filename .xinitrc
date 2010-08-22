@@ -6,11 +6,11 @@
 
   /usr/bin/xmodmap /home/wieland/.Xmodmap&
 urxvtd -q -o -f &
-nitrogen --restore &
+#nitrogen --restore &
 #tint2 &
 #cairo-compmgr &
 #netcfg-tray &
-#thunar --daemon &
+thunar --daemon &
 #/home/wieland/.i3/status.sh &
 #exec ck-launch-session openbox-session
-exec ck-launch-session i3
+exec ck-launch-session i3 --force-xinerama

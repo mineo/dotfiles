@@ -44,10 +44,12 @@ urxvt*foreground: #fff
 !urxvt*transparent: true
 
 !url stuff
-urxvt*perl-ext-common:	default,matcher
+urxvt*perl-ext-common:	default,matcher,url-select
 urxvt*urlLauncher: firefox
 urxvt*cutchars: `"()'*<>[]{|}
 urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 urxvt*matcher.button: 1
+urxvt*underlineURLs: true
+urxvt*keysym.M-u: perl:url-select:select_next
 
 Xcursor*theme: DMZ

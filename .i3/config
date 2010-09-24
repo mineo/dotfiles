@@ -2,8 +2,7 @@
 # and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
 
 # ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font -*-clean-*-*-*-*-*-*-*-*-*-iso10646-*
+font -artwiz-cure-*-r-normal-*-*-*-*-*-*-*-iso8859-1
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -126,7 +125,7 @@ ipc-socket ~/.i3/ipc.sock
 
 # borders
 bindsym Mod4+b bt
-new_window bb
+new_window bp
 new_container tabbed
 #############################################################
 # DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
@@ -134,8 +133,7 @@ new_container tabbed
 bind 83 exec mpc prev
 bind 84 exec mpc toggle
 bind 85 exec mpc next
-#bind 180 exec firefox
-bind 180 exec chromium-dev
+bind 180 exec firefox
 bind 163 exec thunderbird
 bind 121 exec ossvol -t
 bind 122 exec ossvol -d
@@ -144,29 +142,28 @@ bind Mod4+42 exec gmpc
 bindsym Mod4+e exec thunar
 bindsym Mod4+v exec urxvtc -e vim
 bindsym Mod4+p exec pidgin
-bindsym Mod4+i exec urxvtc -tr -e screen -c ~/.screenrc-irc -R -D irc
+bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+m exec thunderbird
+bindsym Mod4+s exec /home/wieland/.i3/status.sh
 
 
 assign Firefox → 1
 assign Chromium → 1
 assign Thunderbird → 3
 assign Lanikai → 3
-assign GMPC → 2
-assign Pidgin → 4
+assign Pidgin → 2
 assign mplayer → ~
 assign Gimp → 5
 
 workspace 1 www
-workspace 2 GMPC
+workspace 2 msg
 workspace 3 Mail
-workspace 4 Chat
 
-#workspace_bar no
+workspace_bar yes
 #border background text
-client.focused #303030 #3a3a3a #afaf87
-client.unfocused #303030 #3a3a3a #686842
-client.focused_inactive #303030 #4f4d4d #afaf87
-bar.focused #303030 #000000 #afaf87
-bar.unfocused #303030 #000000 #686842
+client.focused #1793D1 #3a3a3a #afaf87
+client.unfocused #ffffff #3a3a3a #686842
+client.focused_inactive #ffffff #4f4d4d #afaf87
+bar.focused #000000 #1793D1 #ffffff
+bar.unfocused #000000 #000000 #686842
 bar.urgent #333333 #1E80B1 #333333

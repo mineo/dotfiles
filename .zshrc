@@ -2,9 +2,30 @@ autoload colors
 colors
 setopt autocd
 setopt correct_all
+setopt prompt_subst
 
-git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
-PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~ %{$fg[white]%}» "
+# VCS_INFO stuff
+# set formats
+# # %b - branchname
+# # %u - unstagedstr (see below)
+# # %c - stangedstr (see below)
+# # %a - action (e.g. rebase-i)
+# # %R - repository path
+# # %S - path in the repository
+# # %s - vcs in use
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr "[u]"
+zstyle ':vcs_info:*' stagedstr "[s]"
+zstyle ':vcs_info:*' actionformats " %s:(%b)%u%s/%S"
+zstyle ':vcs_info:*' formats       " %s:(%b)%u/%S"
+autoload -Uz vcs_info
+vcs_info
+precmd () {
+    vcs_info
+    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+}
+
+PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
 RPROMPT="«"
 
 build_aur() {
@@ -26,11 +47,7 @@ alias scr='screen -rx'
 alias v='vim'
 alias sv='sudo vim'
 alias q='exit'
-
-alias q150='ssh wieland@q150'
-alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
 alias mp='mplayer'
-alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1:1'
 # channels:left-fl:right-fl:left-fr:right-fr:left-sl:right-sl:left-sr:right-sr:left-fc:right-fc:left-lfe:right-lfe
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
@@ -50,7 +67,6 @@ alias pm='pacman'
 alias p='packer'
 
 alias up='cd ..'
-alias rf='rm -rf'
 
 alias rs='source ~/.zshrc'
 

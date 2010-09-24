@@ -2,12 +2,12 @@ xmodmap .Xmodmap &
 thunar --daemon &
 nitrogen --restore &
 urxvtd -q -o -f
+.i3/status.sh &
 #trayfreq &
 #tint2 &
-killall mpdscribble
-mpdscribble &
 mpdnotify -s &
-xscreensaver -no-splash &
+killall mpdscribble
+mpdscribble
 pidgin &
 #exec ck-launch-session openbox-session
-exec ck-launch-session i3 --force-xinerama
+exec i3 --force-xinerama

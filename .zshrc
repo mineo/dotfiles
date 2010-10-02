@@ -16,8 +16,8 @@ setopt prompt_subst
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr "[u]"
 zstyle ':vcs_info:*' stagedstr "[s]"
-zstyle ':vcs_info:*' actionformats " %s:(%b)%u%s/%S"
-zstyle ':vcs_info:*' formats       " %s:(%b)%u/%S"
+zstyle ':vcs_info:*' actionformats " %s:(%b)%u%s"
+zstyle ':vcs_info:*' formats       " %s:(%b)%u"
 autoload -Uz vcs_info
 vcs_info
 precmd () {
@@ -41,6 +41,7 @@ build_aur() {
 # aliases #
 ###########
 alias -g L='|less'
+alias -g G='grep'
 alias home='cd ~'
 alias rmdir='rm -R'
 alias scr='screen -rx'
@@ -57,7 +58,6 @@ alias avdump='wine ~/Downloads/avdump.exe -1230e'
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'
 alias lsg='ls | grep'
-alias psg='ps -e | grep'
 alias shutdown='sudo shutdown -h now'
 
 alias fu='sudo pacman -Rns'
@@ -65,8 +65,6 @@ alias pkg='pacman -Qi'
 alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
-
-alias up='cd ..'
 
 alias rs='source ~/.zshrc'
 

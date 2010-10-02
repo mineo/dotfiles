@@ -34,7 +34,6 @@ set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 set tw=79
 let NERDTreeWinPos='right'
-let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/libnet
 set tags+=~/.vim/tags/jni
@@ -66,7 +65,8 @@ imap [ []<Left>
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 au FileType python map <F6> :!python %<CR>
+au FileType python set colorcolumn=80
 au FileType python map <F1> \pw
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

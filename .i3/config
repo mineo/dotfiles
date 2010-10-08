@@ -3,6 +3,7 @@
 
 # ISO 10646 = Unicode
 font -artwiz-cure-*-r-normal-*-*-*-*-*-*-*-iso8859-1
+#font -*-fixed-*-r-normal-*-*-*-*-*-*-*-iso8859-1
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -145,6 +146,7 @@ bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+m exec thunderbird
 bindsym Mod4+s exec /home/wieland/.i3/status.sh
+bindsym Mod4+r exec urxvt -e ranger
 
 
 assign Firefox → 1

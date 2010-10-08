@@ -32,7 +32,7 @@ build_aur() {
         wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
         tar xf $1.tar.gz || exit 1
         cd $1 || exit 1 
-        makepkg -csi || exit 1
+        makepkg -rcsi || exit 1
         cd ..
         rm -rf $1 && rm $1.tar.gz || exit 1
 }
@@ -41,7 +41,7 @@ build_aur() {
 # aliases #
 ###########
 alias -g L='|less'
-alias -g G='grep'
+alias -g G='|grep'
 alias home='cd ~'
 alias rmdir='rm -R'
 alias scr='screen -rx'

@@ -2,7 +2,7 @@ set runtimepath+=/usr/share/vim
 set t_Co=256
 set encoding=utf-8
 
-colorscheme zenburn
+colorscheme mustang
 set guifont=Monospace\ 13
 " status line
 set laststatus=2

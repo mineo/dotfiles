@@ -9,5 +9,6 @@ mpdnotify -s &
 killall mpdscribble
 mpdscribble
 pidgin &
+dropboxd &
 #exec ck-launch-session openbox-session
 exec i3 --force-xinerama

@@ -140,13 +140,12 @@ bind 121 exec ossvol -t
 bind 122 exec ossvol -d
 bind 123 exec ossvol -i
 bind Mod4+42 exec gmpc
-bindsym Mod4+e exec thunar
 bindsym Mod4+v exec urxvtc -e vim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
-bindsym Mod4+m exec thunderbird
+bindsym Mod4+m exec dmpc
 bindsym Mod4+s exec /home/wieland/.i3/status.sh
-bindsym Mod4+r exec urxvt -e ranger
+bindsym XF86Search exec urxvtc -e ranger
 
 
 assign Firefox → 1

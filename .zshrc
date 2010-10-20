@@ -23,7 +23,32 @@ vcs_info
 precmd () {
     vcs_info
     [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+    #print -Pn "e]0;%n: %~"
 }
+preexec() {
+    # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
+    case $TERM in
+      rxvt-*)
+          printf '\33]2;%s\007' $1
+      ;;
+      screen*)
+        printf '\ek%s\e\\' $1;;
+    esac
+}
+
+case $TERM in
+    rxvt-*)
+        chpwd(){
+            print -Pn "\e]2;%n: %~\a"
+        }
+        ;;
+    screen*)
+        chpwd(){
+            print -Pn "\e%~\a"
+        }
+        ;;
+esac
+
 
 PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
 RPROMPT="«"

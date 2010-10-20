@@ -1,7 +1,8 @@
 set runtimepath+=/usr/share/vim
 set t_Co=256
 set encoding=utf-8
-
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 colorscheme mustang
 set guifont=Monospace\ 13
 " status line
@@ -51,6 +52,8 @@ map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
+" http://bitbucket.org/sjl/gundo.vim/src
+map <F5> :GundoToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 

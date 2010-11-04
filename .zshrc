@@ -2,14 +2,71 @@ autoload colors
 colors
 setopt autocd
 setopt correct_all
+setopt prompt_subst
 
-git_branch=`git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /'`
-PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~ %{$fg[white]%}» "
+# VCS_INFO stuff
+# set formats
+# # %b - branchname
+# # %u - unstagedstr (see below)
+# # %c - stangedstr (see below)
+# # %a - action (e.g. rebase-i)
+# # %R - repository path
+# # %S - path in the repository
+# # %s - vcs in use
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr "[u]"
+zstyle ':vcs_info:*' stagedstr "[s]"
+zstyle ':vcs_info:*' actionformats " %s:(%b)%u%s"
+zstyle ':vcs_info:*' formats       " %s:(%b)%u"
+autoload -Uz vcs_info
+vcs_info
+precmd () {
+    vcs_info
+    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+    #print -Pn "e]0;%n: %~"
+}
+preexec() {
+    # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
+    case $TERM in
+      rxvt-*)
+          printf '\33]2;%s\007' $1
+      ;;
+      screen*)
+        printf '\ek%s\e\\' $1;;
+    esac
+}
+
+case $TERM in
+    rxvt-*)
+        chpwd(){
+            print -Pn "\e]2;%n: %~\a"
+        }
+        ;;
+    screen*)
+        chpwd(){
+            print -Pn "\e%~\a"
+        }
+        ;;
+esac
+
+
+PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
 RPROMPT="«"
+
+build_aur() {
+        wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
+        tar xf $1.tar.gz || exit 1
+        cd $1 || exit 1 
+        makepkg -rcsi || exit 1
+        cd ..
+        rm -rf $1 && rm $1.tar.gz || exit 1
+}
 
 ###########
 # aliases #
 ###########
+alias -g L='|less'
+alias -g G='|grep'
 alias home='cd ~'
 alias rmdir='rm -R'
 alias scr='screen -rx'
@@ -25,12 +82,10 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpufreq-info'
 alias htop='htop -u `whoami`'
 alias sucp='sudo cp'
-alias avdump='wine ~/Downloads/avdump/avdump.exe -1230e'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'
 alias lsg='ls | grep'
-alias psg='ps -e | grep'
 alias shutdown='sudo shutdown -h now'
 
 alias fu='sudo pacman -Rns'
@@ -38,9 +93,6 @@ alias pkg='pacman -Qi'
 alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
-
-alias up='cd ..'
-alias rf='rm -rf'
 
 alias rs='source ~/.zshrc'
 

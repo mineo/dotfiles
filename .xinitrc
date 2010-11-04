@@ -1,16 +1,12 @@
-#
-# ~/.xinitrc
-#
-# Executed by startx (run your window manager from here)
-#
-
-  /usr/bin/xmodmap /home/wieland/.Xmodmap&
-urxvtd -q -o -f &
-#nitrogen --restore &
+xmodmap .Xmodmap &
+nitrogen --restore &
+urxvtd -q -o -f
+.i3/status.sh &
+#trayfreq &
 #tint2 &
-#cairo-compmgr &
-#netcfg-tray &
-thunar --daemon &
-#/home/wieland/.i3/status.sh &
+mpdnotify -s &
+killall mpdscribble
+mpdscribble
+dropboxd &
 #exec ck-launch-session openbox-session
-exec ck-launch-session i3 --force-xinerama
+exec i3 --force-xinerama

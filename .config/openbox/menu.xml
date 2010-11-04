@@ -20,7 +20,7 @@
 	</item>
 	<item label="JDownloader">
 		<action name="execute">
-			<command>/usr/bin/jdownloader</command>
+			<command>jdownloader</command>
 		</action>
 	</item>
 </menu>
@@ -30,28 +30,34 @@
 			<command>hedgewars</command>
 		</action>
 	</item>
-	<item label="HoN">
-		<action name="execute">
-			<command>proxychains /home/wieland/HoN/hon-x86_64</command>
-		</action>
-	</item>
-	<item label="Savage">
-		<action name="execute">
-			<command>/usr/bin/savage</command>
-		</action>
-	</item>
 	<item label="Battle for Wesnoth">
 		<action name="execute">
 			<command>wesnoth</command>
 		</action>
 	</item>
-	<item label="Blobby Volley 2">
+	<item label="Slingshot">
 		<action name="execute">
-			<command>blobby</command>
+			<command>slingshot</command>
+		</action>
+	</item>
+	<item label="Starfighter">
+		<action name="execute">
+			<command>starfighter</command>
 		</action>
 	</item>
 </menu>
-
+<menu id="wine-menu" label="Wine">
+    <item label="playonlinux">
+        <action name="execute">
+            <command>playonlinux</command>
+        </action>
+    </item>
+    <item label="Wine-Doors">
+        <action name="execute">
+            <command>wine-doors</command>
+        </action>
+    </item>
+</menu>
 <menu id="apps-office-menu" label="Office">
   <item label="OpenOffice Base">
     <action name="Execute">
@@ -112,9 +118,9 @@
   <menu id="apps-accessories-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="spiele"/>
+  <menu id="wine-menu"/>
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
-  <menu id="apps-office-menu"/>
   <menu id="apps-multimedia-menu"/>
   <menu id="apps-term-menu"/>
   <menu id="apps-fileman-menu"/>

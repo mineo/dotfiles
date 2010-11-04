@@ -1,14 +1,12 @@
 set runtimepath+=/usr/share/vim
 set t_Co=256
 set encoding=utf-8
-
-"colorscheme synic
-colorscheme zenburn
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+colorscheme mustang
 set guifont=Monospace\ 13
 " status line
 set laststatus=2
-"set statusline+=\%h%m%r%w[%{strlen(&ft)?&ft:'none'}] "left side
-" set statusline+=%=0x%-14(%l,%c%V%)%<%P "right side
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]
 syntax on
 " automatically indent
@@ -23,13 +21,11 @@ set number
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set ignorecase
 set hlsearch
 set incsearch
 filetype plugin indent on
-" python stuff
-let g:pydiction_location = '/usr/share/pydiction/complete-dict'
-autocmd FileType python setlocal tw=79 expandtab tabstop=4
 " Show matching brackets etc
 set showmatch
 set foldmethod=indent
@@ -37,28 +33,44 @@ set foldmethod=indent
 set nofoldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
-set tw=79
+let NERDTreeWinPos='right'
+set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/libnet
+set tags+=~/.vim/tags/jni
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
+map <F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-map <F1> :NERDTreeToggle<CR>
+map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
+" http://bitbucket.org/sjl/gundo.vim/src
+map <F5> :GundoToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
-" Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-" Use the arrows to something usefull
-map <right> :bn<cr>
-map <left> :bp<cr>
 
 imap { {}<Left>
 imap ( ()<Left>
 imap [ []<Left>
 " inoremap ' ''<Left>
 " inoremap " ""<Left>
+" Open NERDTree by default
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
-au FileType python map <F6> :!python %<CR>
+au FileType python map <F6> :!python2 %<CR>
+au FileType python set colorcolumn=80
+au FileType python map <F1> \pw
+au FileType python set tw=79
+
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

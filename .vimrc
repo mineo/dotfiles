@@ -74,3 +74,5 @@ au FileType python set tw=79
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>
+
+au FileType rst map <F6> :!rst2pdf %<CR>:!zathura *.pdf<CR>

@@ -1,0 +1,9 @@
+#buttons
+
+Wiimote.A		= KEY_ENTER
+Wiimote.Up		= KEY_LEFT
+Wiimote.Down	= KEY_RIGHT
+Wiimote.Left	= KEY_DOWN
+Wiimote.Right	= KEY_UP
+Wiimote.1       = KEY_LEFTCTRL
+Wiimote.2       = KEY_LEFTSHIFT

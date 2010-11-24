@@ -145,8 +145,8 @@ bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+m exec dmpc
 bindsym Mod4+s exec /home/wieland/.i3/status.sh
+bindsym Mod4+r exec urxvtc -e ranger
 bindsym XF86Search exec urxvtc -e ranger
-
 
 assign Firefox → 1
 assign Chromium → 1

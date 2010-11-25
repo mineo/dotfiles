@@ -94,6 +94,8 @@ alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
 
+alias blueman='ck-launch-session blueman-manager'
+
 alias rs='source ~/.zshrc'
 
 if [[ -x `which fortune` ]]; then

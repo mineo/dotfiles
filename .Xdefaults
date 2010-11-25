@@ -1,7 +1,7 @@
 urxvt*urgentOnBell: true
 urxvt*scrollBar: false
 urxvt*saveLines: 10000
-urxvt*font: xft:Consolas
+urxvt*font: xft:Consolas:pixelsize=16
 !urxvt*color0: #000000
 !urxvt*color1: #ff6565
 !urxvt*color2: #93d44f
@@ -40,9 +40,9 @@ URxvt*color15: #ffffff
 
 urxvt*background: #1a1a1a
 urxvt*foreground: #fff
-urxvt*transparent: true
-urxvt*shading: 35
-urxvt*fading: 50
+!urxvt*transparent: true
+!urxvt*shading: 35
+!urxvt*fading: 50
 
 !url stuff
 urxvt*perl-ext-common:	default,matcher,url-select

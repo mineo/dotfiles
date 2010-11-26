@@ -57,6 +57,8 @@ map <F5> :GundoToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
+" compview:
+map / \v
 
 imap { {}<Left>
 imap ( ()<Left>

@@ -13,6 +13,3 @@
 [submodule ".vim/bundle/gundo"]
 	path = .vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/rainbow-parenthesis"]
-	path = .vim/bundle/rainbow-parenthesis
-	url = https://github.com/vim-scripts/Rainbow-Parenthesis.git

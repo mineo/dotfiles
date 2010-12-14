@@ -34,6 +34,8 @@ set nofoldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 let NERDTreeWinPos='right'
+
+
 set tags+=~/.vim/tags/cpp
 set tags+=~/.vim/tags/libnet
 set tags+=~/.vim/tags/jni
@@ -45,6 +47,8 @@ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
@@ -54,9 +58,14 @@ map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
+
+let mapleader = ","
+
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
+" open a new vertical split, switch to it
+nnoremap <leader>w <C-w>v<C-w>l
 " compview:
 map / \v
 

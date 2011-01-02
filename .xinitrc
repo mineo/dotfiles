@@ -8,4 +8,4 @@ killall mpdscribble
 mpdscribble
 dropboxd &
 #exec ck-launch-session openbox-session
-exec i3 --force-xinerama
+exec ck-lanch-session i3 --force-xinerama

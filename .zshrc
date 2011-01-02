@@ -94,7 +94,7 @@ alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
 
-alias blueman='ck-launch-session blueman-manager'
+alias blueman='blueman-manager'
 
 alias rs='source ~/.zshrc'
 

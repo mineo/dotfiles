@@ -137,8 +137,8 @@ bind 85 exec mpc next
 bind 180 exec firefox
 bind 163 exec thunderbird
 bind 121 exec ossvol -t
-bind 122 exec ossvol -d
-bind 123 exec ossvol -i
+bind 122 exec ossvol -d 2
+bind 123 exec ossvol -i 2
 bind Mod4+42 exec gmpc
 bindsym Mod4+v exec urxvtc -e vim
 bindsym Mod4+p exec pidgin

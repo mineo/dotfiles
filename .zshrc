@@ -53,7 +53,7 @@ case $TERM in
 esac
 
 
-PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
+PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
 RPROMPT="«"
 
 build_aur() {
@@ -96,7 +96,7 @@ alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
 
-alias blueman='ck-launch-session blueman-manager'
+alias blueman='blueman-manager'
 
 alias rs='source ~/.zshrc'
 

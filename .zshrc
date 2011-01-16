@@ -39,6 +39,12 @@ preexec() {
     esac
 }
 
+if [[ -n $DISPLAY ]]; then
+    source ~/dev/bin/gpg-agent.sh
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
 case $TERM in
     rxvt-*)
         chpwd(){

@@ -67,7 +67,7 @@ map co ,c
 " open a new vertical split, switch to it
 nnoremap <leader>w <C-w>v<C-w>l
 " compview:
-map / \v
+map / ,v
 
 imap { {}<Left>
 imap ( ()<Left>
@@ -75,7 +75,7 @@ imap [ []<Left>
 " inoremap ' ''<Left>
 " inoremap " ""<Left>
 " Open NERDTree by default
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 au FileType python map <F6> :!python2 %<CR>

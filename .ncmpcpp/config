@@ -1,3 +1,4 @@
+mpd_host = "/home/wieland/.mpd/socket"
 mpd_communication_mode = "idle"
 song_list_format = "{$2%n$9} {%t}$R{$2%a$9}{ %b}{ disc %d}{ $3%y$9}"
 now_playing_prefix = "$2» $9"

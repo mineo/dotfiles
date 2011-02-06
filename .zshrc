@@ -39,6 +39,12 @@ preexec() {
     esac
 }
 
+if [[ -n $DISPLAY ]]; then
+    source ~/dev/bin/gpg-agent.sh
+fi
+
+GPG_TTY=$(tty)
+export GPG_TTY
 case $TERM in
     rxvt-*)
         chpwd(){
@@ -55,7 +61,6 @@ esac
 
 PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
 RPROMPT="«"
-
 build_aur() {
         wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
         tar xf $1.tar.gz || exit 1

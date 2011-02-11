@@ -68,6 +68,8 @@ map co ,c
 nnoremap <leader>w <C-w>v<C-w>l
 " compview:
 map / ,v
+" command-t
+map <C-t> :CommandT<CR>
 
 imap { {}<Left>
 imap ( ()<Left>

@@ -39,12 +39,6 @@ preexec() {
     esac
 }
 
-if [[ -n $DISPLAY ]]; then
-    source ~/dev/bin/gpg-agent.sh
-fi
-
-GPG_TTY=$(tty)
-export GPG_TTY
 case $TERM in
     rxvt-*)
         chpwd(){
@@ -133,3 +127,11 @@ zstyle :compinstall filename '/home/wieland/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select

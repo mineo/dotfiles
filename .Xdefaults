@@ -1,10 +1,10 @@
-urxvt*urgentOnBell: true
-urxvt*scrollBar: false
-urxvt*saveLines: 10000
-urxvt*font: xft:Consolas:pixelsize=16
-urxvt*internalBorder: 0
-URxvt*colorUL: #c5f779
-URxvt*underlineColor: #c5f779
+*urgentOnBell: true
+*scrollBar: false
+*saveLines: 10000
+*font: xft:Consolas:pixelsize=16
+*internalBorder: 0
+*colorUL: #c5f779
+* underlineColor: #c5f779
 !URxvt*color0: #000000
 !URxvt*color1: #9e1828
 !URxvt*color2: #aece92
@@ -28,12 +28,12 @@ urxvt*foreground: #fff
 !urxvt*fading: 50
 
 !url stuff
-urxvt*perl-ext-common:	default,matcher,url-select
-urxvt*urlLauncher: firefox
-urxvt*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-urxvt*matcher.button: 1
-urxvt*keysym.M-u: perl:url-select:select_next
-urxvt*underlineURLs: true
+*perl-ext-common:	default,matcher,url-select
+*urlLauncher: firefox
+*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+*matcher.button: 1
+*keysym.M-u: perl:url-select:select_next
+*underlineURLs: true
 
 !jwr low contrast
 !https://bbs.archlinux.org/viewtopic.php?pid=652697#p652697

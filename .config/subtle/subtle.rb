@@ -93,7 +93,7 @@ screen 1 do
   top     [ :views, :title, :spacer, :tray, :clock ]
 
   # Content of the bottom panel
-  bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :memory]
+  bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :freq, :separator, :memory]
 end
 
 # Example for a second screen:
@@ -433,10 +433,10 @@ end
 
 # MINE
 
-grab "W-v", "urxvtc -name urxvt.vim -e vim"
-grab "W-r", "urxvtc -name urxvt.ranger -e ranger"
-grab "W-i", "urxvtc -name urxvt.irssi -e screen -c ~/.screenrc -R -D irc"
-grab "W-n", "urxvtc -name urxvt.ncmpcpp -e ncmpcpp"
+grab "W-v", "urxvtc -name vim -e vim"
+grab "W-r", "urxvtc -name ranger -e ranger"
+grab "W-i", "urxvtc -name irssi -e screen -c ~/.screenrc -R -D irc"
+grab "W-n", "urxvtc -name ncmpcpp -e ncmpcpp"
 grab "XF86HomePage", "firefox"
 grab "XF86Mail", "thunderbird"
 grab "XF86AudioLowerVolume", "ossvol -d 2"
@@ -565,16 +565,19 @@ grab "W-d", "dmenu"
 #
 
 # Simple tags
-tag "terms",   "xterm|[u]?rxvt$"
+tag "terms" do
+  match "xterm|[u]?rxvt$"
+  exclude "ncmpcpp|irssi"
+end
 tag "browser", "uzbl|opera|firefox|navigator"
 tag "mail", "mail"
 tag "mplayer", "mplayer"
 tag "media" do
-  match ".*ncmpcpp"
+  match "ncmpcpp"
   gravity :right25
 end
 tag "chat" do
-  match ".*irssi|gajim"
+  match "irssi|gajim"
   gravity :left75
 end
 # Placement
@@ -794,14 +797,24 @@ end
 # http://subforge.org/wiki/subtle/Hooks
 #
 
- begin
-   require "#{ENV["HOME"]}/dev/bin/subtle-contrib/ruby/launcher.rb"
- rescue LoadError => error
-   puts error
- end
+begin
+  require "#{ENV["HOME"]}/dev/bin/subtle-contrib/ruby/launcher.rb"
+rescue LoadError => error
+  puts error
+end
 
- grab "W-x" do
-   Subtle::Contrib::Launcher.run
- end
+grab "W-x" do
+  Subtle::Contrib::Launcher.run
+end
+
+begin
+  require "#{ENV["HOME"]}/dev/bin/subtle-contrib/ruby/selector.rb" 
+rescue LoadError => error
+  puts error
+end
+
+grab "W-z" do
+  Subtle::Contrib::Selector.run
+end
 
 # vim:ts=2:bs=2:sw=2:et:fdm=marker

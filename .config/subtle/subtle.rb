@@ -18,13 +18,13 @@
 # Following options change behaviour and sizes of the window manager:
 #
 # Border size in pixel of the windows
-set :border, 2
+set :border, 0
 
 # Window move/resize steps in pixel per keypress
 set :step, 5
 
 # Window screen border snapping
-set :snap, 10
+set :snap, 0
 
 # Default starting gravity for windows (0 = gravity of last client)
 set :gravity, :center
@@ -44,7 +44,7 @@ set :font, "xft:Bauhaus Md Bt-9"
 #set :font, "xft:sans-8"
 
 # Space around windows
-set :gap, 5
+set :gap, 0
 
 # Panel size padding (left, right, top, bottom)
 set :padding, [ 0, 0, 0, 0 ]
@@ -127,13 +127,13 @@ end
 # http://subforge.org/wiki/subtle/Themes
 
 # Colors of focus window title
-color :title_fg,        "#fecf35"
-color :title_bg,        "#202020"
+color :title_fg,        "#757575"
+color :title_bg,        "#3C3B37"
 color :title_border,    "#303030"
 
 # Colors of the active views
 color :focus_fg,        "#fecf35"
-color :focus_bg,        "#202020"
+color :focus_bg,        "#3C3B37"
 color :focus_border,    "#303030"
 
 # Colors of urgent window titles and views
@@ -142,18 +142,18 @@ color :urgent_bg,       "#202020"
 color :urgent_border,   "#303030"
 
 # Colors of occupied views (views with clients)
-color :occupied_fg,     "#b8b8b8"
-color :occupied_bg,     "#202020"
+color :occupied_fg,     "#AAAAAA"
+color :occupied_bg,     "#3C3B37"
 color :occupied_border, "#303030"
 
 # Color of view buttons
 color :views_fg,        "#757575"
-color :views_bg,        "#202020"
+color :views_bg,        "#3C3B37"
 color :views_border,    "#303030"
 
 # Colors of sublets
 color :sublets_fg,      "#757575"
-color :sublets_bg,      "#202020"
+color :sublets_bg,      "#3C3B37"
 color :sublets_border,  "#303030"
 
 # Border colors of active/inactive windows
@@ -161,7 +161,7 @@ color :client_active,   "#303030"
 color :client_inactive, "#202020"
 
 # Background colors of panels
-color :panel,           "#202020"
+color :panel,           "#3C3B37"
 
 # Background color of root background
 color :background,      "#3d3d3d"
@@ -569,7 +569,7 @@ tag "terms" do
   match "xterm|[u]?rxvt$"
   exclude "ncmpcpp|irssi"
 end
-tag "browser", "uzbl|opera|firefox|navigator"
+tag "browser", "uzbl|opera|firefox|navigator|chromium"
 tag "mail", "mail"
 tag "mplayer", "mplayer"
 tag "media" do
@@ -694,15 +694,37 @@ end
 # http://subforge.org/wiki/subtle/Tagging
 #
 
-view "www",   "browser"
+view "www" do
+  match "browser"
+  icon "~/.bitmaps/xbm8x8/fox.xbm"
+  icon_only true
+end
 view "mc" do
   match "media|chat"
+  icon "~/.bitmaps/xbm8x8/note.xbm"
+  icon_only true
   #dynamic true
 end
-view "dev",   "editor"
-view "terms", "terms"
-view "mail",  "mail"
-view "mplayer", "mplayer"
+view "dev" do
+  match "editor"
+  icon "~/.bitmaps/notepad.xbm"
+  icon_only true
+end
+view "terms" do
+  match "terms"
+  icon "~/.bitmaps/terminal.xbm"
+  icon_only true
+end
+view "mail" do
+  match "mail"
+  icon "~/.bitmaps/xbm8x8/mail.xbm"
+  icon_only true
+end
+view "mplayer" do
+  match "mplayer"
+  icon "~/.bitmaps/movie.xbm"
+  icon_only true
+end
 view "default" do
   match "default"
   dynamic true

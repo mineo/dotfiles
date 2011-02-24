@@ -30,7 +30,7 @@ set :snap, 0
 set :gravity, :center
 
 # Make transient windows urgent
-set :urgent, false
+set :urgent, true
 
 # Honor resize size hints globally
 set :resize, false
@@ -102,7 +102,7 @@ screen 2 do
   stipple false
 #
 #  # Content of the top panel
-  top     [ :views, :title, :spacer ]
+  top     [ :views, :title, :spacer, :clock ]
 #
 #  # Content of the bottom panel
 #  bottom  [ ]
@@ -127,7 +127,8 @@ end
 # http://subforge.org/wiki/subtle/Themes
 
 # Colors of focus window title
-color :title_fg,        "#757575"
+#color :title_fg,        "#757575"
+color :title_fg,         "#fecf35"
 color :title_bg,        "#3C3B37"
 color :title_border,    "#303030"
 
@@ -152,7 +153,8 @@ color :views_bg,        "#3C3B37"
 color :views_border,    "#303030"
 
 # Colors of sublets
-color :sublets_fg,      "#757575"
+#color :sublets_fg,      "#757575"
+color :sublets_fg,      "#fecf35"
 color :sublets_bg,      "#3C3B37"
 color :sublets_border,  "#303030"
 

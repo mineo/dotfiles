@@ -29,7 +29,8 @@ urxvt*foreground: #fff
 
 !url stuff
 *perl-ext-common:	default,matcher,url-select
-*urlLauncher: firefox
+!*urlLauncher: firefox
+*urlLauncher: chromium
 *matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 *matcher.button: 1
 *keysym.M-u: perl:url-select:select_next

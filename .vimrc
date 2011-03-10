@@ -3,7 +3,7 @@ set t_Co=256
 set encoding=utf-8
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-colorscheme mustang
+colorscheme molokai
 set guifont=Monospace\ 13
 " status line
 set laststatus=2
@@ -80,9 +80,12 @@ imap [ []<Left>
 "autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
-au FileType python map <F6> :!python2 %<CR>
-au FileType python set colorcolumn=80
 au FileType python map <F1> \pw
+au FileType python map <F6> :!python2 %<CR>
+au FileType python map N :cn<CR>
+au FileType python map P :cp<CR>
+au FileType python set colorcolumn=80
+au FileType python set makeprg=pep8\ --repeat\ %
 au FileType python set tw=79
 let g:pydoc_cmd = 'pydoc2'
 

@@ -22,15 +22,14 @@
 !URxvt*color15: #ffffff
 
 urxvt*background: #1a1a1a
-urxvt*foreground: #fff
+urxvt*foreground: #ccc
 !urxvt*transparent: true
 !urxvt*shading: 35
 !urxvt*fading: 50
 
 !url stuff
 *perl-ext-common:	default,matcher,url-select
-!*urlLauncher: firefox
-*urlLauncher: chromium
+*urlLauncher: firefox
 *matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 *matcher.button: 1
 *keysym.M-u: perl:url-select:select_next

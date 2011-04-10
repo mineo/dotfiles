@@ -78,11 +78,13 @@ alias q='exit'
 
 alias q150='ssh wieland@q150'
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
+alias less='less -N'
 alias mp='mplayer'
 alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1:1'
 # channels:left-fl:right-fl:left-fr:right-fr:left-sl:right-sl:left-sr:right-sr:left-fc:right-fc:left-lfe:right-lfe
 alias cpui='cpufreq-info'
 alias sucp='sudo cp'
+alias qemu='qemu -enable-kvm'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'

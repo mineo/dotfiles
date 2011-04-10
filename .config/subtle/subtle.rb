@@ -440,7 +440,7 @@ grab "W-r", "urxvtc -name ranger -e ranger"
 grab "W-i", "urxvtc -name irssi -e screen -c ~/.screenrc -R -D irc"
 grab "W-n", "urxvtc -name ncmpcpp -e ncmpcpp"
 grab "XF86HomePage", "firefox"
-grab "XF86Mail", "thunderbird"
+grab "XF86Mail", "claws-mail"
 grab "XF86AudioLowerVolume", "ossvol -d 2"
 grab "XF86AudioRaiseVolume", "ossvol -i 2"
 grab "KP_4", "mpc prev"
@@ -572,7 +572,7 @@ tag "terms" do
   exclude "ncmpcpp|irssi"
 end
 tag "browser", "uzbl|opera|firefox|navigator|chromium"
-tag "mail", "mail"
+tag "mail", "claws-mail|mail"
 tag "mplayer", "mplayer"
 tag "media" do
   match "ncmpcpp"

@@ -7,4 +7,3 @@ altscreen on
 bell_msg "bell in window %n"
 vbell off
 startup_message off
-bind i screen -t 'irc' 9 irssi

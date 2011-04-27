@@ -19,14 +19,14 @@ setopt prompt_subst
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr "[u]"
 zstyle ':vcs_info:*' stagedstr "[s]"
-zstyle ':vcs_info:*' actionformats " %s:(%b)%u%s"
-zstyle ':vcs_info:*' formats       " %s:(%b)%u"
+zstyle ':vcs_info:*' actionformats " [%s:%S](%b)%u-%a"
+zstyle ':vcs_info:*' formats       " [%s:%R](%b)%u"
 autoload -Uz vcs_info
 vcs_info
 precmd () {
     vcs_info
     [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
-    #print -Pn "e]0;%n: %~"
+    print -Pn "e]0;%n: %~"
 }
 preexec() {
     # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
@@ -53,7 +53,8 @@ case $TERM in
 esac
 
 
-PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[yellow]%}%v%{$fg[white]%}» "
+PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[red]%}%v%{$fg[white]%}
+» "
 RPROMPT="«"
 build_aur() {
         wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1

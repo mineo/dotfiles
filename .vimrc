@@ -87,7 +87,6 @@ au FileType python map P :cp<CR>
 au FileType python set colorcolumn=80
 au FileType python set makeprg=pep8\ --repeat\ %
 au FileType python set tw=79
-let g:pydoc_cmd = 'pydoc2'
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

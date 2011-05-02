@@ -4,7 +4,8 @@ set encoding=utf-8
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 colorscheme molokai
-set guifont=Monospace\ 13
+set guifont=Consolas\ 16
+set go=c
 " status line
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]

@@ -435,7 +435,7 @@ end
 
 # MINE
 
-grab "W-v", "urxvtc -name vim -e vim"
+grab "W-v", "gvim"
 grab "W-r", "urxvtc -name ranger -e ranger"
 grab "W-i", "urxvtc -name irssi -e screen -c ~/.screenrc -R -D irc"
 grab "W-n", "urxvtc -name ncmpcpp -e ncmpcpp"

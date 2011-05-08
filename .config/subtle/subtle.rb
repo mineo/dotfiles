@@ -18,7 +18,6 @@
 # Following options change behaviour and sizes of the window manager:
 #
 # Border size in pixel of the windows
-set :border, 0
 
 # Window move/resize steps in pixel per keypress
 set :step, 5
@@ -36,7 +35,6 @@ set :urgent, true
 set :resize, false
 
 # Screen strut for e.g. other panels (left, right, top, bottom)
-set :strut, [ 0, 0, 0, 0 ]
 
 # Font string either take from e.g. xfontsel or use xft
 #set :font, "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*"
@@ -44,19 +42,16 @@ set :font, "xft:Bauhaus Md Bt-9"
 #set :font, "xft:sans-8"
 
 # Space around windows
-set :gap, 0
 
 # Panel size padding (left, right, top, bottom)
-set :padding, [ 0, 0, 0, 0 ]
 
 # Separator between sublets
 set :separator, "|"
 
 # Outline border size in pixel of panel items
-set :outline, 0
 
 # Set the WM_NAME of subtle (Java quirk)
-set :_wmname, "LG3D"
+#set :_wmname, "LG3D"
 
 #
 # == Screen
@@ -93,7 +88,6 @@ screen 1 do
   top     [ :views, :title, :spacer, :tray, :clock ]
 
   # Content of the bottom panel
-  bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :freq, :separator, :memory]
 end
 
 # Example for a second screen:
@@ -128,51 +122,89 @@ end
 
 # Colors of focus window title
 #color :title_fg,        "#757575"
-color :title_fg,         "#fecf35"
-color :title_bg,        "#3C3B37"
-color :title_border,    "#303030"
+style :title do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#fecf35"
+  background  "#3C3B37"
+end
+
+style :focus do
+  padding     0, 3, 3, 0
+  border      "#303030", 0
+  foreground  "#fecf35"
+  background  "#3C3B37"
+end
+
+style :urgent do
+  padding     0, 3, 3, 0
+  border      "#303030", 0
+  foreground  "#ff9800"
+  background  "#202020"
+end
+
+style :occupied do
+  padding     0, 3, 3, 0
+  border      "#303030", 0
+  foreground  "#AAAAAA"
+  background  "#3C3B37"
+end
+
+style :views do
+  padding     0, 3, 3, 0
+  border      "#303030", 0
+  foreground  "#757575"
+  background  "#3C3B37"
+end
+
+style :sublets do
+  padding     0, 0, 0, 0
+  border      "#303030", 0
+  foreground  "#fecf35"
+  background  "#3C3B37"
+end
+
+style :separator do
+  padding     0, 0, 0, 0
+  border      0
+  background  "#3C3B37"
+  foreground  "#757575"
+end
+
+style :clients do
+  active      "#303030", 0
+  inactive    "#202020", 0
+  margin      0
+end
+
+style :subtle do
+  padding     0, 0, 0, 0
+  panel       "#3C3B37"
+  background  "#3d3d3d"
+  stipple     "#757575"
+end
+
 
 # Colors of the active views
-color :focus_fg,        "#fecf35"
-color :focus_bg,        "#3C3B37"
-color :focus_border,    "#303030"
 
 # Colors of urgent window titles and views
-color :urgent_fg,       "#ff9800"
-color :urgent_bg,       "#202020"
-color :urgent_border,   "#303030"
 
 # Colors of occupied views (views with clients)
-color :occupied_fg,     "#AAAAAA"
-color :occupied_bg,     "#3C3B37"
-color :occupied_border, "#303030"
 
 # Color of view buttons
-color :views_fg,        "#757575"
-color :views_bg,        "#3C3B37"
-color :views_border,    "#303030"
 
 # Colors of sublets
 #color :sublets_fg,      "#757575"
-color :sublets_fg,      "#fecf35"
-color :sublets_bg,      "#3C3B37"
-color :sublets_border,  "#303030"
 
 # Border colors of active/inactive windows
-color :client_active,   "#303030"
-color :client_inactive, "#202020"
 
 # Background colors of panels
-color :panel,           "#3C3B37"
 
 # Background color of root background
-color :background,      "#3d3d3d"
 
 # Color of the stipple (if enabled)
-color :stipple,         "#757575"
 
 # Color of the separator
-color :separator,       "#757575"
 
 #
 # == Gravities
@@ -602,6 +634,10 @@ tag "gravity" do
   gravity :center
 end
 
+tag "games" do
+  match "wesnoth|teeworlds"
+  full true
+end
 # Modes
 #tag "stick" do
   #match "mplayer"
@@ -734,6 +770,11 @@ end
 
 view "gimp" do
   match "gimp_.*"
+  dynamic true
+end
+
+view "games" do
+  match "games"
   dynamic true
 end
 

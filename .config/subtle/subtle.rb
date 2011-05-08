@@ -85,15 +85,19 @@ set :_wmname, "LG3D"
 # http://subforge.org/wiki/subtle/Panel
 #
 
+require "socket"
+host = Socket.gethostname
 screen 1 do
   # Add stipple to panels
   stipple false
 
   # Content of the top panel
-  top     [ :views, :title, :spacer, :tray, :clock ]
-
-  # Content of the bottom panel
-  bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :freq, :separator, :memory]
+  if (host == "mineo")
+    top     [ :views, :title, :spacer, :tray, :battery, :wifi, :clock ]
+  else
+    top [ :views, :title, :spacer, :tray, :clock]
+    bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :freq, :separator, :memory]
+  end
 end
 
 # Example for a second screen:
@@ -698,33 +702,33 @@ end
 
 view "www" do
   match "browser"
-  icon "~/.bitmaps/xbm8x8/fox.xbm"
+  icon "/home/wieland/.bitmaps/xbm8x8/fox.xbm"
   icon_only true
 end
 view "mc" do
   match "media|chat"
-  icon "~/.bitmaps/xbm8x8/note.xbm"
+  icon "/home/wieland/.bitmaps/xbm8x8/note.xbm"
   icon_only true
   #dynamic true
 end
 view "dev" do
   match "editor"
-  icon "~/.bitmaps/notepad.xbm"
+  icon "/home/wieland/.bitmaps/notepad.xbm"
   icon_only true
 end
 view "terms" do
   match "terms"
-  icon "~/.bitmaps/terminal.xbm"
+  icon "/home/wieland/.bitmaps/terminal.xbm"
   icon_only true
 end
 view "mail" do
   match "mail"
-  icon "~/.bitmaps/xbm8x8/mail.xbm"
+  icon "/home/wieland/.bitmaps/xbm8x8/mail.xbm"
   icon_only true
 end
 view "mplayer" do
   match "mplayer"
-  icon "~/.bitmaps/movie.xbm"
+  icon "/home/wieland/.bitmaps/movie.xbm"
   icon_only true
 end
 view "default" do

@@ -91,7 +91,6 @@ screen 1 do
     top     [ :views, :title, :spacer, :tray, :battery, :wifi, :clock ]
   else
     top [ :views, :title, :spacer, :tray, :clock]
-    bottom  [ :mpd, :spacer, :jdownloader, :separator, :cpu, :separator, :freq, :separator, :memory]
   end
 end
 

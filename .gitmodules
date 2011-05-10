@@ -1,9 +1,3 @@
-[submodule ".vim/bundle/vividchalk"]
-	path = .vim/bundle/vividchalk
-	url = http://github.com/tpope/vim-vividchalk.git
-[submodule ".vim/bundle/vim-git"]
-	path = .vim/bundle/vim-git
-	url = http://github.com/tpope/vim-git.git
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = http://github.com/msanders/snipmate.vim.git
@@ -19,6 +13,18 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/pyflakes"]
+	path = .vim/bundle/pyflakes
+	url = https://github.com/mitechie/pyflakes-pathogen.git
+[submodule ".vim/bundle/pep8"]
+	path = .vim/bundle/pep8
+	url = https://github.com/vim-scripts/pep8.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule ".vim/bundle/py.test"]
+	path = .vim/bundle/py.test
+	url = https://github.com/alfredodeza/pytest.vim.git
+[submodule ".vim/bundle/ropevim"]
+	path = .vim/bundle/ropevim
+	url = https://github.com/sontek/rope-vim.git

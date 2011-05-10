@@ -4,11 +4,11 @@ set encoding=utf-8
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 colorscheme molokai
-set guifont=Consolas\ 13
+set guifont=Consolas\ 14
 set go=c
 " status line
 set laststatus=2
-set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]
+set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
 syntax on
 " automatically indent
 set autoindent
@@ -30,8 +30,7 @@ filetype plugin indent on
 " Show matching brackets etc
 set showmatch
 set foldmethod=indent
-" Don't automagically fold everything
-set nofoldenable
+set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 let NERDTreeWinPos='right'
@@ -61,12 +60,17 @@ map <F2> :TlistToggle<CR>
 map <F5> :GundoToggle<CR>
 
 let mapleader = ","
+let g:pep8_map = '<leader>8'
 
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
 " open a new vertical split, switch to it
 nnoremap <leader>w <C-w>v<C-w>l
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 " compview:
 map / ,v
 " command-t
@@ -75,6 +79,7 @@ map <C-t> :CommandT<CR>
 imap { {}<Left>
 imap ( ()<Left>
 imap [ []<Left>
+imap <C-a> <C-x><C-o>
 " inoremap ' ''<Left>
 " inoremap " ""<Left>
 " Open NERDTree by default

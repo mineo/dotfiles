@@ -139,3 +139,5 @@ function zle-line-init zle-keymap-select {
 
 zle -N zle-line-init
 zle -N zle-keymap-select
+
+[[ $TTY == "/dev/tty1" ]] && startx

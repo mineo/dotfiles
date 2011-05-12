@@ -43,6 +43,10 @@ sub sig_printtext {
             Irssi::settings_get_str('timestamp_format')." ",
             localtime
         ).$text;
+
+        if(Irssi::settings_get_bool('hilightwin_rm_colormodes')){
+            $text =~ s/%/%%/g;
+        }
         $window->print($text, MSGLEVEL_NEVER) if ($window);
     }
 }
@@ -51,6 +55,7 @@ $window = Irssi::window_find_name('hilight');
 Irssi::print("Create a window named 'hilight'") if (!$window);
 
 Irssi::settings_add_bool('hilightwin','hilightwin_showprivmsg',1);
+Irssi::settings_add_bool('hilightwin','hilightwin_rm_colormodes',1);
 
 Irssi::signal_add('print text', 'sig_printtext');
 

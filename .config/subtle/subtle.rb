@@ -233,8 +233,9 @@ end
 # http://subforge.org/wiki/subtle/Gravity
 #
 
-gravity :left75,          [   0,   0,  75,  100 ]
-gravity :right25,         [ 100,   0,  25,  100 ]
+gravity :lefttop75,          [   0,   0,  75,  50 ]
+gravity :leftbottom75,        [   0,  50,  75,  50  ]
+gravity :right25,         [ 75,   0,  25,  100 ]
   # Top left
 gravity :top_left,       [   0,   0,  50,  50 ]
 gravity :top_left66,     [   0,   0,  50,  66 ]
@@ -476,7 +477,7 @@ grab "W-r", "urxvtc -name ranger -e ranger"
 grab "W-i", "urxvtc -name irssi -e screen -c ~/.screenrc -R -D irc"
 grab "W-n", "urxvtc -name ncmpcpp -e ncmpcpp"
 grab "XF86HomePage", "firefox"
-grab "XF86Mail", "claws-mail"
+grab "XF86Mail", "urxvtc -name mutt -e mutt"
 grab "XF86AudioLowerVolume", "ossvol -d 2"
 grab "XF86AudioRaiseVolume", "ossvol -i 2"
 grab "KP_4", "mpc prev"
@@ -604,11 +605,17 @@ grab "W-d", "dmenu"
 
 # Simple tags
 tag "terms" do
-  match "xterm|[u]?rxvt$"
+  match :instance => "xterm|[u]?rxvt$"
   exclude "ncmpcpp|irssi"
 end
 tag "browser", "uzbl|opera|firefox|navigator|chromium"
-tag "mail", "claws-mail|mail"
+tag "mail" do
+  match "mutt"
+  gravity :leftbottom75
+end
+tag "editor" do
+  match  "[g]?vim|.*vim"
+end
 tag "mplayer", "mplayer"
 tag "media" do
   match "ncmpcpp"
@@ -616,11 +623,8 @@ tag "media" do
 end
 tag "chat" do
   match "irssi|gajim"
-  gravity :left75
-end
+  gravity :lefttop75
 # Placement
-tag "editor" do
-  match  "[g]?vim|.*vim"
   resize true
 end
 
@@ -742,7 +746,7 @@ view "www" do
   icon_only true
 end
 view "mc" do
-  match "media|chat"
+  match "media|chat|mail"
   icon "/home/wieland/.bitmaps/xbm8x8/note.xbm"
   icon_only true
   #dynamic true
@@ -755,11 +759,6 @@ end
 view "terms" do
   match "terms"
   icon "/home/wieland/.bitmaps/terminal.xbm"
-  icon_only true
-end
-view "mail" do
-  match "mail"
-  icon "/home/wieland/.bitmaps/xbm8x8/mail.xbm"
   icon_only true
 end
 view "mplayer" do

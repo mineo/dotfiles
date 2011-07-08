@@ -233,8 +233,7 @@ end
 # http://subforge.org/wiki/subtle/Gravity
 #
 
-gravity :lefttop75,          [   0,   0,  75,  50 ]
-gravity :leftbottom75,        [   0,  50,  75,  50  ]
+gravity :left75,          [   0,   0,  75,  100 ]
 gravity :right25,         [ 75,   0,  25,  100 ]
   # Top left
 gravity :top_left,       [   0,   0,  50,  50 ]
@@ -614,7 +613,7 @@ tag "mail" do
   gravity :leftbottom75
 end
 tag "editor" do
-  match  "[g]?vim|.*vim"
+  match  "[g]?vim|.*vim|.*clipse"
 end
 tag "mplayer", "mplayer"
 tag "media" do
@@ -623,7 +622,7 @@ tag "media" do
 end
 tag "chat" do
   match "irssi|gajim"
-  gravity :lefttop75
+  gravity :left75
 # Placement
   resize true
 end

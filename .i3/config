@@ -135,29 +135,27 @@ bind 83 exec mpc prev
 bind 84 exec mpc toggle
 bind 85 exec mpc next
 bind 180 exec firefox
-bind 163 exec thunderbird
+bind 163 exec urxvtc -e mutt
 bind 121 exec ossvol -t
 bind 122 exec ossvol -d 2
 bind 123 exec ossvol -i 2
 bind Mod4+42 exec gmpc
-bindsym Mod4+v exec urxvtc -e vim
+bindsym Mod4+v exec gvim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+s exec /home/wieland/.i3/status.sh
 bindsym Mod4+r exec urxvtc -e ranger
 bindsym XF86Search exec urxvtc -e ranger
 
-assign Firefox → 1
-assign Chromium → 1
-assign Thunderbird → 3
-assign Lanikai → 3
-assign Pidgin → 2
-assign mplayer → ~
-assign Gimp → 5
+assign Firefox 1
+assign Chromium 1
+assign Gimp 5
+assign irssi 2
+assign Gvim 3
 
 workspace 1 www
 workspace 2 msg
-workspace 3 Mail
+workspace 3 dev
 
 workspace_bar yes
 #border background text

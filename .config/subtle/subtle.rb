@@ -615,7 +615,9 @@ end
 tag "editor" do
   match  "[g]?vim|.*vim|.*clipse"
 end
-tag "mplayer", "mplayer"
+tag "mplayer" do
+  match "mplayer|xbmc.*"
+end
 tag "media" do
   match "ncmpcpp"
   gravity :right25

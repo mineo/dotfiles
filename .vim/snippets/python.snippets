@@ -21,4 +21,14 @@ snippet elife
 		${5:pass}
 snippet from
 	from ${1:module} import ${2:object}
+
+snippet property
+	@property
+	def ${1:x}(self):
+		"""The $1 property"""
+		return self._$1
+
+	@$1.setter
+	def $1(self, value):
+		self._$1 = value
 # vim: set noet:

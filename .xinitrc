@@ -9,9 +9,11 @@ mpdscribble
 dropboxd &
 #exec ck-launch-session openbox-session
 #exec ck-launch-session i3 --force-xinerama
-if [ $2 == "nomulti" ];
-        then disper -S && disper -e -d DFP-0
-else
-    disper -S && disper -e -d DFP-0,DFP-1
+if [ $(hostname) = "slartibartfass"]; then
+    if [ $2 == "nomulti" ];
+            then disper -S && disper -e -d DFP-0
+    else
+        disper -S && disper -e -d DFP-0,DFP-1
+    fi
 fi
 exec ck-launch-session bash -c "udiskie & i3 --force-xinerama"

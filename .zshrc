@@ -86,7 +86,7 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpufreq-info'
 alias sucp='sudo cp'
 alias qemu='qemu -enable-kvm'
-alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
+alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'
@@ -100,6 +100,8 @@ alias pm='pacman'
 alias p='packer'
 
 alias blueman='blueman-manager'
+alias m='udisks --mount'
+alias um='udisks --unmount'
 
 alias rs='source ~/.zshrc'
 

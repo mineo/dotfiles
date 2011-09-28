@@ -105,10 +105,6 @@ alias um='udisks --unmount'
 
 alias rs='source ~/.zshrc'
 
-if [[ -x `which fortune` ]]; then
-    fortune -a 2> /dev/null | cowsay -f three-eyes
-fi
-
 ##############
 # completion #
 ##############

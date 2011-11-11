@@ -5,7 +5,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 colorscheme molokai
 set guifont=Consolas\ 14
-set go=c
+if has('gui_running')
+    set go=c
+    set guicursor+=a:blinkon0
+endif
 " status line
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
@@ -14,7 +17,7 @@ syntax on
 set autoindent
 " show some more characters
 set list
-set listchars=tab:»\ ,trail:«
+set listchars=tab:»\ ,trail:«,eol:<
 set nobackup
 set directory-=.
 set showcmd

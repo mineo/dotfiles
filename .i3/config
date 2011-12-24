@@ -170,4 +170,6 @@ client.focused_inactive #ffffff #4f4d4d #afaf87
 # Old line: bar.urgent #333333 #1E80B1 #333333
 
 # XXX: Automatically added a call to i3bar to provide a workspace bar
-exec i3status | i3bar -d
+bar {
+    status_command i3status
+    }

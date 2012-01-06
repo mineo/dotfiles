@@ -34,6 +34,7 @@ filetype plugin indent on
 set showmatch
 set foldmethod=indent
 set foldenable
+set foldcolumn=1
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 

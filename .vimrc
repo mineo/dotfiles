@@ -36,7 +36,9 @@ set foldmethod=indent
 set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
-let NERDTreeWinPos='right'
+
+let NERDTreeWinPos = 'right'
+let NERDTreeIgnore = ['\.pyc$']
 
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif

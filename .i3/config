@@ -142,8 +142,8 @@ bindsym Mod4+v exec gvim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+s exec /home/wieland/.i3/status.sh
-bindsym Mod4+r exec urxvtc -e ranger
-bindsym XF86Search exec urxvtc -e ranger
+bindsym Mod4+r exec urxvtc -e mc
+bindsym XF86Search exec urxvtc -e mc
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www

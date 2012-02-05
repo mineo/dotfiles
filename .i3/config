@@ -20,6 +20,10 @@ bindcode Mod4+Shift+25 layout tabbed
 # Default (Mod4+e)
 bindcode Mod4+Shift+26 layout default
 
+bindsym Mod4+a split h
+
+bindsym Mod4+s split v
+
 # Toggle tiling/floating of the current window (Mod4+Shift+Space)
 bindcode Mod4+Shift+65 floating toggle
 
@@ -141,7 +145,6 @@ bindcode Mod4+42 exec gmpc
 bindsym Mod4+v exec gvim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
-bindsym Mod4+s exec /home/wieland/.i3/status.sh
 bindsym Mod4+r exec urxvtc -e mc
 bindsym XF86Search exec urxvtc -e mc
 

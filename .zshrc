@@ -136,7 +136,13 @@ function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
 
+bindkey "^[[A" history-beginning-search-backward # up
+bindkey "^[[B" history-beginning-search-forward # down
+bindkey "^[[7~" beginning-of-line # Home
+bindkey "^[[8~" end-of-line # End
+bindkey "^[[5~" beginning-of-history # PageUp
+bindkey "^[[6~" end-of-history # PageDown
+bindkey "^[[3~" delete-char # Del
+
 zle -N zle-line-init
 zle -N zle-keymap-select
-
-umask 077

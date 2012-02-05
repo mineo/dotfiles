@@ -7,3 +7,7 @@ altscreen on
 bell_msg "bell in window %n"
 vbell off
 startup_message off
+# display some useful info in the terminal title
+termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+hardstatus off
+hardstatus string "%t"

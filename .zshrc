@@ -68,7 +68,7 @@ build_aur() {
 ###########
 # aliases #
 ###########
-alias -g L='|less'
+alias -g L='|less -R'
 alias -g G='|grep'
 alias home='cd ~'
 alias rmdir='rm -R'

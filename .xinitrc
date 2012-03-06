@@ -7,6 +7,7 @@ urxvtd -q -o -f
 killall mpdscribble
 mpdscribble
 dropboxd &
+xflux -l 50 -g 10 > /dev/null
 #exec ck-launch-session openbox-session
 #exec ck-launch-session i3 --force-xinerama
 if [ $(hostname) = "slartibartfass" ]; then

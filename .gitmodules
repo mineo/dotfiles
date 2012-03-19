@@ -25,3 +25,9 @@
 [submodule ".vim/bundle/ropevim"]
 	path = .vim/bundle/ropevim
 	url = https://github.com/sontek/rope-vim.git
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".tmux/tmux-colors-solarized"]
+	path = .tmux/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git

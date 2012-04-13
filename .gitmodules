@@ -13,12 +13,6 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/pyflakes"]
-	path = .vim/bundle/pyflakes
-	url = https://github.com/mitechie/pyflakes-pathogen.git
-[submodule ".vim/bundle/pep8"]
-	path = .vim/bundle/pep8
-	url = https://github.com/vim-scripts/pep8.git
 [submodule ".vim/bundle/py.test"]
 	path = .vim/bundle/py.test
 	url = https://github.com/alfredodeza/pytest.vim.git
@@ -31,3 +25,9 @@
 [submodule ".tmux/tmux-colors-solarized"]
 	path = .tmux/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/badwolf"]
+	path = .vim/bundle/badwolf
+	url = https://github.com/sjl/badwolf.git

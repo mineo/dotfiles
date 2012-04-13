@@ -169,7 +169,7 @@ workspace_layout default
 bindcode 83 exec mpc prev
 bindcode 84 exec mpc toggle
 bindcode 85 exec mpc next
-bindcode 180 exec firefox3
+bindcode 180 exec firefox
 bindcode 121 exec mute_toggle
 bindcode 122 exec vol_down
 bindcode 123 exec vol_up
@@ -185,9 +185,9 @@ assign [class="Gimp"] → 5
 assign [class="irssi"] → msg
 assign [class="Gvim"] → dev
 
-client.focused #1793D1 #3a3a3a #afaf87
-client.unfocused #ffffff #3a3a3a #686842
-client.focused_inactive #ffffff #4f4d4d #afaf87
+client.focused #3a3a3a #3a3a3a #afaf87
+client.unfocused #3a3a3a #3a3a3a #686842
+client.focused_inactive #4f4d4d #4f4d4d #afaf87
 # XXX: REMOVED bar.focused, configure i3bar instead.
 # Old line: bar.focused #000000 #1793D1 #ffffff
 # XXX: REMOVED bar.unfocused, configure i3bar instead.

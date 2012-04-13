@@ -147,6 +147,7 @@ bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e screen -c ~/.screenrc-irc -R -D irc
 bindsym Mod4+r exec urxvtc -e mc
 bindsym XF86Search exec urxvtc -e mc
+bindsym XF86Launch1 exec firefox
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www

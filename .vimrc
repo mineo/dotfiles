@@ -13,6 +13,7 @@ endif
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
 syntax on
+let g:Powerline_symbols='fancy'
 " automatically indent
 set autoindent
 " show some more characters
@@ -48,11 +49,11 @@ set completeopt=menuone,menu,longest,preview
 
 map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
+map <F3> :CommandTBuffer<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
 
 let mapleader = ","
-let g:pep8_map = '<leader>8'
 
 map gt :bnext!<CR>
 map gT :bprev!<CR>
@@ -72,6 +73,8 @@ imap { {}<Left>
 imap ( ()<Left>
 imap [ []<Left>
 imap <C-a> <C-x><C-o>
+" ack
+nnoremap <leader>a :!ack<space>
 " inoremap ' ''<Left>
 " inoremap " ""<Left>
 " Open NERDTree by default
@@ -83,11 +86,12 @@ au FileType python map <F6> :!python2 %<CR>
 au FileType python map N :cn<CR>
 au FileType python map P :cp<CR>
 au FileType python set colorcolumn=80
-au FileType python set makeprg=pep8\ --repeat\ %
 au FileType python set tw=79
+au FileType python map <leader>8 :call Flake8()<CR>
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>
+au FileType c map <C-b> :po<CR>
 
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79

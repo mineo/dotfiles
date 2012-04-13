@@ -1,5 +1,4 @@
 xmodmap .Xmodmap &
-nitrogen --restore &
 urxvtd -q -o -f
 #trayfreq &
 #tint2 &
@@ -7,6 +6,7 @@ urxvtd -q -o -f
 killall mpdscribble
 mpdscribble
 dropboxd &
+fehlstart &
 xflux -l 50 -g 10 > /dev/null
 #exec ck-launch-session openbox-session
 #exec ck-launch-session i3 --force-xinerama
@@ -18,5 +18,6 @@ if [ $(hostname) = "slartibartfass" ]; then
         disper -S && disper -e -d DFP-0,DFP-1
     fi
 fi
+nitrogen --restore &
 #~/dev/bin/xdisplay.sh
-exec ck-launch-session dbus-launch bash -c "udiskie & i3 --force-xinerama"
+exec ck-launch-session bash -c "udiskie & i3 --force-xinerama"

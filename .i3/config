@@ -178,6 +178,7 @@ bindsym Mod4+v exec gvim
 bindsym Mod4+p exec pidgin
 bindsym Mod4+i exec urxvtc -e bash -c "tmux -q has-session -t irc && exec tmux attach-session -d -t irc || exec tmux new-session -s irc 'tmux source-file ~/.tmux-irc.conf'"
 bindsym XF86Search exec urxvtc -e mc
+bindsym XF86Launch1 exec firefox
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www

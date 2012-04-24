@@ -14,7 +14,6 @@ if [ $(hostname) = "slartibartfass" ]; then
     if [ $2 == "nomulti" ];
             then disper -S && disper -e -d DFP-0
     else
-        echo "foo" > bar
         disper -S && disper -e -d DFP-0,DFP-1
     fi
 fi

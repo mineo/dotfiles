@@ -88,6 +88,7 @@ alias sucp='sudo cp'
 alias qemu='qemu -enable-kvm'
 alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32'
 alias ipcons='ipython2 qtconsole --pylab=auto'
+alias pypy='pypy -E'
 
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'

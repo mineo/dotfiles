@@ -43,6 +43,13 @@ set backspace=2 "to backspace over linebreaks
 let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
+" easytags
+" no warning update update time being too low
+let g:easytags_updatetime_autodisable = 1
+
+" tags
+nmap <C-b> :po<CR>
+
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview

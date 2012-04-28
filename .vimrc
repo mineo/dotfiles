@@ -1,7 +1,7 @@
 set runtimepath+=/usr/share/vim
 set t_Co=256
 set encoding=utf-8
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 colorscheme molokai
 set guifont=Consolas\ 14
@@ -75,6 +75,9 @@ map <C-l> <C-w>l
 map / ,v
 " command-t
 map <C-t> :CommandT<CR>
+" ultisnips
+let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 
 imap { {}<Left>
 imap ( ()<Left>

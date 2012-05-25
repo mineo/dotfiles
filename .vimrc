@@ -54,6 +54,7 @@ nmap <C-b> :po<CR>
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
+map <F1> <Plug>TaskList
 map <F4> :NERDTreeToggle<CR>
 map <F2> :TlistToggle<CR>
 map <F3> :CommandTBuffer<CR>
@@ -106,3 +107,5 @@ au FileType c map <C-b> :po<CR>
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
+
+au FileType taskpaper setlocal foldmethod=indent

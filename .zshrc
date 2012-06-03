@@ -132,12 +132,6 @@ zstyle :compinstall filename '/home/wieland/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-
 bindkey "^[[A" history-beginning-search-backward # up
 bindkey "^[[B" history-beginning-search-forward # down
 bindkey "^[[7~" beginning-of-line # Home
@@ -145,6 +139,3 @@ bindkey "^[[8~" end-of-line # End
 bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
-
-zle -N zle-line-init
-zle -N zle-keymap-select

@@ -163,7 +163,7 @@ ipc-socket ~/.i3/ipc.sock
 
 # borders
 bindsym Mod4+b border toggle
-new_window 1pixel
+new_window none
 workspace_layout default
 
 bindcode 83 exec mpc prev

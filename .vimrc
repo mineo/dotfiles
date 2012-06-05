@@ -56,7 +56,7 @@ set completeopt=menuone,menu,longest,preview
 
 map <F1> <Plug>TaskList
 map <F4> :NERDTreeToggle<CR>
-map <F2> :TlistToggle<CR>
+map <F2> :TagbarToggle<CR>
 map <F3> :CommandTBuffer<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>

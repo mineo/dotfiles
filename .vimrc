@@ -46,6 +46,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " easytags
 " no warning update update time being too low
 let g:easytags_updatetime_autodisable = 1
+let g:easytags_by_filetype = "~/.vim/tags"
 
 " tags
 nmap <C-b> :po<CR>

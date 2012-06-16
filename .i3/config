@@ -186,6 +186,9 @@ assign [class="Gimp"] → 5
 assign [class="irssi"] → msg
 assign [class="Gvim"] → dev
 
+for_window [instance="tk"] floating enable
+for_window [class="Toplevel"] floating enable
+
 client.focused #3a3a3a #3a3a3a #afaf87
 client.unfocused #3a3a3a #3a3a3a #686842
 client.focused_inactive #4f4d4d #4f4d4d #afaf87

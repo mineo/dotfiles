@@ -17,7 +17,7 @@ if [ $(hostname) = "slartibartfass" ]; then
         disper -S && disper -e -d DFP-0,DFP-1
     fi
     nitrogen --restore &
-    exec ck-launch-session bash -c "udiskie & i3 --force-xinerama"
+    exec ck-launch-session bash -c "udiskie & i3" # --force-xinerama"
 else
     exec ck-launch-session bash -c "udiskie & i3"
 fi

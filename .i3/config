@@ -166,6 +166,11 @@ bindsym Mod4+b border toggle
 new_window none
 workspace_layout default
 
+workspace 1 output HDMI-1
+workspace 2 output DVI-I-1
+
+workspace_auto_back_and_forth yes
+
 bindcode 83 exec mpc prev
 bindcode 84 exec mpc toggle
 bindcode 85 exec mpc next
@@ -173,12 +178,22 @@ bindcode 180 exec firefox
 bindcode 121 exec mute_toggle
 bindcode 122 exec vol_down
 bindcode 123 exec vol_up
-bindcode Mod4+42 exec gmpc
 bindsym Mod4+v exec gvim
-bindsym Mod4+p exec pidgin
-bindsym Mod4+i exec urxvtc -e bash -c "tmux -q has-session -t irc && exec tmux attach-session -d -t irc || exec tmux new-session -s irc 'tmux source-file ~/.tmux-irc.conf'"
 bindsym XF86Search exec urxvtc -e mc
 bindsym XF86Launch1 exec firefox
+bindsym Mod4+Shift+m move scratchpad
+bindsym Mod4+m scratchpad show
+
+# irssi
+exec urxvtc -e bash -c "tmux -q attach-session -d -t irc || tmux new-session -s irc 'tmux source-file ~/.tmux-irc.conf'"
+bindsym Mod4+i exec urxvtc -e bash -c "tmux attach-session -d -t irc"
+
+exec gajim
+assign [instance="gajim"] → msg
+#for_window [instance="gajim"] move left; resize shrink width 200 px
+
+exec urxvtc -name scratchpad -e bash -c "tmux -q attach-session -d -t scratchpad || tmux new-session -s scratchpad 'tmux source-file ~/.tmux-scratchpad.conf'"
+for_window [instance="scratchpad"] move scratchpad
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www

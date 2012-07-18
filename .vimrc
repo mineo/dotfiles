@@ -22,7 +22,7 @@ set listchars=tab:»\ ,trail:«,eol:<
 set nobackup
 set directory-=.
 set showcmd
-set number
+set nonumber
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -36,7 +36,6 @@ filetype plugin indent on
 set showmatch
 set foldmethod=indent
 set foldenable
-set foldcolumn=1
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 

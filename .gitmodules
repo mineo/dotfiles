@@ -34,6 +34,3 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule ".vim/bundle/taskpaper"]
-	path = .vim/bundle/taskpaper
-	url = https://github.com/davidoc/taskpaper.vim.git

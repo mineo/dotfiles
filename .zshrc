@@ -107,6 +107,11 @@ alias um='udisks --unmount'
 
 alias rs='source ~/.zshrc'
 
+# cdr: Remember recent directories, `cdr <TAB>` opens a list of them
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':completion:*:*:cdr:*:*' menu selection
+
 ##############
 # completion #
 ##############

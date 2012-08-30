@@ -1,23 +1,15 @@
 xmodmap .Xmodmap &
 urxvtd -q -o -f
-#trayfreq &
-#tint2 &
-#mpdnotify -s &
 killall mpdscribble
 mpdscribble
 dropboxd &
 fehlstart &
 xflux -l 50 -g 10 > /dev/null
-#exec ck-launch-session openbox-session
-#exec ck-launch-session i3 --force-xinerama
+udiskie &
 if [ $(hostname) = "slartibartfass" ]; then
-    if [ $2 == "nomulti" ];
-            then disper -S && disper -e -d DFP-0
-    else
-        disper -S && disper -e -d DFP-0,DFP-1
-    fi
+    xrandr --output DVI-I-1 --mode 1440x900 --pos 0x0 --rotate normal --output DVI-I-0 --off --output HDMI-1 --mode 1600x1200 --pos 1440x0 --rotate left --output HDMI-0 --off
     nitrogen --restore &
-    exec ck-launch-session bash -c "udiskie & i3" # --force-xinerama"
+    exec i3
 else
-    exec ck-launch-session bash -c "udiskie & i3"
+    exec i3
 fi

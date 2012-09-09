@@ -13,11 +13,9 @@
 !!urxvt*fading: 50
 
 !!url stuff
-*perl-ext-common:	default,matcher,url-select
-*urlLauncher: firefox
-*matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
-*matcher.button: 1
-*keysym.M-u: perl:url-select:select_next
-*underlineURLs: true
+URxvt.perl-ext:      default,url-select
+URxvt.keysym.M-u:    perl:url-select:select_next
+URxvt.url-select.launcher:   /usr/bin/firefox -new-tab
+URxvt.url-select.underline: true
 
 #include ".colors/sicp"

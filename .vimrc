@@ -3,6 +3,7 @@ set t_Co=256
 set encoding=utf-8
 call pathogen#infect()
 call pathogen#helptags()
+let g:molokai_original=1
 colorscheme molokai
 set guifont=Consolas\ 14
 if has('gui_running')
@@ -45,8 +46,14 @@ let NERDTreeIgnore = ['\.pyc$']
 " easytags
 " no warning update update time being too low
 let g:easytags_updatetime_autodisable = 1
-let g:easytags_by_filetype = "~/.vim/tags"
 let g:easytags_autorecurse = 1
+set tags=./tags;
+let g:easytags_dynamic_files = 1
+let g:easytags_file = "./tags"
+
+" Rope AutoComplete
+let ropevim_vim_completion = 1
+let ropevim_extended_complete = 1
 
 " tags
 nmap <C-b> :po<CR>
@@ -100,6 +107,8 @@ au FileType python map P :cp<CR>
 au FileType python set colorcolumn=80
 au FileType python set tw=79
 au FileType python map <leader>8 :call Flake8()<CR>
+let g:pymode_lint_write = 0
+let g:pymode_lint_checker = 'pyflakes,pep8'
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

@@ -13,9 +13,6 @@
 [submodule ".vim/bundle/py.test"]
 	path = .vim/bundle/py.test
 	url = https://github.com/alfredodeza/pytest.vim.git
-[submodule ".vim/bundle/ropevim"]
-	path = .vim/bundle/ropevim
-	url = https://github.com/sontek/rope-vim.git
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -34,3 +31,12 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule ".vim/bundle/molokai"]
+	path = .vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule ".vim/bundle/python-mode"]
+	path = .vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git
+[submodule ".vim/bundle/coveragepy"]
+	path = .vim/bundle/coveragepy
+	url = https://github.com/alfredodeza/coveragepy.vim.git

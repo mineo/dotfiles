@@ -2,8 +2,9 @@
 # and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
 
 # ISO 10646 = Unicode
-font -*-clean-*-*-*-*-*-*-*-*-*-*-iso10646-*
+#font -*-clean-*-*-*-*-*-*-*-*-*-*-iso10646-*
 #font -*-fixed-*-r-normal-*-*-*-*-*-*-*-iso8859-1
+font xft:Ubuntu 9
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -21,6 +22,10 @@ bindcode Mod4+Shift+25 layout tabbed
 
 # Default (Mod4+e)
 bindcode Mod4+Shift+26 layout default
+
+bindsym Mod4+p focus parent
+
+bindsym Mod4+c focus child
 
 bindsym Mod4+a split h
 
@@ -167,7 +172,7 @@ new_window none
 workspace_layout default
 
 workspace 1 output HDMI-1
-workspace 2 output DVI-I-1
+workspace "msg" output DVI-I-1
 
 workspace_auto_back_and_forth yes
 
@@ -207,13 +212,9 @@ for_window [class="Toplevel"] floating enable
 client.focused #3a3a3a #3a3a3a #afaf87
 client.unfocused #3a3a3a #3a3a3a #686842
 client.focused_inactive #4f4d4d #4f4d4d #afaf87
-# XXX: REMOVED bar.focused, configure i3bar instead.
-# Old line: bar.focused #000000 #1793D1 #ffffff
-# XXX: REMOVED bar.unfocused, configure i3bar instead.
-# Old line: bar.unfocused #000000 #000000 #686842
-# XXX: REMOVED bar.urgent, configure i3bar instead.
-# Old line: bar.urgent #333333 #1E80B1 #333333
 
 bar {
     status_command i3status
+    mode hide
+    Modifier Mod5
 }

@@ -90,7 +90,11 @@ alias ipcons='ipython2 qtconsole --pylab=auto'
 alias pypy='pypy -E'
 alias m='mimeopen'
 
-alias ls='ls -lh --color=auto'
+if type ls++ > /dev/null; then
+    alias ls='ls++'
+else
+    alias ls='ls -lh --color=auto'
+fi
 alias grep='grep --color=auto'
 alias lsg='ls | grep'
 alias shutdown='sudo shutdown -h now'

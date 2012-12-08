@@ -109,6 +109,7 @@ au FileType python set tw=79
 au FileType python map <leader>8 :call Flake8()<CR>
 let g:pymode_lint_write = 0
 let g:pymode_lint_checker = 'pyflakes,pep8'
+let g:pymode_lint_ignore= 'E122,E124,E126,E128,E203'
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

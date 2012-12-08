@@ -93,7 +93,7 @@ imap ( ()<Left>
 imap [ []<Left>
 imap <C-a> <C-x><C-o>
 " ack
-nnoremap <leader>a :!ack<space>
+nnoremap <leader>a :Ack<space>
 " inoremap ' ''<Left>
 " inoremap " ""<Left>
 " Open NERDTree by default

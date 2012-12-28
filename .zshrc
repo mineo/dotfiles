@@ -19,8 +19,9 @@ setopt prompt_subst
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr "[u]"
 zstyle ':vcs_info:*' stagedstr "[s]"
-zstyle ':vcs_info:*' actionformats " (%b)%u-%a"
-zstyle ':vcs_info:*' formats       " (%b)%u"
+zstyle ':vcs_info:*' actionformats " (%b)%c%u-%a"
+zstyle ':vcs_info:*' formats       " (%b)%c%u"
+zstyle ':vcs_info:*' disable-patterns "$HOME"
 autoload -Uz vcs_info
 vcs_info
 precmd () {

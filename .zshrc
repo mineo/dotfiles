@@ -6,6 +6,12 @@ setopt pushd_silent
 setopt cdablevars
 setopt correct_all
 setopt prompt_subst
+# Don't show a list of completions before letting me select one of them
+unsetopt AUTO_LIST
+setopt AUTO_MENU
+setopt MENU_COMPLETE
+
+eval $(dircolors -b .dircolors)
 
 # VCS_INFO stuff
 # set formats
@@ -124,17 +130,25 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' matcher-list '' 'r:|[._-]=** r:|=**' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'l:|=* r:|=*'
 zstyle ':completion:*' max-errors 3
-zstyle ':completion:*' menu select=1
+zstyle ':completion:*' menu select
 zstyle ':completion:*' original true
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' prompt 'Completing %e'
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' squeeze-slashes true
+# Colors like ls
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# What is completed (file/command/...)
+zstyle ':completion:*' format 'Completing %d'
+# For completion lists that have to be scrolled
+zstyle ':completion:*' list-prompt 'Showing %l lines (%m matches)'
+zstyle ':completion:*' select-prompt '%m matches'
+# separate man pages into sections
+zstyle ':completion:*:manuals' separate-sections true
+# from https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 zstyle :compinstall filename '/home/wieland/.zshrc'
 
 autoload -Uz compinit

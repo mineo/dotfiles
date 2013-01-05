@@ -117,6 +117,10 @@ alias um='udisks --unmount'
 
 alias rs='source ~/.zshrc'
 
+hash -d unw=~/Downloads/unwatched
+hash -d uni=~/Studium
+hash -d anime=/mnt/Anime
+
 # cdr: Remember recent directories, `cdr <TAB>` opens a list of them
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs

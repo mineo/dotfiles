@@ -11,7 +11,7 @@ unsetopt AUTO_LIST
 setopt AUTO_MENU
 setopt MENU_COMPLETE
 
-eval $(dircolors -b .dircolors)
+[ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 
 # VCS_INFO stuff
 # set formats

@@ -186,6 +186,7 @@ bindcode 123 exec vol_up
 bindsym Mod4+v exec gvim
 bindsym XF86Search exec urxvtc -e mc
 bindsym XF86Launch1 exec firefox
+bindsym XF86TouchpadToggle exec touchpad_toggle.sh
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
 

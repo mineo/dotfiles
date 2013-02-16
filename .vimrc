@@ -26,6 +26,7 @@ if has('gui_running')
     set go=c
     set guicursor+=a:blinkon0
 endif
+
 " status line
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
@@ -56,6 +57,9 @@ set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 
+" Ignore directories
+set wildignore+=*/.git/*,*/.hg/*,*/doc/*,*/docs/*,*/.tox/*,*/build/*
+
 let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
@@ -66,6 +70,9 @@ let g:easytags_autorecurse = 1
 set tags=./tags;
 let g:easytags_dynamic_files = 1
 let g:easytags_file = "./tags"
+
+" CtrlP
+let g:ctrlp_extensions = ['tag']
 
 " Rope AutoComplete
 let ropevim_vim_completion = 1

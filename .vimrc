@@ -1,8 +1,24 @@
 set runtimepath+=/usr/share/vim
+"
+" Vundle
+set rtp+=.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'alfredodeza/coveragepy.vim'
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'tomasr/molokai'
+Bundle 'tpope/vim-fugitive'
+Bundle 'xolox/vim-easytags'
+
 set t_Co=256
 set encoding=utf-8
-call pathogen#infect()
-call pathogen#helptags()
 let g:molokai_original=1
 colorscheme molokai
 set guifont=Consolas\ 14

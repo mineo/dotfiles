@@ -1,7 +1,7 @@
 set runtimepath+=/usr/share/vim
 "
 " Vundle
-set rtp+=.vim/bundle/vundle
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'alfredodeza/coveragepy.vim'

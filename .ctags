@@ -1,0 +1,5 @@
+--exclude=build
+--exclude=.tox
+--exclude=doc
+--exclude=docs
+--exclude=htmlcov

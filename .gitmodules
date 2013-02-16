@@ -40,3 +40,9 @@
 [submodule ".vim/bundle/coveragepy"]
 	path = .vim/bundle/coveragepy
 	url = https://github.com/alfredodeza/coveragepy.vim.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule ".vim/bundle/easymoiton"]
+	path = .vim/bundle/easymoiton
+	url = https://github.com/Lokaltog/vim-easymotion.git

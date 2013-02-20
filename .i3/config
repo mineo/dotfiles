@@ -215,7 +215,8 @@ client.unfocused #3a3a3a #3a3a3a #686842
 client.focused_inactive #4f4d4d #4f4d4d #afaf87
 
 bar {
-    status_command i3status
     mode hide
     Modifier Mod5
+    position top
+    status_command i3status
 }

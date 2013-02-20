@@ -4,13 +4,13 @@
 *font: xft:Consolas:pixelsize=16,xft:Symbola:pixelsize=12
 *internalBorder: 0
 *colorUL: #c5f779
-* underlineColor: #c5f779
+*underlineColor: #c5f779
 
 !urxvt*background: #1a1a1a
 !urxvt*foreground: #ccc
-!!urxvt*transparent: true
-!!urxvt*shading: 35
-!!urxvt*fading: 50
+urxvt*transparent: true
+urxvt*shading: 15
+urxvt*fading: 50
 
 !!url stuff
 URxvt.perl-ext:      default,url-select

@@ -157,7 +157,7 @@ bindcode Mod4+Shift+24 kill
 bindcode Mod4+53 exec /usr/bin/dmenu_run
 
 # Mod4+Shift+e exits i3
-#bindcode Mod4+Shift+26 exit
+#bindcode Mod4+Shift+24 exit
 
 # Mod3+Shift+r restarts i3 inplace
 bindcode Mod3+Shift+27 restart

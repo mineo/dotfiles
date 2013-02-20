@@ -1,4 +1,5 @@
 set runtimepath+=/usr/share/vim
+filetype off
 "
 " Vundle
 set rtp+=~/.vim/bundle/vundle
@@ -88,7 +89,7 @@ set completeopt=menuone,menu,longest,preview
 map <F1> <Plug>TaskList
 map <F4> :NERDTreeToggle<CR>
 map <F2> :TagbarToggle<CR>
-map <F3> :CommandTBuffer<CR>
+map <F3> :CtrlPBuffer<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
 
@@ -105,8 +106,6 @@ map <C-h> <C-w>h
 map <C-l> <C-w>l
 " compview:
 map / ,v
-" command-t
-map <C-t> :CommandT<CR>
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]

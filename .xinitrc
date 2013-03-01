@@ -3,7 +3,6 @@ urxvtd -q -o -f
 killall mpdscribble
 mpdscribble
 dropboxd &
-fehlstart &
 redshift -l 50:10 -t 6500:5000 > /dev/null &
 udiskie &
 nitrogen --restore &

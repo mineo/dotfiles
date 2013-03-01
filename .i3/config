@@ -154,7 +154,7 @@ bindcode Mod4+Shift+24 kill
 
 # Mod4+v starts dmenu and launches the selected application
 # for now, we don’t have a launcher of our own.
-bindcode Mod4+53 exec /usr/bin/dmenu_run
+bindcode Mod4+53 exec i3-dmenu-desktop
 
 # Mod4+Shift+e exits i3
 #bindcode Mod4+Shift+24 exit

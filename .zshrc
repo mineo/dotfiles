@@ -12,6 +12,7 @@ setopt AUTO_MENU
 setopt MENU_COMPLETE
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
+command virtualenvwrapper.sh && source $(command -v virtualenvwrapper.sh)
 
 # VCS_INFO stuff
 # set formats

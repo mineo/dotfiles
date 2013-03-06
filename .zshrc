@@ -92,7 +92,7 @@ alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1
 alias cpui='cpupower frequency-info'
 alias sucp='sudo cp'
 alias qemu='qemu -enable-kvm'
-alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32'
+alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
 alias ipcons='ipython2 qtconsole --pylab=auto'
 alias pypy='pypy -E'
 alias m='mimeopen'

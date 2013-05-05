@@ -7,21 +7,26 @@ call vundle#rc()
 
 Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'alfredodeza/pytest.vim'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'gmarik/vundle'
+Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tomasr/molokai'
+Bundle 'terryma/vim-expand-region'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-easytags'
+Bundle 'ZoomWin'
 
 set t_Co=256
 set encoding=utf-8
@@ -70,19 +75,17 @@ let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
 " easytags
+" always highlight
+let g:easytags_always_enabled = 1
 " no warning update update time being too low
 let g:easytags_updatetime_autodisable = 1
-let g:easytags_autorecurse = 1
+"let g:easytags_autorecurse = 1
 set tags=./tags;
 let g:easytags_dynamic_files = 1
 let g:easytags_file = "./tags"
 
 " CtrlP
 let g:ctrlp_extensions = ['tag']
-
-" Rope AutoComplete
-let ropevim_vim_completion = 1
-let ropevim_extended_complete = 1
 
 " tags
 nmap <C-b> :po<CR>
@@ -115,6 +118,9 @@ map / ,v
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 
+" jedi
+let g:jedi#use_tabs_not_buffers = 0
+
 imap { {}<Left>
 imap ( ()<Left>
 imap [ []<Left>
@@ -127,16 +133,10 @@ nnoremap <leader>a :Ack<space>
 "autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
-au FileType python map <F1> \pw
-au FileType python map <F6> :!python2 %<CR>
 au FileType python map N :cn<CR>
 au FileType python map P :cp<CR>
 au FileType python set colorcolumn=80
 au FileType python set tw=79
-au FileType python map <leader>8 :call Flake8()<CR>
-let g:pymode_lint_write = 0
-let g:pymode_lint_checker = 'pyflakes,pep8'
-let g:pymode_lint_ignore= 'E122,E124,E126,E128,E203,E501'
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>

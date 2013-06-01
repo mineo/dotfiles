@@ -63,14 +63,6 @@ esac
 
 PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[red]%}%v%{$fg[white]%}
 »%{$fg[white]%}"
-build_aur() {
-        wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
-        tar xf $1.tar.gz || exit 1
-        cd $1 || exit 1 
-        makepkg -rcsi || exit 1
-        cd ..
-        rm -rf $1 && rm $1.tar.gz || exit 1
-}
 
 ###########
 # aliases #

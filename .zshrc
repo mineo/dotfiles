@@ -168,3 +168,5 @@ bindkey "^[[4~" end-of-line # End
 bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

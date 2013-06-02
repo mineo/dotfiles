@@ -6,9 +6,10 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'alfredodeza/coveragepy.vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'alfredodeza/pytest.vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'

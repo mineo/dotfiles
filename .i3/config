@@ -198,7 +198,7 @@ exec gajim
 assign [instance="gajim"] → msg
 #for_window [instance="gajim"] move left; resize shrink width 200 px
 
-exec urxvtc -name scratchpad -e bash -c "tmux -q attach-session -d -t scratchpad || tmux new-session -s scratchpad 'tmux source-file ~/.tmux-scratchpad.conf'"
+exec urxvtc -name scratchpad -e bash -c "ncmpcpp"
 for_window [instance="scratchpad"] move scratchpad
 
 assign [class="Firefox"] → www

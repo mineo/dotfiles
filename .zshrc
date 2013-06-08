@@ -12,7 +12,7 @@ setopt AUTO_MENU
 setopt MENU_COMPLETE
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
-command virtualenvwrapper.sh && source $(command -v virtualenvwrapper.sh)
+command virtualenvwrapper.sh 2>/dev/null && source $(command -v virtualenvwrapper.sh)
 
 # VCS_INFO stuff
 # set formats
@@ -24,17 +24,15 @@ command virtualenvwrapper.sh && source $(command -v virtualenvwrapper.sh)
 # # %S - path in the repository
 # # %s - vcs in use
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr "[u]"
-zstyle ':vcs_info:*' stagedstr "[s]"
-zstyle ':vcs_info:*' actionformats " (%b)%c%u-%a"
-zstyle ':vcs_info:*' formats       " (%b)%c%u"
+zstyle ':vcs_info:*' unstagedstr "%F{red}＊"
+zstyle ':vcs_info:*' stagedstr "%F{green}＋"
+zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
+zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
 zstyle ':vcs_info:*' disable-patterns "$HOME"
 autoload -Uz vcs_info
 vcs_info
 precmd () {
     vcs_info
-    [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
-    print -Pn "e]0;%n: %~"
 }
 preexec() {
     # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
@@ -47,30 +45,7 @@ preexec() {
     esac
 }
 
-case $TERM in
-    rxvt-*)
-        chpwd(){
-            print -Pn "\e]2;%n: %~\a"
-        }
-        ;;
-    screen*)
-        chpwd(){
-            print -Pn "\e%~\a"
-        }
-        ;;
-esac
-
-
-PROMPT="%{$fg[yellow]%}%n %{$fg[white]%}on %{$fg[yellow]%}%m %{$fg[white]%}in %{$fg[yellow]%}%~%{$fg[red]%}%v%{$fg[white]%}
-»%{$fg[white]%}"
-build_aur() {
-        wget http://aur.archlinux.org/packages/$1/$1.tar.gz || exit 1
-        tar xf $1.tar.gz || exit 1
-        cd $1 || exit 1 
-        makepkg -rcsi || exit 1
-        cd ..
-        rm -rf $1 && rm $1.tar.gz || exit 1
-}
+PROMPT='%F{yellow}%n %fon %F{yellow}%m %F{red}» %F{yellow}%~${vcs_info_msg_0_}%f » '
 
 ###########
 # aliases #

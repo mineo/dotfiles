@@ -116,14 +116,14 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
-" compview:
-map / ,v
+"
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 
 " jedi
 let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#popup_on_dot = 0
 
 imap { {}<Left>
 imap ( ()<Left>

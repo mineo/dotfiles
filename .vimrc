@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
@@ -26,13 +27,15 @@ Bundle 'tomasr/molokai'
 Bundle 'terryma/vim-expand-region'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'ZoomWin'
 
 set t_Co=256
 set encoding=utf-8
 let g:molokai_original=1
-colorscheme molokai
+colorscheme base16-monokai
+set bg=dark
 set guifont=Consolas\ 14
 if has('gui_running')
     set go=c

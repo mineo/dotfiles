@@ -25,6 +25,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tomasr/molokai'
 Bundle 'terryma/vim-expand-region'
+Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'xolox/vim-misc'
@@ -128,9 +129,6 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
 
-imap { {}<Left>
-imap ( ()<Left>
-imap [ []<Left>
 imap <C-a> <C-x><C-o>
 " ack
 nnoremap <leader>a :Ack<space>
@@ -152,5 +150,3 @@ au FileType c map <C-b> :po<CR>
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
-
-au FileType taskpaper setlocal foldmethod=indent

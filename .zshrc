@@ -78,6 +78,9 @@ if type ls++ > /dev/null; then
 else
     alias ls='ls -lh --color=auto'
 fi
+
+[[ -s  /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+
 alias grep='grep --color=auto'
 alias lsg='ls | grep'
 alias shutdown='sudo shutdown -h now'

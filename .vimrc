@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Blackrush/vim-gocode'
 Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'fholgado/minibufexpl.vim'
@@ -150,3 +151,5 @@ au FileType c map <C-b> :po<CR>
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
+
+au FileType go setlocal noet

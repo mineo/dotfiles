@@ -84,8 +84,11 @@ let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
 " easytags
+" http://stackoverflow.com/a/16920294/307681
+" without this scrolling after :HighlightTags gets really really slow
+set re=1
 " no warning update update time being too low
-let g:easytags_updatetime_autodisable = 1
+let g:easytags_updatetime_warn = 0
 "let g:easytags_autorecurse = 1
 set tags=./tags;
 let g:easytags_dynamic_files = 1

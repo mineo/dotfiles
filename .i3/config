@@ -168,7 +168,7 @@ ipc-socket ~/.i3/ipc.sock
 
 # borders
 bindsym Mod4+b border toggle
-new_window none
+new_window 1pixel
 workspace_layout default
 
 workspace 1 output HDMI-1
@@ -210,7 +210,7 @@ assign [class="Gvim"] → dev
 for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable
 
-client.focused #2d2d2d #2d2d2d #f9f9f9
+client.focused #f9f9f9 #2d2d2d #f9f9f9
 client.unfocused #2d2d2d #2d2d2d #545454
 client.focused_inactive #2d2d2d #2d2d2d #dedede
 

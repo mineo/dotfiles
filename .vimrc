@@ -84,8 +84,6 @@ let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
 " easytags
-" always highlight
-let g:easytags_always_enabled = 1
 " no warning update update time being too low
 let g:easytags_updatetime_autodisable = 1
 "let g:easytags_autorecurse = 1

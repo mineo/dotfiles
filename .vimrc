@@ -38,7 +38,7 @@ set encoding=utf-8
 let g:molokai_original=1
 colorscheme base16-monokai
 set bg=dark
-set guifont=Consolas\ 14
+set guifont=Consolas\ 13
 if has('gui_running')
     set go=c
     set guicursor+=a:blinkon0

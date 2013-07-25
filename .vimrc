@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Blackrush/vim-gocode'
 Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'fholgado/minibufexpl.vim'
@@ -37,7 +38,7 @@ set encoding=utf-8
 let g:molokai_original=1
 colorscheme base16-monokai
 set bg=dark
-set guifont=Consolas\ 14
+set guifont=Consolas\ 13
 if has('gui_running')
     set go=c
     set guicursor+=a:blinkon0
@@ -83,10 +84,11 @@ let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
 " easytags
-" always highlight
-let g:easytags_always_enabled = 1
+" http://stackoverflow.com/a/16920294/307681
+" without this scrolling after :HighlightTags gets really really slow
+set re=1
 " no warning update update time being too low
-let g:easytags_updatetime_autodisable = 1
+let g:easytags_updatetime_warn = 0
 "let g:easytags_autorecurse = 1
 set tags=./tags;
 let g:easytags_dynamic_files = 1
@@ -150,3 +152,5 @@ au FileType c map <C-b> :po<CR>
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
+
+au FileType go setlocal noet

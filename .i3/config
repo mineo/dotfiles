@@ -191,15 +191,12 @@ bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
 
 # irssi
-exec urxvtc -e bash -c "tmux -q attach-session -d -t irc || tmux new-session -s irc 'tmux source-file ~/.tmux-irc.conf'"
 bindsym Mod4+i exec urxvtc -e bash -c "tmux attach-session -d -t irc"
 
-exec gajim
 assign [instance="gajim"] → msg
 #for_window [instance="gajim"] move left; resize shrink width 200 px
 
-exec urxvtc -name scratchpad -e bash -c "ncmpcpp"
-for_window [instance="scratchpad"] move scratchpad
+exec for_window [instance="scratchpad"] move scratchpad
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www

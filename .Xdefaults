@@ -18,4 +18,6 @@ URxvt.keysym.M-u:    perl:url-select:select_next
 URxvt.url-select.launcher:   /usr/bin/firefox -new-tab
 URxvt.url-select.underline: true
 
+Xcursor.size: 16
+
 #include ".colors/sicp"

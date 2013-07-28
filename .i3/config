@@ -189,6 +189,7 @@ bindsym XF86Launch1 exec firefox
 bindsym XF86TouchpadToggle exec touchpad_toggle.sh
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
+bindsym Mod4+n exec quickswitch.py
 
 # irssi
 bindsym Mod4+i exec urxvtc -e bash -c "tmux attach-session -d -t irc"

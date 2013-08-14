@@ -78,7 +78,7 @@ set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 
 " Ignore directories
-set wildignore+=*/.git/*,*/.hg/*,*/doc/*,*/docs/*,*/.tox/*,*/build/*
+set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*
 
 let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']

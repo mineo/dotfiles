@@ -95,7 +95,7 @@ let g:easytags_dynamic_files = 1
 let g:easytags_file = "./tags"
 
 " CtrlP
-let g:ctrlp_extensions = ['tag']
+let g:ctrlp_extensions = ['tag', 'line']
 
 " tags
 nmap <C-b> :po<CR>
@@ -130,6 +130,11 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
 " jedi
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
+
+" syntastic
+let g:syntastic_python_checkers = ["flake8"]
+" ignore "deprecated form of raising exception
+let g:syntastic_python_flake8_args = "--ignore=W602"
 
 imap <C-a> <C-x><C-o>
 " ack

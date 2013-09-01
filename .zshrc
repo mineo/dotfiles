@@ -147,4 +147,7 @@ bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
 
+zmodload zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -20,4 +20,4 @@ URxvt.url-select.underline: true
 
 Xcursor.size: 16
 
-#include ".colors/sicp"
+#include ".colors/mine"

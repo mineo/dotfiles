@@ -204,6 +204,8 @@ assign [class="Chromium"] → www
 assign [class="Gimp"] → 5
 assign [class="irssi"] → msg
 assign [class="Gvim"] → dev
+assign [class="Steam"] → 6
+assign [class="Wine"] → 6
 
 for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable

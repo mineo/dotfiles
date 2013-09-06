@@ -12,3 +12,5 @@ keycode 146 = XF86Launch0
 add Mod3 = Multi_key
 remove Mod4 = Super_R
 add Mod5 = Super_R
+! remap the menu key on my thinkpad to super_R
+keycode 135 = Super_R

@@ -59,12 +59,9 @@ alias v='vim'
 alias sv='sudo vim'
 alias q='exit'
 
-alias q150='ssh wieland@q150'
 alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
 alias less='less -N'
 alias mp='automp'
-alias mp51='mplayer -ao alsa -channels 6 -af pan=2:1:0:0:1:1:0:0:1:0.707:0.707:1:1'
-# channels:left-fl:right-fl:left-fr:right-fr:left-sl:right-sl:left-sr:right-sr:left-fc:right-fc:left-lfe:right-lfe
 alias cpui='cpupower frequency-info'
 alias sucp='sudo cp'
 alias qemu='qemu -enable-kvm'
@@ -82,8 +79,6 @@ fi
 [[ -s  /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
 
 alias grep='grep --color=auto'
-alias lsg='ls | grep'
-alias shutdown='sudo shutdown -h now'
 
 alias fu='sudo pacman -Rns'
 alias pkg='pacman -Qi'

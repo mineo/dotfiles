@@ -6,12 +6,6 @@
 *colorUL: #c5f779
 *underlineColor: #c5f779
 
-!urxvt*background: #1a1a1a
-!urxvt*foreground: #ccc
-urxvt*transparent: true
-urxvt*shading: 15
-urxvt*fading: 50
-
 !!url stuff
 urxvt.perl-ext:      url-select,confirm-paste
 urxvt.keysym.M-u:    perl:url-select:select_next

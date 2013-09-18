@@ -147,7 +147,7 @@ bindcode Mod4+Shift+18 move workspace 9
 bindcode Mod4+Shift+19 move workspace 10
 
 # Mod4+Enter starts a new terminal
-bindcode Mod4+36 exec /usr/bin/urxvtc
+bindcode Mod4+36 exec /usr/bin/urxvt
 
 # Mod4+Shift+q kills the current client
 bindcode Mod4+Shift+24 kill
@@ -184,15 +184,15 @@ bindcode 121 exec mute_toggle
 bindcode 122 exec vol_down
 bindcode 123 exec vol_up
 bindsym Mod4+v exec gvim
-bindsym XF86Search exec urxvtc -e mc
+bindsym XF86Search exec urxvt -e mc
 bindsym XF86Launch1 exec firefox
 bindsym XF86TouchpadToggle exec touchpad_toggle.sh
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
-bindsym Mod4+n exec quickswitch.py
+bindsym Mod1+Tab exec quickswitch.py
 
 # irssi
-bindsym Mod4+i exec urxvtc -e bash -c "tmux attach-session -d -t irc"
+bindsym Mod4+i exec urxvt -e bash -c "tmux attach-session -d -t irc"
 
 assign [instance="gajim"] → msg
 #for_window [instance="gajim"] move left; resize shrink width 200 px

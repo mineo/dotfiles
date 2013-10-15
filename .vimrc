@@ -103,9 +103,9 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 map <F1> <Plug>TaskList
-map <F4> :NERDTreeToggle<CR>
 map <F2> :TagbarToggle<CR>
 map <F3> :CtrlPBuffer<CR>
+map <F4> :NERDTreeToggle<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
 

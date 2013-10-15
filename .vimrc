@@ -34,13 +34,15 @@ Bundle 'ZoomWin'
 
 set t_Co=256
 set encoding=utf-8
-let g:molokai_original=1
-colorscheme base16-monokai
 set bg=dark
 set guifont=Consolas\ 13
 if has('gui_running')
+    colorscheme base16-monokai
     set go=c
     set guicursor+=a:blinkon0
+else
+    let g:molokai_original=1
+    colorscheme molokai
 endif
 
 " status line

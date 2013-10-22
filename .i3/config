@@ -180,9 +180,9 @@ bindcode 83 exec mpc prev
 bindcode 84 exec mpc toggle
 bindcode 85 exec mpc next
 bindcode 180 exec firefox
-bindcode 121 exec mute_toggle
-bindcode 122 exec vol_down
-bindcode 123 exec vol_up
+bindcode 121 exec pulseaudio-ctl mute
+bindcode 122 exec pulseaudio-ctl down
+bindcode 123 exec pulseaudio-ctl up
 bindsym Mod4+v exec gvim
 bindsym XF86Search exec urxvt -e mc
 bindsym XF86Launch1 exec firefox

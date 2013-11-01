@@ -86,6 +86,7 @@ alias sp='sudo pacman'
 alias pm='pacman'
 alias p='packer'
 alias sc='schedtool -n 19 -B -e'
+alias ssc='sudo systemctl'
 
 alias um='udisks --unmount'
 

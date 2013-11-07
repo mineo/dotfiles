@@ -11,7 +11,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle 'gmarik/vundle'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
@@ -35,13 +34,15 @@ Bundle 'ZoomWin'
 
 set t_Co=256
 set encoding=utf-8
-let g:molokai_original=1
-colorscheme base16-monokai
 set bg=dark
 set guifont=Consolas\ 13
 if has('gui_running')
+    colorscheme base16-monokai
     set go=c
     set guicursor+=a:blinkon0
+else
+    let g:molokai_original=1
+    colorscheme molokai
 endif
 
 " status line
@@ -58,9 +59,6 @@ set nobackup
 set directory-=.
 set showcmd
 set number
-if version >= 703
-    set relativenumber
-endif
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -105,9 +103,9 @@ au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
 map <F1> <Plug>TaskList
-map <F4> :NERDTreeToggle<CR>
 map <F2> :TagbarToggle<CR>
 map <F3> :CtrlPBuffer<CR>
+map <F4> :NERDTreeToggle<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
 

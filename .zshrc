@@ -11,6 +11,16 @@ unsetopt AUTO_LIST
 setopt AUTO_MENU
 setopt MENU_COMPLETE
 
+# History
+HISTSIZE=5000
+SAVEHIST=5000
+HISTFILE=~/.zhistory
+
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 command virtualenvwrapper.sh 2>/dev/null && source $(command -v virtualenvwrapper.sh)
 

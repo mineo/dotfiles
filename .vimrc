@@ -136,12 +136,20 @@ let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_args = "--ignore=W602"
 
 imap <C-a> <C-x><C-o>
+
 " ack
 nnoremap <leader>a :Ack<space>
-" inoremap ' ''<Left>
-" inoremap " ""<Left>
-" Open NERDTree by default
-"autocmd VimEnter * NERDTree
+nnoremap <leader>A: AckFromSearch<CR>
+
+" Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Quit window on <leader>q
+nnoremap <leader>q :q<CR>
+
+" ; is an alias for :
+nnoremap ; :
+
 autocmd VimEnter * wincmd p
 
 au FileType python map N :cn<CR>

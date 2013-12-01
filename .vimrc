@@ -82,6 +82,8 @@ set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*
 let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$']
 
+let mapleader = ","
+
 " easytags
 " http://stackoverflow.com/a/16920294/307681
 " without this scrolling after :HighlightTags gets really really slow
@@ -95,6 +97,9 @@ let g:easytags_file = "./tags"
 
 " CtrlP
 let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_cmd= 'CtrlPMixed'
+nnoremap <leader>t :CtrlPTag<CR>
+nnoremap <leader>bt :CtrlPBufTag<CR>
 
 " tags
 nmap <C-b> :po<CR>
@@ -103,14 +108,11 @@ nmap <C-b> :po<CR>
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-map <F1> <Plug>TaskList
 map <F2> :TagbarToggle<CR>
 map <F3> :CtrlPBuffer<CR>
 map <F4> :NERDTreeToggle<CR>
 " http://bitbucket.org/sjl/gundo.vim/src
 map <F5> :GundoToggle<CR>
-
-let mapleader = ","
 
 map gt :bnext!<CR>
 map gT :bprev!<CR>

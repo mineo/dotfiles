@@ -141,7 +141,7 @@ imap <C-a> <C-x><C-o>
 
 " ack
 nnoremap <leader>a :Ack<space>
-nnoremap <leader>A: AckFromSearch<CR>
+nnoremap <leader>A :AckFromSearch<CR>
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>

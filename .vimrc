@@ -29,6 +29,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'vim-perl/vim-perl'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'ZoomWin'
@@ -168,3 +169,6 @@ au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
 
 au FileType go setlocal noet
+
+" musicbrainz-server: *.tt files are template toolkit files including html
+au BufNewFile,BufRead *.tt setf tt2html

@@ -96,7 +96,7 @@ let g:easytags_dynamic_files = 1
 let g:easytags_file = "./tags"
 
 " CtrlP
-let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_extensions = ['tag']
 let g:ctrlp_cmd= 'CtrlPMixed'
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>bt :CtrlPBufTag<CR>

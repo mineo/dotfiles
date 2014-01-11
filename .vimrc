@@ -9,13 +9,13 @@ Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'bling/vim-airline'
 Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'gmarik/vundle'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -50,8 +50,23 @@ endif
 " status line
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
+
+" airline
+" old vim-powerline symbols
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_theme = 'molokai'
+let g:airline#extensions#whitespace#enabled = 0
+
 syntax on
-let g:Powerline_symbols='fancy'
 " automatically indent
 set autoindent
 " show some more characters
@@ -97,7 +112,7 @@ let g:easytags_dynamic_files = 1
 let g:easytags_file = "./tags"
 
 " CtrlP
-let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_extensions = ['tag']
 let g:ctrlp_cmd= 'CtrlPMixed'
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>bt :CtrlPBufTag<CR>

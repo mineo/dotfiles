@@ -1,5 +1,4 @@
 --exclude=build
---exclude=lib
 --exclude=.tox
 --exclude=doc
 --exclude=docs

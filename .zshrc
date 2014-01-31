@@ -62,23 +62,21 @@ PROMPT='%F{yellow}%n %fon %F{yellow}%m %F{red}» %F{yellow}%~${vcs_info_msg_0_}%
 ###########
 alias -g L='|less -R'
 alias -g G='|grep'
-alias home='cd ~'
-alias rmdir='rm -R'
-alias scr='screen -RDx'
-alias v='vim'
-alias sv='sudo vim'
-alias q='exit'
 
-alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
-alias less='less -N'
-alias mp='automp'
 alias cpui='cpupower frequency-info'
-alias sucp='sudo cp'
-alias qemu='qemu -enable-kvm'
-alias wine32='WINEARCH=win32 WINEPREFIX=~/.wine32 wine'
+alias dmesg='dmesg -T'
 alias ipcons='ipython2 qtconsole --pylab=auto'
-alias pypy='pypy -E'
+alias less='less -N'
 alias m='mimeopen'
+alias mp='automp'
+alias mpfb='mplayer -vo fbdev -zoom -xy 1024:768 -fs'
+alias pypy='pypy -E'
+alias qemu='qemu -enable-kvm'
+alias rmdir='rm -R'
+alias sucp='sudo cp'
+alias sv='sudo vim'
+alias um='udisks --unmount'
+alias v='vim'
 
 if type ls++ > /dev/null; then
     alias ls='ls++'
@@ -97,8 +95,6 @@ alias pm='pacman'
 alias p='packer'
 alias sc='schedtool -n 19 -B -e'
 alias ssc='sudo systemctl'
-
-alias um='udisks --unmount'
 
 alias rs='source ~/.zshrc'
 

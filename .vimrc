@@ -151,8 +151,6 @@ let g:jedi#popup_on_dot = 0
 
 " syntastic
 let g:syntastic_python_checkers = ["flake8"]
-" ignore "deprecated form of raising exception
-let g:syntastic_python_flake8_args = "--ignore=W602"
 
 imap <C-a> <C-x><C-o>
 

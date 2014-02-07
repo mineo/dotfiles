@@ -5,6 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+Bundle 'airblade/vim-rooter'
 Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'

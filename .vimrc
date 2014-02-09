@@ -28,6 +28,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'tomasr/molokai'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tommcdo/vim-centaur'
+Bundle 'tommcdo/vim-fugitive-blame-ext'
 Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -152,8 +154,7 @@ let g:jedi#popup_on_dot = 0
 
 " syntastic
 let g:syntastic_python_checkers = ["flake8"]
-" ignore "deprecated form of raising exception
-let g:syntastic_python_flake8_args = "--ignore=W602"
+let g:syntastic_python_flake8_exec = "flake8-python2"
 
 imap <C-a> <C-x><C-o>
 

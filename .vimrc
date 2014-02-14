@@ -92,6 +92,7 @@ filetype plugin indent on
 " Show matching brackets etc
 set showmatch
 set foldmethod=indent
+set foldminlines=7
 set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks

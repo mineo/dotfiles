@@ -163,6 +163,14 @@ imap <C-a> <C-x><C-o>
 nnoremap <leader>a :Ack<space>
 nnoremap <leader>A :AckFromSearch<CR>
 
+" easymotion
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>l <Plug>(easymotion-lineforward)
+
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 

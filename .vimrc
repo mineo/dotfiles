@@ -14,6 +14,7 @@ Bundle 'bling/vim-airline'
 Bundle 'chriskempson/base16-vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'gmarik/vundle'
+Bundle 'honza/vim-snippets'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -147,7 +148,7 @@ map <C-l> <C-w>l
 "
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories = ["UltiSnips"]
 
 " jedi
 let g:jedi#use_tabs_not_buffers = 0

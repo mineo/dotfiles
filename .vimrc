@@ -12,8 +12,12 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'bling/vim-airline'
 Bundle 'chriskempson/base16-vim'
+Bundle 'dag/vim2hs'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'eagletmt/neco-ghc'
 Bundle 'gmarik/vundle'
+Bundle 'honza/vim-snippets'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -23,6 +27,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/vimproc'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tomasr/molokai'
@@ -148,7 +153,7 @@ map <C-l> <C-w>l
 "
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2
-let g:UltiSnipsSnippetDirectories = ["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories = ["UltiSnips"]
 
 " jedi
 let g:jedi#use_tabs_not_buffers = 0
@@ -197,6 +202,8 @@ au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
 
 au FileType go setlocal noet
+
+au FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " musicbrainz-server: *.tt files are template toolkit files including html
 au BufNewFile,BufRead *.tt setf tt2html

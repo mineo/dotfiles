@@ -96,6 +96,7 @@ set foldminlines=7
 set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
+set linespace=2
 
 " Ignore directories
 set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*

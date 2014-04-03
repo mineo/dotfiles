@@ -104,10 +104,10 @@ set backspace=2 "to backspace over linebreaks
 set linespace=2
 
 " Ignore directories
-set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*
+set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*,*.o,*.hi
 
 let NERDTreeWinPos = 'right'
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.hi$']
 
 let mapleader = ","
 

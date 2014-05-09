@@ -24,12 +24,11 @@ bindcode Mod4+Shift+25 layout tabbed
 bindcode Mod4+Shift+26 layout default
 
 bindsym Mod4+p focus parent
-
 bindsym Mod4+c focus child
 
 bindsym Mod4+a split h
-
 bindsym Mod4+s split v
+bindsym Mod4+d layout toggle split
 
 # Toggle tiling/floating of the current window (Mod4+Shift+Space)
 bindcode Mod4+Shift+65 floating toggle

@@ -191,6 +191,7 @@ assign [class="Wine"] → 6
 
 for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable
+for_window [class="org-antlr-v4-runtime-misc-TestRig"] floating disable
 
 client.focused #2d2d2d #2d2d2d #f9f9f9 #8f8f8f
 client.unfocused #2d2d2d #00000 #545454 #f9f9f9

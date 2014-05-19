@@ -87,39 +87,14 @@ bindcode Mod3+43 focus parent; focus left
 bindcode Mod3+44 focus parent; focus down
 bindcode Mod3+45 focus parent; focus up
 bindcode Mod3+46 focus parent; focus right
-# (alternatively, you can use the cursor keys:)
-bindsym Mod3+Left focus parent; focus left
-bindsym Mod3+Down focus parent; focus down
-bindsym Mod3+Up focus parent; focus up
-bindsym Mod3+Right focus parent; focus right
 
-# Snap (Mod4+Control+j/k/l/;)
-bindcode Mod4+Control+43 layout stacking
-bindcode Mod4+Control+44 layout stacking
-bindcode Mod4+Control+45 layout stacking
-bindcode Mod4+Control+46 layout stacking
-# (alternatively, you can use the cursor keys:)
-bindsym Mod4+Control+Left layout stacking
-bindsym Mod4+Control+Down layout stacking
-bindsym Mod4+Control+Up layout stacking
-bindsym Mod4+Control+Right layout stacking
 
 # Move (Mod4+Shift+j/k/l/;)
 bindcode Mod4+Shift+43 move left
 bindcode Mod4+Shift+44 move down
 bindcode Mod4+Shift+45 move up
 bindcode Mod4+Shift+46 move right
-# (alternatively, you can use the cursor keys:)
-#bindsym Mod4+Shift+Left mh
-#bindsym Mod4+Shift+Down mj
-#bindsym Mod4+Shift+Up mk
-#bindsym Mod4+Shift+Right ml
 
-# Move Container (Mod3+Shift+j/k/l/;)
-bindcode Mod3+Shift+43 focus parent; move left
-bindcode Mod3+Shift+44 focus parent; move down
-bindcode Mod3+Shift+45 focus parent; move up
-bindcode Mod3+Shift+46 focus parent; move right
 
 # Workspaces (Mod4+1/2/…)
 bindcode Mod4+10 workspace www

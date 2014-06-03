@@ -24,12 +24,11 @@ bindcode Mod4+Shift+25 layout tabbed
 bindcode Mod4+Shift+26 layout default
 
 bindsym Mod4+p focus parent
-
 bindsym Mod4+c focus child
 
 bindsym Mod4+a split h
-
 bindsym Mod4+s split v
+bindsym Mod4+d layout toggle split
 
 # Toggle tiling/floating of the current window (Mod4+Shift+Space)
 bindcode Mod4+Shift+65 floating toggle
@@ -88,39 +87,14 @@ bindcode Mod3+43 focus parent; focus left
 bindcode Mod3+44 focus parent; focus down
 bindcode Mod3+45 focus parent; focus up
 bindcode Mod3+46 focus parent; focus right
-# (alternatively, you can use the cursor keys:)
-bindsym Mod3+Left focus parent; focus left
-bindsym Mod3+Down focus parent; focus down
-bindsym Mod3+Up focus parent; focus up
-bindsym Mod3+Right focus parent; focus right
 
-# Snap (Mod4+Control+j/k/l/;)
-bindcode Mod4+Control+43 layout stacking
-bindcode Mod4+Control+44 layout stacking
-bindcode Mod4+Control+45 layout stacking
-bindcode Mod4+Control+46 layout stacking
-# (alternatively, you can use the cursor keys:)
-bindsym Mod4+Control+Left layout stacking
-bindsym Mod4+Control+Down layout stacking
-bindsym Mod4+Control+Up layout stacking
-bindsym Mod4+Control+Right layout stacking
 
 # Move (Mod4+Shift+j/k/l/;)
 bindcode Mod4+Shift+43 move left
 bindcode Mod4+Shift+44 move down
 bindcode Mod4+Shift+45 move up
 bindcode Mod4+Shift+46 move right
-# (alternatively, you can use the cursor keys:)
-#bindsym Mod4+Shift+Left mh
-#bindsym Mod4+Shift+Down mj
-#bindsym Mod4+Shift+Up mk
-#bindsym Mod4+Shift+Right ml
 
-# Move Container (Mod3+Shift+j/k/l/;)
-bindcode Mod3+Shift+43 focus parent; move left
-bindcode Mod3+Shift+44 focus parent; move down
-bindcode Mod3+Shift+45 focus parent; move up
-bindcode Mod3+Shift+46 focus parent; move right
 
 # Workspaces (Mod4+1/2/…)
 bindcode Mod4+10 workspace www
@@ -145,6 +119,14 @@ bindcode Mod4+Shift+16 move workspace 7
 bindcode Mod4+Shift+17 move workspace 8
 bindcode Mod4+Shift+18 move workspace 9
 bindcode Mod4+Shift+19 move workspace 10
+
+# Switching workspaces
+bindsym Mod4+Prior workspace prev_on_output
+bindsym Mod4+Next workspace next_on_output
+
+# Moving workspaces to other outputs
+bindsym Mod4+Right move workspace to output right
+bindsym Mod4+left move workspace to output left
 
 # Mod4+Enter starts a new terminal
 bindcode Mod4+36 exec /usr/bin/urxvt
@@ -209,6 +191,7 @@ assign [class="Wine"] → 6
 
 for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable
+for_window [class="org-antlr-v4-runtime-misc-TestRig"] floating disable
 
 client.focused #2d2d2d #2d2d2d #f9f9f9 #8f8f8f
 client.unfocused #2d2d2d #00000 #545454 #f9f9f9

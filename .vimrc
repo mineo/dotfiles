@@ -127,9 +127,6 @@ let g:ctrlp_cmd= 'CtrlPMixed'
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>bt :CtrlPBufTag<CR>
 
-" tags
-nmap <C-b> :po<CR>
-
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
@@ -194,7 +191,6 @@ au FileType python set tw=79
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>
-au FileType c map <C-b> :po<CR>
 
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79

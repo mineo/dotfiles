@@ -72,7 +72,7 @@ endif
 let g:airline_symbols.branch = '⭠'
 let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
-let g:airline_theme = 'molokai'
+let g:airline_theme='luna'
 let g:airline#extensions#whitespace#enabled = 0
 
 syntax on
@@ -101,12 +101,13 @@ set foldminlines=7
 set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
+set linespace=2
 
 " Ignore directories
-set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*,*.pyc,*.pyo
+set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*,*.o,*.hi,*.pyc,*.pyo
 
 let NERDTreeWinPos = 'right'
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.hi$']
 
 let mapleader = ","
 

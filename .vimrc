@@ -10,6 +10,7 @@ Bundle 'alfredodeza/coveragepy.vim'
 Bundle 'alfredodeza/pytest.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'aperezdc/vim-template'
 Bundle 'bling/vim-airline'
 Bundle 'chriskempson/base16-vim'
 Bundle 'dag/vim2hs'
@@ -175,6 +176,9 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>l <Plug>(easymotion-lineforward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+
+" templates
+let g:template_dir = "~/.vim/templates"
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>

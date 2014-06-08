@@ -85,7 +85,7 @@ set listchars=tab:»\ ,trail:«,eol:<
 set nobackup
 set directory-=.
 set showcmd
-set number
+set relativenumber
 set smartindent
 set tabstop=4
 set shiftwidth=4

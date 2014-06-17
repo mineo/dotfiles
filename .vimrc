@@ -163,6 +163,8 @@ let g:jedi#popup_on_dot = 0
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_exec = "flake8-python2"
 
+nnoremap <leader>e :Errors<CR>
+
 imap <C-a> <C-x><C-o>
 
 " ack

@@ -126,7 +126,7 @@ let g:easytags_file = "./tags"
 
 " CtrlP
 let g:ctrlp_extensions = ['tag']
-let g:ctrlp_cmd= 'CtrlPMixed'
+let g:ctrlp_cmd= 'CtrlP'
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>bt :CtrlPBufTag<CR>
 
@@ -162,6 +162,8 @@ let g:jedi#show_call_signatures = 0
 " syntastic
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_exec = "flake8-python2"
+
+nnoremap <leader>e :Errors<CR>
 
 imap <C-a> <C-x><C-o>
 

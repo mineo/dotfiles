@@ -55,7 +55,7 @@ preexec() {
     esac
 }
 
-PROMPT='%F{yellow}%n %fon %F{yellow}%m %F{red}» %F{yellow}%~${vcs_info_msg_0_}%f » '
+PROMPT='%F{yellow}%n %fon %F{yellow}%m %f» %F{yellow}%~${vcs_info_msg_0_}%f »%(0?.. [%?] ») '
 
 ###########
 # aliases #

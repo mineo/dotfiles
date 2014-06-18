@@ -39,6 +39,7 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-perl/vim-perl'
+Bundle 'wellle/targets.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'ZoomWin'
@@ -84,7 +85,7 @@ set listchars=tab:»\ ,trail:«,eol:<
 set nobackup
 set directory-=.
 set showcmd
-set number
+set relativenumber
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -128,9 +129,6 @@ let g:ctrlp_cmd= 'CtrlP'
 nnoremap <leader>t :CtrlPTag<CR>
 nnoremap <leader>bt :CtrlPBufTag<CR>
 
-" tags
-nmap <C-b> :po<CR>
-
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
@@ -158,6 +156,7 @@ let g:UltiSnipsSnippetDirectories = ["UltiSnips"]
 " jedi
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
 
 " syntastic
 let g:syntastic_python_checkers = ["flake8"]
@@ -197,7 +196,6 @@ au FileType python set tw=79
 
 au FileType c map <F6> :!gcc %<CR>
 au FileType c map <F7> :!./a.out %<CR>
-au FileType c map <C-b> :po<CR>
 
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79

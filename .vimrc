@@ -164,7 +164,12 @@ let g:syntastic_python_flake8_exec = "flake8-python2"
 
 nnoremap <leader>e :Errors<CR>
 
+" omni completion
 imap <C-a> <C-x><C-o>
+
+" remap jk to ESC
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " ack
 nnoremap <leader>a :Ack<space>

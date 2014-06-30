@@ -3,5 +3,5 @@
 __pycache__*
 tags
 *hi
-*o
+*.o
 dist/*

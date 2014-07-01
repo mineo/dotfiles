@@ -7,11 +7,11 @@
 *underlineColor: #c5f779
 
 !!url stuff
-urxvt.perl-ext:      url-select,confirm-paste
+*.urxvt.perl-ext:      url-select,confirm-paste
 urxvt.keysym.M-u:    perl:url-select:select_next
 urxvt.url-select.launcher:   /usr/bin/firefox -new-tab
 urxvt.url-select.underline: true
 
-Xcursor.size: 16
+Xcursor.size: 12
 
 #include ".colors/mine"

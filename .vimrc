@@ -9,13 +9,13 @@ Plugin 'airblade/vim-rooter'
 Plugin 'alfredodeza/coveragepy.vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Blackrush/vim-gocode'
 Plugin 'bling/vim-airline'
 Plugin 'chriskempson/base16-vim'
 Plugin 'dag/vim2hs'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'fatih/vim-go'
 Plugin 'gmarik/vundle'
 Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
@@ -161,6 +161,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
 
 " syntastic
+let g:syntastic_go_checkers = ["gofmt", "golint", "govet"]
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_exec = "flake8-python2"
 
@@ -207,8 +208,6 @@ au FileType c map <F7> :!./a.out %<CR>
 au FileType rst set colorcolumn=80
 au FileType rst set tw=79
 au FileType rst map <F6> :!rst2pdf %<CR>
-
-au FileType go setlocal noet
 
 au FileType haskell setlocal omnifunc=necoghc#omnifunc
 

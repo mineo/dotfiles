@@ -108,7 +108,7 @@ set backspace=2 "to backspace over linebreaks
 set linespace=2
 
 " Ignore directories
-set wildignore+=*/.git/*,*/.hg/*,*/docs/*,*/.tox/*,*/build/*,*.o,*.hi,*.pyc,*.pyo
+set wildignore+=*/.git/*,*/.hg/*,*/docs/build/*,*/.tox/*,*/build/*,*.o,*.hi,*.pyc,*.pyo
 
 let NERDTreeWinPos = 'right'
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.hi$']

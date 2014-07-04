@@ -187,6 +187,9 @@ map <Leader>l <Plug>(easymotion-lineforward)
 
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 
+" templates
+let g:template_dir = "~/.vim/templates"
+
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 

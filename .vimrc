@@ -165,7 +165,7 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#show_call_signatures = 0
 
 " syntastic
-let g:syntastic_go_checkers = ["gofmt", "golint", "govet"]
+let g:syntastic_go_checkers = ["go", "gofmt", "golint", "govet"]
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_flake8_exec = "flake8-python2"
 

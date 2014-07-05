@@ -64,6 +64,9 @@ endif
 set laststatus=2
 set statusline=%r%y\ [%m%f]\ %{&ff}\ %=CxL:%cx[%l/%L]\ %{fugitive#statusline()}
 
+" highlight the line the cursor's in
+set cursorline
+
 " airline
 " old vim-powerline symbols
 let g:airline_left_sep = '⮀'

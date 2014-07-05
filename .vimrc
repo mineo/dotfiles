@@ -52,7 +52,7 @@ set encoding=utf-8
 set bg=dark
 set guifont=Consolas\ 13
 if has('gui_running')
-    colorscheme base16-monokai
+    colorscheme base16-eighties
     set go=c
     set guicursor+=a:blinkon0
 else

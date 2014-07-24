@@ -11,6 +11,10 @@ unsetopt AUTO_LIST
 setopt AUTO_MENU
 setopt MENU_COMPLETE
 
+# If a glob pattern doesn't match anything, just leave it as is
+# Useful when pasting URLs with question marks in them
+unsetopt NOMATCH
+
 # History
 HISTSIZE=5000
 SAVEHIST=5000

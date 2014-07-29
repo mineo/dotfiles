@@ -110,6 +110,7 @@ set foldenable
 set matchpairs+=<:>
 set backspace=2 "to backspace over linebreaks
 set linespace=2
+set wildmenu
 
 " Ignore directories
 set wildignore+=*/.git/*,*/.hg/*,*/docs/build/*,*/.tox/*,*/build/*,*.o,*.hi,*.pyc,*.pyo

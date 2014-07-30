@@ -206,8 +206,6 @@ nnoremap ; :
 
 autocmd VimEnter * wincmd p
 
-au FileType python map N :cn<CR>
-au FileType python map P :cp<CR>
 au FileType python set colorcolumn=80
 au FileType python set tw=79
 

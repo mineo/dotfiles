@@ -9,8 +9,6 @@ mpdscribble
 redshift -l 50:10 -t 6500:5000 -g 0.8:0.75:0.8> /dev/null &
 synapse -s &
 udiskie &
-# urxvt -name irc -e bash -c "tmux -q attach-session -d -t irc || tmux new-session -s irc 'tmux source-file ~/.tmux-irc.conf'" &
-# urxvt -name ncmpcpp -e bash -c "ncmpcpp" &
 xmodmap .Xmodmap &
 
 nitrogen --restore &

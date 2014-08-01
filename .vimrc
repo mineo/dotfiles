@@ -150,12 +150,17 @@ map <F5> :GundoToggle<CR>
 map gt :bnext!<CR>
 map gT :bprev!<CR>
 map co ,c 
+
 " open a new vertical split, switch to it
 nnoremap <leader>w <C-w>v<C-w>l
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
+
+" open splits where expected
+set splitbelow
+set splitright
 "
 " ultisnips
 let g:UltiSnipsUsePythonVersion = 2

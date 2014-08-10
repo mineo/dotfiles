@@ -26,7 +26,7 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
-command virtualenvwrapper.sh 2>/dev/null && source $(command -v virtualenvwrapper.sh)
+command virtualenvwrapper_lazy.sh 2>/dev/null && source $(command -v virtualenvwrapper_lazy.sh)
 
 # VCS_INFO stuff
 # set formats

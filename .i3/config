@@ -181,9 +181,13 @@ exec for_window [instance="scratchpad"] move scratchpad
 
 assign [class="Firefox"] → www
 assign [class="Chromium"] → www
-assign [class="Gimp"] → 5
 assign [class="irssi"] → msg
+# Eclipses splash screen does not have class=Eclipse for some reason
+assign [title="Eclipse"] → dev
+# Regular Eclipse
+assign [class="Eclipse"] → dev
 assign [class="Gvim"] → dev
+assign [class="Gimp"] → 5
 assign [class="Steam"] → 6
 assign [class="Wine"] → 6
 

@@ -126,7 +126,7 @@ bindsym Mod4+Next workspace next_on_output
 
 # Moving workspaces to other outputs
 bindsym Mod4+Right move workspace to output right
-bindsym Mod4+left move workspace to output left
+bindsym Mod4+Left move workspace to output left
 
 # Mod4+Enter starts a new terminal
 bindcode Mod4+36 exec /usr/bin/urxvt

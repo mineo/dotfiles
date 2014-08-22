@@ -6,7 +6,7 @@ dropboxd &
 gajim &
 killall mpdscribble
 mpdscribble
-redshift -l 50:10 -t 6500:5000 -g 0.8:0.75:0.8> /dev/null &
+redshift -l 50:10 -t 6500:5000> /dev/null &
 synapse -s &
 udiskie &
 xmodmap .Xmodmap &

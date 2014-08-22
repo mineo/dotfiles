@@ -69,6 +69,7 @@ alias -g G='|grep'
 
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
+alias hme='htop -u $(whoami)'
 alias ipcons='ipython2 qtconsole --pylab=auto'
 alias less='less -N'
 alias m='mimeopen'

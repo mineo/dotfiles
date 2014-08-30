@@ -157,3 +157,8 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function mpd_song-dir () {
+    local song_dir=$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")
+    cd ${HOME}/Musik/${song_dir}
+}

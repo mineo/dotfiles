@@ -153,7 +153,7 @@ bindsym Mod4+b border toggle
 new_window pixel 3
 workspace_layout default
 
-workspace 1 output HDMI-1
+workspace "www" output HDMI-1
 workspace "msg" output DVI-I-1
 
 workspace_auto_back_and_forth yes

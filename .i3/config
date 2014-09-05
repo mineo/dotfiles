@@ -198,8 +198,8 @@ exec --no-startup-id $urxvt-irc
 exec --no-startup-id urxvt -title ncmpcpp -e ncmpcpp
 
 client.focused #2d2d2d #2d2d2d #f9f9f9 #8f8f8f
-client.unfocused #2d2d2d #00000 #545454 #f9f9f9
-client.focused_inactive #2d2d2d #2d2d2d #54545454
+client.unfocused #2d2d2d #000000 #a0a0a0 #f9f9f9
+client.focused_inactive #2d2d2d #2f2f2f #a0a0a0
 
 bar {
     mode hide

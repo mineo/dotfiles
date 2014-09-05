@@ -2,9 +2,7 @@
 # and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
 
 # ISO 10646 = Unicode
-#font -*-clean-*-*-*-*-*-*-*-*-*-*-iso10646-*
-#font -*-fixed-*-r-normal-*-*-*-*-*-*-*-iso8859-1
-font xft:Ubuntu 11
+font xft:Liberation Sans bold 9
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4

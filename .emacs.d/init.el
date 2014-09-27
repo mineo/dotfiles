@@ -95,7 +95,7 @@
 (require 'use-package)
 
 (use-package tex-site
-  :ensure
+  :ensure auctex
   :config
   (use-package auctex-latexmk
     :ensure

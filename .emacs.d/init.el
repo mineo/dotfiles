@@ -94,6 +94,15 @@
 
 (require 'use-package)
 
+(use-package tex-site
+  :ensure
+  :config
+  (use-package auctex-latexmk
+    :ensure
+    :config (auctex-latexmk-setup)
+  )
+)
+
 ;; company
 (use-package company
   :ensure
@@ -163,7 +172,23 @@
 ;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (use-package fill-column-indicator
   :ensure
-  :config (setq-default fill-column 80)
+  :config
+  (setq-default fill-column 80)
+  (defvar-local company-fci-mode-on-p nil)
+
+  ;; https://github.com/company-mode/company-mode/issues/180
+  ;; deactivate fci-mode around companys completion popup
+  (defun company-turn-off-fci (&rest ignore)
+    (when (boundp 'fci-mode)
+      (setq company-fci-mode-on-p fci-mode)
+      (when fci-mode (fci-mode -1))))
+
+  (defun company-maybe-turn-on-fci (&rest ignore)
+    (when company-fci-mode-on-p (fci-mode 1)))
+
+  (add-hook 'company-completion-started-hook 'company-turn-off-fci)
+  (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
+  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
   :init
   (progn
     (dolist (hook '(prog-mode-hook text-mode-hook))

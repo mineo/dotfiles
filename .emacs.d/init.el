@@ -121,8 +121,7 @@
   :init (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
 
 ;; electric-pair-mode
-(use-package electric-pair-mode
-  :init (electric-pair-mode))
+(electric-pair-mode)
 
 ;; ;; enable evil
 (use-package evil

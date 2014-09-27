@@ -1,5 +1,6 @@
 --ignore-dir=build
 --ignore-file=match:/tags/
+--ignore-file=match:/.patch/
 --ignore-dir=.tox
 --ignore-dir=.ropeproject
 --ignore-dir=po

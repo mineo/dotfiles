@@ -62,10 +62,18 @@
     (package-refresh-contents))
   (dolist (package my-packages)
     (unless (package-installed-p package)
-	(package-install package)
+        (package-install package)
 )))
 
 (ensure-packages)
+
+(recentf-mode)
+(defun recentf-ido-find-file ()
+  "Find a recent file using Ido."
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -138,13 +146,14 @@
       (evil-leader/set-leader "SPC")
       (evil-leader/set-key "SPC c" 'ace-jump-char-mode
                            "SPC w" 'ace-jump-word-mode
-			   "a" 'projectile-ack
+                           "a" 'projectile-ack
                            "b" 'ido-switch-buffer
                            "e" 'flycheck-list-errors
                            "f" 'projectile-find-file
                            "k" 'kill-buffer
                            "m" 'magit-status
                            "o" 'ido-find-file
+                           "r" 'recentf-ido-find-file
                            "q" 'save-buffers-kill-emacs
                            "s" 'toggle-dark-light-theme
                            "t" 'imenu-anywhere

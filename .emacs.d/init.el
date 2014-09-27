@@ -420,7 +420,7 @@
 
 (use-package yasnippet
   :ensure
-  ;; :init (yas-global-mode)
+  :init (yas-global-mode)
 )
 (provide 'init)
 ;;; init.el ends here

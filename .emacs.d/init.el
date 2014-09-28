@@ -403,6 +403,10 @@
   :ensure
   :bind ("C-x o" . switch-window))
 
+(use-package volatile-highlights
+  :ensure
+  :config (volatile-highlights-mode)
+)
 
 (use-package whitespace
   :diminish

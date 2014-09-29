@@ -52,14 +52,15 @@ preexec() {
     # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
     case $TERM in
       rxvt-*)
-          printf '\33]2;%s\007' $1
+	  printf '\33]2;%s\007' $1
       ;;
       screen*)
-        printf '\ek%s\e\\' $1;;
+	printf '\ek%s\e\\' $1;;
     esac
 }
 
-PROMPT='%F{yellow}%n %fon %F{yellow}%m %f» %F{yellow}%~${vcs_info_msg_0_}%f »%(0?.. [%?] ») '
+PROMPT='↪ '
+RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
 
 ###########
 # aliases #

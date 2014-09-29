@@ -65,8 +65,8 @@ RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F
 ###########
 # aliases #
 ###########
-alias -g L='|less -R'
 alias -g G='|grep'
+alias -g L='|less -R'
 
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'

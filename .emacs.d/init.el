@@ -110,6 +110,7 @@
     :ensure
     :config (auctex-latexmk-setup)
   )
+  (add-hook 'LaTeX-mode-hook 'reftex-mode)
 )
 
 ;; company

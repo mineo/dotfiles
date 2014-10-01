@@ -27,7 +27,7 @@
 (set-selection-coding-system 'utf-8)
 
 ;; Don't use tabs for indentation
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; Automatically reload buffers if the file changes
 (global-auto-revert-mode 1)

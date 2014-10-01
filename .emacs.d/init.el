@@ -110,7 +110,12 @@
     :ensure
     :config (auctex-latexmk-setup)
   )
-  (add-hook 'LaTeX-mode-hook 'reftex-mode)
+  (dolist (mode '(reftex-mode
+                  TeX-PDF-mode
+                  TeX-fold-mode))
+          (add-hook 'TeX-mode-hook mode))
+  (setq TeX-parse-self t ; parse on load
+        TeX-auto-save t) ; parse on save
 )
 
 ;; company

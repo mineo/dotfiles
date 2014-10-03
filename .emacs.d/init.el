@@ -80,11 +80,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(custom-safe-themes (quote ("6a37be365d1d95fad2f4d185e51928c789ef7a4ccf17e7ca13ad63a8bf5b922f" "3a727bdc09a7a141e58925258b6e873c65ccf393b2240c51553098ca93957723" "756597b162f1be60a12dbd52bab71d40d6a2845a3e3c2584c6573ee9c332a66e" "51bea7765ddaee2aac2983fac8099ec7d62dff47b708aa3595ad29899e9e9e44" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
 )
 
 ;; load theme
-(load-theme 'solarized-light 'no-confirm)
+;; (load-theme 'solarized-light 'no-confirm)
 
 ;; https://kylewm.com/article/2014/01/30/1/emacs-toggle-light-and-dark-themes
 (defcustom default-light-color-theme 'solarized-light
@@ -202,6 +202,11 @@
   (progn
     (dolist (hook '(prog-mode-hook text-mode-hook))
       (add-hook hook 'fci-mode))))
+
+(use-package flatland-theme
+  :ensure
+  :config (load-theme 'flatland 'no-confirm)
+)
 
 ;; flycheck
 (use-package flycheck

@@ -388,6 +388,12 @@
   )
 )
 
+(use-package rainbow-delimiters
+  :ensure
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+)
+
 (use-package smart-mode-line
   :ensure
   :diminish

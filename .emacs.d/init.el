@@ -118,14 +118,14 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
-  :diminish "©"
+  :diminish company-mode
   :init (global-company-mode)
 )
 
 ;; eldoc
 (use-package eldoc
   :ensure
-  :diminish "e"
+  :diminish eldoc-mode
   :init (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
 
 ;; electric-pair-mode
@@ -234,7 +234,7 @@
 ;; guide-key
 (use-package guide-key
   :ensure
-  :diminish
+  :diminish guide-key-mode
   :config
   (progn
     (setq guide-key/guide-key-sequence '("C-c"
@@ -243,6 +243,7 @@
 					 )
     )
     (setq guide-key/recursive-key-sequence-flag t)
+    ;; (diminish 'guide-key-mode)
   )
   :init (guide-key-mode)
 )
@@ -335,6 +336,7 @@
 
 (use-package magit
   :ensure
+  :diminish magit-auto-revert-mode
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
 ;; projectile
@@ -405,11 +407,12 @@
 
 (use-package volatile-highlights
   :ensure
+  :diminish volatile-highlights-mode
   :config (volatile-highlights-mode)
 )
 
 (use-package whitespace
-  :diminish
+  :diminish whitespace-mode
   :ensure
   :config
   (progn
@@ -421,7 +424,7 @@
                          space-before-tab
                          ))
     (use-package whitespace-cleanup-mode
-      :diminish
+      :diminish whitespace-cleanup-mode
       :ensure
       :init
       (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
@@ -433,6 +436,7 @@
 
 (use-package yasnippet
   :ensure
+  :diminish yas-minor-mode
   :init (yas-global-mode)
 )
 (provide 'init)

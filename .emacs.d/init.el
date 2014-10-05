@@ -367,6 +367,7 @@
   (add-hook 'python-mode-hook 'electric-indent-mode)
   (use-package anaconda-mode
     :ensure
+    :diminish anaconda-mode
     :config (add-hook 'python-mode-hook 'anaconda-mode)
   )
   (use-package company-anaconda

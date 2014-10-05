@@ -354,7 +354,10 @@
 (use-package projectile
   :ensure
   :commands projectile-find-file
-  :config (setq projectile-globally-ignored-directories (quote (".tox" ".cabal-sandbox" "dist" "build")))
+  :config
+  (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build"))
+    (add-to-list 'projectile-globally-ignored-directories dir)
+  )
   :init (projectile-global-mode)
 )
 

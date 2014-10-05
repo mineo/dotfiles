@@ -249,9 +249,9 @@
   :config
   (progn
     (setq guide-key/guide-key-sequence '("C-c"
-					 "C-x 4" ; window commands
-					 "C-x 5" ; frame commands
-					 )
+                                         "C-x 4" ; window commands
+                                         "C-x 5" ; frame commands
+                                         )
     )
     (setq guide-key/recursive-key-sequence-flag t)
     ;; (diminish 'guide-key-mode)
@@ -270,11 +270,11 @@
       :commands ghc-init ghc-debug
       :init
       (progn
-	(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-	(use-package company-ghc
-	  :ensure
-	  :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
-	  )
+        (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+        (use-package company-ghc
+          :ensure
+          :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
+          )
       )
     )
 
@@ -288,11 +288,11 @@
       :ensure
       :config
       (progn
-	(set-face-background 'shm-current-face "#eee8d5")
-	(set-face-background 'shm-quarantine-face "lemonchiffon")
+        (set-face-background 'shm-current-face "#eee8d5")
+        (set-face-background 'shm-quarantine-face "lemonchiffon")
       )
       :init
-	(add-hook 'haskell-mode-hook 'structured-haskell-mode)
+        (add-hook 'haskell-mode-hook 'structured-haskell-mode)
     )
 
     (evil-set-initial-state 'haskell-interactive-mode 'emacs)

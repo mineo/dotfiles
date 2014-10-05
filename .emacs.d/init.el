@@ -377,7 +377,6 @@
   (use-package virtualenvwrapper
     :ensure
     :config
-    (setq venv-location "~/dev/virtualenvs")
     (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
     (evil-leader/set-key-for-mode 'python-mode
       "v" 'venv-workon

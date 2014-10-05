@@ -353,7 +353,7 @@
 ;; projectile
 (use-package projectile
   :ensure
-  :commands projectile-find-file
+  :diminish projectile-mode
   :config
   (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build"))
     (add-to-list 'projectile-globally-ignored-directories dir)

@@ -399,10 +399,16 @@
   )
 )
 
+
 (use-package rainbow-delimiters
   :ensure
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+)
+
+(use-package smartscan
+  :ensure
+  :config (add-hook 'prog-mode-hook 'smartscan-mode)
 )
 
 (use-package smart-mode-line

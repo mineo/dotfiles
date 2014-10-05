@@ -132,7 +132,7 @@
 (use-package eldoc
   :ensure
   :diminish eldoc-mode
-  :init (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
+  :config (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
 
 ;; electric-pair-mode
 (electric-pair-mode)
@@ -180,7 +180,7 @@
     :init (define-key evil-normal-state-map (kbd "+") 'er/expand-region))
   (define-key evil-normal-state-map (kbd ";") 'smex)
   (define-key evil-visual-state-map (kbd ";") 'smex)
-  :init (evil-mode)
+  (evil-mode)
 )
 
 ;; fci
@@ -204,10 +204,8 @@
   (add-hook 'company-completion-started-hook 'company-turn-off-fci)
   (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
   (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
-  :init
-  (progn
-    (dolist (hook '(prog-mode-hook text-mode-hook))
-      (add-hook hook 'fci-mode))))
+  (dolist (hook '(prog-mode-hook text-mode-hook))
+    (add-hook hook 'fci-mode)))
 
 (use-package flatland-theme
   :ensure
@@ -217,21 +215,19 @@
 ;; flycheck
 (use-package flycheck
   :ensure
-  :config (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
-  :init
-  (progn
-    (global-flycheck-mode)
-    (use-package flycheck-pos-tip
-      :ensure
-      :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-    )
+  :config
+  (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
+  (global-flycheck-mode)
+  (use-package flycheck-pos-tip
+    :ensure
+    :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
   )
 )
 
 ;; go
 (use-package go-mode
   :ensure
-  :init
+  :config
   (use-package go-eldoc
     :ensure
     :config (go-eldoc-setup)
@@ -247,56 +243,47 @@
   :ensure
   :diminish guide-key-mode
   :config
-  (progn
-    (setq guide-key/guide-key-sequence '("C-c"
-                                         "C-x 4" ; window commands
-                                         "C-x 5" ; frame commands
-                                         )
-    )
-    (setq guide-key/recursive-key-sequence-flag t)
-    ;; (diminish 'guide-key-mode)
+  (setq guide-key/guide-key-sequence '("C-c"
+                                       "C-x 4" ; window commands
+                                       "C-x 5" ; frame commands
+                                       )
   )
-  :init (guide-key-mode)
+  (setq guide-key/recursive-key-sequence-flag t)
+  ;; (diminish 'guide-key-mode)
+  (guide-key-mode)
 )
 
 ;; haskell
 (use-package haskell-mode
   :ensure
   :config
-  (progn
-
-    (use-package ghc
+  (use-package ghc
+    :ensure
+    :commands ghc-init ghc-debug
+    :config
+    (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+    (use-package company-ghc
       :ensure
-      :commands ghc-init ghc-debug
-      :init
-      (progn
-        (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-        (use-package company-ghc
-          :ensure
-          :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
-          )
+      :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
       )
-    )
+  )
 
-    (use-package flycheck-haskell
-      :ensure
-      :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
-    )
+  (use-package flycheck-haskell
+    :ensure
+    :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
+  )
 
-    ;; structured-haskell-mode
-    (use-package shm
-      :ensure
-      :config
-      (progn
-        (set-face-background 'shm-current-face "#eee8d5")
-        (set-face-background 'shm-quarantine-face "lemonchiffon")
-      )
-      :init
-        (add-hook 'haskell-mode-hook 'structured-haskell-mode)
-    )
+  ;; structured-haskell-mode
+  (use-package shm
+    :ensure
+    :config
+    (set-face-background 'shm-current-face "#eee8d5")
+    (set-face-background 'shm-quarantine-face "lemonchiffon")
+    (add-hook 'haskell-mode-hook 'structured-haskell-mode)
+  )
 
-    (evil-set-initial-state 'haskell-interactive-mode 'emacs)
-))
+  (evil-set-initial-state 'haskell-interactive-mode 'emacs)
+)
 
 
 ;; ido
@@ -306,24 +293,24 @@
   (setq ido-everywhere t)
   (use-package ido-vertical-mode
     :ensure
-    :init (ido-vertical-mode)
+    :config (ido-vertical-mode)
   )
   (use-package ido-ubiquitous
     :ensure
-    :init (ido-ubiquitous-mode)
+    :config (ido-ubiquitous-mode)
   )
   (use-package flx-ido
     :ensure
     :config
     (setq ido-enable-flex-matching t)
     (setq ido-use-faces nil)
-    :init (flx-ido-mode 1))
-  :init (ido-mode)
+    :config (flx-ido-mode 1))
+  (ido-mode)
 )
 
 (use-package ignoramus
   :ensure
-  :init (ignoramus-setup))
+  :config (ignoramus-setup))
 
 (use-package imenu-anywhere
   :ensure
@@ -332,7 +319,7 @@
 
 (use-package hl-line
   :ensure
-  :init (global-hl-line-mode))
+  :config (global-hl-line-mode))
 
 ;; line numbers
 (use-package linum
@@ -341,7 +328,6 @@
   (use-package linum-relative
     :ensure
   )
-  :init
   (global-linum-mode)
 )
 
@@ -449,22 +435,20 @@
   :diminish whitespace-mode
   :ensure
   :config
-  (progn
-    (setq whitespace-style '(face
-                         indentation
-                         line
-                         trailing
-                         space-after-tab
-                         space-before-tab
-                         ))
-    (use-package whitespace-cleanup-mode
-      :diminish whitespace-cleanup-mode
-      :ensure
-      :init
-      (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
-        (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
-           (add-hook hook mode)))
-    )
+  (setq whitespace-style '(face
+                       indentation
+                       line
+                       trailing
+                       space-after-tab
+                       space-before-tab
+                       ))
+  (use-package whitespace-cleanup-mode
+    :diminish whitespace-cleanup-mode
+    :ensure
+    :config
+    (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+      (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
+         (add-hook hook mode)))
   )
 )
 

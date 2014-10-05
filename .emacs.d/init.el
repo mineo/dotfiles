@@ -358,7 +358,7 @@
   (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build"))
     (add-to-list 'projectile-globally-ignored-directories dir)
   )
-  :init (projectile-global-mode)
+  (projectile-global-mode)
 )
 
 (use-package python

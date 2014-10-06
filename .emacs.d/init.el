@@ -277,7 +277,7 @@
   (use-package shm
     :ensure
     :config
-    (set-face-background 'shm-current-face "#eee8d5")
+    (set-face-background 'shm-current-face "#585b6e")
     (set-face-background 'shm-quarantine-face "lemonchiffon")
     (add-hook 'haskell-mode-hook 'structured-haskell-mode)
   )

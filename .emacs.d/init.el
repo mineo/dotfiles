@@ -282,6 +282,10 @@
     (add-hook 'haskell-mode-hook 'structured-haskell-mode)
   )
 
+  (setq haskell-tags-on-save t
+        haskell-process-type 'cabal-repl
+        haskell-process-show-debug-tips nil
+        haskell-auto-import-loaded-modules)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
 )
 
@@ -366,7 +370,13 @@
     (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
     (evil-leader/set-key-for-mode 'python-mode
       "v" 'venv-workon
-      "d" 'anaconda-mode-view-doc)
+      "d" 'anaconda-mode-view-doc
+    )
+    (evil-leader/set-key-for-mode 'haskell-mode
+      "cb" 'haskell-process-cabal-build
+      "cc" 'haskell-process-cabal
+      "cs" 'haskell-interactive-switch
+    )
   )
   (use-package flycheck-pyflakes
     :ensure

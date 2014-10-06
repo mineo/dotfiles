@@ -261,11 +261,12 @@
     :ensure
     :commands ghc-init ghc-debug
     :config
-    (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
     (use-package company-ghc
       :ensure
       :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
-      )
+    )
+    :init
+    (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
   )
 
   (use-package flycheck-haskell

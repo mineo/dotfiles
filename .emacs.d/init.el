@@ -279,7 +279,7 @@
     :ensure
     :config
     (set-face-background 'shm-current-face "#585b6e")
-    (set-face-background 'shm-quarantine-face "lemonchiffon")
+    (set-face-background 'shm-quarantine-face "#171717")
     (add-hook 'haskell-mode-hook 'structured-haskell-mode)
   )
 

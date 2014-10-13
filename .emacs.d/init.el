@@ -318,6 +318,17 @@
   (ido-mode)
 )
 
+(use-package highlight-symbol
+  :ensure
+  :diminish highlight-symbol-mode
+  :config
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+  (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
+  (setq highlight-symbol-on-navigation-p t
+        highlight-symbol-idle-delay 0.4
+  )
+)
+
 (use-package ignoramus
   :ensure
   :config (ignoramus-setup))
@@ -404,11 +415,6 @@
   :ensure
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-)
-
-(use-package smartscan
-  :ensure
-  :config (add-hook 'prog-mode-hook 'smartscan-mode)
 )
 
 (use-package smart-mode-line

@@ -288,6 +288,11 @@
         haskell-process-show-debug-tips nil
         haskell-auto-import-loaded-modules)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
+  (evil-leader/set-key-for-mode 'haskell-mode
+    "cb" 'haskell-process-cabal-build
+    "cc" 'haskell-process-cabal
+    "cs" 'haskell-interactive-switch
+  )
 )
 
 
@@ -372,11 +377,6 @@
     (evil-leader/set-key-for-mode 'python-mode
       "v" 'venv-workon
       "d" 'anaconda-mode-view-doc
-    )
-    (evil-leader/set-key-for-mode 'haskell-mode
-      "cb" 'haskell-process-cabal-build
-      "cc" 'haskell-process-cabal
-      "cs" 'haskell-interactive-switch
     )
   )
   (use-package flycheck-pyflakes

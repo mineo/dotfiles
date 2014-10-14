@@ -141,6 +141,7 @@
 (use-package evil
   :commands evil-set-initial-state
   :ensure
+  :diminish undo-tree-mode
   :config
   (use-package ack-and-a-half
     :ensure)

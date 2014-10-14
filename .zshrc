@@ -61,6 +61,7 @@ preexec() {
 
 PROMPT='↪ '
 RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
+ZLE_RPROMPT_INDENT=0
 
 ###########
 # aliases #

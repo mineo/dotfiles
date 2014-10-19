@@ -1,2 +1,3 @@
 [flake8]
 ignore = E501,W602
+jobs=1

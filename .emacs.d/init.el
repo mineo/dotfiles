@@ -26,6 +26,8 @@
 (set-terminal-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; Don't use tabs for indentation
 (setq-default indent-tabs-mode nil)
 

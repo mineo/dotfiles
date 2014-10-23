@@ -360,7 +360,11 @@
   :diminish magit-auto-revert-mode
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
-;; projectile
+
+(use-package pip-requirements
+  :ensure
+)
+
 (use-package projectile
   :ensure
   :diminish projectile-mode

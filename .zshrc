@@ -70,7 +70,7 @@ alias -g G='|grep'
 alias -g J='|jq'
 alias -g L='|less -R'
 
-alias cps='rsync -azh --info=progress2'
+alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
 alias hme='htop -u $(whoami)'

@@ -69,6 +69,7 @@ ZLE_RPROMPT_INDENT=0
 alias -g G='|grep'
 alias -g J='|jq'
 alias -g L='|less -R'
+alias -g P='|peco'
 
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'

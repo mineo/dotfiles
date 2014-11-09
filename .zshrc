@@ -102,7 +102,6 @@ alias fu='sudo pacman -Rns'
 alias pkg='pacman -Qi'
 alias sp='sudo aura'
 alias pm='pacman'
-alias p='packer'
 alias sc='schedtool -n 19 -B -e'
 alias ssc='sudo systemctl'
 

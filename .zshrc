@@ -94,7 +94,7 @@ else
     alias ls='ls -lh --color=auto'
 fi
 
-[[ -s  /etc/profile.d/autojump.zsh ]] && . /etc/profile.d/autojump.zsh
+[[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
 alias grep='grep --color=auto'
 

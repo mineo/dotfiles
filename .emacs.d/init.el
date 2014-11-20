@@ -361,6 +361,13 @@
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
 
+(use-package paradox
+  :ensure
+  :config
+  (evil-set-initial-state 'paradox-menu-mode 'emacs)
+  (setq paradox-github-token t)
+)
+
 (use-package pip-requirements
   :ensure
 )

@@ -239,6 +239,9 @@
     :ensure
     :config (add-to-list 'company-backends 'company-go)
   )
+  (evil-leader/set-key-for-mode 'go-mode
+    "d" 'godoc-at-point
+  )
 )
 
 ;; guide-key

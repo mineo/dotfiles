@@ -250,8 +250,7 @@
   :diminish guide-key-mode
   :config
   (setq guide-key/guide-key-sequence '("C-c"
-                                       "C-x 4" ; window commands
-                                       "C-x 5" ; frame commands
+                                       "C-x"
                                        )
   )
   (setq guide-key/recursive-key-sequence-flag t)

@@ -381,6 +381,14 @@
   (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build"))
     (add-to-list 'projectile-globally-ignored-directories dir)
   )
+  (use-package perspective
+    :ensure
+    :config
+    (persp-mode)
+    (use-package persp-projectile
+      :ensure
+    )
+  )
   (projectile-global-mode)
 )
 

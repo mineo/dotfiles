@@ -291,7 +291,8 @@
   (setq haskell-tags-on-save t
         haskell-process-type 'cabal-repl
         haskell-process-show-debug-tips nil
-        haskell-auto-import-loaded-modules)
+        haskell-auto-import-loaded-modules t
+        haskell-process-suggest-remove-import-lines t)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
   (evil-leader/set-key-for-mode 'haskell-mode
     "cb" 'haskell-process-cabal-build

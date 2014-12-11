@@ -3,3 +3,9 @@ def_key "4"
 
 def_key "6"
   show_help
+
+def_key "0"
+  volume_up
+
+def_key "9"
+  volume_down

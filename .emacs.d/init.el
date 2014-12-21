@@ -395,7 +395,6 @@
 (use-package python
   :ensure
   :config
-  (add-hook 'python-mode-hook 'electric-indent-mode)
   (use-package anaconda-mode
     :ensure
     :diminish anaconda-mode

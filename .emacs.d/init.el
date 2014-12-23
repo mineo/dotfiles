@@ -320,7 +320,7 @@
     :config
     (setq ido-enable-flex-matching t)
     (setq ido-use-faces nil)
-    :config (flx-ido-mode 1))
+    (flx-ido-mode))
   (ido-mode)
 )
 

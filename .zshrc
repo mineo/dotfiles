@@ -105,6 +105,7 @@ alias pkg='pacman -Qi'
 alias sp='sudo aura'
 alias pm='pacman'
 alias sc='schedtool -n 19 -B -e'
+alias scs='systemctl status'
 alias ssc='sudo systemctl'
 
 alias rs='source ~/.zshrc'

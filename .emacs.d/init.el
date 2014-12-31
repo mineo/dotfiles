@@ -472,6 +472,11 @@
   :config (volatile-highlights-mode)
 )
 
+(use-package wgrep-ack
+  :ensure
+  :defer
+)
+
 (use-package whitespace
   :diminish whitespace-mode
   :ensure

@@ -19,3 +19,4 @@ media_library_primary_tag = artist
 discard_colors_if_item_is_selected = "yes"
 locked_screen_width_part = 75
 ask_for_locked_screen_width_part = no
+cyclic_scrolling = yes

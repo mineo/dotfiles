@@ -508,7 +508,7 @@
 (use-package yasnippet
   :ensure
   :diminish yas-minor-mode
-  :init (yas-global-mode)
+  :config (yas-global-mode)
 )
 (provide 'init)
 ;;; init.el ends here

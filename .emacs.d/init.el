@@ -386,7 +386,7 @@
   :ensure
   :diminish projectile-mode
   :config
-  (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build"))
+  (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs"))
     (add-to-list 'projectile-globally-ignored-directories dir)
   )
   (use-package perspective

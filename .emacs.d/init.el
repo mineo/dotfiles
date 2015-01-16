@@ -157,6 +157,7 @@
   :ensure
   :diminish undo-tree-mode
   :config
+  (evil-set-initial-state 'woman-mode 'emacs)
   (use-package ack-and-a-half
     :ensure)
   (use-package ace-jump-mode

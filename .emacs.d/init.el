@@ -150,6 +150,10 @@
   :init (global-company-mode)
 )
 
+(use-package copyright
+  :defer t
+  :init (add-hook 'find-file-hook #'copyright-update))
+
 ;; eldoc
 (use-package eldoc
   :ensure

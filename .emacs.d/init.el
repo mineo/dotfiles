@@ -10,10 +10,11 @@
 (setq backup-directory-alist `((".*" . ,(locate-user-emacs-file ".backup")))
       auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
-;; Disabled bell, startup screen, scratch message
-(setq ring-bell-function 'ignore
-      inhibit-startup-screen t
-      initial-scratch-message nil)
+(setq ring-bell-function 'ignore ;; disable bell, ...
+      inhibit-startup-screen t ;; ... startup screen and ...
+      initial-scratch-message nil ;; the scratch message
+      x-select-enable-primary t ;; and c&p to primary
+      )
 (blink-cursor-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)

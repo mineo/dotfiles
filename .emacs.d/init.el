@@ -196,7 +196,6 @@
 )
 
 ;; fci
-;; (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (use-package fill-column-indicator
   :ensure
   :config
@@ -217,7 +216,10 @@
   (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
   (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
   (dolist (hook '(prog-mode-hook text-mode-hook))
-    (add-hook hook 'fci-mode)))
+    (progn
+      (add-hook hook 'fci-mode)
+      (add-hook hook 'auto-fill-mode)
+      )))
 
 ;; flycheck
 (use-package flycheck

@@ -427,6 +427,7 @@
       :ensure
     )
   )
+  (setq projectile-enable-idle-timer t)
   (projectile-global-mode)
 )
 

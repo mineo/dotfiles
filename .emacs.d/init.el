@@ -113,6 +113,17 @@
 
 (require 'use-package)
 
+(use-package ag
+  :ensure
+  :config
+  (use-package wgrep-ag
+    :ensure
+    :init
+    (autoload 'wgrep-ag-setup "wgrep-ag")
+    (add-hook 'ag-mode-hook 'wgrep-ag-setup)
+    (add-hook 'ag-mode-hook 'evil-emacs-state))
+  )
+
 (use-package tex-site
   :ensure auctex
   :config
@@ -154,8 +165,6 @@
   :diminish undo-tree-mode
   :config
   (evil-set-initial-state 'woman-mode 'emacs)
-  (use-package ack-and-a-half
-    :ensure)
   (use-package ace-jump-mode
     :ensure)
   (use-package evil-leader
@@ -499,11 +508,6 @@
   :ensure
   :diminish volatile-highlights-mode
   :config (volatile-highlights-mode)
-)
-
-(use-package wgrep-ack
-  :ensure
-  :defer
 )
 
 (use-package whitespace

@@ -176,10 +176,11 @@
                            "a" 'projectile-ack
                            "b" 'ido-switch-buffer
                            "e" 'flycheck-list-errors
-                           "f" 'projectile-find-file
                            "k" 'kill-buffer
+                           "l e" 'flycheck-list-errors
                            "m" 'magit-status
                            "o" 'ido-find-file
+                           "p" 'projectile-commander
                            "r" 'recentf-ido-find-file
                            "q" 'save-buffers-kill-emacs
                            "s" 'toggle-dark-light-theme

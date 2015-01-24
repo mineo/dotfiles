@@ -453,7 +453,8 @@
     (evil-leader/set-key-for-mode 'python-mode
       "v" 'venv-workon
       "d" 'anaconda-mode-view-doc
-    )
+      )
+    (evil-set-initial-state 'anaconda-nav-mode 'emacs)
   )
   (use-package flycheck-pyflakes
     :ensure

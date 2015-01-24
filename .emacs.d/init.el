@@ -401,6 +401,9 @@
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
 
+(use-package midnight
+  :config (setq midnight-mode t))
+
 (use-package paradox
   :ensure
   :config

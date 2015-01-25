@@ -235,6 +235,7 @@
 (use-package flycheck
   :ensure
   :config
+  (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (global-flycheck-mode)
   (use-package flycheck-pos-tip

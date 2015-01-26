@@ -208,6 +208,7 @@
 ;; fci
 (use-package fill-column-indicator
   :ensure
+  :diminish auto-fill-function
   :config
   (setq-default fill-column 80)
   (defvar-local company-fci-mode-on-p nil)

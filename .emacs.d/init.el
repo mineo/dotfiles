@@ -42,7 +42,8 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
-(set-frame-font "Consolas-13")
+(add-to-list 'default-frame-alist
+             '(font . "Consolas-14"))
 (setq-default line-spacing 2)
 
 (require 'package)

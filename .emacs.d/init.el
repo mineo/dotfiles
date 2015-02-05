@@ -165,7 +165,7 @@
   :ensure
   :diminish undo-tree-mode
   :config
-  (evil-set-initial-state 'woman-mode 'emacs)
+  (evil-set-initial-state 'man-mode 'emacs)
   (use-package ace-jump-mode
     :ensure)
   (use-package evil-leader

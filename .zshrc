@@ -170,3 +170,6 @@ function mpd_song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
     cd ${HOME}/Musik/${song_dir}
 }
+
+# tramp in emacs
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''

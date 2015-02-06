@@ -312,6 +312,7 @@
         haskell-process-show-debug-tips nil
         haskell-auto-import-loaded-modules t
         haskell-process-suggest-remove-import-lines t)
+  (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
   (evil-leader/set-key-for-mode 'haskell-mode
     "cb" 'haskell-process-cabal-build

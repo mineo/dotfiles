@@ -147,6 +147,10 @@
   :config
   (setq company-show-numbers t)
   :diminish company-mode
+  (use-package company-quickhelp
+    :ensure
+    :init (add-hook 'company-mode-hook #'company-quickhelp-mode)
+    )
   :init (global-company-mode)
 )
 

@@ -158,6 +158,9 @@
   :defer t
   :init (add-hook 'find-file-hook #'copyright-update))
 
+(use-package editorconfig
+  :ensure)
+
 ;; eldoc
 (use-package eldoc
   :ensure

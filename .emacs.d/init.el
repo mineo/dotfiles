@@ -97,16 +97,9 @@
       (disable-theme theme))
     ;; (load-theme (if is-light default-dark-color-theme default-light-color-theme))
     (if is-light
-        (progn
           (load-theme default-dark-color-theme 'no-confirm)
-          (set-face-background 'shm-current-face "#424242")
-          )
-      (progn
         (load-theme default-light-color-theme 'no-confirm)
-        (set-face-background 'shm-current-face "#eed481")
-        (set-face-background 'shm-quarantine-face "lemonchiffon")
         )
-      )
     )
   )
 
@@ -309,21 +302,13 @@
     :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
   )
 
-  ;; structured-haskell-mode
-  (use-package shm
-    :ensure
-    :config
-    (set-face-background 'shm-current-face "#585b6e")
-    (set-face-background 'shm-quarantine-face "#171717")
-    (add-hook 'haskell-mode-hook 'structured-haskell-mode)
-  )
-
   (setq haskell-tags-on-save t
         haskell-process-type 'cabal-repl
         haskell-process-show-debug-tips nil
         haskell-auto-import-loaded-modules t
         haskell-process-suggest-remove-import-lines t)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
+  (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
   (evil-leader/set-key-for-mode 'haskell-mode
     "cb" 'haskell-process-cabal-build

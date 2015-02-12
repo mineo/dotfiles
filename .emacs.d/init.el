@@ -133,6 +133,7 @@
         TeX-auto-save t) ; parse on save
 )
 
+(auto-insert-mode)
 ;; company
 (use-package company
   :ensure
@@ -510,6 +511,11 @@
 (use-package switch-window
   :ensure
   :bind ("C-x o" . switch-window))
+
+(use-package templates
+  :load-path "lisp/"
+  :config (mineo-fill-alist))
+
 
 (use-package volatile-highlights
   :ensure

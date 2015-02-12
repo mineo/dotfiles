@@ -29,11 +29,10 @@
   (nth 1 (split-string filename ":")))
 
 (defun mineo-fill-alist ()
-  "Fill an alist."
-(let ((template-alist ()))
-  (dolist (filename (mineo-sorted-files-in-dir) template-alist)
+  "Fill auto-insert-alist."
+  (dolist (filename (mineo-sorted-files-in-dir) nil)
     (let ((file-regex (mineo-template-filename-split-regex filename)))
       (add-to-list 'auto-insert-alist `(,file-regex . [,filename mineo-expand-yas-buffer]) t)
-      ))))
+      )))
 (provide 'templates)
 ;;; templates.el ends here

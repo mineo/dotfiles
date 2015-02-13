@@ -32,7 +32,7 @@
   "Fill auto-insert-alist."
   (dolist (filename (mineo-sorted-files-in-dir) nil)
     (let ((file-regex (mineo-template-filename-split-regex filename)))
-      (add-to-list 'auto-insert-alist `(,file-regex . [,filename mineo-expand-yas-buffer]) t)
+      (push `(,file-regex . [,filename mineo-expand-yas-buffer]) auto-insert-alist)
       )))
 (provide 'templates)
 ;;; templates.el ends here

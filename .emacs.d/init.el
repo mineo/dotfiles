@@ -433,9 +433,6 @@
   )
   (setq projectile-enable-idle-timer t)
   (projectile-global-mode)
-  ; Workaround for https://github.com/bbatsov/projectile/issues/439
-  (defun projectile--tags (completion-table)
-    (identity completion-table))
 )
 
 (use-package python

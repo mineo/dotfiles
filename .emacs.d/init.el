@@ -457,10 +457,6 @@
       )
     (evil-set-initial-state 'anaconda-nav-mode 'emacs)
   )
-  (use-package flycheck-pyflakes
-    :ensure
-    :config (setq-default flycheck-python-flake8-executable "/usr/bin/flake8-python2")
-    )
   (add-hook 'python-mode-hook 'outline-minor-mode)
 )
 

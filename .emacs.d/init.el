@@ -170,8 +170,8 @@
   :ensure
   :diminish undo-tree-mode
   :config
-  (evil-set-initial-state 'man-mode 'emacs)
   (evil-set-initial-state 'rst-toc-mode 'emacs)
+  (evil-set-initial-state 'Man-mode 'emacs)
   (use-package ace-jump-mode
     :ensure)
   (use-package evil-leader

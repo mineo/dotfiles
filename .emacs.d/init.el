@@ -423,19 +423,31 @@
   :config
   (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs"))
     (add-to-list 'projectile-globally-ignored-directories dir)
-  )
+    )
   (use-package perspective
     :ensure
     :config
     (persp-mode)
     (use-package persp-projectile
       :ensure
+      )
     )
-  )
-  (setq projectile-enable-idle-timer t)
+  (use-package projectile-addons
+    :load-path "lisp/"
+    :config
+    ;; set projectiles idle timer hook to a function that only regenerates tags if
+    ;; the project root is not my home directory
+    (setq projectile-idle-timer-hook 'mineo-projectile-regenerate-tags)
+    ;; setting projectile-enable-idle-timer outside of customize doesn't
+    ;; initialize the timer, so initialize it manually
+    (mineo-initialize-projectile-idle-timer)
+    )
   (projectile-global-mode)
-  ; Workaround for https://github.com/bbatsov/projectile/issues/439#issuecomment-74434568
-  ; This is a modified version of http://emacswiki.org/emacs/InteractivelyDoThings#toc11
+
+  ;; Workaround for
+  ;; https://github.com/bbatsov/projectile/issues/439#issuecomment-74434568
+  ;; This is a modified version of
+  ;; http://emacswiki.org/emacs/InteractivelyDoThings#toc11
   (defun projectile-find-tag ()
     "Find a tag in the project using ido"
     (interactive)
@@ -446,7 +458,7 @@
                   (push (prin1-to-string x t) tag-names))
                 tags-completion-table)
       (find-tag (ido-completing-read "Tag: " (sort tag-names 'string<)))))
-)
+  )
 
 (use-package python
   :ensure

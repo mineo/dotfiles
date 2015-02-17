@@ -115,7 +115,8 @@
     :init
     (autoload 'wgrep-ag-setup "wgrep-ag")
     (add-hook 'ag-mode-hook 'wgrep-ag-setup)
-    (add-hook 'ag-mode-hook 'evil-emacs-state))
+    (add-hook 'ag-mode-hook 'evil-normal-state)
+    )
   )
 
 (use-package tex-site

@@ -1,0 +1,5 @@
+build
+TAGS
+.tox
+.ropeproject
+po

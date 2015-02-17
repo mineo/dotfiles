@@ -409,6 +409,12 @@
 (use-package midnight
   :config (setq midnight-mode t))
 
+(use-package paredit
+  :diminish paredit-mode
+  :ensure
+  :config (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+  )
+
 (use-package paradox
   :ensure
   :config

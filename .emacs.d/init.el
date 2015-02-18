@@ -175,7 +175,12 @@
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
   (use-package ace-jump-mode
-    :ensure)
+    :ensure
+    :config
+    (setq ace-jump-mode-move-keys
+          (nconc (loop for i from ?a to ?z collect i)
+                 (loop for i from ?0 to ?9 collect i)))
+    )
   (use-package evil-leader
     :ensure
     :config

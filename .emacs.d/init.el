@@ -95,11 +95,16 @@
   (let ((is-light (find default-light-color-theme custom-enabled-themes)))
     (dolist (theme custom-enabled-themes)
       (disable-theme theme))
-    ;; (load-theme (if is-light default-dark-color-theme default-light-color-theme))
     (if is-light
+        (progn
           (load-theme default-dark-color-theme 'no-confirm)
+          (fci-mode)
+          (fci-mode))
+      (progn
         (load-theme default-light-color-theme 'no-confirm)
-        )
+        (fci-mode)
+        (fci-mode))
+      )
     )
   )
 

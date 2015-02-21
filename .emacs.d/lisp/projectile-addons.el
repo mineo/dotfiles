@@ -51,9 +51,15 @@
   "Regenerate a projects TAGS file if the project root is not the users home directory."
   (interactive)
   (if (not
-       (string-equal
-        (projectile-project-root)
-        (expand-file-name "~/")))
+       (or
+        (string-equal
+         (projectile-project-root)
+         (expand-file-name "~/"))
+        ;; ctags generates empty TAGS files for haskell projects
+        ;; This also ignores ~ if there's a .cabal directory in it.
+        (eq
+         (projectile-project-type)
+         'haskell-cabal)))
       (projectile-regenerate-tags)))
 
 

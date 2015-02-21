@@ -98,6 +98,8 @@
     (if is-light
         (progn
           (load-theme default-dark-color-theme 'no-confirm)
+          (set-face-foreground 'ace-jump-face-foreground "#fa9a4b")
+          (set-face-background 'ace-jump-face-foreground "#000000")
           (fci-mode)
           (fci-mode))
       (progn

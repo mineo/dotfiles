@@ -102,7 +102,7 @@ alias grep='grep --color=auto'
 
 alias fu='sudo pacman -Rns'
 alias pkg='pacman -Qi'
-alias sp='sudo aura'
+alias sp='sudo pacman'
 alias pm='pacman'
 alias sc='schedtool -n 19 -B -e'
 alias scs='systemctl status'

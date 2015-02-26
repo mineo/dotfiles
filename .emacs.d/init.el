@@ -467,6 +467,7 @@
     ;; initialize the timer, so initialize it manually
     (mineo-initialize-projectile-idle-timer)
     )
+  (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
   (projectile-global-mode)
 
   ;; Workaround for

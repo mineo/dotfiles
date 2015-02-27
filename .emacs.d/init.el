@@ -41,8 +41,7 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
-                         ("meine" . "/home/wieland/dev/yatemplate/archive")))
+                         ("melpa" . "http://melpa.org/packages/")))
 
 (add-to-list 'default-frame-alist
              '(font . "Consolas-14"))

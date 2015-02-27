@@ -14,6 +14,7 @@
       inhibit-startup-screen t ;; ... startup screen and ...
       initial-scratch-message nil ;; the scratch message
       x-select-enable-primary t ;; and c&p to primary
+      tags-revert-without-query t
       )
 (blink-cursor-mode -1)
 (menu-bar-mode -1)
@@ -40,7 +41,8 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("meine" . "/home/wieland/dev/yatemplate/archive")))
 
 (add-to-list 'default-frame-alist
              '(font . "Consolas-14"))
@@ -57,6 +59,7 @@
     solarized-theme
     base16-theme
 ))
+
 
 ;; https://github.com/lunaryorn/.emacs.d/blob/7acd8c6538c4f40a3ee530dfc808eaacaf167630/init.el#L166
 (defun ensure-packages ()
@@ -113,6 +116,12 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (require 'use-package)
+
+(use-package yatemplate
+  :ensure t
+  :config
+  (yatemplate-fill-alist))
+
 
 (use-package ag
   :ensure
@@ -559,9 +568,9 @@
   :ensure
   :bind ("C-x o" . switch-window))
 
-(use-package templates
-  :load-path "lisp/"
-  :config (mineo-fill-alist))
+;; (use-package templates
+;;   :load-path "lisp/"
+;;   :config (mineo-fill-alist))
 
 
 (use-package volatile-highlights

@@ -89,6 +89,7 @@ alias sucp='sudo cp'
 alias sv='sudo vim'
 alias um='udisks --unmount'
 alias v='vim'
+alias wo='workon'
 
 if type ls++ > /dev/null; then
     alias ls='ls++'

@@ -159,6 +159,8 @@
 
 (use-package copyright
   :defer t
+  :config
+  (setq copyright-names-regexp (user-full-name))
   :init (add-hook 'find-file-hook #'copyright-update))
 
 (use-package editorconfig

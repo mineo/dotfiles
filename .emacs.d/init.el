@@ -161,11 +161,6 @@
   :defer t
   :init (add-hook 'find-file-hook #'copyright-update))
 
-(use-package diminish
-  :ensure t
-  :config
-  (diminish 'outline-minor-mode))
-
 (use-package editorconfig
   :ensure)
 

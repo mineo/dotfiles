@@ -228,6 +228,9 @@
     :ensure
     :config (global-evil-surround-mode)
   )
+  (use-package evil-visualstar
+    :ensure
+    :config (global-evil-visualstar-mode))
   (use-package expand-region
     :ensure
     :commands er/expand-region

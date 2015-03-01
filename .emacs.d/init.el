@@ -107,10 +107,7 @@
       (progn
         (load-theme default-light-color-theme 'no-confirm)
         (fci-mode)
-        (fci-mode))
-      )
-    )
-  )
+        (fci-mode)))))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -431,6 +428,9 @@
   :diminish magit-auto-revert-mode
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
+
+(use-package markdown-mode
+  :ensure)
 
 (use-package midnight
   :config (setq midnight-mode t))

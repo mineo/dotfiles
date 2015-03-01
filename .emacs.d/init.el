@@ -420,8 +420,7 @@
   (use-package linum-relative
     :ensure
   )
-  (global-linum-mode)
-)
+  (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package magit
   :ensure

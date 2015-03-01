@@ -44,7 +44,7 @@
                          ("melpa" . "http://melpa.org/packages/")))
 
 (add-to-list 'default-frame-alist
-             '(font . "Consolas-14"))
+             '(font . "Consolas-13"))
 (setq-default line-spacing 2)
 
 (require 'package)

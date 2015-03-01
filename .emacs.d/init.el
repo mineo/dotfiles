@@ -607,5 +607,9 @@
   :diminish yas-minor-mode
   :config (yas-global-mode)
 )
+
+(use-package yatemplate
+  :ensure
+  :config (yatemplate-fill-alist))
 (provide 'init)
 ;;; init.el ends here

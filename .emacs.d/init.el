@@ -542,6 +542,9 @@
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 )
 
+;; rst
+(setq rst-pdf-program "mimeopen")
+
 (use-package smart-mode-line
   :ensure
   :diminish

@@ -47,6 +47,9 @@
              '(font . "Consolas-13"))
 (setq-default line-spacing 2)
 
+;; Don't show minor modes in the modeline
+(setq rm-blacklist ".*")
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)
@@ -154,7 +157,6 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
-  :diminish company-mode
   (use-package company-quickhelp
     :ensure
     :init (add-hook 'company-mode-hook #'company-quickhelp-mode)
@@ -174,7 +176,6 @@
 ;; eldoc
 (use-package eldoc
   :ensure
-  :diminish eldoc-mode
   :config (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
 
 ;; electric-pair-mode
@@ -184,7 +185,6 @@
 (use-package evil
   :commands evil-set-initial-state
   :ensure
-  :diminish undo-tree-mode
   :config
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
@@ -240,7 +240,6 @@
 ;; fci
 (use-package fill-column-indicator
   :ensure
-  :diminish auto-fill-function
   :config
   (setq-default fill-column 80)
   (defvar-local company-fci-mode-on-p nil)
@@ -298,14 +297,12 @@
 ;; guide-key
 (use-package guide-key
   :ensure
-  :diminish guide-key-mode
   :config
   (setq guide-key/guide-key-sequence '("C-c"
                                        "C-x"
                                        )
   )
   (setq guide-key/recursive-key-sequence-flag t)
-  ;; (diminish 'guide-key-mode)
   (guide-key-mode)
 )
 
@@ -370,7 +367,6 @@
 
 (use-package highlight-symbol
   :ensure
-  :diminish highlight-symbol-mode
   :config
   (add-hook 'prog-mode-hook 'highlight-symbol-mode)
   (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
@@ -424,7 +420,6 @@
 
 (use-package magit
   :ensure
-  :diminish magit-auto-revert-mode
   :config (evil-set-initial-state 'magit-mode 'emacs)
 )
 
@@ -435,7 +430,6 @@
   :config (setq midnight-mode t))
 
 (use-package paredit
-  :diminish paredit-mode
   :ensure
   :config (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
   )
@@ -453,7 +447,6 @@
 
 (use-package projectile
   :ensure
-  :diminish projectile-mode
   :config
   (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs"))
     (add-to-list 'projectile-globally-ignored-directories dir)
@@ -501,7 +494,6 @@
   :config
   (use-package anaconda-mode
     :ensure
-    :diminish anaconda-mode
     :config (add-hook 'python-mode-hook 'anaconda-mode)
   )
   (use-package company-anaconda
@@ -547,7 +539,6 @@
 
 (use-package smart-mode-line
   :ensure
-  :diminish
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
@@ -579,12 +570,10 @@
 
 (use-package volatile-highlights
   :ensure
-  :diminish volatile-highlights-mode
   :config (volatile-highlights-mode)
 )
 
 (use-package whitespace
-  :diminish whitespace-mode
   :ensure
   :config
   (setq whitespace-style '(face
@@ -595,7 +584,6 @@
                        space-before-tab
                        ))
   (use-package whitespace-cleanup-mode
-    :diminish whitespace-cleanup-mode
     :ensure
     :config
     (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
@@ -606,7 +594,6 @@
 
 (use-package yasnippet
   :ensure
-  :diminish yas-minor-mode
   :config (yas-global-mode)
 )
 

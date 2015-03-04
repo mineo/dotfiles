@@ -442,6 +442,7 @@
     )
   (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")
   (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
+  (def-projectile-commander-method ?p "Switch the project." (call-interactively 'projectile-switch-project))
   (projectile-global-mode)
 
   ;; Workaround for

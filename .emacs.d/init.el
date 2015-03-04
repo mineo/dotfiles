@@ -137,9 +137,7 @@
     (autoload 'wgrep-ag-setup "wgrep-ag")
     (add-hook 'ag-mode-hook 'wgrep-ag-setup)
     (add-hook 'ag-mode-hook 'evil-normal-state)
-    (setq wgrep-auto-save-buffer t)
-    )
-  )
+    (setq wgrep-auto-save-buffer t)))
 
 (use-package tex-site
   :ensure auctex
@@ -154,8 +152,7 @@
 
 (use-package auctex-latexmk
   :ensure
-  :config (auctex-latexmk-setup)
-)
+  :config (auctex-latexmk-setup))
 
 (auto-insert-mode)
 ;; company
@@ -164,13 +161,11 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
-  :init (global-company-mode)
-)
+  :init (global-company-mode))
 
 (use-package company-quickhelp
   :ensure
-  :init (add-hook 'company-mode-hook #'company-quickhelp-mode)
-  )
+  :init (add-hook 'company-mode-hook #'company-quickhelp-mode))
 
 (use-package copyright
   :defer t
@@ -198,8 +193,7 @@
   (evil-set-initial-state 'Man-mode 'emacs)
   (define-key evil-normal-state-map (kbd ";") 'smex)
   (define-key evil-visual-state-map (kbd ";") 'smex)
-  (evil-mode)
-)
+  (evil-mode))
 
 (use-package ace-jump-mode
   :ensure
@@ -207,8 +201,7 @@
   (setq ace-jump-mode-move-keys
         (nconc (loop for i from ?a to ?z collect i)
                (loop for i from ?0 to ?9 collect i)))
-  (setq ace-jump-word-mode-use-query-char nil)
-  )
+  (setq ace-jump-word-mode-use-query-char nil))
 
 (use-package evil-leader
   :ensure
@@ -229,18 +222,15 @@
                          "s" 'toggle-dark-light-theme
                          "t" 'imenu-anywhere
                          "w" 'evil-window-vsplit)
-   (global-evil-leader-mode)
-)
+   (global-evil-leader-mode))
 
 (use-package evil-nerd-commenter
   :ensure
-  :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines)
-)
+  :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines))
 
 (use-package evil-surround
   :ensure
-  :config (global-evil-surround-mode)
-)
+  :config (global-evil-surround-mode))
 
 (use-package evil-visualstar
   :ensure
@@ -284,32 +274,26 @@
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (setq flycheck-flake8rc "setup.cfg")
-  (global-flycheck-mode)
-)
+  (global-flycheck-mode))
 
-  (use-package flycheck-pos-tip
-    :ensure
-    :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-  )
+(use-package flycheck-pos-tip
+  :ensure
+  :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 ;; go
 (use-package go-mode
   :ensure
   :config
   (evil-leader/set-key-for-mode 'go-mode
-    "d" 'godoc-at-point
-  )
-)
+    "d" 'godoc-at-point))
 
 (use-package go-eldoc
   :ensure
-  :config (go-eldoc-setup)
-)
+  :config (go-eldoc-setup))
 
 (use-package company-go
   :ensure
-  :config (add-to-list 'company-backends 'company-go)
-)
+  :config (add-to-list 'company-backends 'company-go))
 
 ;; guide-key
 (use-package guide-key
@@ -320,8 +304,7 @@
                                        )
   )
   (setq guide-key/recursive-key-sequence-flag t)
-  (guide-key-mode)
-)
+  (guide-key-mode))
 
 ;; haskell
 (use-package haskell-mode
@@ -338,9 +321,7 @@
   (evil-leader/set-key-for-mode 'haskell-mode
     "cb" 'haskell-process-cabal-build
     "cc" 'haskell-process-cabal
-    "cs" 'haskell-interactive-switch
-  )
-)
+    "cs" 'haskell-interactive-switch))
 
 (use-package ghc
   :ensure
@@ -351,13 +332,11 @@
     :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
   )
   :init
-  (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-)
+  (add-hook 'haskell-mode-hook (lambda () (ghc-init))))
 
 (use-package flycheck-haskell
   :ensure
-  :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
-)
+  :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 
 
@@ -366,18 +345,15 @@
   :ensure
   :config
   (setq ido-everywhere t)
-  (ido-mode)
-)
+  (ido-mode))
 
 (use-package ido-vertical-mode
   :ensure
-  :config (ido-vertical-mode)
-)
+  :config (ido-vertical-mode))
 
 (use-package ido-ubiquitous
   :ensure
-  :config (ido-ubiquitous-mode)
-)
+  :config (ido-ubiquitous-mode))
 
 (use-package flx-ido
   :ensure
@@ -392,9 +368,7 @@
   (add-hook 'prog-mode-hook 'highlight-symbol-mode)
   (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
   (setq highlight-symbol-on-navigation-p t
-        highlight-symbol-idle-delay 0.4
-  )
-)
+        highlight-symbol-idle-delay 0.4))
 
 (use-package ibuffer-vc
   :ensure
@@ -414,8 +388,7 @@
                 " "
                 (vc-status 16 16 :left)
                 " "
-                filename-and-process)))
-  )
+                filename-and-process))))
 
 (use-package ignoramus
   :ensure
@@ -423,8 +396,7 @@
 
 (use-package imenu-anywhere
   :ensure
-  :commands imenu-anywhere ido-imenu-anywhere
-)
+  :commands imenu-anywhere ido-imenu-anywhere)
 
 (use-package hl-line
   :ensure
@@ -437,13 +409,11 @@
   (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package linum-relative
-  :ensure
-)
+  :ensure)
 
 (use-package magit
   :ensure
-  :config (evil-set-initial-state 'magit-mode 'emacs)
-)
+  :config (evil-set-initial-state 'magit-mode 'emacs))
 
 (use-package markdown-mode
   :ensure)
@@ -453,19 +423,16 @@
 
 (use-package paredit
   :ensure
-  :config (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-  )
+  :config (add-hook 'emacs-lisp-mode-hook 'paredit-mode))
 
 (use-package paradox
   :ensure
   :config
   (evil-set-initial-state 'paradox-menu-mode 'emacs)
-  (setq paradox-github-token t)
-)
+  (setq paradox-github-token t))
 
 (use-package pip-requirements
-  :ensure
-)
+  :ensure)
 
 (use-package projectile
   :ensure
@@ -543,16 +510,13 @@
     ("C-c l" . org-store-link)
     ("C-c c" . org-capture)
     ("C-c a" . org-agenda)
-    ("C-c b" . org-iswitchb)
-  )
-)
+    ("C-c b" . org-iswitchb)))
 
 
 (use-package rainbow-delimiters
   :ensure
   :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-)
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; rst
 (setq rst-pdf-program "mimeopen")
@@ -562,9 +526,7 @@
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
-  (sml/apply-theme 'respectful )
-  )
-
+  (sml/apply-theme 'respectful ))
 
 ;; smex
 (use-package smex
@@ -576,8 +538,7 @@
     ;; This is your old M-x.
     ("C-c C-c M-x" . execute-extended-command)
   )
-  :config (smex-initialize)
-)
+  :config (smex-initialize))
 
 (use-package switch-window
   :ensure
@@ -585,8 +546,7 @@
 
 (use-package volatile-highlights
   :ensure
-  :config (volatile-highlights-mode)
-)
+  :config (volatile-highlights-mode))
 
 (use-package whitespace
   :ensure
@@ -596,25 +556,22 @@
                        line
                        trailing
                        space-after-tab
-                       space-before-tab
-                       ))
-)
+                       space-before-tab)))
 
 (use-package whitespace-cleanup-mode
   :ensure
   :config
   (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
     (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
-       (add-hook hook mode)))
-)
+       (add-hook hook mode))))
 
 (use-package yasnippet
   :ensure
-  :config (yas-global-mode)
-)
+  :config (yas-global-mode))
 
 (use-package yatemplate
   :ensure
   :config (yatemplate-fill-alist))
+
 (provide 'init)
 ;;; init.el ends here

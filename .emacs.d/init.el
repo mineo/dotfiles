@@ -50,6 +50,9 @@
 ;; Don't show minor modes in the modeline
 (setq rm-blacklist ".*")
 
+;; Keep point centered when scrolling
+(setq scroll-preserve-screen-position t)
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)

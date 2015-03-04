@@ -206,23 +206,25 @@
 (use-package evil-leader
   :ensure
   :config
-    (evil-leader/set-leader "SPC")
-    (evil-leader/set-key "SPC c" 'ace-jump-char-mode
-                         "SPC w" 'ace-jump-word-mode
-                         "a" 'projectile-ack
-                         "b" 'ido-switch-buffer
-                         "e" 'flycheck-list-errors
-                         "k" 'kill-buffer
-                         "l e" 'flycheck-list-errors
-                         "m" 'magit-status
-                         "o" 'ido-find-file
-                         "p" 'projectile-commander
-                         "r" 'recentf-ido-find-file
-                         "q" 'save-buffers-kill-emacs
-                         "s" 'toggle-dark-light-theme
-                         "t" 'imenu-anywhere
-                         "w" 'evil-window-vsplit)
-   (global-evil-leader-mode))
+  (evil-leader/set-leader "SPC")
+  (evil-leader/set-key
+    "SPC c" 'ace-jump-char-mode
+    "SPC w" 'ace-jump-word-mode
+    "a" 'projectile-ack
+    "b" 'ido-switch-buffer
+    "e" 'flycheck-list-errors
+    "f" 'projectile-find-file
+    "h" 'help
+    "k" 'kill-buffer
+    "l e" 'flycheck-list-errors
+    "m" 'magit-status
+    "p" 'projectile-commander
+    "r" 'recentf-ido-find-file
+    "q" 'save-buffers-kill-emacs
+    "s" 'toggle-dark-light-theme
+    "t" 'imenu-anywhere
+    "w" 'evil-window-vsplit)
+  (global-evil-leader-mode))
 
 (use-package evil-nerd-commenter
   :ensure

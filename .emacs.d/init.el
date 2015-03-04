@@ -53,6 +53,9 @@
 ;; Keep point centered when scrolling
 (setq scroll-preserve-screen-position t)
 
+;; Don't use dialog boxes
+(setq use-dialog-box nil)
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)

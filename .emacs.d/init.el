@@ -144,16 +144,17 @@
 (use-package tex-site
   :ensure auctex
   :config
-  (use-package auctex-latexmk
-    :ensure
-    :config (auctex-latexmk-setup)
-  )
   (dolist (mode '(reftex-mode
                   TeX-PDF-mode
                   TeX-fold-mode))
           (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t ; parse on load
         TeX-auto-save t) ; parse on save
+)
+
+(use-package auctex-latexmk
+  :ensure
+  :config (auctex-latexmk-setup)
 )
 
 (auto-insert-mode)
@@ -163,12 +164,13 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
-  (use-package company-quickhelp
-    :ensure
-    :init (add-hook 'company-mode-hook #'company-quickhelp-mode)
-    )
   :init (global-company-mode)
 )
+
+(use-package company-quickhelp
+  :ensure
+  :init (add-hook 'company-mode-hook #'company-quickhelp-mode)
+  )
 
 (use-package copyright
   :defer t
@@ -194,54 +196,60 @@
   :config
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
-  (use-package ace-jump-mode
-    :ensure
-    :config
-    (setq ace-jump-mode-move-keys
-          (nconc (loop for i from ?a to ?z collect i)
-                 (loop for i from ?0 to ?9 collect i)))
-    (setq ace-jump-word-mode-use-query-char nil)
-    )
-  (use-package evil-leader
-    :ensure
-    :config
-      (evil-leader/set-leader "SPC")
-      (evil-leader/set-key "SPC c" 'ace-jump-char-mode
-                           "SPC w" 'ace-jump-word-mode
-                           "a" 'projectile-ack
-                           "b" 'ido-switch-buffer
-                           "e" 'flycheck-list-errors
-                           "k" 'kill-buffer
-                           "l e" 'flycheck-list-errors
-                           "m" 'magit-status
-                           "o" 'ido-find-file
-                           "p" 'projectile-commander
-                           "r" 'recentf-ido-find-file
-                           "q" 'save-buffers-kill-emacs
-                           "s" 'toggle-dark-light-theme
-                           "t" 'imenu-anywhere
-                           "w" 'evil-window-vsplit)
-     (global-evil-leader-mode)
-  )
-  (use-package evil-nerd-commenter
-    :ensure
-    :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines)
-  )
-  (use-package evil-surround
-    :ensure
-    :config (global-evil-surround-mode)
-  )
-  (use-package evil-visualstar
-    :ensure
-    :config (global-evil-visualstar-mode))
-  (use-package expand-region
-    :ensure
-    :commands er/expand-region
-    :init (define-key evil-normal-state-map (kbd "+") 'er/expand-region))
   (define-key evil-normal-state-map (kbd ";") 'smex)
   (define-key evil-visual-state-map (kbd ";") 'smex)
   (evil-mode)
 )
+
+(use-package ace-jump-mode
+  :ensure
+  :config
+  (setq ace-jump-mode-move-keys
+        (nconc (loop for i from ?a to ?z collect i)
+               (loop for i from ?0 to ?9 collect i)))
+  (setq ace-jump-word-mode-use-query-char nil)
+  )
+
+(use-package evil-leader
+  :ensure
+  :config
+    (evil-leader/set-leader "SPC")
+    (evil-leader/set-key "SPC c" 'ace-jump-char-mode
+                         "SPC w" 'ace-jump-word-mode
+                         "a" 'projectile-ack
+                         "b" 'ido-switch-buffer
+                         "e" 'flycheck-list-errors
+                         "k" 'kill-buffer
+                         "l e" 'flycheck-list-errors
+                         "m" 'magit-status
+                         "o" 'ido-find-file
+                         "p" 'projectile-commander
+                         "r" 'recentf-ido-find-file
+                         "q" 'save-buffers-kill-emacs
+                         "s" 'toggle-dark-light-theme
+                         "t" 'imenu-anywhere
+                         "w" 'evil-window-vsplit)
+   (global-evil-leader-mode)
+)
+
+(use-package evil-nerd-commenter
+  :ensure
+  :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines)
+)
+
+(use-package evil-surround
+  :ensure
+  :config (global-evil-surround-mode)
+)
+
+(use-package evil-visualstar
+  :ensure
+  :config (global-evil-visualstar-mode))
+
+(use-package expand-region
+  :ensure
+  :commands er/expand-region
+  :init (define-key evil-normal-state-map (kbd "+") 'er/expand-region))
 
 ;; fci
 (use-package fill-column-indicator
@@ -277,27 +285,30 @@
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (setq flycheck-flake8rc "setup.cfg")
   (global-flycheck-mode)
+)
+
   (use-package flycheck-pos-tip
     :ensure
     :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
   )
-)
 
 ;; go
 (use-package go-mode
   :ensure
   :config
-  (use-package go-eldoc
-    :ensure
-    :config (go-eldoc-setup)
-  )
-  (use-package company-go
-    :ensure
-    :config (add-to-list 'company-backends 'company-go)
-  )
   (evil-leader/set-key-for-mode 'go-mode
     "d" 'godoc-at-point
   )
+)
+
+(use-package go-eldoc
+  :ensure
+  :config (go-eldoc-setup)
+)
+
+(use-package company-go
+  :ensure
+  :config (add-to-list 'company-backends 'company-go)
 )
 
 ;; guide-key
@@ -316,23 +327,6 @@
 (use-package haskell-mode
   :ensure
   :config
-  (use-package ghc
-    :ensure
-    :commands ghc-init ghc-debug
-    :config
-    (use-package company-ghc
-      :ensure
-      :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
-    )
-    :init
-    (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
-  )
-
-  (use-package flycheck-haskell
-    :ensure
-    :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
-  )
-
   (setq haskell-tags-on-save t
         haskell-process-type 'cabal-repl
         haskell-process-show-debug-tips nil
@@ -348,28 +342,49 @@
   )
 )
 
+(use-package ghc
+  :ensure
+  :commands ghc-init ghc-debug
+  :config
+  (use-package company-ghc
+    :ensure
+    :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
+  )
+  :init
+  (add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+)
+
+(use-package flycheck-haskell
+  :ensure
+  :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup)
+)
+
+
 
 ;; ido
 (use-package ido
   :ensure
   :config
   (setq ido-everywhere t)
-  (use-package ido-vertical-mode
-    :ensure
-    :config (ido-vertical-mode)
-  )
-  (use-package ido-ubiquitous
-    :ensure
-    :config (ido-ubiquitous-mode)
-  )
-  (use-package flx-ido
-    :ensure
-    :config
-    (setq ido-enable-flex-matching t)
-    (setq ido-use-faces nil)
-    (flx-ido-mode))
   (ido-mode)
 )
+
+(use-package ido-vertical-mode
+  :ensure
+  :config (ido-vertical-mode)
+)
+
+(use-package ido-ubiquitous
+  :ensure
+  :config (ido-ubiquitous-mode)
+)
+
+(use-package flx-ido
+  :ensure
+  :config
+  (setq ido-enable-flex-matching t)
+  (setq ido-use-faces nil)
+  (flx-ido-mode))
 
 (use-package highlight-symbol
   :ensure
@@ -419,10 +434,11 @@
 (use-package linum
   :ensure
   :config
-  (use-package linum-relative
-    :ensure
-  )
   (add-hook 'prog-mode-hook 'linum-mode))
+
+(use-package linum-relative
+  :ensure
+)
 
 (use-package magit
   :ensure
@@ -458,24 +474,6 @@
     (add-to-list 'projectile-globally-ignored-directories dir)
     )
   (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")
-  (use-package perspective
-    :ensure
-    :config
-    (persp-mode)
-    (use-package persp-projectile
-      :ensure
-      )
-    )
-  (use-package projectile-addons
-    :load-path "lisp/"
-    :config
-    ;; set projectiles idle timer hook to a function that only regenerates tags if
-    ;; the project root is not my home directory
-    (setq projectile-idle-timer-hook 'mineo-projectile-regenerate-tags)
-    ;; setting projectile-enable-idle-timer outside of customize doesn't
-    ;; initialize the timer, so initialize it manually
-    (mineo-initialize-projectile-idle-timer)
-    )
   (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
   (projectile-global-mode)
 
@@ -492,32 +490,48 @@
       (mapatoms (lambda (x)
                   (push (prin1-to-string x t) tag-names))
                 tags-completion-table)
-      (find-tag (ido-completing-read "Tag: " (sort tag-names 'string<)))))
-  )
+      (find-tag (ido-completing-read "Tag: " (sort tag-names 'string<))))))
+
+(use-package perspective
+  :ensure
+  :config
+  (persp-mode))
+
+(use-package persp-projectile
+  :ensure)
+
+(use-package projectile-addons
+  :load-path "lisp/"
+  :config
+  ;; set projectiles idle timer hook to a function that only regenerates tags if
+  ;; the project root is not my home directory
+  (setq projectile-idle-timer-hook 'mineo-projectile-regenerate-tags)
+  ;; setting projectile-enable-idle-timer outside of customize doesn't
+  ;; initialize the timer, so initialize it manually
+  (mineo-initialize-projectile-idle-timer))
 
 (use-package python
   :ensure
   :config
-  (use-package anaconda-mode
-    :ensure
-    :config (add-hook 'python-mode-hook 'anaconda-mode)
-  )
-  (use-package company-anaconda
-    :ensure
-    :config (add-to-list 'company-backends 'company-anaconda)
-  )
-  (use-package virtualenvwrapper
-    :ensure
-    :config
-    (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
-    (evil-leader/set-key-for-mode 'python-mode
-      "v" 'venv-workon
-      "d" 'anaconda-mode-view-doc
-      )
-    (evil-set-initial-state 'anaconda-nav-mode 'emacs)
-  )
-  (add-hook 'python-mode-hook 'outline-minor-mode)
-)
+  (add-hook 'python-mode-hook 'outline-minor-mode))
+
+(use-package anaconda-mode
+  :ensure
+  :config (add-hook 'python-mode-hook 'anaconda-mode))
+
+(use-package company-anaconda
+  :ensure
+  :config (add-to-list 'company-backends 'company-anaconda))
+
+(use-package virtualenvwrapper
+  :ensure
+  :config
+  (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
+  (evil-leader/set-key-for-mode 'python-mode
+    "v" 'venv-workon
+    "d" 'anaconda-mode-view-doc
+    )
+  (evil-set-initial-state 'anaconda-nav-mode 'emacs))
 
 ;; prog-mode stuff
 (add-hook 'prog-mode-hook 'which-function-mode)
@@ -569,11 +583,6 @@
   :ensure
   :bind ("C-x o" . switch-window))
 
-;; (use-package templates
-;;   :load-path "lisp/"
-;;   :config (mineo-fill-alist))
-
-
 (use-package volatile-highlights
   :ensure
   :config (volatile-highlights-mode)
@@ -589,13 +598,14 @@
                        space-after-tab
                        space-before-tab
                        ))
-  (use-package whitespace-cleanup-mode
-    :ensure
-    :config
-    (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
-      (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
-         (add-hook hook mode)))
-  )
+)
+
+(use-package whitespace-cleanup-mode
+  :ensure
+  :config
+  (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+    (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
+       (add-hook hook mode)))
 )
 
 (use-package yasnippet

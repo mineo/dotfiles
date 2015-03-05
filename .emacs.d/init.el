@@ -481,7 +481,9 @@
   (setq projectile-idle-timer-hook 'mineo-projectile-regenerate-tags)
   ;; setting projectile-enable-idle-timer outside of customize doesn't
   ;; initialize the timer, so initialize it manually
-  (mineo-initialize-projectile-idle-timer))
+  (mineo-initialize-projectile-idle-timer)
+  ;; Set the working directory of python processes to projectiles project root
+  (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root))
 
 (use-package python
   :ensure

@@ -5,6 +5,8 @@
 ;; Copyright (c) 2011-2015 Bozhidar Batsov <bozhidar@batsov.com>
 
 ;; Author: Wieland Hoffmann
+;; Package-Requires: ((python "0.24.4") (projectile "0.11.0"))
+;; Package-Version: 0.1.0
 
 ;; This file is not part of GNU Emacs.
 
@@ -62,6 +64,13 @@
          'haskell-cabal)))
       (projectile-regenerate-tags)))
 
+(defun mineo-python-shell-cd-project-root ()
+  "CD the python shell to the project root."
+  (let* ((proot (projectile-project-root))
+         (cdmessage (format "%%cd %s" proot)))
+    (if proot
+        (python-shell-send-string cdmessage (get-buffer-process (current-buffer)))))
+  nil)
 
 (provide 'projectile-addons)
 ;;; projectile-addons.el ends here

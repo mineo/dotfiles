@@ -144,6 +144,7 @@
   :config
   (dolist (mode '(reftex-mode
                   TeX-PDF-mode
+                  TeX-source-correlate-mode
                   TeX-fold-mode))
           (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t ; parse on load

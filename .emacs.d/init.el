@@ -145,7 +145,9 @@
   (dolist (mode '(reftex-mode
                   TeX-PDF-mode
                   TeX-source-correlate-mode
-                  TeX-fold-mode))
+                  TeX-fold-mode
+                  (lambda ()
+                    (setq TeX-command-default "LatexMk"))))
           (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t ; parse on load
         TeX-auto-save t) ; parse on save

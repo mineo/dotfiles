@@ -486,7 +486,9 @@
 (use-package python
   :ensure
   :config
-  (add-hook 'python-mode-hook 'outline-minor-mode))
+  (add-hook 'python-mode-hook 'outline-minor-mode)
+  (setq python-shell-interpreter "ipython2"
+        python-shell-interpreter-args "-i"))
 
 (use-package anaconda-mode
   :ensure

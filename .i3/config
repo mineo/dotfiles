@@ -194,7 +194,7 @@ for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable
 for_window [class="org-antlr-v4-runtime-misc-TestRig"] floating disable
 
-exec --no-startup-id "i3-msg 'workspace msg; append_layout /home/wieland/.i3/ws-2.json'"
+exec --no-startup-id "i3-msg 'workspace msg; append_layout ~/.i3/ws-2.json'"
 exec --no-startup-id $urxvt-irc
 exec --no-startup-id urxvt -title ncmpcpp -e ncmpcpp
 

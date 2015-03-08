@@ -423,7 +423,7 @@
 (use-package projectile
   :ensure
   :config
-  (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs"))
+  (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs" "docs/build"))
     (add-to-list 'projectile-globally-ignored-directories dir)
     )
   (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")

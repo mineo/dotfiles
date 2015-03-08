@@ -83,12 +83,6 @@
 (ensure-packages)
 
 (recentf-mode)
-(defun recentf-ido-find-file ()
-  "Find a recent file using Ido."
-  (interactive)
-  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
-    (when file
-      (find-file file))))
 
 ;; load theme
 (load-theme 'solarized-light 'no-confirm)
@@ -194,8 +188,8 @@
   :config
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
-  (define-key evil-normal-state-map (kbd ";") 'smex)
-  (define-key evil-visual-state-map (kbd ";") 'smex)
+  (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
+  (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-mode))
 
 (use-package ace-jump-mode
@@ -213,16 +207,14 @@
   (evil-leader/set-key
     "SPC c" 'ace-jump-char-mode
     "SPC w" 'ace-jump-word-mode
-    "a" 'projectile-ack
-    "b" 'ido-switch-buffer
+    "b" 'helm-buffers-list
     "e" 'flycheck-list-errors
-    "f" 'projectile-find-file
     "h" 'help
     "k" 'kill-buffer
     "l e" 'flycheck-list-errors
     "m" 'magit-status
     "p" 'projectile-commander
-    "r" 'recentf-ido-find-file
+    "r" 'helm-recentf
     "q" 'save-buffers-kill-emacs
     "s" 'toggle-dark-light-theme
     "t" 'imenu-anywhere
@@ -343,29 +335,22 @@
   :ensure
   :config(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
-
-
-;; ido
-(use-package ido
+(use-package helm
   :ensure
   :config
-  (setq ido-everywhere t)
-  (ido-mode))
+  (helm-mode 1)
+  (helm-autoresize-mode 1)
+  ;; Enable fuzzy matching
+  (setq helm-recentf-fuzzy-match t
+        helm-buffers-fuzzy-matching t
+        helm-M-x-fuzzy-match t
+        helm-imenu-fuzzy-match t
+        helm-semantic-fuzzy-match t))
 
-(use-package ido-vertical-mode
-  :ensure
-  :config (ido-vertical-mode))
-
-(use-package ido-ubiquitous
-  :ensure
-  :config (ido-ubiquitous-mode))
-
-(use-package flx-ido
+(use-package helm-projectile
   :ensure
   :config
-  (setq ido-enable-flex-matching t)
-  (setq ido-use-faces nil)
-  (flx-ido-mode))
+  (helm-projectile-on))
 
 (use-package highlight-symbol
   :ensure
@@ -398,10 +383,6 @@
 (use-package ignoramus
   :ensure
   :config (ignoramus-setup))
-
-(use-package imenu-anywhere
-  :ensure
-  :commands imenu-anywhere ido-imenu-anywhere)
 
 (use-package hl-line
   :ensure
@@ -446,24 +427,11 @@
     (add-to-list 'projectile-globally-ignored-directories dir)
     )
   (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")
+  (def-projectile-commander-method ?j "Find tag." (call-interactively 'helm-etags-select))
   (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
-  (def-projectile-commander-method ?p "Switch the project." (call-interactively 'projectile-switch-project))
+  (def-projectile-commander-method ?p "Switch the project." (call-interactively 'helm-projectile-switch-project))
   (projectile-global-mode)
-
-  ;; Workaround for
-  ;; https://github.com/bbatsov/projectile/issues/439#issuecomment-74434568
-  ;; This is a modified version of
-  ;; http://emacswiki.org/emacs/InteractivelyDoThings#toc11
-  (defun projectile-find-tag ()
-    "Find a tag in the project using ido"
-    (interactive)
-    (setq tags-completion-table nil)
-    (tags-completion-table)
-    (let (tag-names)
-      (mapatoms (lambda (x)
-                  (push (prin1-to-string x t) tag-names))
-                tags-completion-table)
-      (find-tag (ido-completing-read "Tag: " (sort tag-names 'string<))))))
+  )
 
 (use-package perspective
   :ensure
@@ -537,18 +505,6 @@
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
   (sml/apply-theme 'respectful ))
-
-;; smex
-(use-package smex
-  :ensure
-  :commands smex
-  :bind(
-    ("M-x" . smex)
-    ("M-X" . smex-major-mode-commands)
-    ;; This is your old M-x.
-    ("C-c C-c M-x" . execute-extended-command)
-  )
-  :config (smex-initialize))
 
 (use-package switch-window
   :ensure

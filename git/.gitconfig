@@ -1,0 +1,64 @@
+[user]
+    name = Wieland Hoffmann
+    email = themineo@gmail.com
+
+[apply]
+    whitespace = fix
+
+[alias]
+    ai = add --interactive
+    ap = add -p
+    ci = commit
+    cip = commit -p
+    co = checkout
+    d = diff --color
+    ds = diff --stat
+    glog = log --graph --pretty=format:"%C(auto,yellow)%h%C(auto)%d\\ %C(auto,reset)%s\\ \\ [%C(auto,blue)%cn%C(auto,reset),\\ %C(auto,cyan)%ar%C(auto,reset)]"
+    l = log --summary --stat --color
+    pu = pull
+    puff = pull --no-ff
+    rh = reset --hard
+    ri = rebase -i
+    sbsdiff = difftool --tool=vimdiff -U99999
+    sl = shortlog
+    st = status -s
+    wd = diff --color --word-diff
+
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = themineo@gmail.com
+    smtpserverport = 587
+    chainreplyto = false
+    suppressfrom = false
+
+[mergetool "vimdiff3"]
+    cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+
+[mergetool "meld"]
+
+[merge]
+    tool = vimdiff3
+    conflictstyle = diff3
+
+[color]
+    interactive = auto
+    ui = auto
+
+[diff]
+    algorithm = patience
+
+[rebase]
+    autosquash = true
+
+[rerere]
+    enabled = true
+
+[push]
+    default = simple
+
+[commit]
+    verbose = true
+
+[help]
+    autocorrect = 20

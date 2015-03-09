@@ -11,6 +11,6 @@ apps:
 base:
 	$(STOW) emacs peco vim zsh
 devel:
-	$(STOW) code git db
+	$(STOW) code db haskell git
 ui:
 	$(STOW) dunst i3 tex x11

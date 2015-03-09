@@ -1,5 +1,6 @@
+STOWFLAGS =
 TARGET = $(HOME)
-STOW = stow --target $(TARGET)
+STOW = stow $(STOWFLAGS) --target $(TARGET)
 
 .PHONY: all
 

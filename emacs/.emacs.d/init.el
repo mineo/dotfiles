@@ -221,7 +221,7 @@
     "p" 'projectile-commander
     "q" 'save-buffers-kill-emacs
     "s" 'toggle-dark-light-theme
-    "t" 'imenu-anywhere
+    "t" 'helm-semantic-or-imenu
     "w" 'evil-window-vsplit
     "v" 'magit-status)
   (global-evil-leader-mode))

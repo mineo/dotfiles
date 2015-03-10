@@ -208,6 +208,11 @@
   ;; bind evil-jump-out-args
   (define-key evil-normal-state-map "K" 'evil-jump-out-args))
 
+(use-package evil-exchange
+  :ensure
+  :config
+  (evil-exchange-install))
+
 (use-package ace-jump-mode
   :ensure
   :config

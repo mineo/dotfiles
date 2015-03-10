@@ -205,20 +205,25 @@
   :config
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
-    "SPC c" 'ace-jump-char-mode
-    "SPC w" 'ace-jump-word-mode
+    "a c" 'ace-jump-char-mode
+    "a w" 'ace-jump-word-mode
     "b" 'helm-buffers-list
     "e" 'flycheck-list-errors
-    "h" 'help
+    "h a" 'helm-apropos
+    "h h" 'help
+    "h f" 'helm-find-files
+    "h m" 'helm-man-woman
+    "h o" 'helm-occur
+    "h p" 'helm-projectile
+    "h r" 'helm-recentf
     "k" 'kill-buffer
     "l e" 'flycheck-list-errors
-    "m" 'magit-status
     "p" 'projectile-commander
-    "r" 'helm-recentf
     "q" 'save-buffers-kill-emacs
     "s" 'toggle-dark-light-theme
     "t" 'imenu-anywhere
-    "w" 'evil-window-vsplit)
+    "w" 'evil-window-vsplit
+    "v" 'magit-status)
   (global-evil-leader-mode))
 
 (use-package evil-nerd-commenter

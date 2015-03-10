@@ -42,7 +42,6 @@ zstyle ':vcs_info:*' unstagedstr "%F{red}＊"
 zstyle ':vcs_info:*' stagedstr "%F{green}＋"
 zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
 zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
-zstyle ':vcs_info:*' disable-patterns "$HOME"
 autoload -Uz vcs_info
 vcs_info
 precmd () {

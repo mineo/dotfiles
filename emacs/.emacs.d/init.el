@@ -100,17 +100,19 @@
   (let ((is-light (find default-light-color-theme custom-enabled-themes)))
     (dolist (theme custom-enabled-themes)
       (disable-theme theme))
-    (if is-light
+    (progn
+      (if is-light
+          (progn
+            (load-theme default-dark-color-theme 'no-confirm)
+            (set-face-foreground 'ace-jump-face-foreground "#fa9a4b")
+            (set-face-background 'ace-jump-face-foreground "#000000")
+            (fci-mode)
+            (fci-mode))
         (progn
-          (load-theme default-dark-color-theme 'no-confirm)
-          (set-face-foreground 'ace-jump-face-foreground "#fa9a4b")
-          (set-face-background 'ace-jump-face-foreground "#000000")
+          (load-theme default-light-color-theme 'no-confirm)
           (fci-mode)
-          (fci-mode))
-      (progn
-        (load-theme default-light-color-theme 'no-confirm)
-        (fci-mode)
-        (fci-mode)))))
+          (fci-mode)))
+      (set-face-background 'show-paren-match "#00fa9a"))))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 

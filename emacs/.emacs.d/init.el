@@ -223,6 +223,9 @@
                (loop for i from ?0 to ?9 collect i)))
   (setq ace-jump-word-mode-use-query-char nil))
 
+(use-package ace-jump-zap
+  :ensure)
+
 (use-package evil-leader
   :ensure
   :config

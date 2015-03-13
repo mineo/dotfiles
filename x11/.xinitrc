@@ -7,7 +7,6 @@ gajim &
 killall mpdscribble
 mpdscribble
 redshift -l 50:10 -t 6500:5000> /dev/null &
-synapse -s &
 udiskie &
 xmodmap .Xmodmap &
 xscreensaver -no-splash &

@@ -123,6 +123,16 @@
   :config
   (yatemplate-fill-alist))
 
+(use-package ace-jump-mode
+  :ensure
+  :config
+  (setq ace-jump-mode-move-keys
+        (nconc (loop for i from ?a to ?z collect i)
+               (loop for i from ?0 to ?9 collect i)))
+  (setq ace-jump-word-mode-use-query-char nil))
+
+(use-package ace-jump-zap
+  :ensure)
 
 (use-package ag
   :ensure
@@ -215,17 +225,6 @@
   :config
   (evil-exchange-install))
 
-(use-package ace-jump-mode
-  :ensure
-  :config
-  (setq ace-jump-mode-move-keys
-        (nconc (loop for i from ?a to ?z collect i)
-               (loop for i from ?0 to ?9 collect i)))
-  (setq ace-jump-word-mode-use-query-char nil))
-
-(use-package ace-jump-zap
-  :ensure)
-
 (use-package evil-leader
   :ensure
   :config
@@ -233,6 +232,7 @@
   (evil-leader/set-key
     "a c" 'ace-jump-char-mode
     "a w" 'ace-jump-word-mode
+    "a z" 'ace-jump-zap-to-char
     "b" 'helm-buffers-list
     "e" 'flycheck-list-errors
     "h a" 'helm-apropos

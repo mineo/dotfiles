@@ -1,0 +1,122 @@
+set ssl_starttls=yes
+set charset="utf-8"
+set allow_8bit
+set send_charset="us-ascii:utf-8"
+
+set mailcap_path = ~/.mutt/mailcap
+
+# zitieren
+set include=yes
+
+# attribution
+set attribution="Hallo %F:"
+
+set mail_check=60
+
+unset mark_old
+
+# keep a cache of headers for faster loading (1.5.9+?)
+set header_cache=~/.mutt/hcache
+
+# Header Options -------------------------------------
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+
+set use_ipv6=yes
+set pager_index_lines=4
+
+set mbox_type=Maildir
+set folder=$HOME/.mail
+source ~/.mutt/muttrc.mailboxes
+
+# tag my messages
+set nm_record = yes
+set nm_record_tags = '-inbox,-unread,me'
+
+source '~/.mutt/muttrc.private'
+
+set virtual_spoolfile = yes
+
+#aliases
+source ~/.mutt/aliases
+set alias_file="~/.mutt/aliases"
+# edit headers
+set edit_headers=yes
+# threads
+set sort=threads
+set sort_aux=last-date-received
+set strict_threads
+
+# colors
+source ~/.mutt/colors/molokai
+
+set fast_reply                       # skip to compose when replying
+set fcc_attach                       # save attachments with the body
+set reverse_name                     # reply as whomever it was to
+set imap_check_subscribed = no
+
+# sidebar
+set sidebar_width=15
+
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+bind index,pager J   sidebar-next
+bind index,pager K     sidebar-prev
+bind index,pager L  sidebar-open
+bind index,pager N sidebar-next
+bind index,pager P     sidebar-prev
+bind index,pager O  sidebar-open
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+bind index <Esc>S sidebar-toggle
+bind index B bounce-message
+
+
+# GPG
+# decode application/pgp
+set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+
+# verify a pgp/mime signature
+set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
+
+# import a key into the public key ring
+set pgp_import_command="gpg --no-verbose --import %f"
+
+# export a key from the public key ring
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+
+# verify a key
+set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
+
+# read in the public key ring
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
+
+# read in the secret key ring
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
+
+# This version uses --status-fd messages
+set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+
+
+bind index \CX collapse-all
+bind index \CV collapse-thread
+
+set index_format="%4C %Z %{%b %d} %-15.15F %s"
+
+# collapse threads by default
+folder-hook . "exec collapse-all"
+
+# move message to archive
+macro index A "<modify-labels-then-hide>+archive -unread\n<sync-mailbox>"
+
+# Ctrl-R to mark all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<clear-flag>O<untag-pattern>.<enter>" "mark all messages as read"
+
+bind index gg       first-entry
+bind index G        last-entry
+
+bind index,pager R  sync-mailbox

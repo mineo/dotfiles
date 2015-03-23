@@ -13,6 +13,6 @@ base:
 devel:
 	$(STOW) code db haskell git
 mail:
-	$(STOW) afew
+	$(STOW) afew mutt
 ui:
 	$(STOW) dunst i3 tex x11

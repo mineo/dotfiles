@@ -1,0 +1,6 @@
+[ListMailsFilter]
+[ArchiveSentMailsFilter]
+[HeaderMatchingFilter.0]
+header = X-Mailman-Version
+pattern = .*
+tags = +lists

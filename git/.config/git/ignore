@@ -2,6 +2,9 @@
 *pyo
 __pycache__*
 tags
+TAGS
 *hi
 *.o
 dist/*
+.cabal-sandbox/
+cabal.sandbox.config

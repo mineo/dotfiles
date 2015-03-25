@@ -384,6 +384,13 @@
   :config
   (helm-projectile-on))
 
+(use-package helm-swoop
+  :ensure
+  :config
+  (evil-leader/set-key
+    "h s s" 'helm-swoop
+    "h s m" 'helm-multi-swoop))
+
 (use-package highlight-symbol
   :ensure
   :config

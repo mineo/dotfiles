@@ -141,17 +141,6 @@
     "a z" 'ace-jump-zap-to-char
     ))
 
-(use-package ag
-  :ensure
-  :config
-  (use-package wgrep-ag
-    :ensure
-    :init
-    (autoload 'wgrep-ag-setup "wgrep-ag")
-    (add-hook 'ag-mode-hook 'wgrep-ag-setup)
-    (add-hook 'ag-mode-hook 'evil-normal-state)
-    (setq wgrep-auto-save-buffer t)))
-
 (use-package tex-site
   :ensure auctex
   :config
@@ -387,6 +376,9 @@
     "h r" 'helm-recentf
     "h t" 'helm-semantic-or-imenu
     ))
+
+(use-package helm-ag
+  :ensure)
 
 (use-package helm-projectile
   :ensure

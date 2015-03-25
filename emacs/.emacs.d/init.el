@@ -129,10 +129,17 @@
   (setq ace-jump-mode-move-keys
         (nconc (loop for i from ?a to ?z collect i)
                (loop for i from ?0 to ?9 collect i)))
-  (setq ace-jump-word-mode-use-query-char nil))
+  (setq ace-jump-word-mode-use-query-char nil)
+  (evil-leader/set-key
+    "a c" 'ace-jump-char-mode
+    "a w" 'ace-jump-word-mode))
 
 (use-package ace-jump-zap
-  :ensure)
+  :ensure
+  :config
+  (evil-leader/set-key
+    "a z" 'ace-jump-zap-to-char
+    ))
 
 (use-package ag
   :ensure
@@ -200,8 +207,6 @@
   :config
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
-  (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
-  (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-mode))
 
 (use-package evil-args
@@ -230,26 +235,9 @@
   :config
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
-    "a c" 'ace-jump-char-mode
-    "a w" 'ace-jump-word-mode
-    "a z" 'ace-jump-zap-to-char
-    "b" 'helm-buffers-list
-    "e" 'flycheck-list-errors
-    "h a" 'helm-apropos
-    "h h" 'help
-    "h f" 'helm-find-files
-    "h m" 'helm-man-woman
-    "h o" 'helm-occur
-    "h p" 'helm-projectile
-    "h r" 'helm-recentf
     "k" 'kill-buffer
-    "l e" 'flycheck-list-errors
-    "p" 'projectile-commander
-    "q" 'save-buffers-kill-emacs
     "s" 'toggle-dark-light-theme
-    "t" 'helm-semantic-or-imenu
-    "w" 'evil-window-vsplit
-    "v" 'magit-status)
+    "w" 'evil-window-vsplit)
   (global-evil-leader-mode))
 
 (use-package evil-nerd-commenter
@@ -302,6 +290,9 @@
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (setq flycheck-flake8rc "setup.cfg")
+  (evil-leader/set-key
+    "e" 'flycheck-list-errors
+    )
   (global-flycheck-mode))
 
 (use-package flycheck-pos-tip
@@ -377,7 +368,20 @@
         helm-M-x-fuzzy-match t
         helm-imenu-fuzzy-match t
         helm-semantic-fuzzy-match t
-        helm-split-window-in-side-p t))
+        helm-split-window-in-side-p t)
+  (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
+  (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
+  (evil-leader/set-key
+    "b" 'helm-buffers-list
+    "h a" 'helm-apropos
+    "h h" 'help
+    "h f" 'helm-find-files
+    "h m" 'helm-man-woman
+    "h o" 'helm-occur
+    "h p" 'helm-projectile
+    "h r" 'helm-recentf
+    "h t" 'helm-semantic-or-imenu
+    ))
 
 (use-package helm-projectile
   :ensure
@@ -438,7 +442,10 @@
 
 (use-package magit
   :ensure
-  :config (evil-set-initial-state 'magit-mode 'emacs))
+  :config
+  (evil-set-initial-state 'magit-mode 'emacs)
+  (evil-leader/set-key
+    "v" 'magit-status))
 
 (use-package markdown-mode
   :ensure)
@@ -469,6 +476,9 @@
   (def-projectile-commander-method ?j "Find tag." (call-interactively 'helm-etags-select))
   (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
   (def-projectile-commander-method ?p "Switch the project." (call-interactively 'helm-projectile-switch-project))
+  (evil-leader/set-key
+    "p" 'projectile-commander
+    )
   (projectile-global-mode)
   )
 

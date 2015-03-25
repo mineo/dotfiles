@@ -283,6 +283,9 @@
       (add-hook hook 'auto-fill-mode)
       )))
 
+(use-package flatland-theme
+  :ensure)
+
 ;; flycheck
 (use-package flycheck
   :ensure

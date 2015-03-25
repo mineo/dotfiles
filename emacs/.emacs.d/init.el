@@ -376,6 +376,7 @@
   (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
   (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-leader/set-key
+    "SPC" 'helm-M-x
     "b" 'helm-buffers-list
     "h a" 'helm-apropos
     "h h" 'help

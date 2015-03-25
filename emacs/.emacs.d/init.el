@@ -320,6 +320,7 @@
   :config
   (setq guide-key/guide-key-sequence '("C-c"
                                        "C-x"
+                                       "SPC"
                                        )
   )
   (setq guide-key/recursive-key-sequence-flag t)

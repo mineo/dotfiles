@@ -8,3 +8,8 @@ TAGS
 dist/*
 .cabal-sandbox/
 cabal.sandbox.config
+.tox/
+*.egg-info
+version.py
+build/
+*~

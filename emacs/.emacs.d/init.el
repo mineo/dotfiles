@@ -83,9 +83,6 @@
 
 (recentf-mode)
 
-;; load theme
-(load-theme 'solarized-light 'no-confirm)
-
 ;; https://kylewm.com/article/2014/01/30/1/emacs-toggle-light-and-dark-themes
 (defcustom default-light-color-theme 'solarized-light
   "default light theme")
@@ -583,6 +580,9 @@
 (use-package yatemplate
   :ensure
   :config (yatemplate-fill-alist))
+
+;; load theme
+(load-theme 'solarized-light 'no-confirm)
 
 (provide 'init)
 ;;; init.el ends here

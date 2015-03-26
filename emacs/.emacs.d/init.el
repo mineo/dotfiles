@@ -65,7 +65,6 @@
     use-package
     ;; color themes
     solarized-theme
-    base16-theme
 ))
 
 

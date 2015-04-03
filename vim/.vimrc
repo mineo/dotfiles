@@ -57,8 +57,7 @@ if has('gui_running')
     set go=c
     set guicursor+=a:blinkon0
 else
-    let g:molokai_original=1
-    colorscheme molokai
+    colorscheme default
 endif
 
 " status line

@@ -162,6 +162,9 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
 [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# tramp in emacs
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
+
 function man () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
@@ -170,6 +173,3 @@ function mpd_song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
     cd ${HOME}/Musik/${song_dir}
 }
-
-# tramp in emacs
-[ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''

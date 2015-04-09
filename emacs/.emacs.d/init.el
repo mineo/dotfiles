@@ -322,7 +322,8 @@
         haskell-process-type 'cabal-repl
         haskell-process-show-debug-tips nil
         haskell-auto-import-loaded-modules t
-        haskell-process-suggest-remove-import-lines t)
+        haskell-process-suggest-remove-import-lines t
+        haskell-stylish-on-save t)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)

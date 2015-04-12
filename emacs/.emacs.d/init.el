@@ -329,9 +329,17 @@
   (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
   (evil-leader/set-key-for-mode 'haskell-mode
-    "cb" 'haskell-process-cabal-build
-    "cc" 'haskell-process-cabal
-    "cs" 'haskell-interactive-switch))
+    "mcb" 'haskell-process-cabal-build
+    "mcc" 'haskell-process-cabal
+    "mai" 'haskell-add-import
+    "ib" 'haskell-interactive-bring
+    "ic" 'haskell-interactive-mode-clear
+    "if" 'haskell-process-load-file
+    "is" 'haskell-interactive-switch)
+  (evil-leader/set-key-for-mode 'haskell-cabal-mode
+    "mcc" 'haskell-process-cabal
+    "ib" 'haskell-interactive-bring
+    "ic" 'haskell-interactive-mode-clear))
 
 (use-package ghc
   :ensure

@@ -26,7 +26,7 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
-command virtualenvwrapper_lazy.sh 2>/dev/null && source $(command -v virtualenvwrapper_lazy.sh)
+command virtualenvwrapper_lazy.sh &> /dev/null && source $(command -v virtualenvwrapper_lazy.sh)
 
 # VCS_INFO stuff
 # set formats
@@ -90,7 +90,7 @@ alias um='udisks --unmount'
 alias v='vim'
 alias wo='workon'
 
-if type ls++ > /dev/null; then
+if type ls++ &> /dev/null; then
     alias ls='ls++'
 else
     alias ls='ls -lh --color=auto'

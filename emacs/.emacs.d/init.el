@@ -222,7 +222,11 @@
   (evil-leader/set-key
     "k" 'kill-buffer
     "s" 'toggle-dark-light-theme
-    "w" 'evil-window-vsplit)
+    "w s" 'evil-window-vsplit
+    "w o" 'switch-window
+    "w w" 'delete-window
+    "w c" 'delete-frame
+    "w +" 'text-scale-adjust)
   (global-evil-leader-mode))
 
 (use-package evil-nerd-commenter

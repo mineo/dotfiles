@@ -455,7 +455,17 @@
     "v" 'magit-status))
 
 (use-package markdown-mode
-  :ensure)
+  :ensure
+  :config
+  (evil-leader/set-key-for-mode 'markdown-mode
+    "m v" 'markdown-preview
+    "m -" 'markdown-promote
+    "m +" 'markdown-demote
+    "m e" 'markdown-export
+    "m i l" 'markdown-insert-link
+    "m o" 'markdown-follow-thing-at-point
+    "m n" 'outline-next-heading
+    "m p" 'outline-previous-heading))
 
 (use-package midnight
   :config (setq midnight-mode t))

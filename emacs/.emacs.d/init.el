@@ -45,6 +45,8 @@
 
 (add-to-list 'default-frame-alist
              '(font . "Consolas-13"))
+(set-face-attribute 'mode-line nil :font "Consolas-12")
+
 (setq-default line-spacing 2)
 
 ;; Don't show minor modes in the modeline

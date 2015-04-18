@@ -572,7 +572,9 @@
   :config
   (setq sml/no-confirm-load-theme t)
   (sml/setup)
-  (sml/apply-theme 'respectful ))
+  (sml/apply-theme 'respectful)
+  (setq sml/projectile-replacement-format "p:%s/")
+  )
 
 (use-package switch-window
   :ensure

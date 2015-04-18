@@ -285,7 +285,9 @@
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (setq flycheck-flake8rc "setup.cfg")
   (evil-leader/set-key
-    "e" 'flycheck-list-errors
+    "e l" 'flycheck-list-errors
+    "e n" 'flycheck-next-error
+    "e p" 'flycheck-previous-error
     )
   (global-flycheck-mode))
 

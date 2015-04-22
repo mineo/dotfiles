@@ -546,9 +546,6 @@
     )
   (evil-set-initial-state 'anaconda-nav-mode 'emacs))
 
-;; prog-mode stuff
-(add-hook 'prog-mode-hook 'which-function-mode)
-
 ;; org-mode
 (use-package org
   :ensure

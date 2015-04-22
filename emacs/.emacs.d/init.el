@@ -558,7 +558,11 @@
     ("C-c l" . org-store-link)
     ("C-c c" . org-capture)
     ("C-c a" . org-agenda)
-    ("C-c b" . org-iswitchb)))
+    ("C-c b" . org-iswitchb))
+  :config
+  (setq org-directory "~/.org"
+        org-default-notes-file (concat org-directory "/notes.org")
+        org-agenda-files '("~/.org")))
 
 
 (use-package rainbow-delimiters

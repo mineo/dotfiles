@@ -501,14 +501,6 @@
   (projectile-global-mode)
   )
 
-(use-package perspective
-  :ensure
-  :config
-  (persp-mode))
-
-(use-package persp-projectile
-  :ensure)
-
 (use-package projectile-addons
   :load-path "lisp/"
   :config

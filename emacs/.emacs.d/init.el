@@ -194,6 +194,7 @@
   :config
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
+  (evil-set-initial-state 'calendar-mode 'emacs)
   (evil-mode))
 
 (use-package evil-args

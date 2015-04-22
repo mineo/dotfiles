@@ -544,12 +544,12 @@
 ;; org-mode
 (use-package org
   :ensure
-  :bind (
-    ("C-c l" . org-store-link)
-    ("C-c c" . org-capture)
-    ("C-c a" . org-agenda)
-    ("C-c b" . org-iswitchb))
   :config
+  (evil-leader/set-key
+    "o a" 'org-agenda
+    "o c" 'org-capture
+    "o b" 'org-iswitchb
+    "o l" 'org-store-link)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")
         org-agenda-files '("~/.org")))

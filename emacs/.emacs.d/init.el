@@ -103,13 +103,9 @@
           (progn
             (load-theme default-dark-color-theme 'no-confirm)
             (set-face-foreground 'ace-jump-face-foreground "#fa9a4b")
-            (set-face-background 'ace-jump-face-foreground "#000000")
-            (fci-mode)
-            (fci-mode))
+            (set-face-background 'ace-jump-face-foreground "#000000"))
         (progn
-          (load-theme default-light-color-theme 'no-confirm)
-          (fci-mode)
-          (fci-mode)))
+          (load-theme default-light-color-theme 'no-confirm)))
       (set-face-background 'show-paren-match "#00fa9a"))))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -156,6 +152,12 @@
 (use-package auctex-latexmk
   :ensure
   :config (auctex-latexmk-setup))
+
+(use-package column-enforce-mode
+  :ensure
+  :config
+  (add-hook 'prog-mode-hook 'column-enforce-mode)
+  (add-hook 'text-mode-hook 'column-enforce-mode))
 
 (auto-insert-mode)
 ;; company
@@ -248,32 +250,6 @@
   :ensure
   :commands er/expand-region
   :init (define-key evil-normal-state-map (kbd "+") 'er/expand-region))
-
-;; fci
-(use-package fill-column-indicator
-  :ensure
-  :config
-  (setq-default fill-column 80)
-  (defvar-local company-fci-mode-on-p nil)
-
-  ;; https://github.com/company-mode/company-mode/issues/180
-  ;; deactivate fci-mode around companys completion popup
-  (defun company-turn-off-fci (&rest ignore)
-    (when (boundp 'fci-mode)
-      (setq company-fci-mode-on-p fci-mode)
-      (when fci-mode (fci-mode -1))))
-
-  (defun company-maybe-turn-on-fci (&rest ignore)
-    (when company-fci-mode-on-p (fci-mode 1)))
-
-  (add-hook 'company-completion-started-hook 'company-turn-off-fci)
-  (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
-  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
-  (dolist (hook '(prog-mode-hook text-mode-hook))
-    (progn
-      (add-hook hook 'fci-mode)
-      (add-hook hook 'auto-fill-mode)
-      )))
 
 (use-package flatland-theme
   :ensure)

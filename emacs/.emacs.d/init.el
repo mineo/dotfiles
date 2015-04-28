@@ -351,8 +351,7 @@
         helm-buffers-fuzzy-matching t
         helm-M-x-fuzzy-match t
         helm-imenu-fuzzy-match t
-        helm-semantic-fuzzy-match t
-        helm-split-window-in-side-p t)
+        helm-semantic-fuzzy-match t)
   (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
   (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-leader/set-key
@@ -366,7 +365,15 @@
     "h p" 'helm-projectile
     "h r" 'helm-recentf
     "h t" 'helm-semantic-or-imenu
-    ))
+    )
+  ;; Let helm always open at the bottom at 40% window height
+  ;; From https://www.reddit.com/r/emacs/comments/345vtl/make_helm_window_at_the_bottom_without_using_any/
+  (add-to-list 'display-buffer-alist
+               `(,(rx bos "*helm" (* not-newline) "*" eos)
+                 (display-buffer-in-side-window)
+                 (inhibit-same-window . t)
+                 (window-height . 0.4)))
+  )
 
 (use-package helm-ag
   :ensure)

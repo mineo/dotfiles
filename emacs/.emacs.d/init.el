@@ -356,7 +356,7 @@
   (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-leader/set-key
     "SPC" 'helm-M-x
-    "b" 'helm-buffers-list
+    "b" 'helm-projectile-switch-to-buffer
     "h a" 'helm-apropos
     "h h" 'help
     "h f" 'helm-find-files

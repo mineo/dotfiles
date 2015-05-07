@@ -589,7 +589,7 @@
   :config (yatemplate-fill-alist))
 
 ;; load theme
-(load-theme 'solarized-light 'no-confirm)
+(toggle-dark-light-theme)
 
 (provide 'init)
 ;;; init.el ends here

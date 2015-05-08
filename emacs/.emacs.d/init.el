@@ -43,9 +43,6 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
-;; (add-to-list 'default-frame-alist
-;;              '(font . "Consolas-13"))
-
 (setq-default line-spacing 2)
 
 ;; Don't show minor modes in the modeline

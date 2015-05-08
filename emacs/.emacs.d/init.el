@@ -43,9 +43,8 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
-(add-to-list 'default-frame-alist
-             '(font . "Consolas-13"))
-(set-face-attribute 'mode-line nil :font "Consolas-12")
+;; (add-to-list 'default-frame-alist
+;;              '(font . "Consolas-13"))
 
 (setq-default line-spacing 2)
 
@@ -590,6 +589,10 @@
 
 ;; load theme
 (toggle-dark-light-theme)
+(set-face-attribute 'default nil :font "Consolas-13")
+(dolist (what '(mode-line
+                mode-line-inactive))
+  (set-face-attribute what nil :font "Consolas-12"))
 
 (provide 'init)
 ;;; init.el ends here

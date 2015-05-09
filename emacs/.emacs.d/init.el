@@ -434,6 +434,7 @@
 (use-package magit
   :ensure
   :config
+  (setq magit-last-seen-setup-instructions "1.4.0")
   (evil-set-initial-state 'magit-mode 'emacs)
   (evil-leader/set-key
     "v" 'magit-status))

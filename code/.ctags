@@ -3,6 +3,7 @@
 --exclude=doc
 --exclude=docs
 --exclude=htmlcov
+--exclude=.ensime_cache
 
 --langdef=Go
 --langmap=Go:.go

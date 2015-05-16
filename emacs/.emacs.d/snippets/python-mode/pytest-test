@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Py.test test
+# key: pytest
+# binding: direct-keybinding
+# --
+def test_$1($2):
+    assert $0

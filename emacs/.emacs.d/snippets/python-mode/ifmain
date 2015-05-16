@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: ifmain
+# key: ifmain
+# binding: direct-keybinding
+# --
+if __name__ == "__main__":
+    main()

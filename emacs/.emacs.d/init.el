@@ -211,6 +211,12 @@
   ;; bind evil-jump-out-args
   (define-key evil-normal-state-map "K" 'evil-jump-out-args))
 
+(setq-default evil-escape-key-sequence "jk")
+(use-package evil-escape
+  :ensure
+  :config
+  (evil-escape-mode))
+
 (use-package evil-exchange
   :ensure
   :config

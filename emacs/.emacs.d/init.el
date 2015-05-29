@@ -239,6 +239,13 @@
   :ensure
   :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines))
 
+(use-package evil-org
+  :ensure
+  :config
+  (evil-define-key 'normal evil-org-mode-map
+    "c" 'org-ctrl-c-ctrl-c)
+  (add-hook 'org-mode-hook 'evil-org-mode))
+
 (use-package evil-surround
   :ensure
   :config (global-evil-surround-mode))

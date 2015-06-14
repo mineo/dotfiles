@@ -87,6 +87,8 @@ set crypt_replysignencrypted = no
 
 set crypt_use_gpgme = yes
 
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+
 bind index \CX collapse-all
 bind index \CV collapse-thread
 

@@ -196,6 +196,7 @@ assign [class="Wine"] → 6
 for_window [instance="tk"] floating enable
 for_window [class="Toplevel"] floating enable
 for_window [class="org-antlr-v4-runtime-misc-TestRig"] floating disable
+for_window [class="jetbrains-idea" title="Commit Changes"] floating disable
 
 exec --no-startup-id "i3-msg 'workspace msg; append_layout ~/.i3/ws-2.json'"
 exec --no-startup-id $urxvt-irc

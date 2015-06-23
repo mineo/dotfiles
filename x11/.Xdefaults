@@ -1,17 +1,22 @@
 *urgentOnBell: true
 *scrollBar: false
 *saveLines: 10000
-urxvt.font: xft:Consolas:pixelsize=16,xft:Segoe UI Symbol:pixelsize=13,xft:Symbola:pixelsize=12
+urxvt.font: xft:Consolas:size=12,xft:Segoe UI Symbol:size=9,xft:Symbola:size=9
 *internalBorder: 0
 *colorUL: #c5f779
 *underlineColor: #c5f779
 
 !!url stuff
-*.urxvt.perl-ext:      url-select,confirm-paste
+*.urxvt.perl-ext:      url-select,confirm-paste,color-themes
 urxvt.keysym.M-u:    perl:url-select:select_next
 urxvt.url-select.launcher:   /usr/bin/firefox -new-tab
 urxvt.url-select.underline: true
+urxvt.keysym.M-C-n: perl:color-themes:next
+urxvt.keysym.M-C-p: perl:color-themes:prev
+urxvt.keysym.M-C-l: perl:color-themes:load-state
+urxvt.keysym.M-C-s: perl:color-themes:save-state
+urxvt.color-themes.preprocessor: /usr/bin/cpp
+urxvt.color-themes.autosave: 1
+urxvt.color-themes.themedir: ~/.colors
 
 Xcursor.size: 12
-
-#include ".colors/mine"

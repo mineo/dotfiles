@@ -13,13 +13,13 @@ default_orientation vertical
 bindcode Mod4+41 fullscreen
 
 # Stacking (Mod4+r)
-bindcode Mod4+Shift+27 layout stacking
+bindsym Mod4+Shift+r layout stacking
 
 # Tabbed (Mod4+w)
-bindcode Mod4+Shift+25 layout tabbed
+bindsym Mod4+Shift+w layout tabbed
 
 # Default (Mod4+e)
-bindcode Mod4+Shift+26 layout default
+bindsym Mod4+Shift+e layout default
 
 bindsym Mod4+p focus parent
 bindsym Mod4+c focus child

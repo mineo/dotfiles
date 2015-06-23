@@ -202,9 +202,10 @@ exec --no-startup-id "i3-msg 'workspace msg; append_layout ~/.i3/ws-2.json'"
 exec --no-startup-id $urxvt-irc
 exec --no-startup-id urxvt -title ncmpcpp -e ncmpcpp
 
-client.focused #2d2d2d #2d2d2d #f9f9f9 #8f8f8f
-client.unfocused #2d2d2d #000000 #a0a0a0 #f9f9f9
-client.focused_inactive #2d2d2d #2f2f2f #a0a0a0
+#class                   border background text indicator
+client.focused           #2d2d2d #2d2d2d #f9f9f9 #3ec2ff
+client.unfocused         #2d2d2d #000000 #a0a0a0 #f9f9f9
+client.focused_inactive  #2d2d2d #2f2f2f #a0a0a0
 
 bar {
     mode hide

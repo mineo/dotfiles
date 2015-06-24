@@ -54,37 +54,6 @@ my $help = "
 
     See the file formats.txt on an explanation of what colors are
     available.
-
-/set neat_left_actions <ON|OFF>
-    * ON  : print nicks left-aligned on actions
-    * OFF : print nicks right-aligned on actions
-
-/set neat_left_messages <ON|OFF>
-    * ON  : print nicks left-aligned on messages
-    * OFF : print nicks right-aligned on messages
-
-/set neat_right_mode <ON|OFF>
-    * ON  : print the mode of the nick e.g @%+ after the nick
-    * OFF : print it left of the nick 
-
-/set neat_maxlength <number>
-    * number : Maximum length of Nicks to display. Longer nicks are truncated.
-    * 0      : Do not truncate nicks.
-
-/set neat_melength <number>
-    * number : number of spaces to substract from /me padding
-
-/set neat_ignorechars <str>
-    * str : regular expression used to filter out unwanted characters in
-            nicks. this can be used to assign the same color for similar
-            nicks, e.g. foo and foo_:
-
-                /set neat_ignorechars [_]
-
-/set neat_allow_shrinking <ON|OFF>
-    * ON  : shrink padding when longest nick disappears
-    * OFF : do not shrink, only allow growing
- 
 ";
 
 #
@@ -179,86 +148,14 @@ my $help = "
 ###
 ################
 
-my ($longestNick, %saved_colors, @colors, $alignment, $sign, %commands);
+my ($nickLength, %saved_colors, @colors, $alignment, $sign, %commands);
 
 my $colorize = -1;
-
-sub reformat() {
-	my $max = Irssi::settings_get_int('neat_maxlength');
-	my $actsign = Irssi::settings_get_bool('neat_left_actions')? '': '-';
-	$sign = Irssi::settings_get_bool('neat_left_messages')? '': '-';
-
-	if ($max && $max < $longestNick) {
-		$longestNick = $max;
-	}
-
-	my $me = $longestNick - Irssi::settings_get_int('neat_melength');
-	$me = 0 if ($me < 0);
-
-	Irssi::command('^format own_action {ownaction $['.$actsign.$me.']0} $1');
-	Irssi::command('^format action_public {pubaction $['.$actsign.$me.']0}$1');
-	Irssi::command('^format action_private {pvtaction $['.$actsign.$me.']0}$1');
-	Irssi::command('^format action_private_query {pvtaction_query $['.$actsign.$me.']0} $2');
-
-	my $length = $sign . $longestNick;
-	if (Irssi::settings_get_bool('neat_right_mode') == 0) {
-		Irssi::command('^format own_msg {ownmsgnick $2 {ownnick $['.$length.']0}}$1');
-		Irssi::command('^format own_msg_channel {ownmsgnick $3 {ownnick $['.$length.']0}{msgchannel $1}}$2');
-		Irssi::command('^format pubmsg_me {pubmsgmenick $2 {menick $['.$length.']0}}$1');
-		Irssi::command('^format pubmsg_me_channel {pubmsgmenick $3 {menick $['.$length.']0}{msgchannel $1}}$2');
-		Irssi::command('^format pubmsg_hilight {pubmsghinick $0 $3 $['.$length.']1%n}$2');
-		Irssi::command('^format pubmsg_hilight_channel {pubmsghinick $0 $4 $['.$length.']1{msgchannel $2}}$3');
-		Irssi::command('^format pubmsg {pubmsgnick $2 {pubnick $['.$length.']0}}$1');
-		Irssi::command('^format pubmsg_channel {pubmsgnick $2 {pubnick $['.$length.']0}}$1');
-	} else {
-		Irssi::command('^format own_msg {ownmsgnick {ownnick $['.$length.']0$2}}$1');
-		Irssi::command('^format own_msg_channel {ownmsgnick {ownnick $['.$length.']0$3}{msgchannel $1}}$2');
-		Irssi::command('^format pubmsg_me {pubmsgmenick {menick $['.$length.']0}$2}$1');
-		Irssi::command('^format pubmsg_me_channel {pubmsgmenick {menick $['.$length.']0$3}{msgchannel $1}}$2');
-		Irssi::command('^format pubmsg_hilight {pubmsghinick $0 $0 $['.$length.']1$3%n}$2');
-		Irssi::command('^format pubmsg_hilight_channel {pubmsghinick $0 $['.$length.']1$4{msgchannel $2}}$3');
-		Irssi::command('^format pubmsg {pubmsgnick {pubnick $['.$length.']0$2}}$1');
-		Irssi::command('^format pubmsg_channel {pubmsgnick {pubnick $['.$length.']0$2}}$1');
-	}
-
-	# format queries
-	Irssi::command('^format own_msg_private_query {ownprivmsgnick {ownprivnick $['.$length.']2}}$1');
-	Irssi::command('^format msg_private_query {privmsgnick $['.$length.']0}$2');
-};
-
-sub findLongestNick {
-	$longestNick = 0;
-
-	# get own nick length
-	map {
-		my $len = length($_->{nick});
-
-		$longestNick = $len if ($len > $longestNick);
-	} Irssi::servers();
-
-	# find longest other nick
-	foreach (Irssi::channels()) {
-		foreach ($_->nicks()) {
-			my $len = length($_->{nick});
-
-			$longestNick = $len if ($len > $longestNick);
-		}
-	}
-
-	reformat();
-}
 
 # a new nick was created
 sub sig_newNick
 {
 	my ($channel, $nick) = @_;
-
-	my $len = length($nick->{nick});
-
-	if ($len > $longestNick) {
-		$longestNick = $len;
-		reformat();
-	}
 
 	return if (exists($saved_colors{$nick->{nick}}));
 
@@ -278,44 +175,8 @@ sub sig_changeNick
 	# we need to update the saved colorors hash independent of nick lenght
 	$saved_colors{$nick->{nick}} = $saved_colors{$old_nick};
 	delete $saved_colors{$old_nick};
-
-	my $new = length($nick->{nick});
-
-	# in case the new nick is longer than the old one, simply remember this
-	# as the new longest nick and reformat.
-	#
-	# if the new nick is as long as the known longest nick nothing has to be
-	# done
-	#
-	# if the new nick is shorter than the current longest one and if the
-	# user allows us to shrink, find new longest nick and reformat.
-	if ($new > $longestNick) {
-		$longestNick = $new;
-	} elsif ($new == $longestNick) {
-		return;
-	} else {
-		return unless Irssi::settings_get_bool('neat_allow_shrinking');
-		findLongestNick();
-	}
-
-	reformat();
 }
 
-sub sig_removeNick
-{
-	my ($channel, $nick) = @_;
-
-	my $thisLen = length($nick->{nick});
-
-	# we only need to recalculate if this was the longest nick and we are
-	# allowed to shrink
-	if ($thisLen == $longestNick && Irssi::settings_get_bool('neat_allow_shrinking')) {
-		findLongestNick();
-		reformat();
-	}
-
-	# we do not remove a known color for a gone nick, as they may return
-}
 
 # based on simple_hash from nickcolor.pl
 sub nick_to_color($) {
@@ -333,32 +194,21 @@ sub nick_to_color($) {
 	return $colors[$counter % ($#colors + 1)];
 }
 
-sub color_left($) {
-	Irssi::command('^format pubmsg {pubmsgnick $2 {pubnick '.$_[0].'$['.$sign.$longestNick.']0}}$1');
-	Irssi::command('^format pubmsg_channel {pubmsgnick $2 {pubnick '.$_[0].'$['.$sign.$longestNick.']0}}$1');
-}
-
-sub color_right($) {
-	Irssi::command('^format pubmsg {pubmsgnick {pubnick '.$_[0].'$['.$sign.$longestNick.']0}$2}$1');
-	Irssi::command('^format pubmsg_channel {pubmsgnick {pubnick '.$_[0].'$['.$sign.$longestNick.']0}$2}$1');
+sub colorize($) {
+    Irssi::command('^format pubmsg {pubmsgnick {pubnick '.$_[0].'$['.$nickLength.']0}$2}$1');
+    Irssi::command('^format pubmsg_channel {pubmsgnick {pubnick '.$_[0].'$['.$nickLength.']0}$2}$1');
 }
 
 sub sig_public {
 	my ($server, $msg, $nick, $address, $target) = @_;
 
-	&$alignment($saved_colors{$nick});
+	colorize($saved_colors{$nick});
 }
 
 sub sig_setup {
 	@colors = split(//, Irssi::settings_get_str('neat_colors'));
+        $nickLength = Irssi::settings_get_int('neat_length');
 
-	# check left or right alignment
-	if (Irssi::settings_get_bool('neat_right_mode') == 0) {
-		$alignment = \&color_left;
-	} else {
-		$alignment = \&color_right;
-	}
-	
 	# check if we switched coloring on or off
 	my $new = Irssi::settings_get_bool('neat_colorize');
 	if ($new != $colorize) {
@@ -371,9 +221,6 @@ sub sig_setup {
 		}
 	}
 	$colorize = $new;
-
-	reformat();
-	&$alignment('%w');
 }
 
 # make sure that every nick has an assigned color
@@ -632,27 +479,20 @@ sub cmd_neatcolor() {
 	&{$commands{$cmd}{"func"}}($witem, $nick, $color);
 }
 
-Irssi::settings_add_bool('misc', 'neat_left_messages', 0);
-Irssi::settings_add_bool('misc', 'neat_left_actions', 0);
-Irssi::settings_add_bool('misc', 'neat_right_mode', 1);
-Irssi::settings_add_int('misc', 'neat_maxlength', 0);
-Irssi::settings_add_int('misc', 'neat_melength', 2);
 Irssi::settings_add_bool('misc', 'neat_colorize', 1);
 Irssi::settings_add_str('misc', 'neat_colors', 'rRgGyYbBmMcC');
 Irssi::settings_add_str('misc', 'neat_ignorechars', '');
-Irssi::settings_add_bool('misc', 'neat_allow_shrinking', 1);
+Irssi::settings_add_int('misc', 'neat_length', 10);
 
 Irssi::command_bind('neatcolor', 'cmd_neatcolor');
 
 Irssi::signal_add('nicklist new', 'sig_newNick');
 Irssi::signal_add('nicklist changed', 'sig_changeNick');
-Irssi::signal_add('nicklist remove', 'sig_removeNick');
 
 Irssi::signal_add('setup changed', 'sig_setup');
 Irssi::signal_add_last('setup reread', 'sig_setup');
 
-findLongestNick();
-sig_setup;
+sig_setup();
 
 load_colors();
 assert_colors();

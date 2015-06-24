@@ -8,6 +8,7 @@
 #define S_base3         #fdf6e3
 
 *background:            S_base3
+*borderColor:           S_base3
 *foreground:            S_base00
 *fadeColor:             S_base3
 *cursorColor:           S_base01

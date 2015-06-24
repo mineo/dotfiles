@@ -1,6 +1,7 @@
 ! based on colors/sicp
 
 *background:                                #171717
+*borderColor:                               #171716
 *foreground:                                #a0a0a0
 
 !Black --------------------------------------------

@@ -272,6 +272,10 @@
     "w +" 'text-scale-adjust)
   (global-evil-leader-mode))
 
+(use-package evil-matchit
+  :ensure
+  :config (global-evil-matchit-mode))
+
 (use-package evil-nerd-commenter
   :ensure
   :config (define-key evil-normal-state-map (kbd "C-o") 'evilnc-comment-or-uncomment-lines))

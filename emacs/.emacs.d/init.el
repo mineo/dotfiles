@@ -206,6 +206,21 @@
 ;; electric-pair-mode
 (electric-pair-mode)
 
+(use-package ensime
+  :ensure
+  :config
+  (setq ensime-auto-connect 'always
+        ;; For some reason ensime doesn't find this automatically
+        ensime-sbt-command "/usr/bin/sbt")
+  (add-hook 'scala-mode-hook #'ensime-mode)
+  (with-eval-after-load 'flycheck
+    (add-hook 'ensime-mode-hook (lambda () (flycheck-mode -1))))
+  (evil-set-initial-state 'ensime-inspector-mode 'emacs)
+  (evil-leader/set-key-for-mode 'scala-mode
+    "e l" 'ensime-show-all-errors-and-warnings
+    "e n" 'ensime-forward-note
+    "e p" 'ensime-backward-note))
+
 ;; ;; enable evil
 (use-package evil
   :commands evil-set-initial-state

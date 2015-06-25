@@ -8,6 +8,7 @@ font xft:Liberation Sans bold 9
 floating_modifier Mod4
 
 default_orientation vertical
+workspace_layout tabbed
 
 # Fullscreen (Mod4+f)
 bindcode Mod4+41 fullscreen
@@ -149,7 +150,6 @@ ipc-socket ~/.i3/ipc.sock
 # borders
 bindsym Mod4+b border toggle
 new_window pixel 3
-workspace_layout default
 
 workspace "www" output HDMI-1
 workspace "msg" output DVI-I-1

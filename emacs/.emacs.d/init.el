@@ -142,7 +142,29 @@
           (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t ; parse on load
         TeX-auto-save t) ; parse on save
-)
+  (evil-leader/set-key-for-mode 'latex-mode
+    ;; preview
+    "m p c" 'preview-clearout-document
+    "m p d" 'preview-document
+    ;; building
+    "m _" 'TeX-master-file-ask
+    "m c" 'TeX-command-master
+    "m v" 'TeX-view
+    ;; reftex
+    "m =" 'reftex-toc
+    "m r -" 'reftex-toc-recenter
+    "m r c" 'reftex-citation
+    "m r r" 'reftex-reference
+    ;; insertion
+    "m i e" 'LaTeX-environment
+    "m i f" 'TeX-font
+    "m i m" 'TeX-insert-macro
+    "m i s" 'LaTeX-section
+    ))
+
+(use-package reftex
+  :config
+  (setq reftex-plug-into-AUCTeX t))
 
 (use-package auctex-latexmk
   :ensure

@@ -42,8 +42,6 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.org/packages/")))
 
-(setq-default line-spacing 2)
-
 ;; Don't show minor modes in the modeline
 (setq rm-blacklist ".*")
 

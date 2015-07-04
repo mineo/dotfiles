@@ -487,7 +487,7 @@
   :ensure
   :config
   (setq magit-last-seen-setup-instructions "1.4.0")
-  (evil-set-initial-state 'magit-mode 'emacs)
+  (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
   (evil-leader/set-key
     "v" 'magit-status))
 

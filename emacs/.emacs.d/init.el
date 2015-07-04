@@ -310,6 +310,7 @@
   (setq flycheck-flake8rc "setup.cfg")
   (evil-leader/set-key
     "e l" 'flycheck-list-errors
+    "e L" 'helm-flycheck
     "e n" 'flycheck-next-error
     "e p" 'flycheck-previous-error
     )

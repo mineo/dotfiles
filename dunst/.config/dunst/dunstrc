@@ -139,7 +139,7 @@
 
     # redisplay last message(s)
     # On the US keyboard layout 'grave' is normally above TAB and left of '1'.
-    history = ctrl+grave
+    history = mod4+grave
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

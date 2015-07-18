@@ -99,7 +99,11 @@
             (set-face-background 'ace-jump-face-foreground "#000000"))
         (progn
           (load-theme default-light-color-theme 'no-confirm)))
-      (set-face-background 'show-paren-match "#00fa9a"))))
+      (set-face-background 'show-paren-match "#00fa9a")
+      (set-face-attribute 'default nil :font "Consolas-13")
+      (dolist (what '(mode-line
+                      mode-line-inactive))
+        (set-face-attribute what nil :font "Consolas-12")))))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -639,10 +643,6 @@
 
 ;; load theme
 (toggle-dark-light-theme)
-(set-face-attribute 'default nil :font "Consolas-13")
-(dolist (what '(mode-line
-                mode-line-inactive))
-  (set-face-attribute what nil :font "Consolas-12"))
 
 (provide 'init)
 ;;; init.el ends here

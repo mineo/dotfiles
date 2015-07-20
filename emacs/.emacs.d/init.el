@@ -93,12 +93,8 @@
       (disable-theme theme))
     (progn
       (if is-light
-          (progn
-            (load-theme default-dark-color-theme 'no-confirm)
-            (set-face-foreground 'ace-jump-face-foreground "#fa9a4b")
-            (set-face-background 'ace-jump-face-foreground "#000000"))
-        (progn
-          (load-theme default-light-color-theme 'no-confirm)))
+          (load-theme default-dark-color-theme 'no-confirm)
+        (load-theme default-light-color-theme 'no-confirm))
       (set-face-background 'show-paren-match "#00fa9a")
       (set-face-attribute 'default nil :font "Consolas-13")
       (dolist (what '(mode-line
@@ -114,23 +110,19 @@
   :config
   (yatemplate-fill-alist))
 
-(use-package ace-jump-mode
+(use-package avy
   :ensure
   :config
-  (setq ace-jump-mode-move-keys
-        (nconc (loop for i from ?a to ?z collect i)
-               (loop for i from ?0 to ?9 collect i)))
-  (setq ace-jump-word-mode-use-query-char nil)
   (evil-leader/set-key
-    "a c" 'ace-jump-char-mode
-    "a w" 'ace-jump-word-mode))
+    "a c" 'avy-goto-char
+    "a w" 'avy-goto-word-or-subword-1
+    "a l" 'avy-goto-line))
 
-(use-package ace-jump-zap
+(use-package avy-zap
   :ensure
   :config
   (evil-leader/set-key
-    "a z" 'ace-jump-zap-to-char
-    ))
+    "a z" 'avy-zap-to-char))
 
 (use-package tex-site
   :ensure auctex

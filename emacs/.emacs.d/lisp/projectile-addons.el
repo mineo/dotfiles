@@ -49,21 +49,6 @@
            (when (projectile-project-p)
              (run-hooks 'projectile-idle-timer-hook))))))
 
-(defun mineo-projectile-regenerate-tags ()
-  "Regenerate a projects TAGS file if the project root is not the users home directory."
-  (interactive)
-  (if (not
-       (or
-        (string-equal
-         (projectile-project-root)
-         (expand-file-name "~/"))
-        ;; ctags generates empty TAGS files for haskell projects
-        ;; This also ignores ~ if there's a .cabal directory in it.
-        (eq
-         (projectile-project-type)
-         'haskell-cabal)))
-      (projectile-regenerate-tags)))
-
 (defun mineo-python-shell-cd-project-root ()
   "CD the python shell to the project root."
   (let* ((proot (projectile-project-root))

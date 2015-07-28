@@ -535,9 +535,6 @@
 (use-package projectile-addons
   :load-path "lisp/"
   :config
-  ;; set projectiles idle timer hook to a function that only regenerates tags if
-  ;; the project root is not my home directory
-  (setq projectile-idle-timer-hook 'mineo-projectile-regenerate-tags)
   ;; setting projectile-enable-idle-timer outside of customize doesn't
   ;; initialize the timer, so initialize it manually
   (mineo-initialize-projectile-idle-timer)

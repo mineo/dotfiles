@@ -105,11 +105,6 @@
 
 (require 'use-package)
 
-(use-package yatemplate
-  :ensure t
-  :config
-  (yatemplate-fill-alist))
-
 (use-package avy
   :ensure
   :config

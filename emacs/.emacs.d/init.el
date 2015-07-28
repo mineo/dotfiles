@@ -331,17 +331,6 @@
   :ensure
   :config (add-to-list 'company-backends 'company-go))
 
-;; guide-key
-(use-package guide-key
-  :ensure
-  :config
-  (setq guide-key/guide-key-sequence '("C-c"
-                                       "C-x"
-                                       "SPC"
-                                       )
-  )
-  (setq guide-key/recursive-key-sequence-flag t)
-  (guide-key-mode))
 
 ;; haskell
 (use-package haskell-mode
@@ -604,6 +593,22 @@
 (use-package volatile-highlights
   :ensure
   :config (volatile-highlights-mode))
+
+(use-package which-key
+  :ensure
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-right-bottom)
+  (dolist (el '(("SPC a" . "avy")
+                ("SPC e" . "flycheck")
+                ("SPC h" . "helm")
+                ("SPC h s" . "helm-swoop")
+                ("SPC m" . "major mode")
+                ("SPC o" . "org")
+                ("SPC p" . "projectile")
+                ("SPC v" . "magit")
+                ("SPC w" . "window")))
+    (add-to-list 'which-key-key-based-description-replacement-alist el)))
 
 (use-package whitespace
   :ensure

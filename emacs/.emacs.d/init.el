@@ -583,8 +583,7 @@
   )
 
 (use-package switch-window
-  :ensure
-  :bind ("C-x o" . switch-window))
+  :ensure)
 
 (use-package volatile-highlights
   :ensure

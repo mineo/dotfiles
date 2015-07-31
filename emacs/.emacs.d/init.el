@@ -238,6 +238,7 @@
 
 (setq-default evil-escape-key-sequence "jk")
 (use-package evil-escape
+  :disabled t
   :ensure
   :config
   (evil-escape-mode))

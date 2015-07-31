@@ -1,4 +1,5 @@
-! based on colors/sicp
+*colorUL: #c5f779
+*underlineColor: #c5f779
 
 *background:                                #171717
 *borderColor:                               #171716

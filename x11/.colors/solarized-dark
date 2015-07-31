@@ -10,6 +10,7 @@
 *background:            S_base03
 *borderColor:           S_base03
 *foreground:            S_base0
+*underlineColor:        S_base0
 *fadeColor:             S_base03
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01

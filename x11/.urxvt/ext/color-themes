@@ -104,7 +104,7 @@ sub escape_seq {
         'italicColor'      => '704',
         'tintColor'        => '705',
         'boldColor'        => '706',
-        'underlinedColor'  => '707',
+        'underlineColor'  => '707',
         'borderColor'      => '708',
         'font'             => '710',
         'boldFont'         => '711',

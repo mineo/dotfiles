@@ -341,6 +341,7 @@
         haskell-indentation-show-indentations nil)
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+  (add-hook 'haskell-mode-hook (lambda () (column-enforce-mode -1)))
   (evil-set-initial-state 'haskell-interactive-mode 'emacs)
   (evil-leader/set-key-for-mode 'haskell-mode
     "mcb" 'haskell-process-cabal-build

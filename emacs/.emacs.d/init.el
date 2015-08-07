@@ -459,11 +459,13 @@
 ;; line numbers
 (use-package linum
   :ensure
+  :disabled t
   :config
   (add-hook 'prog-mode-hook 'linum-mode))
 
 (use-package linum-relative
-  :ensure)
+  :ensure
+  :disabled t)
 
 (use-package magit
   :ensure

@@ -58,8 +58,6 @@
 (defconst my-packages
   '(
     use-package
-    ;; color themes
-    solarized-theme
 ))
 
 
@@ -575,6 +573,17 @@
 
 ;; rst
 (setq rst-pdf-program "mimeopen")
+
+(use-package solarized
+  :ensure solarized-theme
+  :config
+  (setq solarized-use-less-bold t
+        solarized-use-variable-pitch nil
+        solarized-height-minus-1 1.0
+        solarized-height-plus-1 1.0
+        solarized-height-plus-2 1.0
+        solarized-height-plus-3 1.0
+        solarized-height-plus-4 1.0))
 
 (use-package smart-mode-line
   :ensure

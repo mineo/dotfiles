@@ -619,6 +619,7 @@
   (which-key-mode)
   (which-key-setup-side-window-right-bottom)
   (dolist (el '(("SPC a" . "avy")
+                ("SPC b" . "buffer-move")
                 ("SPC e" . "flycheck")
                 ("SPC h" . "helm")
                 ("SPC h s" . "helm-swoop")

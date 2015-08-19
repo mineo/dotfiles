@@ -51,6 +51,9 @@
 ;; Don't use dialog boxes
 (setq use-dialog-box nil)
 
+;; I'll take a longer route for killing emacs
+(global-unset-key "\C-x\C-c")
+
 (require 'package)
 (setq package-enable-at-startup nil)
 (package-initialize)

@@ -120,6 +120,15 @@
   (evil-leader/set-key
     "a z" 'avy-zap-to-char))
 
+(use-package buffer-move
+  :ensure
+  :config
+  (evil-leader/set-key
+    "b m h" 'buf-move-left
+    "b m l" 'buf-move-right
+    "b m j" 'buf-move-down
+    "b m k" 'buf-move-up))
+
 (use-package tex-site
   :ensure auctex
   :config

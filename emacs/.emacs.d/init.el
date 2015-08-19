@@ -263,14 +263,15 @@
   :config
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
-    "k" 'kill-buffer
+    "b k" 'kill-buffer
     "s" 'toggle-dark-light-theme
+    "w 1" 'delete-other-windows
     "w s" 'evil-window-vsplit
     "w o" 'switch-window
     "w w" 'delete-window
     "w c" 'delete-frame
     "w +" 'text-scale-adjust)
-  (global-evil-leader-mode))
+  (global-evil-leader-mode 1))
 
 (use-package evil-matchit
   :ensure
@@ -396,7 +397,6 @@
   (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
   (evil-leader/set-key
     "SPC" 'helm-M-x
-    "b" 'helm-projectile-switch-to-buffer
     "h a" 'helm-apropos
     "h h" 'help
     "h f" 'helm-find-files

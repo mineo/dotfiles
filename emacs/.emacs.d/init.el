@@ -97,10 +97,14 @@
           (load-theme default-dark-color-theme 'no-confirm)
         (load-theme default-light-color-theme 'no-confirm))
       (set-face-background 'show-paren-match "#00fa9a")
-      (set-face-attribute 'default nil :font "Consolas-13")
-      (dolist (what '(mode-line
-                      mode-line-inactive))
-        (set-face-attribute what nil :font "Consolas-12")))))
+      ;; Set the default font
+      (add-to-list 'default-frame-alist '(font . "Consolas-13"))
+      ;; Set the font of the mode line. If this is done before
+      ;; after-make-frame-functions, emacsclient -a '' segfaults
+      (add-hook 'after-make-frame-functions
+                (lambda (frame)
+                  (set-face-attribute 'mode-line frame :font "Consolas-12"))))))
+
 
 (require 'use-package)
 

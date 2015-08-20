@@ -83,7 +83,7 @@
 (defcustom default-light-color-theme 'solarized-light
   "default light theme")
 
-(defcustom default-dark-color-theme 'flatland
+(defcustom default-dark-color-theme 'solarized-dark
   "default dark theme")
 
 (defun toggle-dark-light-theme ()

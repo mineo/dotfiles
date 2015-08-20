@@ -36,7 +36,7 @@
 ;; Automatically reload buffers if the file changes
 (global-auto-revert-mode 1)
 
-(column-number-mode)
+(column-number-mode 1)
 
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
@@ -77,7 +77,7 @@
 
 (ensure-packages)
 
-(recentf-mode)
+(recentf-mode 1)
 
 ;; https://kylewm.com/article/2014/01/30/1/emacs-toggle-light-and-dark-themes
 (defcustom default-light-color-theme 'solarized-light
@@ -175,14 +175,14 @@
   (add-hook 'prog-mode-hook 'column-enforce-mode)
   (add-hook 'text-mode-hook 'column-enforce-mode))
 
-(auto-insert-mode)
+(auto-insert-mode 1)
 ;; company
 (use-package company
   :ensure
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
-  :init (global-company-mode))
+  :init (global-company-mode 1))
 
 (use-package company-quickhelp
   :ensure
@@ -203,7 +203,7 @@
   :config (add-hook 'prog-mode-hook 'turn-on-eldoc-mode))
 
 ;; electric-pair-mode
-(electric-pair-mode)
+(electric-pair-mode 1)
 
 (use-package ensime
   :ensure
@@ -251,7 +251,7 @@
   :disabled t
   :ensure
   :config
-  (evil-escape-mode))
+  (evil-escape-mode 1))
 
 (use-package evil-exchange
   :ensure
@@ -275,7 +275,7 @@
 
 (use-package evil-matchit
   :ensure
-  :config (global-evil-matchit-mode))
+  :config (global-evil-matchit-mode 1))
 
 (use-package evil-nerd-commenter
   :ensure
@@ -290,11 +290,11 @@
 
 (use-package evil-surround
   :ensure
-  :config (global-evil-surround-mode))
+  :config (global-evil-surround-mode 1))
 
 (use-package evil-visualstar
   :ensure
-  :config (global-evil-visualstar-mode))
+  :config (global-evil-visualstar-mode 1))
 
 (use-package expand-region
   :ensure
@@ -317,10 +317,11 @@
     "e n" 'flycheck-next-error
     "e p" 'flycheck-previous-error
     )
-  (global-flycheck-mode))
+  (global-flycheck-mode ))
 
 (use-package flycheck-pos-tip
   :ensure
+  :disabled t
   :config (custom-set-variables '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
 ;; go
@@ -464,7 +465,7 @@
 
 (use-package hl-line
   :ensure
-  :config (global-hl-line-mode))
+  :config (global-hl-line-mode 1))
 
 ;; line numbers
 (use-package linum
@@ -527,7 +528,7 @@
   (evil-leader/set-key
     "p" 'projectile-commander
     )
-  (projectile-global-mode)
+  (projectile-global-mode 1)
   )
 
 (use-package projectile-addons
@@ -577,6 +578,10 @@
         org-default-notes-file (concat org-directory "/notes.org")
         org-agenda-files '("~/.org")))
 
+(use-package org-bullets
+  :ensure
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package rainbow-delimiters
   :ensure
@@ -614,12 +619,12 @@
 
 (use-package volatile-highlights
   :ensure
-  :config (volatile-highlights-mode))
+  :config (volatile-highlights-mode 1))
 
 (use-package which-key
   :ensure
   :config
-  (which-key-mode)
+  (which-key-mode 1)
   (which-key-setup-side-window-right-bottom)
   (dolist (el '(("SPC a" . "avy")
                 ("SPC b" . "buffer-move")
@@ -652,7 +657,7 @@
 
 (use-package yasnippet
   :ensure
-  :config (yas-global-mode))
+  :config (yas-global-mode 1))
 
 (use-package yatemplate
   :ensure

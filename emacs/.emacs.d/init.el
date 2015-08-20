@@ -105,6 +105,13 @@
                 (lambda (frame)
                   (set-face-attribute 'mode-line frame :font "Consolas-12"))))))
 
+(defun mineo-configure-fonts (frame)
+    "Set up additional fonts for Emoji and other things in FRAME."
+  (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend)
+  (set-fontset-font t 'symbol (font-spec :family "Segoe UI Symbol") nil 'prepend))
+
+(add-hook 'after-make-frame-functions #'mineo-configure-fonts)
+
 
 (require 'use-package)
 

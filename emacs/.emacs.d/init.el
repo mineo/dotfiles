@@ -107,25 +107,28 @@
 (use-package avy
   :ensure
   :config
-  (evil-leader/set-key
-    "a c" 'avy-goto-char
-    "a w" 'avy-goto-word-or-subword-1
-    "a l" 'avy-goto-line))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "a c" 'avy-goto-char
+      "a w" 'avy-goto-word-or-subword-1
+      "a l" 'avy-goto-line)))
 
 (use-package avy-zap
   :ensure
   :config
-  (evil-leader/set-key
-    "a z" 'avy-zap-to-char))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "a z" 'avy-zap-to-char)))
 
 (use-package buffer-move
   :ensure
   :config
-  (evil-leader/set-key
-    "b m h" 'buf-move-left
-    "b m l" 'buf-move-right
-    "b m j" 'buf-move-down
-    "b m k" 'buf-move-up))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "b m h" 'buf-move-left
+      "b m l" 'buf-move-right
+      "b m j" 'buf-move-down
+      "b m k" 'buf-move-up)))
 
 (use-package tex-site
   :ensure auctex
@@ -136,28 +139,29 @@
                   TeX-fold-mode
                   (lambda ()
                     (setq TeX-command-default "LatexMk"))))
-          (add-hook 'TeX-mode-hook mode))
-  (setq TeX-parse-self t ; parse on load
-        TeX-auto-save t) ; parse on save
-  (evil-leader/set-key-for-mode 'latex-mode
-    ;; preview
-    "m p c" 'preview-clearout-document
-    "m p d" 'preview-document
-    ;; building
-    "m _" 'TeX-master-file-ask
-    "m c" 'TeX-command-master
-    "m v" 'TeX-view
-    ;; reftex
-    "m =" 'reftex-toc
-    "m r -" 'reftex-toc-recenter
-    "m r c" 'reftex-citation
-    "m r r" 'reftex-reference
-    ;; insertion
-    "m i e" 'LaTeX-environment
-    "m i f" 'TeX-font
-    "m i m" 'TeX-insert-macro
-    "m i s" 'LaTeX-section
-    ))
+    (add-hook 'TeX-mode-hook mode))
+  (setq TeX-parse-self t                ; parse on load
+        TeX-auto-save t)                ; parse on save
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'latex-mode
+      ;; preview
+      "m p c" 'preview-clearout-document
+      "m p d" 'preview-document
+      ;; building
+      "m _" 'TeX-master-file-ask
+      "m c" 'TeX-command-master
+      "m v" 'TeX-view
+      ;; reftex
+      "m =" 'reftex-toc
+      "m r -" 'reftex-toc-recenter
+      "m r c" 'reftex-citation
+      "m r r" 'reftex-reference
+      ;; insertion
+      "m i e" 'LaTeX-environment
+      "m i f" 'TeX-font
+      "m i m" 'TeX-insert-macro
+      "m i s" 'LaTeX-section
+      )))
 
 (use-package reftex
   :config
@@ -184,7 +188,9 @@
 
 (use-package company-quickhelp
   :ensure
-  :init (add-hook 'company-mode-hook #'company-quickhelp-mode))
+  :config
+  (with-eval-after-load 'company
+    (add-hook 'company-mode-hook #'company-quickhelp-mode)))
 
 (use-package copyright
   :defer t
@@ -212,11 +218,13 @@
   (add-hook 'scala-mode-hook #'ensime-mode)
   (with-eval-after-load 'flycheck
     (add-hook 'ensime-mode-hook (lambda () (flycheck-mode -1))))
-  (evil-set-initial-state 'ensime-inspector-mode 'emacs)
-  (evil-leader/set-key-for-mode 'scala-mode
-    "e l" 'ensime-show-all-errors-and-warnings
-    "e n" 'ensime-forward-note
-    "e p" 'ensime-backward-note))
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'ensime-inspector-mode 'emacs))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'scala-mode
+      "e l" 'ensime-show-all-errors-and-warnings
+      "e n" 'ensime-forward-note
+      "e p" 'ensime-backward-note)))
 
 ;; ;; enable evil
 (use-package evil
@@ -309,12 +317,13 @@
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   (setq-default flycheck-disabled-checkers '(python-pylint python-pyflakes))
   (setq flycheck-flake8rc "setup.cfg")
-  (evil-leader/set-key
-    "e l" 'flycheck-list-errors
-    "e L" 'helm-flycheck
-    "e n" 'flycheck-next-error
-    "e p" 'flycheck-previous-error
-    )
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "e l" 'flycheck-list-errors
+      "e L" 'helm-flycheck
+      "e n" 'flycheck-next-error
+      "e p" 'flycheck-previous-error
+      ))
   (global-flycheck-mode ))
 
 (use-package flycheck-pos-tip
@@ -326,8 +335,9 @@
 (use-package go-mode
   :ensure
   :config
-  (evil-leader/set-key-for-mode 'go-mode
-    "d" 'godoc-at-point))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'go-mode
+      "d" 'godoc-at-point)))
 
 (use-package go-eldoc
   :ensure
@@ -352,19 +362,22 @@
   (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
   (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   (add-hook 'haskell-mode-hook (lambda () (column-enforce-mode -1)))
-  (evil-set-initial-state 'haskell-interactive-mode 'emacs)
-  (evil-leader/set-key-for-mode 'haskell-mode
-    "mcb" 'haskell-process-cabal-build
-    "mcc" 'haskell-process-cabal
-    "mai" 'haskell-add-import
-    "ib" 'haskell-interactive-bring
-    "ic" 'haskell-interactive-mode-clear
-    "if" 'haskell-process-load-file
-    "is" 'haskell-interactive-switch)
-  (evil-leader/set-key-for-mode 'haskell-cabal-mode
-    "mcc" 'haskell-process-cabal
-    "ib" 'haskell-interactive-bring
-    "ic" 'haskell-interactive-mode-clear))
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'haskell-interactive-mode 'emacs))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'haskell-mode
+      "mcb" 'haskell-process-cabal-build
+      "mcc" 'haskell-process-cabal
+      "mai" 'haskell-add-import
+      "ib" 'haskell-interactive-bring
+      "ic" 'haskell-interactive-mode-clear
+      "if" 'haskell-process-load-file
+      "is" 'haskell-interactive-switch))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'haskell-cabal-mode
+      "mcc" 'haskell-process-cabal
+      "ib" 'haskell-interactive-bring
+      "ic" 'haskell-interactive-mode-clear)))
 
 (use-package ghc
   :ensure
@@ -394,17 +407,19 @@
         helm-semantic-fuzzy-match t)
   (define-key evil-normal-state-map (kbd ";") 'helm-M-x)
   (define-key evil-visual-state-map (kbd ";") 'helm-M-x)
-  (evil-leader/set-key
-    "SPC" 'helm-M-x
-    "h a" 'helm-apropos
-    "h h" 'help
-    "h f" 'helm-find-files
-    "h m" 'helm-man-woman
-    "h o" 'helm-occur
-    "h p" 'helm-projectile
-    "h r" 'helm-recentf
-    "h t" 'helm-semantic-or-imenu
-    )
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "SPC" 'helm-M-x
+      "b s" 'helm-buffers-list
+      "h a" 'helm-apropos
+      "h h" 'help
+      "h f" 'helm-find-files
+      "h m" 'helm-man-woman
+      "h o" 'helm-occur
+      "h p" 'helm-projectile
+      "h r" 'helm-recentf
+      "h t" 'helm-semantic-or-imenu
+      ))
   ;; Let helm always open at the bottom at 40% window height
   ;; From https://www.reddit.com/r/emacs/comments/345vtl/make_helm_window_at_the_bottom_without_using_any/
   (add-to-list 'display-buffer-alist
@@ -425,9 +440,10 @@
 (use-package helm-swoop
   :ensure
   :config
-  (evil-leader/set-key
-    "h s s" 'helm-swoop
-    "h s m" 'helm-multi-swoop))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "h s s" 'helm-swoop
+      "h s m" 'helm-multi-swoop)))
 
 (use-package highlight-symbol
   :ensure
@@ -461,21 +477,23 @@
   :config
   (setq magit-last-seen-setup-instructions "1.4.0")
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
-  (evil-leader/set-key
-    "v" 'magit-status))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "v" 'magit-status)))
 
 (use-package markdown-mode
   :ensure
   :config
-  (evil-leader/set-key-for-mode 'markdown-mode
-    "m v" 'markdown-preview
-    "m -" 'markdown-promote
-    "m +" 'markdown-demote
-    "m e" 'markdown-export
-    "m i l" 'markdown-insert-link
-    "m o" 'markdown-follow-thing-at-point
-    "m n" 'outline-next-heading
-    "m p" 'outline-previous-heading))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'markdown-mode
+      "m v" 'markdown-preview
+      "m -" 'markdown-promote
+      "m +" 'markdown-demote
+      "m e" 'markdown-export
+      "m i l" 'markdown-insert-link
+      "m o" 'markdown-follow-thing-at-point
+      "m n" 'outline-next-heading
+      "m p" 'outline-previous-heading)))
 
 (use-package midnight
   :config (setq midnight-mode t))
@@ -487,7 +505,8 @@
 (use-package paradox
   :ensure
   :config
-  (evil-set-initial-state 'paradox-menu-mode 'emacs)
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'paradox-menu-mode 'emacs))
   (setq paradox-github-token t))
 
 (use-package pip-requirements
@@ -503,9 +522,10 @@
   (def-projectile-commander-method ?j "Find tag." (call-interactively 'helm-etags-select))
   (def-projectile-commander-method ?P "Test the project." (call-interactively 'projectile-test-project))
   (def-projectile-commander-method ?p "Switch the project." (call-interactively 'helm-projectile-switch-project))
-  (evil-leader/set-key
-    "p" 'projectile-commander
-    )
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "p" 'projectile-commander
+      ))
   (projectile-global-mode 1)
   )
 
@@ -537,24 +557,44 @@
   :ensure
   :config
   (setq-default mode-line-format (cons '(:exec venv-current-name) mode-line-format))
-  (evil-leader/set-key-for-mode 'python-mode
-    "v" 'venv-workon
-    "d" 'anaconda-mode-view-doc
-    )
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'python-mode
+      "v" 'venv-workon
+      "d" 'anaconda-mode-view-doc
+      ))
   (evil-set-initial-state 'anaconda-nav-mode 'emacs))
 
 ;; org-mode
 (use-package org
   :ensure
   :config
-  (evil-leader/set-key
-    "o a" 'org-agenda
-    "o c" 'org-capture
-    "o b" 'org-iswitchb
-    "o l" 'org-store-link)
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "o a" 'org-agenda
+      "o c" 'org-capture
+      "o b" 'org-iswitchb
+      "o l" 'org-store-link))
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key-for-mode 'org-mode
+      "m A" 'org-archive-to-archive-sibling))
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")
-        org-agenda-files '("~/.org")))
+        ;; Open my notes file instead of the scratch buffer in new
+        ;; emacs instances
+        initial-buffer-choice org-default-notes-file
+        org-ellipsis " […]"
+        org-agenda-files '("~/.org")
+        org-refile-targets '((org-agenda-files :maxlevel . 2))
+        org-capture-templates
+        '(("t" "Todo" entry (file+headline nil "Tasks")
+           "* TODO %?\n  %i\n  %a")
+          ("b" "Buch" entry (file+headline nil "unsortiert")
+           "*** %?")
+          ( "v" "Video" entry (file+headline nil "Video")
+            "** %?")
+          ("m" "Musik" item (file+headline nil "Musik")
+           "    - [ ] %?"))))
 
 (use-package org-bullets
   :ensure

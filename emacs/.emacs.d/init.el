@@ -102,8 +102,6 @@
                       mode-line-inactive))
         (set-face-attribute what nil :font "Consolas-12")))))
 
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 (require 'use-package)
 
 (use-package avy
@@ -438,26 +436,6 @@
   (add-hook 'prog-mode-hook 'highlight-symbol-nav-mode)
   (setq highlight-symbol-on-navigation-p t
         highlight-symbol-idle-delay 0.4))
-
-(use-package ibuffer-vc
-  :ensure
-  :config
-  (add-hook 'ibuffer-hook
-            (lambda ()
-              (ibuffer-vc-set-filter-groups-by-vc-root)
-              (unless (eq ibuffer-sorting-mode 'alphabetic)
-                (ibuffer-do-sort-by-alphabetic))))
-  (setq ibuffer-formats
-        '((mark modified read-only vc-status-mini " "
-                (name 18 18 :left :elide)
-                " "
-                (size 9 -1 :right)
-                " "
-                (mode 16 16 :left :elide)
-                " "
-                (vc-status 16 16 :left)
-                " "
-                filename-and-process))))
 
 (use-package ignoramus
   :ensure

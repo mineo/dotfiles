@@ -39,8 +39,7 @@
 (column-number-mode 1)
 
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")))
 
 ;; Don't show minor modes in the modeline, except for flycheck
 (setq rm-whitelist "FlyC.*")

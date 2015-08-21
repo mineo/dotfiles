@@ -599,6 +599,8 @@
         org-refile-targets '((org-agenda-files :maxlevel . 2))
         org-capture-templates
         '(("t" "Todo" entry (file+headline nil "Tasks")
+           "* TODO %?\n  %i")
+          ("l" "Todo with link" entry (file+headline nil "Tasks")
            "* TODO %?\n  %i\n  %a")
           ("b" "Buch" entry (file+headline nil "unsortiert")
            "*** %?")

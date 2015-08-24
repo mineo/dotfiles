@@ -244,7 +244,10 @@
   (evil-set-initial-state 'rst-toc-mode 'emacs)
   (evil-set-initial-state 'Man-mode 'emacs)
   (evil-set-initial-state 'calendar-mode 'emacs)
-  (evil-mode))
+  ;; I never use evils M-., so free the keybinding for Emacs' find-tag
+  (define-key evil-normal-state-map (kbd "M-.") nil)
+  (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+  (evil-mode 1))
 
 (use-package evil-args
   :ensure

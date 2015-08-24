@@ -279,7 +279,9 @@
   :config
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
+    "b b" 'bury-buffer
     "b k" 'kill-buffer
+    "b K" 'kill-buffer-and-window
     "s" 'toggle-dark-light-theme
     "w 1" 'delete-other-windows
     "w s" 'evil-window-vsplit

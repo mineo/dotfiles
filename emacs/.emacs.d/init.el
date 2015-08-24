@@ -357,6 +357,8 @@
   :ensure
   :config (add-to-list 'company-backends 'company-go))
 
+(add-hook 'prog-mode-hook 'goto-address-prog-mode)
+(add-hook 'text-mode-hook 'goto-address-mode)
 
 ;; haskell
 (use-package haskell-mode

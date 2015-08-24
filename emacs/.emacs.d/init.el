@@ -523,7 +523,8 @@
   :config
   (with-eval-after-load 'evil
     (evil-set-initial-state 'paradox-menu-mode 'emacs))
-  (setq paradox-github-token t))
+  (setq paradox-github-token t
+        paradox-execute-asynchronously nil))
 
 (use-package pip-requirements
   :ensure)

@@ -95,7 +95,8 @@
       (if is-light
           (load-theme default-dark-color-theme 'no-confirm)
         (load-theme default-light-color-theme 'no-confirm))
-      (set-face-background 'show-paren-match "#00fa9a")
+      (set-face-underline 'show-paren-match t)
+      (set-face-underline 'highlight-symbol-face t)
       ;; Set the default font
       (add-to-list 'default-frame-alist '(font . "Consolas-13"))
       ;; Set the font of the mode line. If this is done before

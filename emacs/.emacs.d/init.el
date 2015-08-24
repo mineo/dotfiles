@@ -300,9 +300,7 @@
 (use-package evil-org
   :ensure
   :config
-  (evil-define-key 'normal evil-org-mode-map
-    "c" 'org-ctrl-c-ctrl-c)
-  (add-hook 'org-mode-hook 'evil-org-mode))
+  (add-hook 'org-mode-hook 'evil-org-mode 1))
 
 (use-package evil-surround
   :ensure

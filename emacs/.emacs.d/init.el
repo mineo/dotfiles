@@ -613,7 +613,12 @@
           ( "v" "Video" entry (file+headline nil "Video")
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
-           "    - [ ] %?"))))
+           "    - [ ] %?")))
+  ;; Use mimeopen or evince for PDF files
+  (setq org-file-apps (cl-remove "\\.pdf\\'" org-file-apps :test 'equal :key 'car))
+  (if (executable-find "mimeopen")
+      (add-to-list 'org-file-apps '("pdf" . "mimeopen %s"))
+      (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")))
 
 (use-package org-bullets
   :ensure

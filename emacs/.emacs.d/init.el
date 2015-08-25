@@ -197,6 +197,12 @@
   (setq company-show-numbers t)
   :init (global-company-mode 1))
 
+(use-package company-emoji
+  :ensure
+  :config
+  (with-eval-after-load 'company
+    (company-emoji-init)))
+
 (use-package company-quickhelp
   :ensure
   :config
@@ -477,6 +483,41 @@
   :ensure
   :config (global-hl-line-mode 1))
 
+(use-package jabber
+  :ensure
+  :config
+  (setq jabber-message-alert-same-buffer nil
+        ;; DBus doesn't work for some reason
+        jabber-libnotify-method 'shell
+        ;; One auto-away change after 30 minutes is enough
+        jabber-autoaway-timeout 30
+        jabber-autoaway-xa-timeout 0
+        ;; No avatars, please
+        jabber-roster-line-format " %c %-25n\n   %u %-8s  %S")
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "j c" 'jabber-connect-all
+      "j d" 'jabber-disconnect
+      "j r" 'jabber-switch-to-roster-buffer))
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'jabber-roster-mode 'emacs)
+    (evil-set-initial-state 'jabber-chat-mode 'emacs))
+
+  (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
+  ;; I don't need notifications about status changes in the echo area
+  (remove-hook 'jabber-alert-presence-hooks 'jabber-presence-echo)
+
+  ;; These faces use a huge height by default
+  (set-face-attribute 'jabber-title-large nil :height 1.2)
+  (set-face-attribute 'jabber-title-medium nil :height 1.1))
+
+(defconst mineo-private-dir (locate-user-emacs-file "private"))
+
+(use-package mineo-jabber
+  :load-path mineo-private-dir
+  :config
+  (mineo-setup-jabber-accounts))
+
 ;; line numbers
 (use-package linum
   :ensure
@@ -525,6 +566,13 @@
     (evil-set-initial-state 'paradox-menu-mode 'emacs))
   (setq paradox-github-token t
         paradox-execute-asynchronously nil))
+
+;; This is necessary for jabber because it makes jabber.el retrieve
+;; the passwords from pass
+(use-package auth-password-store
+  :ensure
+  :config
+  (auth-pass-enable))
 
 (use-package pip-requirements
   :ensure)
@@ -670,6 +718,7 @@
                 ("SPC e" . "flycheck")
                 ("SPC h" . "helm")
                 ("SPC h s" . "helm-swoop")
+                ("SPC j" . "jabber")
                 ("SPC m" . "major mode")
                 ("SPC o" . "org")
                 ("SPC p" . "projectile")

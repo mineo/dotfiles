@@ -185,8 +185,7 @@
 (use-package column-enforce-mode
   :ensure
   :config
-  (add-hook 'prog-mode-hook 'column-enforce-mode)
-  (add-hook 'text-mode-hook 'column-enforce-mode))
+  (add-hook 'prog-mode-hook 'column-enforce-mode))
 
 (auto-insert-mode 1)
 ;; company

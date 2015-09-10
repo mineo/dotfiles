@@ -403,6 +403,7 @@
 
 (use-package ghc
   :ensure
+  :disabled t
   :commands ghc-init ghc-debug
   :config
   (use-package company-ghc

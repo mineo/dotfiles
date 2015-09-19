@@ -612,7 +612,13 @@
           ( "v" "Video" entry (file+headline nil "Video")
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
-           "    - [ ] %?"))))
+           "    - [ ] %?")))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((C . t)
+     (python . t)
+     (scala .t)))
+  )
 
 (use-package org-bullets
   :ensure

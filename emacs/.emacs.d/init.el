@@ -195,6 +195,8 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
+  (with-eval-after-load 'evil
+    (define-key evil-insert-state-map "\C-a" 'company-complete))
   :init (global-company-mode 1))
 
 (use-package company-emoji

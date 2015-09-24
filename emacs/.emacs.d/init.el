@@ -645,6 +645,10 @@
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")
+        ;; Keep track of state changes of tasks and show them in the
+        ;; agenda by default
+        org-log-done 'time
+        org-agenda-start-with-log-mode t
         ;; Open my notes file instead of the scratch buffer in new
         ;; emacs instances
         initial-buffer-choice org-default-notes-file

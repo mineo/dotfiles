@@ -713,18 +713,17 @@
   :config
   (which-key-mode 1)
   (which-key-setup-side-window-right-bottom)
-  (dolist (el '(("SPC a" . "avy")
-                ("SPC b" . "buffer-move")
-                ("SPC e" . "flycheck")
-                ("SPC h" . "helm")
-                ("SPC h s" . "helm-swoop")
-                ("SPC j" . "jabber")
-                ("SPC m" . "major mode")
-                ("SPC o" . "org")
-                ("SPC p" . "projectile")
-                ("SPC v" . "magit")
-                ("SPC w" . "window")))
-    (add-to-list 'which-key-key-based-description-replacement-alist el)))
+  (which-key-add-key-based-replacements "SPC a" "avy"
+                "SPC b" "buffer-move"
+                "SPC e" "flycheck"
+                "SPC h" "helm"
+                "SPC h s" "helm-swoop"
+                "SPC j" "jabber"
+                "SPC m" "major mode"
+                "SPC o" "org"
+                "SPC p" "projectile"
+                "SPC v" "magit"
+                "SPC w" "window"))
 
 (use-package whitespace
   :ensure

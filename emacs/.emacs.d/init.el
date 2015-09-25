@@ -508,7 +508,7 @@
       "j r" 'jabber-switch-to-roster-buffer))
   (with-eval-after-load 'evil
     (evil-set-initial-state 'jabber-roster-mode 'emacs)
-    (evil-set-initial-state 'jabber-chat-mode 'evil-insert-state))
+    (evil-set-initial-state 'jabber-chat-mode 'insert))
 
   (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
   ;; I don't need notifications about status changes in the echo area

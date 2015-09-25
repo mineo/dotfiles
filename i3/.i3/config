@@ -164,7 +164,7 @@ bindcode 121 exec --no-startup-id pulseaudio-ctl mute
 bindcode 122 exec --no-startup-id pulseaudio-ctl down
 bindcode 123 exec --no-startup-id pulseaudio-ctl up
 bindsym Mod4+e exec --no-startup-id emacsclient -a "" -nc
-# bindsym Mod4+space exec --no-startup-id synapse
+bindsym Mod4+space exec --no-startup-id synapse
 bindsym Mod4+t exec thunar
 bindsym Mod4+g exec gvim
 bindsym Mod4+v exec pavucontrol
@@ -172,8 +172,7 @@ bindsym XF86Launch1 exec firefox
 bindsym XF86TouchpadToggle exec touchpad_toggle.sh
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
-bindsym Mod1+Tab exec --no-startup-id rofi -show window
-bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu'
+bindsym Mod1+Tab exec --no-startup-id quickswitch.py
 
 set $urxvt-irc urxvt -title irc -e bash -c "tmux new-session -AD -s irc 'tmux source-file .tmux-irc.conf'"
 bindsym Mod4+i exec $urxvt-irc

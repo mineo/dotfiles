@@ -648,7 +648,12 @@
       "o l" 'org-store-link))
   (with-eval-after-load 'evil-leader
     (evil-leader/set-key-for-mode 'org-mode
-      "m A" 'org-archive-to-archive-sibling))
+      "m a" 'org-agenda
+      "m A" 'org-archive-subtree
+      "m c" 'org-capture
+      "m j" 'org-goto
+      "m r" 'org-refile
+      "m s" 'org-schedule))
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")

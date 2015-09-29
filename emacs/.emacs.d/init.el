@@ -403,10 +403,6 @@
       "ib" 'haskell-interactive-bring
       "ic" 'haskell-interactive-mode-clear)))
 
-(defun mineo-ignore-function-call-function (orig-fun &rest args)
-  "Ignore any call to ORIG-FUN, whatever the ARGS."
-  )
-
 (use-package ghc
   :ensure
   :commands ghc-init ghc-debug
@@ -415,7 +411,6 @@
     :ensure
     :config (add-to-list 'company-backends '(company-ghc :with company-dabbrev-code))
   )
-  (advice-add 'ghc-check-syntax :around #'mineo-ignore-function-call-function)
   :init
   (add-hook 'haskell-mode-hook (lambda () (ghc-init))))
 

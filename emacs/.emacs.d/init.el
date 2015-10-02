@@ -39,7 +39,8 @@
 (column-number-mode 1)
 
 
-(setq package-archives '(("melpa" . "http://melpa.org/packages/")))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 
 ;; Don't show minor modes in the modeline, except for flycheck
 (setq rm-whitelist "FlyC.*")
@@ -185,8 +186,7 @@
 (use-package column-enforce-mode
   :ensure
   :config
-  (add-hook 'prog-mode-hook 'column-enforce-mode)
-  (add-hook 'text-mode-hook 'column-enforce-mode))
+  (add-hook 'prog-mode-hook 'column-enforce-mode))
 
 (auto-insert-mode 1)
 ;; company
@@ -196,6 +196,12 @@
   :config
   (setq company-show-numbers t)
   :init (global-company-mode 1))
+
+(use-package company-emoji
+  :ensure
+  :config
+  (with-eval-after-load 'company
+    (company-emoji-init)))
 
 (use-package company-quickhelp
   :ensure
@@ -477,6 +483,41 @@
   :ensure
   :config (global-hl-line-mode 1))
 
+(use-package jabber
+  :ensure
+  :config
+  (setq jabber-message-alert-same-buffer nil
+        ;; DBus doesn't work for some reason
+        jabber-libnotify-method 'shell
+        ;; One auto-away change after 30 minutes is enough
+        jabber-autoaway-timeout 30
+        jabber-autoaway-xa-timeout 0
+        ;; No avatars, please
+        jabber-roster-line-format " %c %-25n\n   %u %-8s  %S")
+  (with-eval-after-load 'evil-leader
+    (evil-leader/set-key
+      "j c" 'jabber-connect-all
+      "j d" 'jabber-disconnect
+      "j r" 'jabber-switch-to-roster-buffer))
+  (with-eval-after-load 'evil
+    (evil-set-initial-state 'jabber-roster-mode 'emacs)
+    (evil-set-initial-state 'jabber-chat-mode 'evil-insert-state))
+
+  (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
+  ;; I don't need notifications about status changes in the echo area
+  (remove-hook 'jabber-alert-presence-hooks 'jabber-presence-echo)
+
+  ;; These faces use a huge height by default
+  (set-face-attribute 'jabber-title-large nil :height 1.2)
+  (set-face-attribute 'jabber-title-medium nil :height 1.1))
+
+(defconst mineo-private-dir (locate-user-emacs-file "private"))
+
+(use-package mineo-jabber
+  :load-path mineo-private-dir
+  :config
+  (mineo-setup-jabber-accounts))
+
 ;; line numbers
 (use-package linum
   :ensure
@@ -523,7 +564,15 @@
   :config
   (with-eval-after-load 'evil
     (evil-set-initial-state 'paradox-menu-mode 'emacs))
-  (setq paradox-github-token t))
+  (setq paradox-github-token t
+        paradox-execute-asynchronously nil))
+
+;; This is necessary for jabber because it makes jabber.el retrieve
+;; the passwords from pass
+(use-package auth-password-store
+  :ensure
+  :config
+  (auth-pass-enable))
 
 (use-package pip-requirements
   :ensure)
@@ -596,6 +645,10 @@
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")
+        ;; Keep track of state changes of tasks and show them in the
+        ;; agenda by default
+        org-log-done 'time
+        org-agenda-start-with-log-mode t
         ;; Open my notes file instead of the scratch buffer in new
         ;; emacs instances
         initial-buffer-choice org-default-notes-file
@@ -619,6 +672,11 @@
      (python . t)
      (scala .t)))
   )
+  ;; Use mimeopen or evince for PDF files
+  (setq org-file-apps (cl-remove "\\.pdf\\'" org-file-apps :test 'equal :key 'car))
+  (if (executable-find "mimeopen")
+      (add-to-list 'org-file-apps '("pdf" . "mimeopen %s"))
+      (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")))
 
 (use-package org-bullets
   :ensure
@@ -665,17 +723,17 @@
   :config
   (which-key-mode 1)
   (which-key-setup-side-window-right-bottom)
-  (dolist (el '(("SPC a" . "avy")
-                ("SPC b" . "buffer-move")
-                ("SPC e" . "flycheck")
-                ("SPC h" . "helm")
-                ("SPC h s" . "helm-swoop")
-                ("SPC m" . "major mode")
-                ("SPC o" . "org")
-                ("SPC p" . "projectile")
-                ("SPC v" . "magit")
-                ("SPC w" . "window")))
-    (add-to-list 'which-key-key-based-description-replacement-alist el)))
+  (which-key-add-key-based-replacements "SPC a" "avy"
+                "SPC b" "buffer-move"
+                "SPC e" "flycheck"
+                "SPC h" "helm"
+                "SPC h s" "helm-swoop"
+                "SPC j" "jabber"
+                "SPC m" "major mode"
+                "SPC o" "org"
+                "SPC p" "projectile"
+                "SPC v" "magit"
+                "SPC w" "window"))
 
 (use-package whitespace
   :ensure

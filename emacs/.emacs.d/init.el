@@ -445,14 +445,19 @@
       "h r" 'helm-recentf
       "h t" 'helm-semantic-or-imenu
       ))
+  ;; Ignore some more buffers in helms buffer selection
+  (dolist (regex '("\\*magit"
+                   "\\TAGS"
+                   "\\*toc" ;; reftex-toc
+                   ))
+    (add-to-list 'helm-boring-buffer-regexp-list regex))
   ;; Let helm always open at the bottom at 40% window height
   ;; From https://www.reddit.com/r/emacs/comments/345vtl/make_helm_window_at_the_bottom_without_using_any/
   (add-to-list 'display-buffer-alist
                `(,(rx bos "*helm" (* not-newline) "*" eos)
                  (display-buffer-in-side-window)
                  (inhibit-same-window . t)
-                 (window-height . 0.4)))
-  )
+                 (window-height . 0.4))))
 
 (use-package helm-ag
   :ensure)

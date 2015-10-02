@@ -153,7 +153,8 @@
                     (setq TeX-command-default "LatexMk"))))
     (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t                ; parse on load
-        TeX-auto-save t)                ; parse on save
+        TeX-auto-save t                ; parse on save
+        LaTeX-verbatim-environments-local '("minted" "listing"))
   (with-eval-after-load 'evil-leader
     (evil-leader/set-key-for-mode 'latex-mode
       ;; preview

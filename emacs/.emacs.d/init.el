@@ -500,7 +500,8 @@
     (evil-leader/set-key
       "j c" 'jabber-connect-all
       "j d" 'jabber-disconnect
-      "j r" 'jabber-switch-to-roster-buffer))
+      "j r" 'jabber-switch-to-roster-buffer
+      "j w" 'jabber-chat-with))
   (with-eval-after-load 'evil
     (evil-set-initial-state 'jabber-roster-mode 'emacs)
     (evil-set-initial-state 'jabber-chat-mode 'insert))

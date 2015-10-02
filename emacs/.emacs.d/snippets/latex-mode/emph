@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: emph
+# key: emph
+# binding: direct-keybinding
+# --
+\emph{$1}$0

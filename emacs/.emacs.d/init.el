@@ -195,6 +195,8 @@
   :bind ("C-a" . company-complete)
   :config
   (setq company-show-numbers t)
+  (with-eval-after-load 'evil
+    (define-key evil-insert-state-map "\C-a" 'company-complete))
   :init (global-company-mode 1))
 
 (use-package company-emoji
@@ -498,10 +500,11 @@
     (evil-leader/set-key
       "j c" 'jabber-connect-all
       "j d" 'jabber-disconnect
-      "j r" 'jabber-switch-to-roster-buffer))
+      "j r" 'jabber-switch-to-roster-buffer
+      "j w" 'jabber-chat-with))
   (with-eval-after-load 'evil
     (evil-set-initial-state 'jabber-roster-mode 'emacs)
-    (evil-set-initial-state 'jabber-chat-mode 'evil-insert-state))
+    (evil-set-initial-state 'jabber-chat-mode 'insert))
 
   (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
   ;; I don't need notifications about status changes in the echo area
@@ -641,7 +644,12 @@
       "o l" 'org-store-link))
   (with-eval-after-load 'evil-leader
     (evil-leader/set-key-for-mode 'org-mode
-      "m A" 'org-archive-to-archive-sibling))
+      "m a" 'org-agenda
+      "m A" 'org-archive-subtree
+      "m c" 'org-capture
+      "m j" 'org-goto
+      "m r" 'org-refile
+      "m s" 'org-schedule))
   (add-hook 'org-capture-mode-hook 'evil-insert-state)
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")

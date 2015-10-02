@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Footnote
+# key: fn
+# binding: direct-keybinding
+# --
+\footnote{$0}

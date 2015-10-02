@@ -679,7 +679,6 @@
    '((C . t)
      (python . t)
      (scala .t)))
-  )
   ;; Use mimeopen or evince for PDF files
   (setq org-file-apps (cl-remove "\\.pdf\\'" org-file-apps :test 'equal :key 'car))
   (if (executable-find "mimeopen")

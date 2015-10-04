@@ -439,6 +439,7 @@
       "h a" 'helm-apropos
       "h h" 'help
       "h f" 'helm-find-files
+      "h i" 'helm-mini
       "h m" 'helm-man-woman
       "h o" 'helm-occur
       "h p" 'helm-projectile

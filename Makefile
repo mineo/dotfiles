@@ -11,7 +11,7 @@ apps:
 archlinux:
 	$(STOW) abs
 base:
-	$(STOW) emacs peco vim zsh
+	$(STOW) spacemacs peco vim zsh
 devel:
 	$(STOW) code db haskell git
 mail:

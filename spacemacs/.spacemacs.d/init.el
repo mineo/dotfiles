@@ -13,7 +13,8 @@ values."
    dotspacemacs-distribution 'spacemacs
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path (list
+                                          (locate-user-emacs-file "private/layers"))
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
@@ -24,8 +25,13 @@ values."
      emacs-lisp
      git
      github
-     (latex :variables latex-build-command "LatexMk")
+     jabber
+     (haskell
+      :variables haskell-enable-ghc-mod-support t)
+     (latex
+      :variables latex-build-command "LatexMk")
      ;; markdown
+     mineo
      org
      python
      ;; (shell :variables
@@ -138,7 +144,7 @@ values."
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil

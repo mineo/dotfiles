@@ -46,7 +46,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(auth-password-store editorconfig github-clone midnight)
+   dotspacemacs-additional-packages '(editorconfig github-clone)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -203,24 +203,12 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq
-        ;; company
-        company-show-numbers t
-        company-tooltip-align-annotations t
-        ;; copyright
-        copyright-names-regexp (user-full-name)
-        ;; evil-escape
+  (setq ;; evil-escape
         evil-escape-key-sequence "jk"
         powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
-        ;; midnight
-        midnight-mode t
-        ;; org
-        org-ellipsis "[…]"
-        )
-  (auth-pass-enable)
-  (add-hook 'find-file-hook #'copyright-update)
-  (evil-leader/set-key "o s" 'spacemacs/cycle-spacemacs-theme)
+        tags-revert-without-query t
+        use-dialog-box nil)
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))

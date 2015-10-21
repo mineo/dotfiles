@@ -30,7 +30,7 @@ values."
       :variables haskell-enable-ghc-mod-support t)
      (latex
       :variables latex-build-command "LatexMk")
-     ;; markdown
+     markdown
      mineo
      org
      python

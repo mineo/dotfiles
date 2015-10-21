@@ -153,7 +153,8 @@
                     (setq TeX-command-default "LatexMk"))))
     (add-hook 'TeX-mode-hook mode))
   (setq TeX-parse-self t                ; parse on load
-        TeX-auto-save t)                ; parse on save
+        TeX-auto-save t                ; parse on save
+        LaTeX-verbatim-environments-local '("minted" "listing"))
   (with-eval-after-load 'evil-leader
     (evil-leader/set-key-for-mode 'latex-mode
       ;; preview
@@ -438,20 +439,26 @@
       "h a" 'helm-apropos
       "h h" 'help
       "h f" 'helm-find-files
+      "h i" 'helm-mini
       "h m" 'helm-man-woman
       "h o" 'helm-occur
       "h p" 'helm-projectile
       "h r" 'helm-recentf
       "h t" 'helm-semantic-or-imenu
       ))
+  ;; Ignore some more buffers in helms buffer selection
+  (dolist (regex '("\\*magit"
+                   "\\TAGS"
+                   "\\*toc" ;; reftex-toc
+                   ))
+    (add-to-list 'helm-boring-buffer-regexp-list regex))
   ;; Let helm always open at the bottom at 40% window height
   ;; From https://www.reddit.com/r/emacs/comments/345vtl/make_helm_window_at_the_bottom_without_using_any/
   (add-to-list 'display-buffer-alist
                `(,(rx bos "*helm" (* not-newline) "*" eos)
                  (display-buffer-in-side-window)
                  (inhibit-same-window . t)
-                 (window-height . 0.4)))
-  )
+                 (window-height . 0.4))))
 
 (use-package helm-ag
   :ensure)
@@ -674,6 +681,11 @@
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
            "    - [ ] %?")))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((C . t)
+     (python . t)
+     (scala .t)))
   ;; Use mimeopen or evince for PDF files
   (setq org-file-apps (cl-remove "\\.pdf\\'" org-file-apps :test 'equal :key 'car))
   (if (executable-find "mimeopen")

@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: doc
+# key: doc
+# binding: direct-keybinding
+# --
+@Misc{$1,
+  title = {$2},
+  howpublished = {\url{$3}},
+  note = {Abgerufen am `(format-time-string "%Y-%m-%d")`}}
+
+$0

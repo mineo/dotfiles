@@ -32,7 +32,8 @@
   "o o a" 'org-agenda
   "o o c" 'org-capture
   "o s"   'spacemacs/cycle-spacemacs-theme
-  "p j"   'helm-etags-select)
+  "p j"   'helm-etags-select
+  "p t"   'projectile-test-project)
 
 (spacemacs/declare-prefix "o j" "jabber")
 (spacemacs/declare-prefix "o o" "org")

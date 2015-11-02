@@ -4,3 +4,6 @@ CmdLine
  -n18
  -n44
 }
+
+# Exclude these environments from syntax checking
+VerbEnvir { pgfpicture tikzpicture minted }

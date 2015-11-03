@@ -26,7 +26,7 @@
 
 (evil-leader/set-key
   "o j c" 'jabber-connect-all
-  "o j d" 'jabber-disconnect-all
+  "o j d" 'jabber-disconnect
   "o j r" 'jabber-switch-to-roster-buffer
   "o j w" 'jabber-chat-with
   "o o a" 'org-agenda

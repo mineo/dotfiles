@@ -26,6 +26,7 @@
       (projectile-addons :location local)
       org
       show-paren
+      writeroom-mode
       yatemplate))
 
 ;; List of packages to exclude.
@@ -120,6 +121,10 @@
   (use-package show-paren-mode
     :config
     (show-paren-mode 1)))
+
+(defun mineo/init-writeroom-mode ()
+  "Initialize writeroom-mode."
+  (use-package writeroom-mode))
 
 (defun mineo/init-yatemplate ()
   "Initialize yatemplate."

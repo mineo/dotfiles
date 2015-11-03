@@ -32,6 +32,7 @@
   "o o a" 'org-agenda
   "o o c" 'org-capture
   "o s"   'spacemacs/cycle-spacemacs-theme
+  "o w"   'writeroom-mode
   "p j"   'helm-etags-select
   "p t"   'projectile-test-project)
 

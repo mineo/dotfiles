@@ -15,6 +15,7 @@
 (setq mineo-packages
     '(
       auth-password-store
+      (bibtex :location built-in)
       column-enforce-mode
       company
       copyright
@@ -32,11 +33,12 @@
 ;; List of packages to exclude.
 (setq mineo-excluded-packages '())
 
-;; For each package, define a function mineo/init-<package-name>
-;;
-;; (defun mineo/init-my-package ()
-;;   "Initialize my package"
-;;   )
+(defun mineo/init-bibtex ()
+  "Initialize bibtex"
+  (use-package bibtex
+    :config
+    (add-hook 'bibtex-mode-hook 'goto-address-mode)))
+
 (defun mineo/init-auth-password-store ()
   "Initialize auth-password-store."
   (use-package auth-password-store

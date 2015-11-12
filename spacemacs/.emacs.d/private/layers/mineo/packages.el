@@ -29,6 +29,8 @@
       (projectile-addons :location local)
       org
       show-paren
+      whitespace
+      whitespace-cleanup-mode
       writeroom-mode
       yatemplate))
 
@@ -139,6 +141,26 @@
   (use-package show-paren-mode
     :config
     (show-paren-mode 1)))
+
+(defun mineo/init-whitespace ()
+  "Initialize whitespace."
+  (use-package whitespace
+    :config
+    (setq spacemacs-show-trailing-whitespace nil)
+    (setq whitespace-style '(face
+                             indentation
+                             line
+                             trailing
+                             space-after-tab
+                             space-before-tab))))
+
+(defun mineo/init-whitespace-cleanup-mode ()
+  "Initialize whitespace-cleanup-mode."
+  (use-package whitespace-cleanup-mode
+    :config
+    (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
+      (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
+        (add-hook hook mode)))))
 
 (defun mineo/init-writeroom-mode ()
   "Initialize writeroom-mode."

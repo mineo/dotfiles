@@ -103,6 +103,11 @@
      jabber-autoaway-xa-timeout 0
      ;; No avatars, please
      jabber-roster-line-format " %c %-25n\n   %u %-8s  %S")
+
+    (setq jabber-chat-time-format "%H%M"
+          ;; Align nicknames
+          jabber-chat-foreign-prompt-format "%t %10n| "
+          jabber-chat-local-prompt-format "%t %10n| ")
     (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
     ;; I don't need notifications about status changes in the echo area
     (remove-hook 'jabber-alert-presence-hooks 'jabber-presence-echo)
@@ -122,12 +127,8 @@
   "Initialize mineo-private."
   (use-package mineo-private
     :config
-    (set-face-underline 'highlight-symbol-face t)
-    (set-face-underline 'show-paren-match t)
     (advice-add 'spacemacs/cycle-spacemacs-theme :after
-                #'(lambda () (set-face-underline 'highlight-symbol-face t)))
-    (advice-add 'spacemacs/cycle-spacemacs-theme :after
-                #'(lambda () (set-face-underline 'show-paren-match t)))
+                #'mineo-face-overrides))
     (mineo-setup-jabber-accounts)))
 
 (defun mineo/init-projectile-addons ()

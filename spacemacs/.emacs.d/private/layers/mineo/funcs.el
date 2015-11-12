@@ -19,6 +19,18 @@
   (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend)
   (set-fontset-font t 'symbol (font-spec :family "Segoe UI Symbol") nil 'prepend))
 
+(defun mineo-face-overrides ()
+  (set-face-underline 'highlight-symbol-face t)
+  (set-face-underline 'show-paren-match t)
+
+  ;; No bold nicknames in jabber
+  (set-face-bold 'jabber-chat-prompt-local nil)
+  (set-face-bold 'jabber-chat-prompt-foreign nil)
+  ;; and use some better colors
+  (set-face-foreground 'jabber-chat-prompt-local (face-foreground font-lock-keyword-face))
+  (set-face-foreground 'jabber-chat-prompt-foreign (face-foreground font-lock-function-name-face))
+  )
+
 
 (add-hook 'after-make-frame-functions #'mineo-configure-fonts)
 

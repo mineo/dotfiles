@@ -148,7 +148,8 @@
   (use-package virtualenvwrapper
     :config
     (evil-leader/set-key-for-mode 'python-mode
-      "m v" 'venv-workon)
+      "m v" 'venv-workon
+      "m V" 'venv-deactivate)
     (spacemacs|define-mode-line-segment virtualenvwrapper-active-env
       (format "venv:%s" venv-current-name)
       :when (equal major-mode 'python-mode))

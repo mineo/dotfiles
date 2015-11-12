@@ -29,6 +29,7 @@
       (projectile-addons :location local)
       org
       show-paren
+      virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
       writeroom-mode
@@ -141,6 +142,17 @@
   (use-package show-paren-mode
     :config
     (show-paren-mode 1)))
+
+(defun mineo/init-virtualenvwrapper ()
+  "Initialize virtualenvwrapper."
+  (use-package virtualenvwrapper
+    :config
+    (evil-leader/set-key-for-mode 'python-mode
+      "m v" 'venv-workon)
+    (spacemacs|define-mode-line-segment virtualenvwrapper-active-env
+      (format "venv:%s" venv-current-name)
+      :when (equal major-mode 'python-mode))
+    (add-to-list 'spacemacs-mode-line-left 'virtualenvwrapper-active-env t)))
 
 (defun mineo/init-whitespace ()
   "Initialize whitespace."

@@ -15,6 +15,7 @@
 (setq mineo-packages
     '(
       auth-password-store
+      beacon
       (bibtex :location built-in)
       column-enforce-mode
       company
@@ -33,6 +34,12 @@
 
 ;; List of packages to exclude.
 (setq mineo-excluded-packages '())
+
+(defun mineo/init-beacon ()
+  "Initialize beacon."
+  (use-package beacon
+    :config
+    (beacon-mode)))
 
 (defun mineo/init-bibtex ()
   "Initialize bibtex"

@@ -18,6 +18,7 @@
       (bibtex :location built-in)
       column-enforce-mode
       company
+      company-emoji
       copyright
       highlight-symbol
       jabber
@@ -58,6 +59,10 @@
     (setq company-show-numbers t
           company-tooltip-align-annotations t)))
 
+(defun mineo/init-company-emoji ()
+  "Initialize company-emoji."
+  (use-package company-emoji))
+
 (defun mineo/init-copyright ()
   "Initialize copyright."
   (use-package copyright
@@ -93,7 +98,11 @@
     (remove-hook 'jabber-alert-presence-hooks 'jabber-presence-echo)
     (with-eval-after-load 'evil
       (evil-set-initial-state 'jabber-roster-mode 'emacs)
-      (evil-set-initial-state 'jabber-chat-mode 'insert))))
+      (evil-set-initial-state 'jabber-chat-mode 'insert))
+    (when (configuration-layer/package-usedp 'company)
+      (spacemacs|add-company-hook jabber-chat-mode))
+    (with-eval-after-load 'company-emoji
+      (push 'company-emoji company-backends-jabber-chat-mode))))
 
 (defun mineo/init-midnight ()
   "Initialize midnight."

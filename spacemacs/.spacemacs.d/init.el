@@ -212,7 +212,7 @@ layers configuration. You are free to put any user code."
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
-)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

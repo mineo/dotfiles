@@ -128,7 +128,7 @@
   (use-package mineo-private
     :config
     (advice-add 'spacemacs/cycle-spacemacs-theme :after
-                #'mineo-face-overrides))
+                #'mineo-face-overrides)
     (mineo-setup-jabber-accounts)))
 
 (defun mineo/init-projectile-addons ()

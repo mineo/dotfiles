@@ -69,9 +69,9 @@
     (setq company-show-numbers t
           company-tooltip-align-annotations t)))
 
-(defun mineo/init-company-emoji ()
-  "Initialize company-emoji."
-  (use-package company-emoji))
+(defun mineo/post-init-company-emoji ()
+  "Post-initialize company-emoji."
+  (setq company-emoji-insert-unicode t))
 
 (defun mineo/init-copyright ()
   "Initialize copyright."

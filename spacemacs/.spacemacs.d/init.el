@@ -21,7 +21,6 @@ values."
    '(
      (auto-completion
       :variables auto-completion-enable-help-tooltip t)
-     ;; better-defaults
      emacs-lisp
      git
      github
@@ -34,9 +33,10 @@ values."
      mineo
      org
      python
-     ;; (shell :variables
+     (shell :variables
      ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+            shell-default-position 'bottom
+            shell-default-term-shell "/bin/zsh")
      ;; spell-checking
      (syntax-checking
       :variables syntax-checking-enable-tooltips nil)

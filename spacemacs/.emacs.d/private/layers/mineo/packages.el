@@ -14,6 +14,7 @@
 ;; which require an initialization must be listed explicitly in the list.
 (setq mineo-packages
     '(
+      auctex
       auth-password-store
       beacon
       (bibtex :location built-in)
@@ -37,6 +38,16 @@
 
 ;; List of packages to exclude.
 (setq mineo-excluded-packages '())
+
+(defun mineo/post-init-auctex ()
+  "Post-initialize auctex."
+  ;; For zc etc.
+  (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
+  ;; Enable fold mode
+  (add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
+  ;; Fold automatically
+  (add-hook 'LaTeX-mode-hook 'TeX-fold-buffer t)
+  )
 
 (defun mineo/init-beacon ()
   "Initialize beacon."

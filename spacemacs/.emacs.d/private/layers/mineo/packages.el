@@ -167,18 +167,6 @@
       :when (equal major-mode 'python-mode))
     (add-to-list 'spacemacs-mode-line-left 'virtualenvwrapper-active-env t)))
 
-(defun mineo/init-whitespace ()
-  "Initialize whitespace."
-  (use-package whitespace
-    :config
-    (setq spacemacs-show-trailing-whitespace nil)
-    (setq whitespace-style '(face
-                             indentation
-                             line
-                             trailing
-                             space-after-tab
-                             space-before-tab))))
-
 (defun mineo/init-whitespace-cleanup-mode ()
   "Initialize whitespace-cleanup-mode."
   (use-package whitespace-cleanup-mode
@@ -233,6 +221,19 @@
       (add-to-list 'projectile-globally-ignored-directories dir)
       )
     (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")))
+
+(defun mineo/post-init-whitespace ()
+  "Post-initialize whitespace."
+  (use-package whitespace
+    :config
+    (setq spacemacs-show-trailing-whitespace nil)
+    (setq whitespace-style '(face
+                             indentation
+                             line
+                             trailing
+                             space-after-tab
+                             space-before-tab))))
+
 ;;
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:

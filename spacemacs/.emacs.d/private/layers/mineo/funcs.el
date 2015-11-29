@@ -21,7 +21,7 @@
 
 (defun mineo-face-overrides ()
   (set-face-underline 'highlight-symbol-face t)
-  (set-face-underline 'show-paren-match t)
+  (set-face-underline 'sp-show-pair-match-face t)
 
   ;; No bold nicknames in jabber
   (set-face-bold 'jabber-chat-prompt-local nil)

@@ -29,7 +29,6 @@
       projectile
       (projectile-addons :location local)
       org
-      show-paren
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
@@ -149,11 +148,6 @@
     (mineo-initialize-projectile-idle-timer)
     (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
 
-(defun mineo/init-show-paren-mode ()
-  "Initialize show-paren-mode."
-  (use-package show-paren-mode
-    :config
-    (show-paren-mode 1)))
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."

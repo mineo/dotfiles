@@ -52,7 +52,9 @@
   "Initialize beacon."
   (use-package beacon
     :config
-    (beacon-mode)))
+    (setq beacon-dont-blink-commands
+          (delete 'recenter-top-bottom beacon-dont-blink-commands))
+    (beacon-mode 1)))
 
 (defun mineo/init-bibtex ()
   "Initialize bibtex"

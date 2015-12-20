@@ -39,6 +39,7 @@
 (spacemacs/declare-prefix "o j" "jabber")
 (spacemacs/declare-prefix "o o" "org")
 
+(define-key evil-insert-state-map "\C-a" 'company-complete)
 
 (provide 'keybindings)
 ;;; keybindings.el ends here

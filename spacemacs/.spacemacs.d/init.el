@@ -20,7 +20,9 @@ values."
    dotspacemacs-configuration-layers
    '(
      (auto-completion
-      :variables auto-completion-enable-help-tooltip t)
+      :variables
+      auto-completion-enable-help-tooltip t
+      auto-completion-enable-snippets-in-popup t)
      emacs-lisp
      git
      github

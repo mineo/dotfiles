@@ -1,1 +1,9 @@
-../../../dev/dotfiles/emacs/.emacs.d/snippets/rst-mode/image-50
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: image 50%
+# key: img50
+# binding: direct-keybinding
+# --
+.. image:: $1
+           :scale: 50%
+
+$0

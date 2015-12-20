@@ -1,1 +1,10 @@
-../../../dev/dotfiles/emacs/.emacs.d/snippets/python-mode/function_docstring
+# -*- mode: snippet -*-
+# name: function_docstring
+# key: def
+# group: definitions
+# --
+def ${1:name}($2):
+    \"\"\"$3
+    ${2:$(python-args-to-docstring)}
+    \"\"\"
+    $0

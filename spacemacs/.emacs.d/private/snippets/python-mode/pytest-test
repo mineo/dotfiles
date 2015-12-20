@@ -1,1 +1,7 @@
-../../../dev/dotfiles/emacs/.emacs.d/snippets/python-mode/pytest-test
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Py.test test
+# key: pytest
+# binding: direct-keybinding
+# --
+def test_$1($2):
+    assert $0

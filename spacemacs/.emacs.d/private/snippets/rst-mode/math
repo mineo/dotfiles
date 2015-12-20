@@ -1,1 +1,6 @@
-../../../dev/dotfiles/emacs/.emacs.d/snippets/rst-mode/math
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: Math
+# key: math
+# binding: direct-keybinding
+# --
+:math:\`$1\` $0

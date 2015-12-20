@@ -78,7 +78,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 'nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -214,6 +214,16 @@ layers configuration. You are free to put any user code."
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
+
+  ;; I don't find minor modes in the mode line useful, I don't even know what
+  ;; most of them mean :-)
+  (spacemacs/toggle-mode-line-minor-modes-off)
+  (setq spacemacs-mode-line-right (delete 'hud spacemacs-mode-line-right))
+
+  ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/1830
+  (yas-reload-all)
+
+  (setq yas-snippet-dirs (delete "~/.emacs.d/snippets" yas-snippet-dirs))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

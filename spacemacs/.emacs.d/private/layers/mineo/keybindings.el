@@ -40,6 +40,7 @@
 (spacemacs/declare-prefix "o o" "org")
 
 (define-key evil-insert-state-map "\C-a" 'company-complete)
+(define-key evil-insert-state-map (kbd "TAB") 'hippie-expand)
 
 (provide 'keybindings)
 ;;; keybindings.el ends here

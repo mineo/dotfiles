@@ -173,7 +173,9 @@
 
 (defun mineo/init-writeroom-mode ()
   "Initialize writeroom-mode."
-  (use-package writeroom-mode))
+  (use-package writeroom-mode
+    :config
+    (setq writeroom-fullscreen-effect 'maximized)))
 
 (defun mineo/init-yatemplate ()
   "Initialize yatemplate."

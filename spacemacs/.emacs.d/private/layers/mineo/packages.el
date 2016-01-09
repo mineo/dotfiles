@@ -158,10 +158,10 @@
     (evil-leader/set-key-for-mode 'python-mode
       "m v" 'venv-workon
       "m V" 'venv-deactivate)
-    (spacemacs|define-mode-line-segment virtualenvwrapper-active-env
+    (spaceline-define-segment virtualenvwrapper-active-env
       (format "venv:%s" venv-current-name)
       :when (equal major-mode 'python-mode))
-    (add-to-list 'spacemacs-mode-line-left 'virtualenvwrapper-active-env t)))
+    (add-to-list 'spaceline-left 'virtualenvwrapper-active-env t)))
 
 (defun mineo/init-whitespace-cleanup-mode ()
   "Initialize whitespace-cleanup-mode."

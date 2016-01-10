@@ -218,7 +218,7 @@ layers configuration. You are free to put any user code."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
-  (setq spacemacs-mode-line-right (delete 'hud spacemacs-mode-line-right))
+  (setq spaceline-right (delete 'hud spaceline-right))
 
   ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/1830
   (yas-reload-all)

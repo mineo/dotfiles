@@ -70,7 +70,6 @@ alias -g J='|jq'
 alias -g L='|less -R'
 alias -g P='|peco'
 
-alias com='checkoutmanager'
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'

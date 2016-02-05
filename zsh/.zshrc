@@ -96,6 +96,12 @@ else
     alias ls='ls -lh --color=auto'
 fi
 
+if type automp &> /dev/null; then
+    alias mp='automp'
+else
+    alias mp='mpv'
+fi
+
 [[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
 
 alias grep='grep --color=auto'

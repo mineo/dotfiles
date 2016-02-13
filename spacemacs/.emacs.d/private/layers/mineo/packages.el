@@ -23,9 +23,7 @@
       company-emoji
       copyright
       highlight-symbol
-      jabber
       (midnight :location built-in)
-      (mineo-private :location local)
       projectile
       (projectile-addons :location local)
       org
@@ -101,47 +99,9 @@
     (setq highlight-symbol-on-navigation-p t
           highlight-symbol-idle-delay 0.4)))
 
-(defun mineo/post-init-jabber ()
-  "Initialize jabber."
-  (use-package jabber
-    :config
-    (setq ;; Show message alerts for the current buffer because it might
-     ;; be in an unfocused frame.
-     jabber-message-alert-same-buffer t
-     ;; DBus doesn't work for some reason
-     jabber-libnotify-method 'shell
-     ;; One auto-away change after 30 minutes is enough
-     jabber-autoaway-timeout 30
-     jabber-autoaway-xa-timeout 0
-     ;; No avatars, please
-     jabber-roster-line-format " %c %-25n\n   %u %-8s  %S")
-
-    (setq jabber-chat-time-format "%H%M"
-          ;; Align nicknames
-          jabber-chat-foreign-prompt-format "%t %10n| "
-          jabber-chat-local-prompt-format "%t %10n| ")
-    (add-hook 'jabber-alert-message-hooks 'jabber-message-libnotify)
-    ;; I don't need notifications about status changes in the echo area
-    (remove-hook 'jabber-alert-presence-hooks 'jabber-presence-echo)
-    (with-eval-after-load 'evil
-      (evil-set-initial-state 'jabber-roster-mode 'emacs)
-      (evil-set-initial-state 'jabber-chat-mode 'insert))
-    (when (configuration-layer/package-usedp 'company)
-      (spacemacs|add-company-hook jabber-chat-mode))
-    (with-eval-after-load 'company-emoji
-      (push 'company-emoji company-backends-jabber-chat-mode))))
-
 (defun mineo/init-midnight ()
   "Initialize midnight."
   (use-package midnight))
-
-(defun mineo/init-mineo-private ()
-  "Initialize mineo-private."
-  (use-package mineo-private
-    :config
-    (advice-add 'spacemacs/cycle-spacemacs-theme :after
-                #'mineo-face-overrides)
-    (mineo-setup-jabber-accounts)))
 
 (defun mineo/init-projectile-addons ()
   "Initialize projectile-addons."
@@ -149,7 +109,6 @@
     :config
     (mineo-initialize-projectile-idle-timer)
     (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
-
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."

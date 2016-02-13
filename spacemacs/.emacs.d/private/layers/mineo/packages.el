@@ -226,11 +226,18 @@
     :config
     (setq spacemacs-show-trailing-whitespace nil)
     (setq whitespace-style '(face
-                             indentation
-                             line
+                             tabs
                              trailing
+                             lines
+                             space-before-tab
+                             newline
+                             empty
                              space-after-tab
-                             space-before-tab))))
+                             tab-mark
+                             newline-mark))
+    (setq whitespace-display-mappings
+          '((newline-mark ?\n [?< ?\n])
+            (tab-mark     ?\t [?\u00BB ?\t] [?\\ ?\t])))))
 
 ;;
 ;; Often the body of an initialize function uses `use-package'

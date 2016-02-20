@@ -46,6 +46,8 @@
   (add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
   ;; Fold automatically
   (add-hook 'LaTeX-mode-hook 'TeX-fold-buffer t)
+  ;; Automatically insert braces for super and subscripts
+  (setq TeX-electric-sub-and-superscript t)
   )
 
 (defun mineo/init-beacon ()

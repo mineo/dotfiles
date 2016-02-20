@@ -1,9 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: image 50%
-# key: img50
-# binding: direct-keybinding
-# --
-.. image:: $1
-           :scale: 50%
-
-$0

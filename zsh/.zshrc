@@ -70,7 +70,6 @@ alias -g J='|jq'
 alias -g L='|less -R'
 alias -g P='|peco'
 
-alias com='checkoutmanager'
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
@@ -95,6 +94,12 @@ if type ls++ &> /dev/null; then
     alias ls='ls++'
 else
     alias ls='ls -lh --color=auto'
+fi
+
+if type automp &> /dev/null; then
+    alias mp='automp'
+else
+    alias mp='mpv'
 fi
 
 [[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh

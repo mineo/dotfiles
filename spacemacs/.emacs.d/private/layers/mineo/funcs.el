@@ -1,6 +1,6 @@
 ;;; funcs.el --- My functions                        -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015  Wieland Hoffmann
+;; Copyright (C) 2015, 2016  Wieland Hoffmann
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,6 +36,8 @@
 
 
 (add-hook 'after-make-frame-functions #'mineo-configure-fonts)
+(advice-add 'spacemacs/cycle-spacemacs-theme :after
+            #'mineo-face-overrides)
 
 (provide 'funcs)
 ;;; funcs.el ends here

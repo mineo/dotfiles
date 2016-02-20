@@ -239,8 +239,7 @@ user code."
   (setq ;; solarized
    solarized-use-less-bold t
    solarized-use-variable-pitch nil
-   solarized-scale-org-headlines nil)
-  )
+   solarized-scale-org-headlines nil))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -259,13 +258,7 @@ layers configuration. You are free to put any user code."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
-  (setq spaceline-right (delete 'hud spaceline-right))
-
-  ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/1830
-  (yas-reload-all)
-
-  (setq yas-snippet-dirs (delete "~/.emacs.d/snippets" yas-snippet-dirs))
-  )
+  (setq spaceline-right (delete 'hud spaceline-right)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

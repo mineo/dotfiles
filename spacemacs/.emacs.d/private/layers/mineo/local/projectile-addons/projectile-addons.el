@@ -1,8 +1,6 @@
 ;;; projectile-addons.el --- Some additional functions for projectile  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2015, 2016  Wieland Hoffmann
-;; The body of mineo-initialize-projectile-idle-timer is
-;; Copyright (c) 2011-2015 Bozhidar Batsov <bozhidar@batsov.com>
 
 ;; Author: Wieland Hoffmann
 ;; Package-Requires: ((python "0.24.4") (projectile "0.11.0"))
@@ -29,19 +27,6 @@
 
 ;;; Code:
 (require 'projectile)
-
-(defun mineo-initialize-projectile-idle-timer ()
-  "Initialize projectiles idle timer."
-  (interactive)
-  (when projectile-idle-timer
-    (cancel-timer projectile-idle-timer))
-  (setq projectile-idle-timer nil)
-  (setq projectile-idle-timer
-        (run-with-idle-timer
-         projectile-idle-timer-seconds t
-         (lambda ()
-           (when (projectile-project-p)
-             (run-hooks 'projectile-idle-timer-hook))))))
 
 (defun mineo-python-shell-cd-project-root ()
   "CD the python shell to the project root."

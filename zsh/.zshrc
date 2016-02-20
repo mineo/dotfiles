@@ -168,7 +168,7 @@ bindkey "^R" history-incremental-search-backward
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
-[ -d /usr/share/zsh/plugins ] && source /usr/share/zsh/plugins/*/*.plugin.zsh
+[ -d /usr/share/zsh/plugins ] && source /usr/share/zsh/plugins/*/*.zsh
 
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''

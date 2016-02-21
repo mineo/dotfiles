@@ -3,3 +3,4 @@ TAGS
 .tox
 .ropeproject
 po
+.git

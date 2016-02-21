@@ -116,9 +116,9 @@
   "Initialize virtualenvwrapper."
   (use-package virtualenvwrapper
     :config
-    (evil-leader/set-key-for-mode 'python-mode
-      "m v" 'venv-workon
-      "m V" 'venv-deactivate)
+    (spacemacs/set-leader-keys-for-major-mode 'python-mode
+      "v" 'venv-workon
+      "V" 'venv-deactivate)
     (spaceline-define-segment virtualenvwrapper-active-env
       (format "venv:%s" venv-current-name)
       :when (equal major-mode 'python-mode))

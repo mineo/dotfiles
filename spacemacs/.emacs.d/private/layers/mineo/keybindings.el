@@ -1,6 +1,6 @@
 ;;; keybindings.el --- My keybindings                -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015  Wieland Hoffmann
+;; Copyright (C) 2015, 2016  Wieland Hoffmann
 
 ;; Author: Wieland Hoffmann <wieland@slartibartfass>
 ;; Keywords: 
@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(evil-leader/set-key
+(spacemacs/set-leader-keys
   "o j c" 'jabber-connect-all
   "o j d" 'jabber-disconnect
   "o j r" 'jabber-switch-to-roster-buffer

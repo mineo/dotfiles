@@ -12,8 +12,8 @@ fi
 dropbox &
 redshift -l 50:10 -t 6500:5000> /dev/null &
 udiskie &
-xmodmap .Xmodmap &
 setxkbmap -layout us -model pc105 -option ctrl:swapcaps,compose:lctrl
+xmodmap .Xmodmap
 xscreensaver -no-splash &
 dunst &
 

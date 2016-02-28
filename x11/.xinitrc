@@ -16,7 +16,7 @@ setxkbmap -layout us -model pc105 -option ctrl:swapcaps,compose:lctrl
 xmodmap .Xmodmap
 xscreensaver -no-splash &
 dunst &
-
+parcellite &
 nitrogen --restore &
 
 exec i3

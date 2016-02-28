@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Rofi SSH
+Comment=Rofi SSH
+Exec=/usr/bin/rofi -show ssh
+Icon=Rofi SSH
+Terminal=false
+StartupNotify=false
+Categories=Application;

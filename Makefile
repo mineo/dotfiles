@@ -17,4 +17,4 @@ devel:
 mail:
 	$(STOW) afew mutt
 ui:
-	$(STOW) dunst gtk i3 tex x11
+	$(STOW) dunst gtk i3 tex rofi x11

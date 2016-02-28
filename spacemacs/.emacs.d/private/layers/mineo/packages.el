@@ -109,7 +109,6 @@
   "Initialize projectile-addons."
   (use-package projectile-addons
     :config
-    (customize-set-variable 'projectile-enable-idle-timer t)
     (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
 
 (defun mineo/init-virtualenvwrapper ()

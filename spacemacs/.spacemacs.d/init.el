@@ -21,8 +21,8 @@ values."
    '(
      (auto-completion
       :variables
-      auto-completion-enable-help-tooltip t
-      auto-completion-enable-snippets-in-popup t)
+      auto-completion-enable-help-tooltip t)
+     (c-c++)
      emacs-lisp
      git
      github
@@ -33,6 +33,7 @@ values."
       :variables latex-build-command "LatexMk")
      markdown
      mineo
+     mineo-irony
      org
      python
      (shell :variables

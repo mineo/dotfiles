@@ -23,12 +23,6 @@
   (set-face-underline 'highlight-symbol-face t)
   (set-face-underline 'sp-show-pair-match-face t)
 
-  ;; No bold nicknames in jabber
-  (set-face-bold 'jabber-chat-prompt-local nil)
-  (set-face-bold 'jabber-chat-prompt-foreign nil)
-  ;; and use some better colors
-  (set-face-foreground 'jabber-chat-prompt-local (face-foreground font-lock-keyword-face))
-  (set-face-foreground 'jabber-chat-prompt-foreign (face-foreground font-lock-function-name-face))
   ;; These faces use a huge height by default
   (set-face-attribute 'jabber-title-large nil :height 1.2)
   (set-face-attribute 'jabber-title-medium nil :height 1.1)

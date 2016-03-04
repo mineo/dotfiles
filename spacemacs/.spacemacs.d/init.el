@@ -251,7 +251,8 @@ layers configuration. You are free to put any user code."
         powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
-        use-dialog-box nil)
+        use-dialog-box nil
+        neo-theme 'ascii)
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))

@@ -251,7 +251,8 @@ layers configuration. You are free to put any user code."
         powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
-        use-dialog-box nil)
+        use-dialog-box nil
+        neo-theme 'ascii)
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
@@ -259,7 +260,10 @@ layers configuration. You are free to put any user code."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
-  (setq spaceline-right (delete 'hud spaceline-right)))
+  (setq spaceline-right (delete 'hud spaceline-right))
+  ;; Sort these a bit, the defaults are not very good with the Consolas font
+  (setq org-bullets-bullet-list '("✿" "✸" "◉" "○"))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

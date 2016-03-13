@@ -33,7 +33,7 @@ values."
       :variables latex-build-command "LatexMk")
      markdown
      mineo
-     mineo-irony
+     mineo-rtags
      org
      python
      (shell :variables

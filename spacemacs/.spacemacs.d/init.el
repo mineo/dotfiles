@@ -36,6 +36,7 @@ values."
      mineo-rtags
      org
      python
+     scala
      (shell :variables
      ;;        shell-default-height 30
             shell-default-position 'bottom

@@ -30,7 +30,13 @@
 ;;; Code:
 
 (defconst mineo-rtags-packages
-  '(rtags))
+  '(cmake-ide
+    rtags))
+
+(defun mineo-rtags/init-cmake-ide ()
+  (use-package cmake-ide
+    :config
+    (cmake-ide-setup)))
 
 (defun mineo-rtags/init-rtags ()
   (use-package rtags
@@ -40,7 +46,8 @@
           rtags-use-helm t)
     (push '(company-rtags)
           company-backends-c-mode-common)
-    (rtags-enable-standard-keybindings))
+    (rtags-enable-standard-keybindings)
+    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running))
   (use-package flycheck-rtags
     :ensure rtags))
 

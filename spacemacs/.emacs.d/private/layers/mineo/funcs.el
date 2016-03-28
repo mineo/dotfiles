@@ -21,12 +21,7 @@
 
 (defun mineo-face-overrides ()
   (set-face-underline 'highlight-symbol-face t)
-  (set-face-underline 'sp-show-pair-match-face t)
-
-  ;; These faces use a huge height by default
-  (set-face-attribute 'jabber-title-large nil :height 1.2)
-  (set-face-attribute 'jabber-title-medium nil :height 1.1)
-  )
+  (set-face-underline 'sp-show-pair-match-face t))
 
 
 (add-hook 'after-make-frame-functions #'mineo-configure-fonts)

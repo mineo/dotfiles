@@ -29,13 +29,15 @@ values."
      jabber
      (haskell
       :variables haskell-enable-ghc-mod-support t)
+     html
      (latex
       :variables latex-build-command "LatexMk")
      markdown
      mineo
-     mineo-irony
+     mineo-rtags
      org
      python
+     scala
      (shell :variables
      ;;        shell-default-height 30
             shell-default-position 'bottom

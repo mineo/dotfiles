@@ -22,6 +22,7 @@
       company
       company-emoji
       copyright
+      editorconfig
       highlight-symbol
       (midnight :location built-in)
       projectile
@@ -91,6 +92,12 @@
     :config
     (add-hook 'find-file-hook #'copyright-update)
     (setq copyright-names-regexp (user-full-name))))
+
+(defun mineo/init-editorconfig ()
+  "Initialize editorconfig."
+  (use-package editorconfig
+    :config
+    (editorconfig-mode 1)))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

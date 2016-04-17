@@ -51,8 +51,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(editorconfig
-                                      github-clone
+   dotspacemacs-additional-packages '(github-clone
                                       monokai-theme
                                       pkgbuild-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.

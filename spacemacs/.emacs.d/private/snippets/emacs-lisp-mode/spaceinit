@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: spaceinit
+# key: spaceinit
+# --
+(defun mineo/init-$1 ()
+  "Initialize $1."
+  (use-package $1
+    :config
+    ($0)))

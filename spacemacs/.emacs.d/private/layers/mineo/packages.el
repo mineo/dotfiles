@@ -188,7 +188,6 @@
     (setq whitespace-style '(face
                              tabs
                              trailing
-                             lines
                              space-before-tab
                              newline
                              empty

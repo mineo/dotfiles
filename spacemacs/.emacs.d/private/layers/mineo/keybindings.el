@@ -34,7 +34,7 @@
   "o s"   'spacemacs/cycle-spacemacs-theme
   "o w"   'writeroom-mode
   "p j"   'helm-etags-select
-  "p t"   'projectile-test-project)
+  "p P"   'projectile-test-project)
 
 (spacemacs/declare-prefix "o j" "jabber")
 (spacemacs/declare-prefix "o o" "org")

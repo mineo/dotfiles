@@ -277,6 +277,9 @@ layers configuration. You are free to put any user code."
   (setq spaceline-right (delete 'hud spaceline-right))
   ;; Sort these a bit, the defaults are not very good with the Consolas font
   (setq org-bullets-bullet-list '("✿" "✸" "◉" "○"))
+  ;; Explicitly call this for the first frame
+  (-when-let (frame (selected-frame))
+             (mineo-configure-fonts frame))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

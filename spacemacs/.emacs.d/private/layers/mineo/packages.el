@@ -28,6 +28,7 @@
       flycheck-package
       highlight-symbol
       (midnight :location built-in)
+      (monokai-mod-theme :location local)
       projectile
       (projectile-addons :location local)
       org
@@ -130,6 +131,10 @@
   "Initialize midnight."
   (use-package midnight))
 
+(defun mineo/init-monokai-mod-theme ()
+  "Initialize monokai-mod-theme."
+  (use-package monokai-mod-theme))
+
 (defun mineo/init-projectile-addons ()
   "Initialize projectile-addons."
   (use-package projectile-addons
@@ -144,9 +149,9 @@
       "v" 'venv-workon
       "V" 'venv-deactivate)
     (spaceline-define-segment virtualenvwrapper-active-env
+      "Shows the currently activated virtual environment."
       (format "venv:%s" venv-current-name)
-      :when (equal major-mode 'python-mode))
-    (add-to-list 'spaceline-left 'virtualenvwrapper-active-env t)))
+      :when (equal major-mode 'python-mode))))
 
 (defun mineo/init-whitespace-cleanup-mode ()
   "Initialize whitespace-cleanup-mode."

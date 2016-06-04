@@ -181,6 +181,8 @@
           ;; Open my notes file instead of the scratch buffer in new
           ;; emacs instances
           initial-buffer-choice org-default-notes-file
+          ;; Other stuff
+          org-hide-emphasis-markers t
           org-ellipsis " […]"
           org-agenda-files '("~/.org")
           org-refile-targets '((org-agenda-files :maxlevel . 2))

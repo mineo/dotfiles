@@ -279,7 +279,7 @@ layers configuration. You are free to put any user code."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
-  (setq spaceline-right (delete 'hud spaceline-right))
+  (spaceline-toggle-hud-off)
   ;; Sort these a bit, the defaults are not very good with the Consolas font
   (setq org-bullets-bullet-list '("✿" "✸" "◉" "○"))
   ;; Explicitly call this for the first frame

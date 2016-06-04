@@ -280,6 +280,7 @@ layers configuration. You are free to put any user code."
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
   (spaceline-toggle-hud-off)
+  (spacemacs/toggle-fringe-off)
   ;; Sort these a bit, the defaults are not very good with the Consolas font
   (setq org-bullets-bullet-list '("✿" "✸" "◉" "○"))
   ;; Explicitly call this for the first frame

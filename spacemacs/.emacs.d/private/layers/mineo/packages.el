@@ -1,6 +1,6 @@
 ;;; packages.el --- mineo Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2014 Sylvain Benner
+;; Copyright (c) 2012-2014, 2016 Sylvain Benner
 ;; Copyright (c) 2014-2015 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
@@ -18,11 +18,14 @@
       auth-password-store
       beacon
       (bibtex :location built-in)
+      cask-mode
       column-enforce-mode
       company
       company-emoji
       copyright
       editorconfig
+      flycheck-cask
+      flycheck-package
       highlight-symbol
       (midnight :location built-in)
       projectile
@@ -69,6 +72,10 @@
     :config
     (auth-pass-enable)))
 
+(defun mineo/init-cask-mode ()
+  "Initialize cask-mode."
+  (use-package cask-mode))
+
 (defun mineo/init-column-enforce-mode ()
   "Initialize enforce-column-mode."
   (use-package column-enforce-mode
@@ -98,6 +105,18 @@
   (use-package editorconfig
     :config
     (editorconfig-mode 1)))
+
+(defun mineo/init-flycheck-cask ()
+  "Initialize flycheck-cask."
+  (use-package flycheck-cask
+    :config
+    (add-hook 'flycheck-mode-hook #'flycheck-cask-setup)))
+
+(defun mineo/init-flycheck-package ()
+  "Initialize flycheck-package."
+  (use-package flycheck-package
+    :config
+    (flycheck-package-setup)))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

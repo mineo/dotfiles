@@ -2699,9 +2699,9 @@ Also affects 'linum-mode' background."
       (,terminal-class (:foreground ,terminal-monokai-mod-gray))))
 
    `(helm-source-header
-     ((,class (:background ,monokai-mod-violet-l
-                           :foreground ,monokai-mod-bg
-                           :underline nil))
+     ((,class (:background ,monokai-mod-bg
+                           :foreground ,monokai-mod-orange-l
+                           :underline t))
       (,terminal-class (:background ,terminal-monokai-mod-violet-l
                                     :foreground ,terminal-monokai-mod-bg
                                     :underline nil))))

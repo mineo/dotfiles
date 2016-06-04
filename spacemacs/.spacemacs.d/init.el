@@ -271,6 +271,8 @@ layers configuration. You are free to put any user code."
         use-dialog-box nil
         neo-theme 'ascii)
 
+  (spaceline-compile)
+
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
 

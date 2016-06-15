@@ -280,8 +280,8 @@ layers configuration. You are free to put any user code."
   (spacemacs/toggle-mode-line-minor-modes-off)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)
-  ;; Sort these a bit, the defaults are not very good with the Consolas font
-  (setq org-bullets-bullet-list '("✿" "✸" "◉" "○"))
+  (setq org-bullets-bullet-list '("✿" "✸" "◉" "○") ;; Sort these a bit, the defaults are not very good with the Consolas font
+        org-clock-idle-time 5)
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
              (mineo-configure-fonts frame))

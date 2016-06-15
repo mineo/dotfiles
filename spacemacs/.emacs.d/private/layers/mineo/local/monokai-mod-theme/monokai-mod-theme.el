@@ -295,7 +295,7 @@ Also affects 'linum-mode' background."
                                     :italic nil))))
 
    `(font-lock-variable-name-face
-     ((,class (:foreground ,monokai-mod-orange))
+     ((,class (:foreground ,monokai-mod-fg))
       (,terminal-class (:foreground ,terminal-monokai-mod-orange))))
 
    `(font-lock-warning-face

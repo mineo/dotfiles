@@ -37,12 +37,9 @@ values."
      mineo-rtags
      org
      python
-     ;; scala
      (shell :variables
-     ;;        shell-default-height 30
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")
-     ;; spell-checking
      (syntax-checking
       :variables syntax-checking-enable-tooltips nil)
      version-control

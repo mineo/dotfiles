@@ -26,6 +26,7 @@ values."
      emacs-lisp
      git
      github
+     go
      jabber
      (haskell
       :variables haskell-enable-ghc-mod-support t)

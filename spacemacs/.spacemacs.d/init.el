@@ -28,8 +28,6 @@ values."
      github
      go
      jabber
-     (haskell
-      :variables haskell-enable-ghc-mod-support t)
      html
      (latex
       :variables latex-build-command "LatexMk")

@@ -276,6 +276,7 @@ layers configuration. You are free to put any user code."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
+  (spacemacs/toggle-camel-case-motion-globally-on)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)
   (setq org-bullets-bullet-list '("✿" "✸" "◉" "○") ;; Sort these a bit, the defaults are not very good with the Consolas font

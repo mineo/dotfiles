@@ -181,7 +181,7 @@ function man () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
 
-function mpd_song-dir () {
+function mpd-song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
     cd ${HOME}/Musik/${song_dir}
 }

@@ -27,7 +27,6 @@ values."
      git
      github
      go
-     jabber
      html
      (latex
       :variables latex-build-command "LatexMk")

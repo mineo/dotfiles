@@ -24,6 +24,9 @@ values."
       auto-completion-enable-help-tooltip t)
      (c-c++)
      emacs-lisp
+     (evil-snipe
+      :variables
+      evil-snipe-enable-alternate-f-and-t-behaviors t)
      git
      github
      go

@@ -270,10 +270,6 @@ layers configuration. You are free to put any user code."
 
   (spaceline-compile)
 
-  ;; This really doesn't hurt on OS X
-  (when (spacemacs/system-is-mac)
-    spacemacs/toggle-menu-bar-on)
-
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
 

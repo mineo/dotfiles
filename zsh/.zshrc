@@ -1,3 +1,5 @@
+[ -e $HOME/.zshrc.local ] && . $HOME/.zshrc.local
+
 autoload colors
 colors
 setopt autocd

@@ -189,7 +189,7 @@ fi
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
 
-function man () {
+function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
 

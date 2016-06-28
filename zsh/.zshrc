@@ -42,11 +42,15 @@ zstyle ':vcs_info:*' unstagedstr "%F{red}＊"
 zstyle ':vcs_info:*' stagedstr "%F{green}＋"
 zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
 zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
-autoload -Uz vcs_info
-vcs_info
-precmd () {
+
+if [[ $ZSH_VERSION > 5.0.0 ]]; then
+    autoload -Uz vcs_info
     vcs_info
-}
+    precmd () {
+        vcs_info
+    }
+fi
+
 preexec() {
     # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
     case $TERM in
@@ -58,8 +62,13 @@ preexec() {
     esac
 }
 
-PROMPT='↪ '
-RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
+
+if [[ $ZSH_VERSION > 5.0.0 ]]; then
+    PROMPT='↪ '
+    RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
+else
+    PROMPT='%n on %m: %~%(0?.. [%?]) ↪ '
+fi
 ZLE_RPROMPT_INDENT=0
 
 ###########
@@ -118,8 +127,10 @@ alias ssc='sudo systemctl'
 alias rs='source ~/.zshrc'
 
 # cdr: Remember recent directories, `cdr <TAB>` opens a list of them
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
+if [[ $ZSH_VERSION > 5.0.0 ]]; then
+    autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+    add-zsh-hook chpwd chpwd_recent_dirs
+fi
 zstyle ':completion:*:*:cdr:*:*' menu selection
 
 ##############

@@ -54,11 +54,12 @@ fi
 preexec() {
     # define screen/terminal title with the current command (http://aperiodic.net/phil/prompt/)
     case $TERM in
-      rxvt-*)
-	  printf '\33]2;%s\007' $1
-      ;;
-      screen*)
-	printf '\ek%s\e\\' $1;;
+        rxvt-*)
+            printf '\33]2;%s\007' $1
+            ;;
+        screen*)
+            printf '\ek%s\e\\' $1
+            ;;
     esac
 }
 

@@ -67,7 +67,7 @@ if [[ $ZSH_VERSION > 5.0.0 ]]; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
 else
-    PROMPT='%n on %m: %~%(0?.. [%?]) ↪ '
+    PROMPT=$'%{\e[0;33m%}%n %{\e[0;10m%}on %{\e[0;35m%}%m%{\e[0;10m%}: %~%(0?.. [%?]) ↪ '
 fi
 ZLE_RPROMPT_INDENT=0
 

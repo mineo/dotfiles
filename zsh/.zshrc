@@ -116,14 +116,20 @@ fi
 
 alias grep='grep --color=auto'
 
-alias fu='sudo pacman -Rns'
-alias pkg='pacman -Qi'
-alias sp='sudo pacman'
-alias pm='pacman'
-alias pa='pacaur'
+if type pacman &> /dev/null; then
+    alias fu='sudo pacman -Rns'
+    alias pkg='pacman -Qi'
+    alias sp='sudo pacman'
+    alias pm='pacman'
+    alias pa='pacaur'
+fi
+
 alias sc='schedtool -n 19 -B -e'
-alias scs='systemctl status'
-alias ssc='sudo systemctl'
+
+if type systemctl &> /dev/null; then
+    alias scs='systemctl status'
+    alias ssc='sudo systemctl'
+fi
 
 alias rs='source ~/.zshrc'
 

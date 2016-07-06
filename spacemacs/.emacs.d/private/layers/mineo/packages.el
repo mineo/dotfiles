@@ -177,31 +177,36 @@
 
 (defun mineo/post-init-org ()
   "Post-initialize org."
-    (setq org-directory "~/.org"
-          org-default-notes-file (concat org-directory "/notes.org")
-          ;; Keep track of state changes of tasks and show them in the
-          ;; agenda by default
-          org-log-done 'time
-          org-agenda-start-with-log-mode t
-          ;; Open my notes file instead of the scratch buffer in new
-          ;; emacs instances
-          initial-buffer-choice org-default-notes-file
-          ;; Other stuff
-          org-hide-emphasis-markers t
-          org-ellipsis " […]"
-          org-agenda-files '("~/.org")
-          org-refile-targets '((org-agenda-files :maxlevel . 2))
-          org-capture-templates
-          '(("t" "Todo" entry (file+headline nil "Tasks")
-             "* TODO %?\n  %i")
-            ("l" "Todo with link" entry (file+headline nil "Tasks")
-             "* TODO %?\n  %i\n  %a")
-            ("b" "Buch" entry (file+headline nil "unsortiert")
-             "*** %?")
-            ( "v" "Video" entry (file+headline nil "Video")
-              "** %?")
-            ("m" "Musik" item (file+headline nil "Musik")
-             "- [ ] %?"))))
+  (setq mineo-org-babel-languages '(C python sh shell))
+  (with-eval-after-load 'org
+    (dolist (language mineo-org-babel-languages)
+      (cl-pushnew `(,language . t) org-babel-load-languages)))
+
+  (setq org-directory "~/.org"
+        org-default-notes-file (concat org-directory "/notes.org")
+        ;; Keep track of state changes of tasks and show them in the
+        ;; agenda by default
+        org-log-done 'time
+        org-agenda-start-with-log-mode t
+        ;; Open my notes file instead of the scratch buffer in new
+        ;; emacs instances
+        initial-buffer-choice org-default-notes-file
+        ;; Other stuff
+        org-hide-emphasis-markers t
+        org-ellipsis " […]"
+        org-agenda-files '("~/.org")
+        org-refile-targets '((org-agenda-files :maxlevel . 2))
+        org-capture-templates
+        '(("t" "Todo" entry (file+headline nil "Tasks")
+           "* TODO %?\n  %i")
+          ("l" "Todo with link" entry (file+headline nil "Tasks")
+           "* TODO %?\n  %i\n  %a")
+          ("b" "Buch" entry (file+headline nil "unsortiert")
+           "*** %?")
+          ( "v" "Video" entry (file+headline nil "Video")
+            "** %?")
+          ("m" "Musik" item (file+headline nil "Musik")
+           "- [ ] %?"))))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

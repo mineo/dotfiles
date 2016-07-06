@@ -41,6 +41,7 @@ values."
      (shell :variables
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")
+     spacemacs-fixes
      (syntax-checking
       :variables syntax-checking-enable-tooltips nil)
      version-control

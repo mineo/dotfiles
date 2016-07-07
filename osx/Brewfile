@@ -6,6 +6,7 @@
 brew 'coreutils'
 brew 'findutils'
 brew 'gnu-sed'
+brew 'gnu-tar'
 
 # Shell
 brew 'zsh'

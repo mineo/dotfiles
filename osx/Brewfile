@@ -8,6 +8,9 @@ brew 'findutils'
 brew 'gnu-sed'
 brew 'gnu-tar'
 
+# Easier extraction
+brew 'atool'
+
 # Shell
 brew 'zsh'
 

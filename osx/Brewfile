@@ -10,6 +10,7 @@ brew 'gnu-tar'
 
 # Easier extraction
 brew 'atool'
+brew 'p7zip'
 
 # Shell
 brew 'zsh'

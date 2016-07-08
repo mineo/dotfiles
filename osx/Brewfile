@@ -19,6 +19,7 @@ brew 'zsh'
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'git'
+brew 'source-highlight'
 brew 'the_silver_searcher'
 
 # Dotfile management

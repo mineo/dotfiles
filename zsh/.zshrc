@@ -30,6 +30,12 @@ setopt HIST_REDUCE_BLANKS
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 command virtualenvwrapper_lazy.sh &> /dev/null && source $(command -v virtualenvwrapper_lazy.sh)
 
+# Easier URL typing
+# url-quote-magic automatically escapes some characters as they are typed if
+# they are part of a URL.
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
 # VCS_INFO stuff
 # set formats
 # # %b - branchname

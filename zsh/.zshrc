@@ -36,6 +36,13 @@ command virtualenvwrapper_lazy.sh &> /dev/null && source $(command -v virtualenv
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+if [[ $ZSH_VERSION > 5.0.0 ]]; then
+    # Easier URL pasting
+    # Like the above, but escapes characters as URLs are pasted.
+    autoload -Uz bracketed-paste-magic
+    zle -N bracketed-paste bracketed-paste-magic
+fi
+
 # VCS_INFO stuff
 # set formats
 # # %b - branchname

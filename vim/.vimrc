@@ -5,7 +5,6 @@ set encoding=utf-8
 set bg=dark
 set go=c
 set guifont=Consolas\ 13
-colorscheme molokai
 
 " status line
 set laststatus=2

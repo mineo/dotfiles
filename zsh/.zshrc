@@ -215,6 +215,12 @@ function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
 
+# View the JSON file passed as the single argument in less after colorizing it
+# with jq.
+function jless () {
+    jq -C . < $1 | less
+}
+
 # Jump to the directory of the currently playing song.
 function mpd-song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"

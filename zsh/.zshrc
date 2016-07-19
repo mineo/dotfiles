@@ -210,10 +210,12 @@ fi
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
 
+# View the man page passed as the single argument in emacs.
 function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
 
+# Jump to the directory of the currently playing song.
 function mpd-song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
     cd ${HOME}/Musik/${song_dir}

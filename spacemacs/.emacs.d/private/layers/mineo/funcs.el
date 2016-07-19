@@ -24,9 +24,6 @@
   (set-face-underline 'sp-show-pair-match-face t))
 
 
-(add-hook 'after-make-frame-functions #'mineo-configure-fonts)
-(advice-add 'spacemacs/cycle-spacemacs-theme :after
-            #'mineo-face-overrides)
 
 (provide 'funcs)
 ;;; funcs.el ends here

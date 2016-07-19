@@ -44,6 +44,7 @@ values."
      spacemacs-fixes
      (syntax-checking
       :variables syntax-checking-enable-tooltips nil)
+     theming
      version-control
      )
    ;; List of additional packages that will be installed without being
@@ -261,6 +262,16 @@ user code."
         monokai-mod-height-minus-1 1.0
         monokai-mod-distinct-fringe-background t
         monokai-mod-use-variable-pitch nil)
+
+  (setq theming-modifications
+        `((monokai (highlight-symbol-face :underline t)
+                   (sp-show-pair-match-face :underline t))
+          (monokai-mod (highlight-symbol-face :underline t)
+                       (sp-show-pair-match-face :underline t))
+          (solarized-light (highlight-symbol-face :underline t)
+                           (sp-show-pair-match-face :underline t))
+          (solarized-dark (highlight-symbol-face :underline t)
+                          (sp-show-pair-match-face :underline t))))
   )
 
 (defun dotspacemacs/user-config ()

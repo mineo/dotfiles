@@ -28,7 +28,6 @@
       flycheck-package
       highlight-symbol
       (midnight :location built-in)
-      (monokai-mod-theme :location local)
       projectile
       (projectile-addons :location local)
       org
@@ -130,10 +129,6 @@
 (defun mineo/init-midnight ()
   "Initialize midnight."
   (use-package midnight))
-
-(defun mineo/init-monokai-mod-theme ()
-  "Initialize monokai-mod-theme."
-  (use-package monokai-mod-theme))
 
 (defun mineo/init-projectile-addons ()
   "Initialize projectile-addons."

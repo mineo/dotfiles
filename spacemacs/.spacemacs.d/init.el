@@ -107,7 +107,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(monokai-mod
+   dotspacemacs-themes '(monokai
                          solarized-light
                          solarized-dark)
    ;; If non nil the cursor color matches the state color.
@@ -251,23 +251,28 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+
+  ;; See https://github.com/syl20bnr/spacemacs/issues/6614.
+  ;; This assumes that ~/dev/monokai-emacs contains a checked out version of my
+  ;; fork. If not, it'll end up using the standard monokai-emacs package from
+  ;; MELPA, which isn't too bad.
+  (push "~/dev/monokai-emacs/" custom-theme-load-path)
+
   (setq ;; solarized
    solarized-use-less-bold t
    solarized-use-variable-pitch nil
    solarized-scale-org-headlines nil)
-  (setq monokai-mod-height-plus-1 1.0 ;; monokai-mod
-        monokai-mod-height-plus-2 1.0
-        monokai-mod-height-plus-3 1.0
-        monokai-mod-height-plus-4 1.0
-        monokai-mod-height-minus-1 1.0
-        monokai-mod-distinct-fringe-background t
-        monokai-mod-use-variable-pitch nil)
+  (setq monokai-height-plus-1 1.0 ;; monokai
+        monokai-height-plus-2 1.0
+        monokai-height-plus-3 1.0
+        monokai-height-plus-4 1.0
+        monokai-height-minus-1 1.0
+        monokai-distinct-fringe-background t
+        monokai-use-variable-pitch nil)
 
   (setq theming-modifications
         `((monokai (highlight-symbol-face :underline t)
                    (sp-show-pair-match-face :underline t))
-          (monokai-mod (highlight-symbol-face :underline t)
-                       (sp-show-pair-match-face :underline t))
           (solarized-light (highlight-symbol-face :underline t)
                            (sp-show-pair-match-face :underline t))
           (solarized-dark (highlight-symbol-face :underline t)

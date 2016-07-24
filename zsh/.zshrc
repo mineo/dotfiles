@@ -216,9 +216,14 @@ function eman () {
 }
 
 # View the JSON file passed as the single argument in less after colorizing it
-# with jq.
+# with jq. If jq is not available, fall back to simple formatting via Python's
+# json.tool.
 function jless () {
-    jq -C . < $1 | less
+    if type jq &> /dev/null; then
+        jq -C . < $1 | less
+    else
+        python -m json.tool $1 | less
+    fi
 }
 
 # Jump to the directory of the currently playing song.

@@ -46,6 +46,7 @@ values."
       :variables syntax-checking-enable-tooltips nil)
      theming
      version-control
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -54,7 +55,7 @@ values."
    dotspacemacs-additional-packages '(github-clone
                                       pkgbuild-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(pyenv-mode evil-jumper)
+   dotspacemacs-excluded-packages '(pyenv-mode evil-jumper evil-magit)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -292,6 +293,9 @@ layers configuration. You are free to put any user code."
         neo-theme 'ascii)
 
   (spaceline-compile)
+
+  ;; I don't need look at TAGS buffers.
+  (push "TAGS.*" spacemacs-useless-buffers-regexp)
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))

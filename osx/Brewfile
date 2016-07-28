@@ -22,6 +22,8 @@ brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'git'
 brew 'source-highlight'
 brew 'the_silver_searcher'
+brew 'unifdef'
+
 
 # Dotfile management
 brew 'stow'

@@ -23,7 +23,7 @@ ignore *                                # ignore all headers
 unignore from: to: cc: date: subject:   # show only these
 unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
-
+my_hdr X-Clacks-Overhead: GNU Terry Pratchett
 
 set use_ipv6=yes
 set pager_index_lines=4
@@ -31,6 +31,10 @@ set pager_index_lines=4
 set mbox_type=Maildir
 set folder=$HOME/.mail
 source ~/.mutt/muttrc.mailboxes
+
+alternates themineo+.*@gmail.com
+source ~/.mutt/accounts/0-common
+source ~/.mutt/accounts/1-gmail
 
 # tag my messages
 set nm_record = yes

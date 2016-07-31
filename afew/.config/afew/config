@@ -4,3 +4,5 @@
 header = X-Mailman-Version
 pattern = .+
 tags = +lists
+[FolderNameFilter]
+folder_transforms = gmail/Newsletter:newsletter

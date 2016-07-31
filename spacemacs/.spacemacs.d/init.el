@@ -296,7 +296,7 @@ layers configuration. You are free to put any user code."
   (spaceline-compile)
 
   ;; I don't need look at TAGS buffers.
-  (push "TAGS.*" spacemacs-useless-buffers-regexp)
+  (add-to-list 'spacemacs-useless-buffers-regexp "TAGS.*")
 
   ;; I really prefer using the emacs state in magit buffers
   (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))

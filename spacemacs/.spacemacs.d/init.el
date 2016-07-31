@@ -290,8 +290,7 @@ layers configuration. You are free to put any user code."
         powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
-        use-dialog-box nil
-        neo-theme 'ascii)
+        use-dialog-box nil)
 
   (spaceline-compile)
 

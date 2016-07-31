@@ -28,6 +28,7 @@
       flycheck-package
       highlight-symbol
       (midnight :location built-in)
+      neotree
       projectile
       (projectile-addons :location local)
       org
@@ -169,6 +170,12 @@
       (setq yatemplate-dir (locate-user-emacs-file "private/templates"))
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
+
+(defun mineo/post-init-neotree ()
+  "Initialize neotree."
+  (use-package neotree
+    :config
+    (setq neo-theme 'ascii)))
 
 (defun mineo/post-init-org ()
   "Post-initialize org."

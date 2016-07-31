@@ -201,7 +201,11 @@
           ( "v" "Video" entry (file+headline nil "Video")
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
-           "- [ ] %?"))))
+           "- [ ] %?"))
+        ;; Sort these a bit, the defaults are not very good with the Consolas
+        ;; font
+        org-bullets-bullet-list '("✿" "✸" "◉" "○")
+        org-clock-idle-time 5))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

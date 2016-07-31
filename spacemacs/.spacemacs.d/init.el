@@ -309,8 +309,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/toggle-camel-case-motion-globally-on)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)
-  (setq org-bullets-bullet-list '("✿" "✸" "◉" "○") ;; Sort these a bit, the defaults are not very good with the Consolas font
-        org-clock-idle-time 5)
+
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
              (mineo-configure-fonts frame))

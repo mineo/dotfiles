@@ -298,8 +298,10 @@ layers configuration. You are free to put any user code."
   ;; I don't need look at TAGS buffers.
   (add-to-list 'spacemacs-useless-buffers-regexp "TAGS.*")
 
-  ;; I really prefer using the emacs state in magit buffers
-  (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
+  ;; I really prefer using the emacs state in some buffers, mostly because the
+  ;; evil state hides many useful bindings in them.
+  (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"))
+          (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
 
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)

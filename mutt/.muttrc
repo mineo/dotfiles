@@ -74,9 +74,10 @@ bind index,pager L  sidebar-open
 bind index,pager N sidebar-next
 bind index,pager P     sidebar-prev
 bind index,pager O  sidebar-open
+bind index,pager S sidebar-toggle-virtual
+bind index <Esc>S sidebar-toggle-visible
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
-bind index <Esc>S sidebar-toggle-visible
 bind index B bounce-message
 
 

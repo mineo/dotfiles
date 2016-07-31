@@ -40,8 +40,6 @@ source ~/.mutt/accounts/1-gmail
 set nm_record = yes
 set nm_record_tags = '-inbox,-unread,me'
 
-source '~/.mutt/muttrc.private'
-
 set virtual_spoolfile = yes
 
 #aliases

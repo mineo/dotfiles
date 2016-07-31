@@ -63,6 +63,8 @@ set imap_check_subscribed = no
 # sidebar
 set sidebar_width=15
 
+set sidebar_format="%B%* %N"
+
 bind index,pager <down>   sidebar-next
 bind index,pager <up>     sidebar-prev
 bind index,pager <right>  sidebar-open
@@ -74,7 +76,7 @@ bind index,pager P     sidebar-prev
 bind index,pager O  sidebar-open
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
-bind index <Esc>S sidebar-toggle
+bind index <Esc>S sidebar-toggle-visible
 bind index B bounce-message
 
 

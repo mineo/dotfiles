@@ -9,7 +9,7 @@ color status color3 color8
 # selected message
 color indicator color3 black
 
-color sidebar color8 default
+color sidebar_highlight color8 default
 
 color signature color6 default
 

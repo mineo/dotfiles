@@ -111,3 +111,12 @@ bind index gg       first-entry
 bind index G        last-entry
 
 bind index,pager R  sync-mailbox
+
+virtual-mailboxes "Inbox"  "notmuch://?query=folder:gmail/INBOX and NOT tag:lists and NOT tag:archive"\
+                  "Bugs" "notmuch://?query=folder:gmail/bugs and tag:unread and NOT tag:archive"\
+                  "Newsletter" "notmuch://?query=tag:newsletter and tag:unread and NOT tag:archive"\
+                  "ML (me)"  "notmuch://?query=tag:lists and tag:replied and NOT tag:archive&type=threads"\
+                  "ML" "notmuch://?query=tag:lists and tag:unread and not tag:newsletter"\
+                  "Cron"   "notmuch://?query=folder:gmail/Cron AND NOT tag:archive"\
+                  "Unread" "notmuch://?query=tag:unread and not tag:newsletter"\
+                  "Archive" "notmuch://?query=tag:archive&type=threads"

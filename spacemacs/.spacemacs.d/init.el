@@ -23,6 +23,7 @@ values."
       :variables
       auto-completion-enable-help-tooltip t)
      (c-c++)
+     dockerfile
      emacs-lisp
      (evil-snipe
       :variables
@@ -99,7 +100,7 @@ values."
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
-   dotspacemacs-startup-lists '(recents projects)
+   dotspacemacs-startup-lists nil
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
@@ -289,16 +290,17 @@ layers configuration. You are free to put any user code."
         powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
-        use-dialog-box nil
-        neo-theme 'ascii)
+        use-dialog-box nil)
 
   (spaceline-compile)
 
   ;; I don't need look at TAGS buffers.
-  (push "TAGS.*" spacemacs-useless-buffers-regexp)
+  (add-to-list 'spacemacs-useless-buffers-regexp "TAGS.*")
 
-  ;; I really prefer using the emacs state in magit buffers
-  (add-to-list 'evil-buffer-regexps '("\*magit.*\*" . 'emacs))
+  ;; I really prefer using the emacs state in some buffers, mostly because the
+  ;; evil state hides many useful bindings in them.
+  (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"))
+          (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
 
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
@@ -306,8 +308,7 @@ layers configuration. You are free to put any user code."
   (spacemacs/toggle-camel-case-motion-globally-on)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)
-  (setq org-bullets-bullet-list '("✿" "✸" "◉" "○") ;; Sort these a bit, the defaults are not very good with the Consolas font
-        org-clock-idle-time 5)
+
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
              (mineo-configure-fonts frame))

@@ -28,6 +28,7 @@
       flycheck-package
       highlight-symbol
       (midnight :location built-in)
+      neotree
       projectile
       (projectile-addons :location local)
       org
@@ -170,6 +171,12 @@
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
 
+(defun mineo/post-init-neotree ()
+  "Initialize neotree."
+  (use-package neotree
+    :config
+    (setq neo-theme 'ascii)))
+
 (defun mineo/post-init-org ()
   "Post-initialize org."
   (setq mineo-org-babel-languages '(C python sh shell))
@@ -201,7 +208,11 @@
           ( "v" "Video" entry (file+headline nil "Video")
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
-           "- [ ] %?"))))
+           "- [ ] %?"))
+        ;; Sort these a bit, the defaults are not very good with the Consolas
+        ;; font
+        org-bullets-bullet-list '("✿" "✸" "◉" "○")
+        org-clock-idle-time 5))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

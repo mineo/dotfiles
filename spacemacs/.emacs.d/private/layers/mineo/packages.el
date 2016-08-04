@@ -27,6 +27,7 @@
       flycheck-cask
       flycheck-package
       highlight-symbol
+      magit
       (midnight :location built-in)
       neotree
       projectile
@@ -171,6 +172,13 @@
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
 
+(defun mineo/post-init-magit ()
+  "Post-initialize magit."
+  (use-package magit
+    :config
+    (add-to-list 'evil-buffer-regexps
+                 '("COMMIT_EDITMSG" . insert))))
+
 (defun mineo/post-init-neotree ()
   "Initialize neotree."
   (use-package neotree
@@ -212,7 +220,8 @@
         ;; Sort these a bit, the defaults are not very good with the Consolas
         ;; font
         org-bullets-bullet-list '("✿" "✸" "◉" "○")
-        org-clock-idle-time 5))
+        org-clock-idle-time 5)
+  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

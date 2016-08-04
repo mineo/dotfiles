@@ -14,13 +14,6 @@
 ;;; Code:
 
 (defconst spacemacs-fixes-packages
-  '(org))
-
-(defun spacemacs-fixes/post-init-org ()
-  "Post-initialize org."
-  (use-package org
-    :config
-    (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)))
-
+  '())
 
 ;;; packages.el ends here

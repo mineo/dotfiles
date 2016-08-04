@@ -299,7 +299,8 @@ layers configuration. You are free to put any user code."
 
   ;; I really prefer using the emacs state in some buffers, mostly because the
   ;; evil state hides many useful bindings in them.
-  (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"))
+  (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"
+                         "\*Paradox Report\*"))
           (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
 
   ;; I don't find minor modes in the mode line useful, I don't even know what

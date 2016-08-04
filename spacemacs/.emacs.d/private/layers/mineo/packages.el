@@ -236,8 +236,8 @@
   "Post-initialize whitespace."
   (use-package whitespace
     :config
-    (setq spacemacs-show-trailing-whitespace nil)
-    (setq whitespace-style '(face
+    (setq spacemacs-show-trailing-whitespace nil
+          whitespace-style '(face
                              tabs
                              trailing
                              space-before-tab
@@ -245,8 +245,8 @@
                              empty
                              space-after-tab
                              tab-mark
-                             newline-mark))
-    (setq whitespace-display-mappings
+                             newline-mark)
+          whitespace-display-mappings
           '((newline-mark ?\n [?< ?\n])
             (tab-mark     ?\t [?\u00BB ?\t] [?\\ ?\t])))))
 

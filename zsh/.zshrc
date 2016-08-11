@@ -91,7 +91,13 @@ ZLE_RPROMPT_INDENT=0
 # aliases #
 ###########
 alias -g G='|grep'
-alias -g J='|jq'
+
+if type jq &> /dev/null; then
+    alias -g J='|jq'
+else
+    alias -g J='|python -m json.tool'
+fi
+
 alias -g L='|less -R'
 alias -g P='|peco'
 

@@ -26,6 +26,7 @@
       editorconfig
       flycheck-cask
       flycheck-package
+      git-commit
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -119,6 +120,13 @@
   (use-package flycheck-package
     :config
     (flycheck-package-setup)))
+
+(defun mineo/postinit-git-commit ()
+  "Post-Initialize git-commit."
+  (use-package git-commit
+    :config
+    (remove-hook 'git-commit-finish-query-functions
+                 #'git-commit-check-style-conventions)))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

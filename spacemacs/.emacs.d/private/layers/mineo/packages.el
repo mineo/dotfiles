@@ -177,7 +177,8 @@
   (use-package magit
     :config
     (add-to-list 'evil-buffer-regexps
-                 '("COMMIT_EDITMSG" . insert))))
+                 '("COMMIT_EDITMSG" . insert))
+    (setq magit-revision-show-gravatars nil)))
 
 (defun mineo/post-init-neotree ()
   "Initialize neotree."

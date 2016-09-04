@@ -58,7 +58,6 @@ source ~/.mutt/colors/molokai
 set fast_reply                       # skip to compose when replying
 set fcc_attach                       # save attachments with the body
 set reverse_name                     # reply as whomever it was to
-set imap_check_subscribed = no
 
 # sidebar
 set sidebar_width=15

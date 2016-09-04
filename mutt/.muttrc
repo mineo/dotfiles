@@ -78,6 +78,9 @@ macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
 macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
 bind index B bounce-message
 
+# nntp
+set news_server = news.gmane.org
+bind index i change-newsgroup
 
 # GPG
 set pgp_use_gpg_agent = yes

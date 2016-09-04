@@ -16,7 +16,7 @@ base:
 devel:
 	$(STOW) code db haskell git
 mail:
-	$(STOW) afew mutt
+	$(STOW) afew neomutt
 osx:
 	$(BREW) bundle --file=osx/Brewfile
 ui:

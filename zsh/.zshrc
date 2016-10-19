@@ -217,6 +217,10 @@ if [ -d /usr/share/zsh/plugins ]; then
     done
 fi
 
+for i in /usr/loca/share/zsh-*/*.zsh(N); do
+    source $i
+done
+
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
 

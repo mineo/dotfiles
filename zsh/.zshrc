@@ -133,7 +133,11 @@ else
     alias mp='mpv'
 fi
 
-[[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
+if type brew &> /dev/null; then
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+else
+    [[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
+fi
 
 alias grep='grep --color=auto'
 

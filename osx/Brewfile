@@ -13,6 +13,7 @@ brew 'atool'
 brew 'p7zip'
 
 # Shell
+brew 'autojump'
 brew 'shocco'
 brew 'zsh'
 

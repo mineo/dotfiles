@@ -211,11 +211,9 @@ bindkey "^R" history-incremental-search-backward
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
-if [ -d /usr/share/zsh/plugins ]; then
-    for i in /usr/share/zsh/plugins/*/*.zsh; do
-        source $i
-    done
-fi
+for i in /usr/share/zsh/plugins/*/*.zsh(N); do
+    source $i
+done
 
 for i in /usr/loca/share/zsh-*/*.zsh(N); do
     source $i

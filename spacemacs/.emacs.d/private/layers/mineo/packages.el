@@ -201,6 +201,11 @@
     (dolist (language mineo-org-babel-languages)
       (cl-pushnew `(,language . t) org-babel-load-languages)))
 
+  (defalias
+    'spacemacs/helm-jump-in-buffer
+    'helm-semantic-or-imenu
+    "Always use `helm-semantic-or-imenu' for jumping in the buffer, especially in org-mode.")
+
   (setq org-directory "~/.org"
         org-default-notes-file (concat org-directory "/notes.org")
         ;; Keep track of state changes of tasks and show them in the

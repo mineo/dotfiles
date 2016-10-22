@@ -97,6 +97,7 @@ message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tra
 
 bind index \CX collapse-all
 bind index \CV collapse-thread
+bind index,pager + entire-thread
 
 set index_format="%4C %Z %{%b %d} %-15.15F %s"
 

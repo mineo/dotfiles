@@ -119,12 +119,10 @@
     :config
     (flycheck-package-setup)))
 
-(defun mineo/postinit-git-commit ()
-  "Post-Initialize git-commit."
-  (use-package git-commit
-    :config
-    (remove-hook 'git-commit-finish-query-functions
-                 #'git-commit-check-style-conventions)))
+(defun mineo/post-init-git-commit ()
+  "Post-initialize git-commit."
+  (remove-hook 'git-commit-finish-query-functions
+               #'git-commit-check-style-conventions))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

@@ -79,11 +79,9 @@
   "Initialize cask-mode."
   (use-package cask-mode))
 
-(defun mineo/init-column-enforce-mode ()
-  "Initialize enforce-column-mode."
-  (use-package column-enforce-mode
-    :config
-    (add-hook 'prog-mode-hook 'column-enforce-mode)))
+(defun mineo/post-init-column-enforce-mode ()
+  "Post-initialize enforce-column-mode."
+  (add-hook 'prog-mode-hook 'column-enforce-mode))
 
 (defun mineo/post-init-company ()
   "Post-initialize company."

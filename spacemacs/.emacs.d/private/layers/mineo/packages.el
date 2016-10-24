@@ -24,6 +24,7 @@
       company-emoji
       copyright
       editorconfig
+      flycheck
       flycheck-cask
       flycheck-package
       git-commit
@@ -175,6 +176,11 @@
       (setq yatemplate-dir (locate-user-emacs-file "private/templates"))
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
+
+(defun mineo/post-init-flycheck ()
+  "Post-initialize flycheck."
+  (when-let ((flake8 (executable-find "flake8-python2")))
+    (setq flycheck-python-flake8-executable flake8)))
 
 (defun mineo/post-init-magit ()
   "Post-initialize magit."

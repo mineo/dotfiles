@@ -14,7 +14,7 @@ archlinux:
 base:
 	$(STOW) spacemacs peco tmux vim zsh
 devel:
-	$(STOW) code db haskell git
+	$(STOW) code db git
 mail:
 	$(STOW) afew neomutt
 osx:

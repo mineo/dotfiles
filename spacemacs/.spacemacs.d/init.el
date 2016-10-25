@@ -55,7 +55,7 @@ values."
    dotspacemacs-additional-packages '(github-clone
                                       pkgbuild-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(pyenv-mode evil-jumper evil-magit)
+   dotspacemacs-excluded-packages '(pyenv-mode pyvenv evil-jumper evil-magit)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)

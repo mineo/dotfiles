@@ -8,7 +8,7 @@ STOW = stow $(STOWFLAGS) -R --target $(TARGET)
 all: apps base devel mail ui
 
 apps:
-	$(STOW) ipython irssi mpd
+	$(STOW) ipython irssi mpd mpv
 archlinux:
 	$(STOW) abs
 base:

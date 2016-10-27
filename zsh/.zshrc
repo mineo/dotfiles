@@ -1,5 +1,9 @@
 [ -e $HOME/.zshrc.local ] && . $HOME/.zshrc.local
 
+function binary_exists () {
+    type $1 &> /dev/null
+}
+
 autoload colors
 colors
 setopt autocd
@@ -28,7 +32,10 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
-command virtualenvwrapper_lazy.sh &> /dev/null && source $(command -v virtualenvwrapper_lazy.sh)
+if binary_exists virtualenvwrapper_lazy.sh; then
+    source $(command -v virtualenvwrapper_lazy.sh)
+    alias wo='workon'
+fi
 
 # Easier URL typing
 # url-quote-magic automatically escapes some characters as they are typed if
@@ -92,21 +99,26 @@ ZLE_RPROMPT_INDENT=0
 ###########
 alias -g G='|grep'
 
-if type jq &> /dev/null; then
+if binary_exists jq; then
     alias -g J='|jq'
 else
     alias -g J='|python -m json.tool'
 fi
 
 alias -g L='|less -R'
-alias -g P='|peco'
+binary_exists peco && alias -g P='|peco'
 
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
 alias ftphere='python2 -m pyftpdlib -w -d .'
-alias g='git'
-command -v hub &> /dev/null && alias g='hub'
+
+if binary_exists hub; then
+    alias g='hub'
+else
+    alias g='git'
+fi
+
 alias hme='htop -u $(whoami)'
 alias ipcons='ipython2 qtconsole --pylab=auto'
 alias m='mimeopen'
@@ -119,21 +131,20 @@ alias sucp='sudo cp'
 alias sv='sudoedit'
 alias um='udisks --unmount'
 alias v='vim'
-alias wo='workon'
 
-if type ls++ &> /dev/null; then
+if binary_exists ls++; then
     alias ls='ls++'
 else
     alias ls='ls -lh --color=auto'
 fi
 
-if type automp &> /dev/null; then
+if binary_exists automp; then
     alias mp='automp'
 else
     alias mp='mpv'
 fi
 
-if type brew &> /dev/null; then
+if binary_exists brew; then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 else
     [[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh
@@ -141,7 +152,7 @@ fi
 
 alias grep='grep --color=auto'
 
-if type pacman &> /dev/null; then
+if binary_exists pacman; then
     alias fu='sudo pacman -Rns'
     alias pkg='pacman -Qi'
     alias sp='sudo pacman'
@@ -151,7 +162,7 @@ fi
 
 alias sc='schedtool -n 19 -B -e'
 
-if type systemctl &> /dev/null; then
+if binary_exists systemctl; then
     alias scs='systemctl status'
     alias ssc='sudo systemctl'
 fi
@@ -231,11 +242,16 @@ function eman () {
 # with jq. If jq is not available, fall back to simple formatting via Python's
 # json.tool.
 function jless () {
-    if type jq &> /dev/null; then
+    if binary_exists jq; then
         jq -C . < $1 | less
     else
         python -m json.tool $1 | less
     fi
+}
+
+# Mkdir $1 and cd into it.
+function mkcd () {
+    mkdir -p $1 && cd $1
 }
 
 # Jump to the directory of the currently playing song.
@@ -243,3 +259,5 @@ function mpd-song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
     cd ${HOME}/Musik/${song_dir}
 }
+
+unset -f binary_exists

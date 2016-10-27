@@ -109,8 +109,13 @@ alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
 alias ftphere='python2 -m pyftpdlib -w -d .'
-alias g='git'
-binary_exists hub && alias g='hub'
+
+if binary_exists hub; then
+    alias g='hub'
+else
+    alias g='git'
+fi
+
 alias hme='htop -u $(whoami)'
 alias ipcons='ipython2 qtconsole --pylab=auto'
 alias m='mimeopen'

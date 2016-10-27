@@ -32,7 +32,10 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
-binary_exists virtualenvwrapper_lazy.sh && source $(command -v virtualenvwrapper_lazy.sh)
+if binary_exists virtualenvwrapper_lazy.sh; then
+    source $(command -v virtualenvwrapper_lazy.sh)
+    alias wo='workon'
+fi
 
 # Easier URL typing
 # url-quote-magic automatically escapes some characters as they are typed if
@@ -128,7 +131,6 @@ alias sucp='sudo cp'
 alias sv='sudoedit'
 alias um='udisks --unmount'
 alias v='vim'
-alias wo='workon'
 
 if binary_exists ls++; then
     alias ls='ls++'

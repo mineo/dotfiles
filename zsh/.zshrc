@@ -238,6 +238,11 @@ function jless () {
     fi
 }
 
+# Mkdir $1 and cd into it.
+function mkcd () {
+    mkdir -p $1 && cd $1
+}
+
 # Jump to the directory of the currently playing song.
 function mpd-song-dir () {
     local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"

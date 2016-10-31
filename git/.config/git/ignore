@@ -13,3 +13,5 @@ cabal.sandbox.config
 version.py
 build/
 *~
+.eggs
+.cache

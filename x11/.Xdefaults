@@ -1,7 +1,7 @@
 *urgentOnBell: true
 *scrollBar: false
 *saveLines: 10000
-urxvt.font: xft:Consolas:size=12,xft:Symbola:size=9,xft:Segoe UI Symbol:size=9
+urxvt.font: xft:Consolas:size=12,xft:Symbola:size=9,xft:Droid Sans Fallback:size=9,xft:Noto Emoji:size=9
 *internalBorder: 0
 
 !!url stuff

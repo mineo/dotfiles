@@ -16,8 +16,7 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (defun mineo-configure-fonts (frame)
     "Set up additional fonts for Emoji and other things in FRAME."
-  (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend)
-  (set-fontset-font t 'symbol (font-spec :family "Segoe UI Symbol") nil 'prepend))
+  (set-fontset-font t 'symbol (font-spec :family "Symbola") nil 'prepend))
 
 (defun mineo-face-overrides ()
   (set-face-underline 'highlight-symbol-face t)

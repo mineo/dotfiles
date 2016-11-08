@@ -28,7 +28,5 @@
 
 (add-hook 'after-make-frame-functions #'mineo-configure-fonts)
 
-(spacemacs|defvar-company-backends jabber-chat-mode)
-
 (provide 'config)
 ;;; config.el ends here

@@ -260,4 +260,11 @@ function mpd-song-dir () {
     cd ${HOME}/Musik/${song_dir}
 }
 
+# Git clone $1 in /tmp and cd into the cloned folder
+function tmpclone {
+    cd /tmp
+    g clone $1
+    cd ${1##*/}
+}
+
 unset -f binary_exists

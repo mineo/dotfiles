@@ -22,7 +22,24 @@
   (set-face-underline 'highlight-symbol-face t)
   (set-face-underline 'sp-show-pair-match-face t))
 
-
+(defun mineo-git-clone-tmp (repository)
+  "Clone REPOSITORY into a temporary folder."
+  (interactive "MUrl or User/Repo:")
+  (let ((is-github-repo (or
+                         (string-match-p "github.com" repository)
+                         ;; This regexp (except for the ^) has been taken from
+                         ;; github-clone-repo-name
+                         (string-match-p "^\\([[:alnum:]\-_.]+\\)/\\([[:alnum:]\-_.]+\\)$" repository)))
+        (likely-target-directory (concat
+                                  temporary-file-directory
+                                  (cdr (github-clone-repo-name repository)))))
+    (if is-github-repo
+        (github-clone repository temporary-file-directory)
+      ;; magit-clone runs asynchronously, figure out if there's any way to wait
+      ;; for it be fore calling projectile-find-file-in-directory
+      ;; (magit-clone repository temp-folder))
+      (error "Cloning non-github repos is not supported right now :("))
+    (projectile-find-file-in-directory likely-target-directory)))
 
 (provide 'funcs)
 ;;; funcs.el ends here

@@ -264,7 +264,7 @@ function mpd-song-dir () {
 function tmpclone {
     cd /tmp
     g clone $1
-    cd ${1##*/}
+    cd ${${1##*/}%%.git}
 }
 
 unset -f binary_exists

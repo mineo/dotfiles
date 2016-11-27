@@ -266,5 +266,3 @@ function tmpclone {
     g clone $1
     cd ${${1##*/}%%.git}
 }
-
-unset -f binary_exists

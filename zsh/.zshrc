@@ -226,7 +226,7 @@ for i in /usr/share/zsh/plugins/*/*.zsh(N); do
     source $i
 done
 
-for i in /usr/loca/share/zsh-*/*.zsh(N); do
+for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done
 

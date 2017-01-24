@@ -19,7 +19,6 @@
       beacon
       (bibtex :location built-in)
       cask-mode
-      column-enforce-mode
       compact-docstrings
       company
       company-emoji
@@ -81,16 +80,11 @@
   "Initialize cask-mode."
   (use-package cask-mode))
 
-(defun mineo/post-init-column-enforce-mode ()
-  "Post-initialize enforce-column-mode."
-  (add-hook 'prog-mode-hook 'column-enforce-mode))
-
 (defun mineo/init-compact-docstrings ()
   "Initialize compact-docstrings."
   (use-package compact-docstrings
     :config
     (add-hook 'prog-mode-hook #'compact-docstrings-mode)))
-
 
 (defun mineo/post-init-company ()
   "Post-initialize company."

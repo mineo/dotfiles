@@ -30,3 +30,6 @@ brew 'unifdef'
 
 # Dotfile management
 brew 'stow'
+
+brew 'go'
+brew 'godep'

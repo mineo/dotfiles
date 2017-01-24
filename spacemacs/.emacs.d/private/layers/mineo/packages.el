@@ -28,6 +28,7 @@
       flycheck-cask
       flycheck-package
       git-commit
+      go-mode
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -126,6 +127,12 @@
   "Post-initialize git-commit."
   (remove-hook 'git-commit-finish-query-functions
                #'git-commit-check-style-conventions))
+
+(defun mineo/post-init-go-mode ()
+  "Initialize go-mode."
+  (spacemacs|use-package-add-hook go-mode
+    :post-config (when (featurep 'whitespace)
+                   (add-hook 'go-mode-hook #'spacemacs/toggle-whitespace-off))))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

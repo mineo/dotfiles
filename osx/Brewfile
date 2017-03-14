@@ -1,6 +1,5 @@
 # To use:
-# > brew tap homebrew/bundle
-# > brew bundle
+tap 'homebrew/bundle'
 
 # Use GNU tools instead of the built-in ones
 brew 'coreutils'

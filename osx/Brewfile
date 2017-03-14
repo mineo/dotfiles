@@ -1,5 +1,6 @@
 # To use:
 tap 'homebrew/bundle'
+tap 'homebrew/dupes'
 
 # Use GNU tools instead of the built-in ones
 brew 'coreutils'
@@ -27,6 +28,8 @@ brew 'source-highlight'
 brew 'the_silver_searcher'
 brew 'unifdef'
 
+# Newer versions of included tools
+brew 'rsync'
 
 # Dotfile management
 brew 'stow'

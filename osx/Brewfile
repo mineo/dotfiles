@@ -24,6 +24,7 @@ brew 'zsh-syntax-highlighting'
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'git'
+brew 'hub'
 brew 'source-highlight'
 brew 'the_silver_searcher'
 brew 'unifdef'

@@ -31,6 +31,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
+# Prevent me from doing stupid things with `rm *`
+unsetopt RM_STAR_SILENT
+setopt RM_STAR_WAIT
+
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 if binary_exists virtualenvwrapper_lazy.sh; then
     source $(command -v virtualenvwrapper_lazy.sh)

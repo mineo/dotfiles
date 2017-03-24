@@ -310,6 +310,11 @@ layers configuration. You are free to put any user code."
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)
 
+  ;; This is part of the sql layer, but doesn't get loaded automatically. I
+  ;; don't have time to figure out how or why at the moment, so just forcefully
+  ;; load it here.
+  (require 'sql-indent)
+
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
              (mineo-configure-fonts frame))

@@ -65,3 +65,5 @@
     autocorrect = 20
 [include]
     path = ~/.gitconfig.private
+[stash]
+	showPatch = true

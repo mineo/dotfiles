@@ -38,6 +38,7 @@ values."
      mineo-rtags
      org
      python
+     rust
      (shell :variables
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")

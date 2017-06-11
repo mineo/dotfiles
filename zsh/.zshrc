@@ -9,7 +9,9 @@ function load_zle_widget () {
     zle -N $1
 }
 
-autoload colors
+autoload -Uz is-at-least
+
+autoload -Uz colors
 colors
 setopt autocd
 setopt autopushd
@@ -51,7 +53,7 @@ fi
 # they are part of a URL.
 load_zle_widget url-quote-magic
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     # Easier URL pasting
     # Like the above, but escapes characters as URLs are pasted.
     load_zle_widget bracketed-paste-magic
@@ -72,7 +74,7 @@ zstyle ':vcs_info:*' stagedstr "%F{green}＋"
 zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
 zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     autoload -Uz vcs_info
     vcs_info
     precmd () {
@@ -93,7 +95,7 @@ preexec() {
 }
 
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
 else
@@ -177,7 +179,7 @@ fi
 alias rs='source ~/.zshrc'
 
 # cdr: Remember recent directories, `cdr <TAB>` opens a list of them
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
     add-zsh-hook chpwd chpwd_recent_dirs
 fi

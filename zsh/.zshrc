@@ -4,6 +4,11 @@ function binary_exists () {
     type $1 &> /dev/null
 }
 
+function load_zle_widget () {
+    autoload -Uz $1
+    zle -N $1
+}
+
 autoload colors
 colors
 setopt autocd
@@ -44,14 +49,12 @@ fi
 # Easier URL typing
 # url-quote-magic automatically escapes some characters as they are typed if
 # they are part of a URL.
-autoload -Uz url-quote-magic
-zle -N self-insert url-quote-magic
+load_zle_widget url-quote-magic
 
 if [[ $ZSH_VERSION > 5.0.0 ]]; then
     # Easier URL pasting
     # Like the above, but escapes characters as URLs are pasted.
-    autoload -Uz bracketed-paste-magic
-    zle -N bracketed-paste bracketed-paste-magic
+    load_zle_widget bracketed-paste-magic
 fi
 
 # VCS_INFO stuff
@@ -222,6 +225,17 @@ bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
 bindkey "^R" history-incremental-search-backward
+
+load_zle_widget edit-command-line
+bindkey -M emacs "^x^e" edit-command-line
+bindkey -M viins "^x^e" edit-command-line
+bindkey -M vicmd v edit-command-line
+
+load_zle_widget history-beginning-search-menu
+bindkey "^x^r" history-beginning-search-menu
+
+load_zle_widget insert-files
+bindkey "^x^f" insert-files
 
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion

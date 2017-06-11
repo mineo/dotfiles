@@ -115,7 +115,6 @@ else
 fi
 
 alias -g L='|less -R'
-binary_exists peco && alias -g P='|peco'
 
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'

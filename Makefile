@@ -12,7 +12,7 @@ apps:
 archlinux:
 	$(STOW) abs
 base:
-	$(STOW) spacemacs peco tmux vim zsh
+	$(STOW) spacemacs tmux vim zsh
 devel:
 	$(STOW) code db git
 mail:

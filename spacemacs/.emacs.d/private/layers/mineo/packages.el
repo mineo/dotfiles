@@ -228,7 +228,7 @@
         initial-buffer-choice org-default-notes-file
         ;; Other stuff
         org-hide-emphasis-markers t
-        org-ellipsis " […]"
+        org-ellipsis " ▾"
         org-agenda-files '("~/.org")
         org-refile-targets '((org-agenda-files :maxlevel . 2))
         org-capture-templates
@@ -242,9 +242,7 @@
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
            "- [ ] %?"))
-        ;; Sort these a bit, the defaults are not very good with the Consolas
-        ;; font
-        org-bullets-bullet-list '("✿" "✸" "◉" "○")
+        org-bullets-bullet-list '("○")
         org-clock-idle-time 5)
   (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
   (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))

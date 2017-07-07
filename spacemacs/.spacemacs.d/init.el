@@ -19,7 +19,6 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     javascript
      (auto-completion
       :variables
       auto-completion-enable-help-tooltip t)
@@ -32,6 +31,7 @@ values."
      github
      go
      html
+     javascript
      (latex
       :variables latex-build-command "LatexMk")
      markdown

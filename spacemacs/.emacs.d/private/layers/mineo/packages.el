@@ -246,7 +246,8 @@
         ;; font
         org-bullets-bullet-list '("✿" "✸" "◉" "○")
         org-clock-idle-time 5)
-  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages))
+  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
+  (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

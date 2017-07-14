@@ -243,7 +243,9 @@
           ("m" "Musik" item (file+headline nil "Musik")
            "- [ ] %?"))
         org-bullets-bullet-list '("○")
-        org-clock-idle-time 5)
+        org-clock-idle-time 5
+        org-format-latex-options (plist-put org-format-latex-options :scale 1.2)
+        )
   (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
   (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))
 

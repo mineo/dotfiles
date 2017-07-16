@@ -150,7 +150,8 @@
   "Initialize projectile-addons."
   (use-package projectile-addons
     :config
-    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
+    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)
+    (advice-add 'projectile-default-test-command :before-until #'mineo-projectile-default-tox-test-command)))
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."

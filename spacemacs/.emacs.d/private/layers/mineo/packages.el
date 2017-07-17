@@ -150,7 +150,8 @@
   "Initialize projectile-addons."
   (use-package projectile-addons
     :config
-    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
+    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)
+    (advice-add 'projectile-default-test-command :before-until #'mineo-projectile-default-tox-test-command)))
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."
@@ -185,11 +186,6 @@
       (setq yatemplate-dir (locate-user-emacs-file "private/templates"))
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
-
-(defun mineo/post-init-flycheck ()
-  "Post-initialize flycheck."
-  (when-let ((flake8 (executable-find "flake8-python2")))
-    (setq flycheck-python-flake8-executable flake8)))
 
 (defun mineo/post-init-magit ()
   "Post-initialize magit."

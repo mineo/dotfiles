@@ -111,6 +111,7 @@ macro index A "<modify-labels-then-hide>+archive -unread\n<sync-mailbox>"
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<clear-flag>O<untag-pattern>.<enter>" "mark all messages as read"
 
+bind index g noop
 bind index gg       first-entry
 bind index G        last-entry
 

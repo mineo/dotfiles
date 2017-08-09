@@ -4,7 +4,14 @@ function binary_exists () {
     type $1 &> /dev/null
 }
 
-autoload colors
+function load_zle_widget () {
+    autoload -Uz $1
+    zle -N $1
+}
+
+autoload -Uz is-at-least
+
+autoload -Uz colors
 colors
 setopt autocd
 setopt autopushd
@@ -31,6 +38,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 
+# Prevent me from doing stupid things with `rm *`
+unsetopt RM_STAR_SILENT
+setopt RM_STAR_WAIT
+
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 if binary_exists virtualenvwrapper_lazy.sh; then
     source $(command -v virtualenvwrapper_lazy.sh)
@@ -40,14 +51,12 @@ fi
 # Easier URL typing
 # url-quote-magic automatically escapes some characters as they are typed if
 # they are part of a URL.
-autoload -Uz url-quote-magic
-zle -N self-insert url-quote-magic
+load_zle_widget url-quote-magic
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     # Easier URL pasting
     # Like the above, but escapes characters as URLs are pasted.
-    autoload -Uz bracketed-paste-magic
-    zle -N bracketed-paste bracketed-paste-magic
+    load_zle_widget bracketed-paste-magic
 fi
 
 # VCS_INFO stuff
@@ -65,7 +74,7 @@ zstyle ':vcs_info:*' stagedstr "%F{green}＋"
 zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
 zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     autoload -Uz vcs_info
     vcs_info
     precmd () {
@@ -86,7 +95,7 @@ preexec() {
 }
 
 
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %F{yellow}%n %fon %F{magenta}%m%f'
 else
@@ -106,7 +115,6 @@ else
 fi
 
 alias -g L='|less -R'
-binary_exists peco && alias -g P='|peco'
 
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
@@ -170,7 +178,7 @@ fi
 alias rs='source ~/.zshrc'
 
 # cdr: Remember recent directories, `cdr <TAB>` opens a list of them
-if [[ $ZSH_VERSION > 5.0.0 ]]; then
+if is-at-least 5.0.0 $ZSH_VERSION; then
     autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
     add-zsh-hook chpwd chpwd_recent_dirs
 fi
@@ -219,6 +227,17 @@ bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
 bindkey "^R" history-incremental-search-backward
 
+load_zle_widget edit-command-line
+bindkey -M emacs "^x^e" edit-command-line
+bindkey -M viins "^x^e" edit-command-line
+bindkey -M vicmd v edit-command-line
+
+load_zle_widget history-beginning-search-menu
+bindkey "^x^r" history-beginning-search-menu
+
+load_zle_widget insert-files
+bindkey "^x^f" insert-files
+
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
@@ -226,7 +245,7 @@ for i in /usr/share/zsh/plugins/*/*.zsh(N); do
     source $i
 done
 
-for i in /usr/loca/share/zsh-*/*.zsh(N); do
+for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done
 

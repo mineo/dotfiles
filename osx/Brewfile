@@ -1,6 +1,6 @@
 # To use:
-# > brew tap homebrew/bundle
-# > brew bundle
+tap 'homebrew/bundle'
+tap 'homebrew/dupes'
 
 # Use GNU tools instead of the built-in ones
 brew 'coreutils'
@@ -14,6 +14,7 @@ brew 'p7zip'
 
 # Shell
 brew 'autojump'
+brew 'shellcheck'
 brew 'shocco'
 brew 'zsh'
 brew 'zsh-autosuggestions'
@@ -23,10 +24,16 @@ brew 'zsh-syntax-highlighting'
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'git'
+brew 'hub'
 brew 'source-highlight'
 brew 'the_silver_searcher'
 brew 'unifdef'
 
+# Newer versions of included tools
+brew 'rsync'
 
 # Dotfile management
 brew 'stow'
+
+brew 'go'
+brew 'godep'

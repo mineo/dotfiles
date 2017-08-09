@@ -19,7 +19,6 @@
       beacon
       (bibtex :location built-in)
       cask-mode
-      column-enforce-mode
       compact-docstrings
       company
       company-emoji
@@ -29,6 +28,7 @@
       flycheck-cask
       flycheck-package
       git-commit
+      go-mode
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -81,16 +81,11 @@
   "Initialize cask-mode."
   (use-package cask-mode))
 
-(defun mineo/post-init-column-enforce-mode ()
-  "Post-initialize enforce-column-mode."
-  (add-hook 'prog-mode-hook 'column-enforce-mode))
-
 (defun mineo/init-compact-docstrings ()
   "Initialize compact-docstrings."
   (use-package compact-docstrings
     :config
     (add-hook 'prog-mode-hook #'compact-docstrings-mode)))
-
 
 (defun mineo/post-init-company ()
   "Post-initialize company."
@@ -133,6 +128,12 @@
   (remove-hook 'git-commit-finish-query-functions
                #'git-commit-check-style-conventions))
 
+(defun mineo/post-init-go-mode ()
+  "Initialize go-mode."
+  (spacemacs|use-package-add-hook go-mode
+    :post-config (when (featurep 'whitespace)
+                   (add-hook 'go-mode-hook #'spacemacs/toggle-whitespace-off))))
+
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."
   (use-package highlight-symbol
@@ -149,7 +150,8 @@
   "Initialize projectile-addons."
   (use-package projectile-addons
     :config
-    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)))
+    (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)
+    (advice-add 'projectile-default-test-command :before-until #'mineo-projectile-default-tox-test-command)))
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."
@@ -184,11 +186,6 @@
       (setq yatemplate-dir (locate-user-emacs-file "private/templates"))
       (yatemplate-fill-alist)
       (auto-insert-mode 1)))
-
-(defun mineo/post-init-flycheck ()
-  "Post-initialize flycheck."
-  (when-let ((flake8 (executable-find "flake8-python2")))
-    (setq flycheck-python-flake8-executable flake8)))
 
 (defun mineo/post-init-magit ()
   "Post-initialize magit."
@@ -227,7 +224,7 @@
         initial-buffer-choice org-default-notes-file
         ;; Other stuff
         org-hide-emphasis-markers t
-        org-ellipsis " […]"
+        org-ellipsis " ▾"
         org-agenda-files '("~/.org")
         org-refile-targets '((org-agenda-files :maxlevel . 2))
         org-capture-templates
@@ -241,11 +238,10 @@
             "** %?")
           ("m" "Musik" item (file+headline nil "Musik")
            "- [ ] %?"))
-        ;; Sort these a bit, the defaults are not very good with the Consolas
-        ;; font
-        org-bullets-bullet-list '("✿" "✸" "◉" "○")
+        org-bullets-bullet-list '("○")
         org-clock-idle-time 5)
-  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages))
+  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
+  (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

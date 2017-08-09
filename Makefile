@@ -3,16 +3,18 @@ TARGET = $(HOME)
 BREW = brew
 STOW = stow $(STOWFLAGS) -R --target $(TARGET)
 
-.PHONY: all osx osxupdate
+.PHONY: all-linux all-osx osx osxupdate
 
-all: apps base devel mail ui
+all-linux: apps base devel mail ui
+
+all-osx: apps base devel osx
 
 apps:
 	$(STOW) ipython irssi mpd mpv
 archlinux:
 	$(STOW) abs
 base:
-	$(STOW) spacemacs peco tmux vim zsh
+	$(STOW) spacemacs tmux vim zsh
 devel:
 	$(STOW) code db git
 mail:

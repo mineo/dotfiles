@@ -31,6 +31,7 @@
 
 (defconst mineo-rtags-packages
   '(cmake-ide
+    helm-rtags
     rtags))
 
 (defun mineo-rtags/init-cmake-ide ()
@@ -43,9 +44,7 @@
     :config
     (setq rtags-autostart-diagnostics t
           rtags-completions-enabled t
-          rtags-use-helm t)
-    ; See https://github.com/Andersbakken/rtags/issues/832
-    (require 'rtags-helm)
+          rtags-display-result-backend 'helm)
     (push '(company-rtags)
           company-backends-c-mode-common)
     (rtags-enable-standard-keybindings)

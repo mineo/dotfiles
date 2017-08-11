@@ -24,7 +24,6 @@
       company-emoji
       copyright
       editorconfig
-      flycheck
       flycheck-cask
       flycheck-package
       git-commit

@@ -1,6 +1,6 @@
 ;;; keybindings.el ---                               -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2016  Wieland Hoffmann
+;; Copyright (C) 2016, 2017  Wieland Hoffmann
 
 ;; Author: Wieland Hoffmann <wieland@mineo>
 ;; Keywords:
@@ -45,6 +45,7 @@
     "g /" 'rtags-find-all-references-at-point
     "g Y" 'rtags-cycle-overlays-on-screen
     "g >" 'rtags-find-symbol
+    "g ." 'rtags-find-symbol
     "g <" 'rtags-find-references
     "g [" 'rtags-location-stack-back
     "g ]" 'rtags-location-stack-forward

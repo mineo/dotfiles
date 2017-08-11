@@ -48,7 +48,10 @@
     (push '(company-rtags)
           company-backends-c-mode-common)
     (rtags-enable-standard-keybindings)
-    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running))
+    (add-hook 'c-mode-common-hook 'rtags-start-process-unless-running)
+    (add-hook 'c-mode-hook #'mineo-flycheck-rtags-setup)
+    (add-hook 'c++-mode-hook #'mineo-flycheck-rtags-setup)
+    (add-hook 'objc-mode-hook #'mineo-flycheck-rtags-setup))
   (use-package flycheck-rtags
     :ensure rtags))
 

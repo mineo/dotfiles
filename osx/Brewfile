@@ -37,3 +37,5 @@ brew 'stow'
 
 brew 'go'
 brew 'godep'
+
+brew 'ncdu'

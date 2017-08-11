@@ -28,6 +28,7 @@
       flycheck-cask
       flycheck-package
       git-commit
+      github-clone
       go-mode
       highlight-symbol
       magit
@@ -127,6 +128,11 @@
   "Post-initialize git-commit."
   (remove-hook 'git-commit-finish-query-functions
                #'git-commit-check-style-conventions))
+
+;; Required for mineo-git-clone-tmp
+(defun mineo/init-github-clone ()
+  "Initialize github-clone."
+  (use-package github-clone))
 
 (defun mineo/post-init-go-mode ()
   "Initialize go-mode."

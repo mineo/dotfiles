@@ -1,0 +1,10 @@
+[Unit]
+Description=Apple airplay and raop protocol server
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/shairplay -a "ShairPlay@%H" --ao_deviceid=0
+Restart=always
+
+[Install]
+WantedBy=default.target

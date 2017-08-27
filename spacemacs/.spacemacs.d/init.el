@@ -39,7 +39,8 @@ values."
      mineo-rtags
      org
      python
-     rust
+     (rust :variables
+           rust-format-on-save t)
      (shell :variables
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")

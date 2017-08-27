@@ -276,8 +276,3 @@
           whitespace-display-mappings
           '((newline-mark ?\n [?< ?\n])
             (tab-mark     ?\t [?\u00BB ?\t] [?\\ ?\t])))))
-
-;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package

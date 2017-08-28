@@ -189,7 +189,12 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 ##############
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _expand _expand_alias _extensions _complete _ignored _approximate
+if is-at-least 5.0.6 $ZSH_VERSION; then
+    zstyle ':completion:*' completer _expand _expand_alias _extensions _complete _ignored _approximate
+else
+    zstyle ':completion:*' completer _expand _expand_alias _complete _ignored _approximate
+fi
+
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-suffixes true

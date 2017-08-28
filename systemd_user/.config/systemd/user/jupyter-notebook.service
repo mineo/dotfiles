@@ -1,0 +1,10 @@
+[Unit]
+Description=Jupyter notebook
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/jupyter notebook --no-browser --ip 0.0.0.0
+WorkingDirectory=/%h/dev/ipython-notebooks
+
+[Install]
+WantedBy=default.target

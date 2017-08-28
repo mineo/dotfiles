@@ -244,9 +244,8 @@
           ("m" "Musik" item (file+headline nil "Musik")
            "- [ ] %?"))
         org-bullets-bullet-list '("○")
-        org-clock-idle-time 5
-        org-format-latex-options (plist-put org-format-latex-options :scale 1.2)
-        )
+        org-clock-idle-time 5)
+
   (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
   (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))
 
@@ -276,8 +275,3 @@
           whitespace-display-mappings
           '((newline-mark ?\n [?< ?\n])
             (tab-mark     ?\t [?\u00BB ?\t] [?\\ ?\t])))))
-
-;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package

@@ -5,7 +5,7 @@ STOW = stow $(STOWFLAGS) -R --target $(TARGET)
 
 .PHONY: all-linux all-osx osx osxupdate
 
-all-linux: apps base devel mail ui
+all-linux: apps base devel linux mail ui
 
 all-osx: apps base devel osx
 
@@ -17,6 +17,8 @@ base:
 	$(STOW) spacemacs tmux vim zsh
 devel:
 	$(STOW) code db git
+linux:
+	$(STOW) systemd_user
 mail:
 	$(STOW) afew neomutt
 osx:

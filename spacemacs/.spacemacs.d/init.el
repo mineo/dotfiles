@@ -44,6 +44,7 @@ values."
      (shell :variables
             shell-default-position 'bottom
             shell-default-term-shell "/bin/zsh")
+     shell-scripts
      spacemacs-fixes
      sql
      (syntax-checking

@@ -36,6 +36,7 @@
       projectile
       (projectile-addons :location local)
       org
+      sh-script
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
@@ -257,6 +258,13 @@
       (add-to-list 'projectile-globally-ignored-directories dir)
       )
     (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")))
+
+(defun mineo/post-init-sh-script ()
+  "Post-initialize sh-script."
+  (use-package sh-script
+    :config
+    (sh-electric-here-document-mode -1)))
+
 
 (defun mineo/post-init-whitespace ()
   "Post-initialize whitespace."

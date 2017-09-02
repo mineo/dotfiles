@@ -1,0 +1,10 @@
+[Unit]
+Description=Apple airplay and raop protocol server on port %i
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/shairplay -a "ShairPlay@%H" --ao_deviceid=0 --server_port=%i
+Restart=always
+
+[Install]
+WantedBy=default.target

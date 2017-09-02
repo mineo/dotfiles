@@ -3,7 +3,18 @@ TARGET = $(HOME)
 BREW = brew
 STOW = stow $(STOWFLAGS) -R --target $(TARGET)
 
-.PHONY: all-linux all-osx osx osxupdate
+
+.PHONY: all all-linux all-osx osx osxupdate
+
+OS := $(shell uname)
+
+ifeq ($(OS), Darwin)
+	OS_TARGET = all-osx
+else
+	OS_TARGET = all-linux
+endif
+
+all: $(OS_TARGET)
 
 all-linux: apps base devel linux mail ui
 

@@ -254,6 +254,8 @@ for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done
 
+unset i
+
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
 

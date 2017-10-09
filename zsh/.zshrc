@@ -140,8 +140,8 @@ alias sv='sudoedit'
 alias um='udisks --unmount'
 alias v='vim'
 
-if binary_exists ls++; then
-    alias ls='ls++'
+if binary_exists exa; then
+    alias ls='exa --long --header --git'
 else
     alias ls='ls -lh --color=auto'
 fi

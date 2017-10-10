@@ -140,8 +140,8 @@ alias sv='sudoedit'
 alias um='udisks --unmount'
 alias v='vim'
 
-if binary_exists ls++; then
-    alias ls='ls++'
+if binary_exists exa; then
+    alias ls='exa --long --header --git'
 else
     alias ls='ls -lh --color=auto'
 fi
@@ -253,6 +253,8 @@ done
 for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done
+
+unset i
 
 # tramp in emacs
 [ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''

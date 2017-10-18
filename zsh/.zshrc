@@ -257,7 +257,7 @@ done
 unset i
 
 # tramp in emacs
-[ $TERM = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
+[ ${TERM:-dumb} = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
 
 # View the man page passed as the single argument in emacs.
 function eman () {

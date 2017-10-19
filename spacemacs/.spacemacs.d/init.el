@@ -23,6 +23,7 @@ values."
       :variables
       auto-completion-enable-help-tooltip t)
      (c-c++)
+     docker
      emacs-lisp
      (evil-snipe
       :variables

@@ -18,42 +18,44 @@ values."
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
-   '(
-     (auto-completion
-      :variables
-      auto-completion-enable-help-tooltip t)
-     (c-c++)
-     docker
-     emacs-lisp
-     (evil-snipe
-      :variables
-      evil-snipe-enable-alternate-f-and-t-behaviors t)
-     git
-     github
-     go
-     html
-     javascript
-     (latex
-      :variables latex-build-command "LatexMk")
-     markdown
-     mineo
-     mineo-rtags
-     org
-     python
-     (rust :variables
-           rust-format-on-save t)
-     (shell :variables
-            shell-default-position 'bottom
-            shell-default-term-shell "/bin/zsh")
-     shell-scripts
-     spacemacs-fixes
-     sql
-     (syntax-checking
-      :variables syntax-checking-enable-tooltips nil)
-     theming
-     version-control
-     yaml
-     )
+   (let ((layers '((auto-completion
+                    :variables
+                    auto-completion-enable-help-tooltip t)
+                   (c-c++)
+                   docker
+                   emacs-lisp
+                   (evil-snipe
+                    :variables
+                    evil-snipe-enable-alternate-f-and-t-behaviors t)
+                   git
+                   github
+                   go
+                   html
+                   javascript
+                   (latex
+                    :variables latex-build-command "LatexMk")
+                   markdown
+                   mineo
+                   mineo-rtags
+                   org
+                   python
+                   (rust :variables
+                         rust-format-on-save t)
+                   (shell :variables
+                          shell-default-position 'bottom
+                          shell-default-term-shell "/bin/zsh")
+                   shell-scripts
+                   spacemacs-fixes
+                   sql
+                   (syntax-checking
+                    :variables syntax-checking-enable-tooltips nil)
+                   theming
+                   version-control
+                   yaml
+                   )))
+     (if (file-directory-p (configuration-layer//get-private-layer-dir "layers/mineo-private"))
+         (append '(mineo-private) layers)
+       layers))
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the

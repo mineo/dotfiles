@@ -333,6 +333,7 @@ layers configuration. You are free to put any user code."
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
         use-dialog-box nil
+        helm-ag-base-command "rg --vimgrep --no-heading"
         tags-add-tables nil)
 
   (spaceline-compile)

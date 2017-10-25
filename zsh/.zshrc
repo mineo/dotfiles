@@ -141,7 +141,7 @@ alias um='udisks --unmount'
 alias v='vim'
 
 if binary_exists exa; then
-    alias ls='exa --long --header --git'
+    alias ls='exa --long --header'
 else
     alias ls='ls -lh --color=auto'
 fi

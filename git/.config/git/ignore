@@ -11,7 +11,6 @@ cabal.sandbox.config
 .tox/
 *.egg-info
 version.py
-build/
 *~
 .eggs
 .cache

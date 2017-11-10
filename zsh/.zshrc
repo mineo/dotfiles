@@ -159,6 +159,7 @@ else
 fi
 
 alias grep='grep --color=auto'
+alias rg='rg --smart-case'
 
 if binary_exists pacman; then
     alias fu='sudo pacman -Rns'

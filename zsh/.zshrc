@@ -169,6 +169,13 @@ if binary_exists pacman; then
     alias pa='pacaur'
 fi
 
+if binary_exists python3; then
+    alias httphere='python3 -m http.server'
+elif binary_exists python2; then
+    alias httphere='python2 -m BaseHTTPServer'
+fi
+
+
 alias sc='schedtool -n 19 -B -e'
 
 if binary_exists systemctl; then

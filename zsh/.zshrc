@@ -28,6 +28,11 @@ setopt MENU_COMPLETE
 # Useful when pasting URLs with question marks in them
 unsetopt NOMATCH
 
+if is-at-least 5.2.0 $ZSH_VERSIN; then
+    # ** search recursively, like **/*, but with less typing
+    setopt GLOB_STAR_SHORT
+fi
+
 # History
 HISTSIZE=5000
 SAVEHIST=5000

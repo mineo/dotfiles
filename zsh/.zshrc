@@ -133,12 +133,9 @@ else
 fi
 
 alias hme='htop -u $(whoami)'
-alias ipcons='ipython2 qtconsole --pylab=auto'
 alias m='mimeopen'
 alias mp='automp'
 alias mutt='GPG_AGENT_INFO="" mutt'
-alias pypy='pypy -E'
-alias qemu='qemu -enable-kvm'
 alias rmdir='rm -R'
 alias sucp='sudo cp'
 alias sv='sudoedit'

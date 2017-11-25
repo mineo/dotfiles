@@ -111,7 +111,11 @@ ZLE_RPROMPT_INDENT=0
 ###########
 # aliases #
 ###########
-alias -g G='|grep'
+if binary_exists rg; then
+    alias -g G='|\rg --smart-case'
+else
+    alias -g G='|grep'
+fi
 
 if binary_exists jq; then
     alias -g J='|jq'

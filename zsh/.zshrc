@@ -38,10 +38,10 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=~/.zhistory
 
-setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt SHARE_HISTORY
 
 # Prevent me from doing stupid things with `rm *`
 unsetopt RM_STAR_SILENT

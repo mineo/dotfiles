@@ -1,6 +1,6 @@
 ;;; keybindings.el --- My keybindings                -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015, 2016  Wieland Hoffmann
+;; Copyright (C) 2015, 2016, 2017  Wieland Hoffmann
 
 ;; Author: Wieland Hoffmann <wieland@slartibartfass>
 ;; Keywords: 
@@ -25,10 +25,6 @@
 ;;; Code:
 
 (spacemacs/set-leader-keys
-  "o j c" 'jabber-connect-all
-  "o j d" 'jabber-disconnect
-  "o j r" 'jabber-switch-to-roster-buffer
-  "o j w" 'jabber-chat-with
   "o o a" 'org-agenda
   "o o c" 'org-capture
   "o s"   'spacemacs/cycle-spacemacs-theme
@@ -36,7 +32,6 @@
   "p j"   'helm-etags-select
   "p P"   'projectile-test-project)
 
-(spacemacs/declare-prefix "o j" "jabber")
 (spacemacs/declare-prefix "o o" "org")
 
 (define-key evil-insert-state-map "\C-a" 'company-complete)

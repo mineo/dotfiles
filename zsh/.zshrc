@@ -152,6 +152,8 @@ else
     alias ls='ls -lh --color=auto'
 fi
 
+alias ll=ls
+
 if binary_exists automp; then
     alias mp='automp'
 else

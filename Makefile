@@ -16,7 +16,7 @@ endif
 
 all: $(OS_TARGET)
 
-all-linux: apps base devel linux mail ui
+all-linux: apps base devel linux ui
 
 all-osx: apps base devel osx
 
@@ -30,8 +30,6 @@ devel:
 	$(STOW) code db git
 linux:
 	$(STOW) systemd_user
-mail:
-	$(STOW) afew neomutt
 osx:
 	$(BREW) bundle --file=osx/Brewfile
 osxupdate:

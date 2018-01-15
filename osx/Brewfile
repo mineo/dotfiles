@@ -24,6 +24,7 @@ brew 'zsh-syntax-highlighting'
 # Editing
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
+brew 'flake8'
 brew 'git'
 brew 'hub'
 brew 'source-highlight'

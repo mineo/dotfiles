@@ -37,6 +37,9 @@ brew 'rsync'
 # Dotfile management
 brew 'stow'
 
+# Management of remote systems
+brew 'ansible'
+
 brew 'go'
 brew 'godep'
 

@@ -3,9 +3,6 @@ TARGET = $(HOME)
 BREW = brew
 STOW = stow $(STOWFLAGS) -R --target $(TARGET)
 
-
-.PHONY: all all-linux all-osx osx osxupdate
-
 OS := $(shell uname)
 
 ifeq ($(OS), Darwin)
@@ -13,6 +10,10 @@ ifeq ($(OS), Darwin)
 else
 	OS_TARGET = all-linux
 endif
+
+FOLDERS = $(shell find . -type d -print -maxdepth 1)
+
+.PHONY: all all-linux all-osx homebrew osxupdate $(FOLDERS)
 
 all: $(OS_TARGET)
 
@@ -30,7 +31,7 @@ devel:
 	$(STOW) code db git
 linux:
 	$(STOW) systemd_user
-osx:
+homebrew:
 	$(BREW) bundle --file=osx/Brewfile
 osxupdate:
 	$(BREW) update
@@ -38,3 +39,6 @@ osxupdate:
 	$(BREW) linkapps
 ui:
 	$(STOW) dunst gtk i3 tex rofi x11
+
+$(FOLDERS):
+	$(STOW) $@

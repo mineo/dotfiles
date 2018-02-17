@@ -237,6 +237,9 @@ zstyle :compinstall filename '/home/wieland/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+bindkey -e
+
 bindkey "^[[A" history-beginning-search-backward # up
 bindkey "^[[B" history-beginning-search-forward # down
 bindkey "^[[7~" beginning-of-line # Home

@@ -128,7 +128,6 @@ alias -g L='|less -R'
 alias cps='rsync -ah --info=progress2'
 alias cpui='cpupower frequency-info'
 alias dmesg='dmesg -T'
-alias ftphere='python2 -m pyftpdlib -w -d .'
 
 if binary_exists hub; then
     alias g='hub'
@@ -177,11 +176,19 @@ if binary_exists pacman; then
     alias pa='pacaur'
 fi
 
-if binary_exists python3; then
-    alias httphere='python3 -m http.server'
-elif binary_exists python2; then
-    alias httphere='python2 -m BaseHTTPServer'
-fi
+httphere() {
+    printf "The current hostname is %s\n" $(hostname --fqdn)
+    if binary_exists python3; then
+        python3 -m http.server $@
+    elif binary_exists python2; then
+        python2 -m BaseHTTPServer $@
+    fi
+}
+
+ftphere() {
+    printf "The current hostname is %s\n" $(hostname --fqdn)
+    python2 -m pyftpdlib -w -d . $@
+}
 
 
 alias sc='schedtool -n 19 -B -e'

@@ -137,7 +137,6 @@ fi
 
 alias hme='htop -u $(whoami)'
 alias m='mimeopen'
-alias mp='automp'
 alias mutt='GPG_AGENT_INFO="" mutt'
 alias rmdir='rm -R'
 alias sucp='sudo cp'
@@ -152,12 +151,6 @@ else
 fi
 
 alias ll=ls
-
-if binary_exists automp; then
-    alias mp='automp'
-else
-    alias mp='mpv'
-fi
 
 if binary_exists brew; then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh

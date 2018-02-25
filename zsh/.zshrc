@@ -250,6 +250,10 @@ bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
 bindkey "^[/"  _history-complete-older # M-/
+# The default backward-kill-word is not as useful when operating on paths: On
+# "ls /usr/bin/gcc|" (| being the point), backward-kill-word will kill the
+# whole path. vi-backward-kill-word only kills "gcc", which is much nicer.
+bindkey "^W" backward-kill-word
 bindkey "^R" history-incremental-search-backward
 
 load_zle_widget edit-command-line

@@ -338,7 +338,9 @@ layers configuration. You are free to put any user code."
         tags-revert-without-query t
         use-dialog-box nil
         helm-ag-base-command "rg --smart-case --vimgrep --no-heading"
-        tags-add-tables nil)
+        tags-add-tables nil
+        ;; When opening a man page, make it the current buffer
+        Man-notify-method 'aggressive)
 
   (spaceline-compile)
 

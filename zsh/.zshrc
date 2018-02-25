@@ -249,6 +249,7 @@ bindkey "^[[4~" end-of-line # End
 bindkey "^[[5~" beginning-of-history # PageUp
 bindkey "^[[6~" end-of-history # PageDown
 bindkey "^[[3~" delete-char # Del
+bindkey "^[/"  _history-complete-older # M-/
 bindkey "^R" history-incremental-search-backward
 
 load_zle_widget edit-command-line

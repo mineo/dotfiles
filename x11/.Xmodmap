@@ -10,4 +10,4 @@ remove Mod4 = Super_R
 add Mod5 = Super_R
 ! remap the menu key on my thinkpad to super_R
 keycode 135 = Super_R
-remove Lock = Multi_Key
+remove Lock = Multi_key

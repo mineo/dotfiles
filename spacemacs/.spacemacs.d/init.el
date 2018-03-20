@@ -26,6 +26,7 @@ values."
                    (c-c++)
                    docker
                    emacs-lisp
+                   ess
                    (evil-snipe
                     :variables
                     evil-snipe-enable-alternate-f-and-t-behaviors t)

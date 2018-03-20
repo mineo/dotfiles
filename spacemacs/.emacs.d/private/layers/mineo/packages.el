@@ -115,6 +115,7 @@
 
 (defun mineo/post-init-flycheck ()
   "Initialize flycheck."
+  (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   ;; I'm working with code bases where there's more than 400 warnings for a
   ;; single shell script, so bump this up :(
   (setq flycheck-checker-error-threshold 1000))

@@ -27,6 +27,7 @@ brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'flake8'
 brew 'git'
 brew 'hub'
+brew 'jq'
 brew 'source-highlight'
 brew 'ripgrep'
 brew 'unifdef'

@@ -46,3 +46,5 @@ brew 'go'
 brew 'godep'
 
 brew 'ncdu'
+
+brew 'tox'

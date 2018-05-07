@@ -36,7 +36,6 @@ homebrew:
 osxupdate:
 	$(BREW) update
 	$(BREW) upgrade
-	$(BREW) linkapps
 ui:
 	$(STOW) dunst gtk i3 tex rofi x11
 

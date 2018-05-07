@@ -99,8 +99,7 @@ preexec() {
     esac
 }
 
-
-if is-at-least 5.0.0 $ZSH_VERSION; then
+if is-at-least 5.0.0 $ZSH_VERSION && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %(!.%U%K{red}%F{black}.%F{yellow})%n%u%k %fon %F{magenta}%m%f'
 else
@@ -279,10 +278,6 @@ for i in /usr/local/share/zsh-*/*.zsh(N); do
 done
 
 unset i
-
-# tramp in emacs
-[ ${TERM:-dumb} = "dumb" ] && unsetopt zle && PS1='$ ' && RPROMPT=''
-
 # View the man page passed as the single argument in emacs.
 function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"

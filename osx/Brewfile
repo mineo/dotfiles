@@ -46,5 +46,6 @@ brew 'go'
 brew 'godep'
 
 brew 'ncdu'
+brew 'telnet'
 
 brew 'tox'

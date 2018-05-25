@@ -19,7 +19,7 @@ all: $(OS_TARGET)
 
 all-linux: apps base devel linux ui
 
-all-osx: apps base devel osx
+all-osx: apps base devel homebrew
 
 apps:
 	$(STOW) ipython irssi mpd mpv

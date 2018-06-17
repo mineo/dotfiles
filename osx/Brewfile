@@ -19,6 +19,7 @@ brew 'shellcheck'
 brew 'shocco'
 brew 'zsh'
 brew 'zsh-autosuggestions'
+brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
 # Editing
@@ -27,6 +28,7 @@ brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'flake8'
 brew 'git'
 brew 'hub'
+brew 'jq'
 brew 'source-highlight'
 brew 'ripgrep'
 brew 'unifdef'
@@ -44,3 +46,6 @@ brew 'go'
 brew 'godep'
 
 brew 'ncdu'
+brew 'telnet'
+
+brew 'tox'

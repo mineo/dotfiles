@@ -26,6 +26,7 @@ values."
                    (c-c++)
                    docker
                    emacs-lisp
+                   ess
                    (evil-snipe
                     :variables
                     evil-snipe-enable-alternate-f-and-t-behaviors t)
@@ -63,7 +64,9 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(github-clone
-                                      pkgbuild-mode)
+                                      groovy-mode
+                                      pkgbuild-mode
+                                      yasnippet-snippets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.

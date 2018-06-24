@@ -1,2 +1,3 @@
 emacs/.emacs.d/private
 spacemacs/.emacs.d/private/layers/mineo-private
+spacemacs/.spacemacs.d/custom-file.el

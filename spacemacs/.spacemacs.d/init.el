@@ -355,6 +355,7 @@ layers configuration. You are free to put any user code."
   (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"
                          "\*Paradox Report\*"))
           (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
+  (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
 
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)

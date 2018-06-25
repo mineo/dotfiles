@@ -217,7 +217,7 @@
 
 (defun mineo/post-init-org ()
   "Post-initialize org."
-  (setq mineo-org-babel-languages '(C python sh shell))
+  (setq mineo-org-babel-languages '(C python shell))
   (with-eval-after-load 'org
     (dolist (language mineo-org-babel-languages)
       (cl-pushnew `(,language . t) org-babel-load-languages)))

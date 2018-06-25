@@ -67,6 +67,7 @@ values."
                                       groovy-mode
                                       pkgbuild-mode
                                       ssh-config-mode
+                                      solarized-theme
                                       yasnippet-snippets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -150,10 +151,10 @@ values."
                                    :width normal
                                    :powerline-scale 1.0)
                                '("Consolas"
-                                :size 17
-                                :weight normal
-                                :width normal
-                                :powerline-scale 1.0))
+                                 :size 17
+                                 :weight normal
+                                 :width normal
+                                 :powerline-scale 1.0))
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -304,6 +305,7 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq custom-file "~/.spacemacs.d/custom-file.el")
 
   ;; See https://github.com/syl20bnr/spacemacs/issues/6614.
   ;; This assumes that ~/dev/monokai-emacs contains a checked out version of my
@@ -355,7 +357,8 @@ layers configuration. You are free to put any user code."
   ;; evil state hides many useful bindings in them.
   (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"
                          "\*Paradox Report\*"))
-          (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
+    (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
+  (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
 
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
@@ -371,8 +374,5 @@ layers configuration. You are free to put any user code."
 
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
-             (mineo-configure-fonts frame))
+    (mineo-configure-fonts frame))
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.

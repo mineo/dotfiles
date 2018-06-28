@@ -135,7 +135,12 @@ else
 fi
 
 alias hme='htop -u $(whoami)'
-alias m='mimeopen'
+
+if [[ "${VENDOR}" == apple ]]; then
+   alias m='open'
+else
+    alias m='mimeopen'
+fi
 alias mutt='GPG_AGENT_INFO="" mutt'
 alias rmdir='rm -R'
 alias sucp='sudo cp'

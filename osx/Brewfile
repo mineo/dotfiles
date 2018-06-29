@@ -45,6 +45,8 @@ brew 'ansible'
 brew 'go'
 brew 'godep'
 
+brew 'maven'
+
 brew 'ncdu'
 brew 'telnet'
 

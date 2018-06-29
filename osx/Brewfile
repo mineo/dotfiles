@@ -41,6 +41,7 @@ brew 'stow'
 
 # Management of remote systems
 brew 'ansible'
+brew 'ansible-lint'
 
 brew 'go'
 brew 'godep'

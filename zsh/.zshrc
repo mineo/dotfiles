@@ -137,7 +137,7 @@ fi
 alias hme='htop -u $(whoami)'
 
 if [[ "${VENDOR}" == apple ]]; then
-   alias m='open'
+    alias m='open'
 else
     alias m='mimeopen'
 fi

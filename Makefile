@@ -21,23 +21,18 @@ all-linux: apps base devel linux ui
 
 all-osx: apps base devel homebrew
 
-apps:
-	$(STOW) ipython irssi mpd mpv
-archlinux:
-	$(STOW) abs
-base:
-	$(STOW) spacemacs tmux vim zsh
-devel:
-	$(STOW) code db git
-linux:
-	$(STOW) systemd_user
+apps: ipython irssi mpd mpv
+archlinux: abs
+base: spacemacs tmux vim zsh
+devel: code db git
+linux: systemd_user
+ui: dunst gtk i3 tex rofi x11
+
 homebrew:
 	$(BREW) bundle --file=osx/Brewfile
 osxupdate:
 	$(BREW) update
 	$(BREW) upgrade
-ui:
-	$(STOW) dunst gtk i3 tex rofi x11
 
 $(FOLDERS):
 	$(STOW) $@

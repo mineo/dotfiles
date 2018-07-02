@@ -47,6 +47,11 @@ setopt SHARE_HISTORY
 unsetopt RM_STAR_SILENT
 setopt RM_STAR_WAIT
 
+# Prevent me from truncating existing files, but allow it through commands form
+# the history
+setopt NOCLOBBER
+setopt HIST_ALLOW_CLOBBER
+
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 if binary_exists virtualenvwrapper_lazy.sh; then
     source $(command -v virtualenvwrapper_lazy.sh)

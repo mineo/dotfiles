@@ -309,11 +309,13 @@ function mkcd () {
     mkdir -p $1 && cd $1
 }
 
-# Jump to the directory of the currently playing song.
-function mpd-song-dir () {
-    local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
-    cd ${HOME}/Musik/${song_dir}
-}
+if binary_exists mpc; then
+    # Jump to the directory of the currently playing song.
+    function mpd-song-dir () {
+        local song_dir="$(dirname "$(/usr/bin/mpc --no-status --format %file% current)")"
+        cd ${HOME}/Musik/${song_dir}
+    }
+fi
 
 # Git clone $1 in /tmp and cd into the cloned folder
 function tmpclone {

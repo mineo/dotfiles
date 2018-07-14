@@ -28,7 +28,7 @@ setopt MENU_COMPLETE
 # Useful when pasting URLs with question marks in them
 unsetopt NOMATCH
 
-if is-at-least 5.2.0 $ZSH_VERSIN; then
+if is-at-least 5.2.0; then
     # ** search recursively, like **/*, but with less typing
     setopt GLOB_STAR_SHORT
 fi
@@ -63,7 +63,7 @@ fi
 # they are part of a URL.
 load_zle_widget url-quote-magic
 
-if is-at-least 5.0.0 $ZSH_VERSION; then
+if is-at-least 5.0.0; then
     # Easier URL pasting
     # Like the above, but escapes characters as URLs are pasted.
     load_zle_widget bracketed-paste-magic
@@ -84,7 +84,7 @@ zstyle ':vcs_info:*' stagedstr "%F{green}＋"
 zstyle ':vcs_info:*' actionformats " %F{green}(%b)%c%u-%a"
 zstyle ':vcs_info:*' formats       " %F{green}(%b)%c%u"
 
-if is-at-least 5.0.0 $ZSH_VERSION; then
+if is-at-least 5.0.0; then
     autoload -Uz vcs_info
     vcs_info
     precmd () {
@@ -104,7 +104,7 @@ preexec() {
     esac
 }
 
-if is-at-least 5.0.0 $ZSH_VERSION && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then
+if is-at-least 5.0.0 && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %(!.%U%K{red}%F{black}.%F{yellow})%n%u%k %fon %F{magenta}%m%f'
 else
@@ -203,7 +203,7 @@ fi
 alias rs='source ~/.zshrc'
 
 # cdr: Remember recent directories, `cdr <TAB>` opens a list of them
-if is-at-least 5.0.0 $ZSH_VERSION; then
+if is-at-least 5.0.0; then
     autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
     add-zsh-hook chpwd chpwd_recent_dirs
 fi
@@ -214,7 +214,7 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 ##############
 # The following lines were added by compinstall
 
-if is-at-least 5.0.6 $ZSH_VERSION; then
+if is-at-least 5.0.6; then
     zstyle ':completion:*' completer _expand _expand_alias _extensions _complete _ignored _approximate
 else
     zstyle ':completion:*' completer _expand _expand_alias _complete _ignored _approximate

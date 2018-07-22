@@ -15,8 +15,10 @@ brew 'p7zip'
 # Shell
 brew 'autojump'
 brew 'exa'
+brew 'ncdu'
 brew 'shellcheck'
 brew 'shocco'
+brew 'telnet'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
@@ -43,12 +45,10 @@ brew 'stow'
 brew 'ansible'
 brew 'ansible-lint'
 
+# Programming languages
 brew 'go'
 brew 'godep'
 
 brew 'maven'
-
-brew 'ncdu'
-brew 'telnet'
 
 brew 'tox'

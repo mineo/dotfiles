@@ -15,6 +15,7 @@ brew 'p7zip'
 # Shell
 brew 'autojump'
 brew 'exa'
+brew 'fd'
 brew 'ncdu'
 brew 'shellcheck'
 brew 'shocco'

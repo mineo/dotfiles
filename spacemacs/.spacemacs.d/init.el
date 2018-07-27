@@ -167,7 +167,7 @@ values."
                                    :width normal
                                    :powerline-scale 1.0)
                                '("Consolas"
-                                 :size 17
+                                 :size 18
                                  :weight normal
                                  :width normal
                                  :powerline-scale 1.0))

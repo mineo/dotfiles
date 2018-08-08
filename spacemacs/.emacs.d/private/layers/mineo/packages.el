@@ -30,6 +30,7 @@
       git-commit
       github-clone
       go-mode
+      helpful
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -148,6 +149,19 @@
     :post-config (when (featurep 'whitespace)
                    (add-hook 'go-mode-hook #'spacemacs/toggle-whitespace-off))))
 
+(defun mineo/init-helpful ()
+  "Initialize helpful."
+  (use-package helpful
+    :config
+    (advice-add 'describe-function :override 'helpful-callable)
+    (advice-add 'describe-key :override 'helpful-key)
+    (advice-add 'describe-variable :override 'helpful-variable)
+    (spacemacs/set-leader-keys
+      "hdC" 'helpful-command
+      "hd*" 'helpful-at-point
+      )
+    (evilified-state-evilify helpful-mode helpful-mode-map)))
+
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."
   (use-package highlight-symbol
@@ -240,7 +254,7 @@
         org-hide-emphasis-markers t
         org-ellipsis " ▾"
         org-agenda-files '("~/.org")
-        org-refile-targets '((org-agenda-files :maxlevel . 2))
+        org-refile-targets '((org-agenda-files :maxlevel . 3))
         org-capture-templates
         '(("t" "Todo" entry (file+headline nil "Tasks")
            "* TODO %?\n  %i")
@@ -265,7 +279,8 @@
     (dolist (dir '(".tox" ".cabal-sandbox" "dist" "build" ".eggs" "htmlcov" "docs/build" ".ensime_cache"))
       (add-to-list 'projectile-globally-ignored-directories dir)
       )
-    (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")))
+    (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")
+    (setq projectile-project-search-path '("~/dev"))))
 
 (defun mineo/post-init-sh-script ()
   "Post-initialize sh-script."

@@ -66,6 +66,7 @@ values."
                    sql
                    (syntax-checking
                     :variables syntax-checking-enable-tooltips nil)
+                   systemd
                    theming
                    version-control
                    yaml

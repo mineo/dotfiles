@@ -317,6 +317,13 @@ if binary_exists mpc; then
     }
 fi
 
+if binary_exists exiv2; then
+    # Rename all passed filenames with `exiv2`.
+    function exivrename {
+        exiv2 --Force --rename '%Y-%m-%d %H:%M:%S' mv "${@:?}"
+    }
+fi
+
 # Git clone $1 in /tmp and cd into the cloned folder
 function tmpclone {
     cd /tmp

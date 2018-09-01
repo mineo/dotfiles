@@ -81,7 +81,6 @@ values."
    dotspacemacs-additional-packages '(github-clone
                                       groovy-mode
                                       pkgbuild-mode
-                                      ssh-config-mode
                                       solarized-theme
                                       yasnippet-snippets)
    ;; A list of packages that cannot be updated.

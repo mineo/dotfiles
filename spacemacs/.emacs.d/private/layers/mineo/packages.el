@@ -39,6 +39,11 @@
       (projectile-addons :location local)
       org
       sh-script
+      (ssh-config-mode :location (recipe
+                                  :fetcher github
+                                  :repo "mineo/ssh-config-mode-el"
+                                  :branch "imenu"
+                                  :files (:defaults "*.txt")))
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
@@ -180,6 +185,13 @@
     :config
     (add-hook 'inferior-python-mode-hook 'mineo-python-shell-cd-project-root)
     (advice-add 'projectile-default-test-command :before-until #'mineo-projectile-default-tox-test-command)))
+
+(defun mineo/init-ssh-config-mode ()
+  "Initialize ssh-config-mode."
+  (use-package ssh-config-mode
+    :init
+    ;; This is where ssh-config-mode looks for the keywords.txt file
+    (setq ssh-config-load-file-dir (configuration-layer//get-package-directory 'ssh-config-mode))))
 
 (defun mineo/init-virtualenvwrapper ()
   "Initialize virtualenvwrapper."

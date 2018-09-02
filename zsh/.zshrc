@@ -279,10 +279,18 @@ bindkey "^x^f" insert-files
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete # Shift-Tab in completion
 
+
+# Arch Linux
 for i in /usr/share/zsh/plugins/*/*.zsh(N); do
     source $i
 done
 
+# raspbian
+for i in /usr/share/zsh-*/*.zsh(N); do
+    source $i
+done
+
+# macOS
 for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done

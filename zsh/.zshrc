@@ -251,6 +251,10 @@ bindkey -e
 
 bindkey "^[[A" history-beginning-search-backward # up
 bindkey "^[[B" history-beginning-search-forward # down
+# tmux on my raspberry pi
+bindkey "^[OA" history-beginning-search-backward # up
+bindkey "^[OB" history-beginning-search-forward # down
+
 bindkey "^[[7~" beginning-of-line # Home
 bindkey "^[[8~" end-of-line # End
 bindkey "^[[1~" beginning-of-line # Home

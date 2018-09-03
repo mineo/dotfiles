@@ -48,6 +48,7 @@
       whitespace
       whitespace-cleanup-mode
       writeroom-mode
+      yaml-mode
       yatemplate))
 
 ;; List of packages to exclude.
@@ -318,3 +319,9 @@
           whitespace-display-mappings
           '((newline-mark ?\n [?< ?\n])
             (tab-mark     ?\t [?\u00BB ?\t] [?\\ ?\t])))))
+
+(defun mineo/post-init-yaml-mode ()
+  "Initialize yaml-mode."
+  (use-package yaml-mode
+    :config
+    (add-hook 'yaml-mode-hook 'goto-address-mode)))

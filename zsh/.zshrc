@@ -249,11 +249,17 @@ compinit
 
 bindkey -e
 
-bindkey "^[[A" history-beginning-search-backward # up
-bindkey "^[[B" history-beginning-search-forward # down
+# Like history-beginning-search-{back,for}ward, but place the cursor at the end
+# of the line.
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey "^[[A" history-beginning-search-backward-end # up
+bindkey "^[[B" history-beginning-search-forward-end # down
 # tmux on my raspberry pi
-bindkey "^[OA" history-beginning-search-backward # up
-bindkey "^[OB" history-beginning-search-forward # down
+bindkey "^[OA" history-beginning-search-backward-end # up
+bindkey "^[OB" history-beginning-search-forward-end # down
 
 bindkey "^[[7~" beginning-of-line # Home
 bindkey "^[[8~" end-of-line # End

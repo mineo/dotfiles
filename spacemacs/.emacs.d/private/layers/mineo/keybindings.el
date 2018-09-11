@@ -1,6 +1,6 @@
 ;;; keybindings.el --- My keybindings                -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2015, 2016, 2017  Wieland Hoffmann
+;; Copyright (C) 2015, 2016, 2017, 2018  Wieland Hoffmann
 
 ;; Author: Wieland Hoffmann <wieland@slartibartfass>
 ;; Keywords: 
@@ -27,6 +27,7 @@
 (spacemacs/set-leader-keys
   "o o a" 'org-agenda
   "o o c" 'org-capture
+  "o m"   'message-mark-inserted-region
   "o s"   'spacemacs/cycle-spacemacs-theme
   "o w"   'writeroom-mode
   "p j"   'helm-etags-select

@@ -67,3 +67,5 @@
     path = ~/.gitconfig.private
 [stash]
 	showPatch = true
+[branch]
+	sort = authordate

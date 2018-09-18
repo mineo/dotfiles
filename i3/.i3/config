@@ -169,7 +169,7 @@ bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
 bindsym Mod1+Tab exec --no-startup-id rofi -show window
 
-set $urxvt-irc urxvt -title irc -e bash -c "ssh -t pi 'tmux a -d -t irc'"
+set $urxvt-irc urxvt -title irc -e bash -c "mosh -- pi tmux a -d -t irc"
 bindsym Mod4+i exec $urxvt-irc
 
 assign [instance="gajim"] → msg

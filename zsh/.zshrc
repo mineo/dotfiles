@@ -33,6 +33,8 @@ if is-at-least 5.2.0; then
     setopt GLOB_STAR_SHORT
 fi
 
+setopt EXTENDED_GLOB
+
 # History
 HISTSIZE=5000
 SAVEHIST=5000

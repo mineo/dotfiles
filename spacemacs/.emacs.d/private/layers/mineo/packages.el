@@ -18,6 +18,7 @@
       auth-password-store
       beacon
       (bibtex :location built-in)
+      (calc :location built-in)
       cask-mode
       compact-docstrings
       company
@@ -79,6 +80,13 @@
   (use-package bibtex
     :config
     (add-hook 'bibtex-mode-hook 'goto-address-mode)))
+
+(defun mineo/init-calc ()
+  "Initialize calc."
+  (use-package calc
+    :config
+    (setq calc-group-digits t
+          calc-algebraic-mode t)))
 
 (defun mineo/init-auth-password-store ()
   "Initialize auth-password-store."

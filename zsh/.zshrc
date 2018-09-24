@@ -146,7 +146,6 @@ if [[ "${VENDOR}" == apple ]]; then
 else
     alias m='mimeopen'
 fi
-alias mutt='GPG_AGENT_INFO="" mutt'
 alias rmdir='rm -R'
 alias sucp='sudo cp'
 alias sv='sudoedit'

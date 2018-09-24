@@ -43,6 +43,7 @@ HISTFILE=~/.zhistory
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 
 # Prevent me from doing stupid things with `rm *`

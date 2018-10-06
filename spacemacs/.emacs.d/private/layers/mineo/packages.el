@@ -119,7 +119,7 @@
   "Initialize copyright."
   (use-package copyright
     :config
-    (add-hook 'find-file-hook #'copyright-update)
+    (add-hook 'prog-mode-hook #'copyright-update)
     (setq copyright-names-regexp (user-full-name))))
 
 (defun mineo/init-editorconfig ()

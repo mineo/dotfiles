@@ -2,6 +2,6 @@
 # coding: utf-8
 # Copyright © `(format-time-string "%Y")` `yatemplate-owner`
 # License: MIT, see LICENSE for details
-import unittest
+import pytest
 
 $0

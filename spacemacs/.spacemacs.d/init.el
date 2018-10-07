@@ -382,8 +382,10 @@ you should place your code here."
 
   (spaceline-compile)
 
-  ;; I don't need look at TAGS buffers.
-  (add-to-list 'spacemacs-useless-buffers-regexp "TAGS.*")
+  ;; I don't need look at TAGS buffers and also don't want to switch to magit
+  ;; buffers via next-buffer.
+  (dolist (buffer-name '(".*magit.*:.*" "TAGS.*"))
+    (add-to-list 'spacemacs-useless-buffers-regexp buffer-name))
 
   ;; I really prefer using the emacs state in some buffers, mostly because the
   ;; evil state hides many useful bindings in them.

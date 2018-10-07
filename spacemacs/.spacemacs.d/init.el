@@ -387,8 +387,7 @@ you should place your code here."
 
   ;; I really prefer using the emacs state in some buffers, mostly because the
   ;; evil state hides many useful bindings in them.
-  (dolist (buffer-name '("\*magit.*\*" "\*Man.*\*" "\*Anaconda.*\*"
-                         "\*Paradox Report\*"))
+  (dolist (buffer-name '(".*magit.*:.*" "\*Man.*\*" "\*Anaconda.*\*" "\*Paradox Report\*"))
     (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
   (evil-set-initial-state 'xref--xref-buffer-mode 'emacs)
 

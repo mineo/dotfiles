@@ -408,7 +408,13 @@ you should place your code here."
   ;; Explicitly call this for the first frame
   (-when-let (frame (selected-frame))
     (mineo-configure-fonts frame))
+
+  ;; Don't switch between projects by default.
+  (spacemacs/set-leader-keys
+    "bn" 'projectile-next-project-buffer
+    "bp" 'projectile-previous-project-buffer)
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

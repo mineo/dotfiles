@@ -24,10 +24,6 @@ unsetopt AUTO_LIST
 setopt AUTO_MENU
 setopt MENU_COMPLETE
 
-# If a glob pattern doesn't match anything, just leave it as is
-# Useful when pasting URLs with question marks in them
-unsetopt NOMATCH
-
 if is-at-least 5.2.0; then
     # ** search recursively, like **/*, but with less typing
     setopt GLOB_STAR_SHORT

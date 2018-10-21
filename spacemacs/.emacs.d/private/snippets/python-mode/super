@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: super
+# key: super
+# --
+super().`(replace-regexp-in-string "^[^.]+." "" (python-info-current-defun))`(self, $1)
+$0

@@ -2,5 +2,5 @@
 # name: super
 # key: super
 # --
-super().`(replace-regexp-in-string "^[^.]+." "" (python-info-current-defun))`(self, $1)
+super().`(replace-regexp-in-string "^[^.]+." "" (python-info-current-defun))`($1)
 $0

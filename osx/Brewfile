@@ -54,3 +54,5 @@ brew 'godep'
 brew 'maven'
 
 brew 'tox'
+
+cask 'firefox'

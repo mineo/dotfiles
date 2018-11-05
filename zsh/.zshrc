@@ -97,10 +97,11 @@ preexec() {
         rxvt-*)
             printf '\33]2;%s\007' $1
             ;;
-        screen*)
-            printf '\ek%s\e\\' $1
-            ;;
     esac
+
+    if [[ -n "${STY}" ]]; then
+        printf '\ek%s\e\\' $1
+    fi
 }
 
 if is-at-least 5.0.0 && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then

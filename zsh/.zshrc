@@ -188,7 +188,7 @@ httphere() {
 
 ftphere() {
     printf "The current hostname is %s\n" $(hostname --fqdn)
-    python2 -m pyftpdlib -w -d . $@
+    python3 -m pyftpdlib -w -d . $@
 }
 
 

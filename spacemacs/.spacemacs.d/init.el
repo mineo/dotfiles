@@ -55,7 +55,8 @@ values."
                    mineo
                    mineo-rtags
                    org
-                   python
+                   (python :variabeles
+                           python-test-runner 'pytest)
                    (rust :variables
                          rust-format-on-save t)
                    (shell :variables

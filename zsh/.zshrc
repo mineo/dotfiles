@@ -161,7 +161,7 @@ fi
 
 alias ll=ls
 
-if binary_exists brew; then
+if [[ "${VENDOR}" == apple ]]; then
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 else
     [[ -s  /etc/profile.d/autojump.sh ]] && . /etc/profile.d/autojump.sh

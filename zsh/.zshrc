@@ -140,6 +140,7 @@ else
 fi
 
 alias hme='htop -u $(whoami)'
+alias ip='ip -color'
 
 if [[ "${VENDOR}" == apple ]]; then
     alias m='open'

@@ -27,6 +27,7 @@ brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
 # Editing
+brew 'bat'
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'flake8'

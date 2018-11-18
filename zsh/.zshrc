@@ -115,6 +115,10 @@ ZLE_RPROMPT_INDENT=0
 ###########
 # aliases #
 ###########
+if binary_exists bat; then
+    alias b='bat'
+fi
+
 if binary_exists rg; then
     alias -g G='|\rg --smart-case'
 else

@@ -12,7 +12,9 @@ export WORKON_HOME="~/dev/virtualenvs/"
 export XDG_DESKTOP_DIR="~/.desktop"
 export XDG_DOWNLOAD_DIR="~/Downloads"
 
+export BAT_THEME="Monokai Extended Light"
 export LESS="-R"
+
 if type source-highlight-esc.sh &> /dev/null; then
     export LESSOPEN="|source-highlight-esc.sh %s"
 fi

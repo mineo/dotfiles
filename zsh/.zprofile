@@ -1,5 +1,3 @@
-. /etc/zsh/zprofile
-
 export BROWSER=firefox
 export EDITOR=vim
 export GOPATH=~/dev/go

@@ -14,9 +14,9 @@ brew 'p7zip'
 
 # Shell
 brew 'autojump'
+brew 'bat'
 brew 'exa'
 brew 'fd'
-brew 'mdcat'
 brew 'ncdu'
 brew 'shellcheck'
 brew 'shocco'
@@ -27,7 +27,6 @@ brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
 # Editing
-brew 'bat'
 brew 'editorconfig'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-librsvg']
 brew 'flake8'

@@ -10,6 +10,7 @@ export WORKON_HOME="~/dev/virtualenvs/"
 export XDG_DESKTOP_DIR="~/.desktop"
 export XDG_DOWNLOAD_DIR="~/Downloads"
 
+export BAT_STYLE="plain"
 export BAT_THEME="Monokai Extended Light"
 export LESS="-R"
 

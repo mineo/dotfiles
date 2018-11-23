@@ -14,6 +14,8 @@ export BAT_STYLE="plain"
 export BAT_THEME="Monokai Extended Light"
 export LESS="-R"
 
+export MOSH_TITLE_NOPREFIX=1
+
 if type source-highlight-esc.sh &> /dev/null; then
     export LESSOPEN="|source-highlight-esc.sh %s"
 fi

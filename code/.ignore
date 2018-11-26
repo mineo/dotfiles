@@ -4,3 +4,6 @@ TAGS
 po
 .git
 _build
+*.orig
+*.imp
+*.esym

@@ -315,6 +315,11 @@ function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"
 }
 
+# Workaround for https://github.com/zsh-users/zsh-autosuggestions/issues/379
+# Without this, completing the name of a local directory via `name<TAB>` doesn't
+# work anymore.
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-or-complete)
+
 # View the JSON file passed as the single argument in less after colorizing it
 # with jq. If jq is not available, fall back to simple formatting via Python's
 # json.tool.

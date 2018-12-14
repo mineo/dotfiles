@@ -31,6 +31,7 @@
 
 (defconst mineo-rtags-packages
   '(cmake-ide
+    flycheck-rtags
     helm-rtags
     rtags))
 

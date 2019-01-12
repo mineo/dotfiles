@@ -321,11 +321,13 @@ function eman () {
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-or-complete)
 
 # View the JSON file passed as the single argument in less after colorizing it
-# with jq. If jq is not available, fall back to simple formatting via Python's
-# json.tool.
+# with jq. If jq is not available, fall back to bat (if available) or simple
+# formatting via Python's json.tool.
 function jless () {
     if binary_exists jq; then
         jq -C . < $1 | less
+    elif binary_exists bat; then
+        bat $1
     else
         python -m json.tool $1 | less
     fi

@@ -38,6 +38,7 @@ values."
                     :variables
                     auto-completion-enable-help-tooltip t)
                    (c-c++)
+                   csv
                    docker
                    emacs-lisp
                    ess

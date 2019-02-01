@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: Required variable
-# key: errvar
+# key: reqvar
 # --
 "\${$1:?$2}" $0

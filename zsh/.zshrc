@@ -107,6 +107,9 @@ preexec() {
 if is-at-least 5.0.0 && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then
     PROMPT='↪ '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %(!.%U%K{red}%F{black}.%F{yellow})%n%u%k %fon %F{magenta}%m%f'
+elif [[ $TERM == "dumb" ]]; then
+    unsetopt zle
+    PS1='$ '
 else
     PROMPT=$'%{\e[0;33m%}%n %{\e[0;10m%}on %{\e[0;35m%}%m%{\e[0;10m%}: %~%(0?.. [%?]) ↪ '
 fi

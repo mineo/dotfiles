@@ -357,6 +357,13 @@ if binary_exists exiv2; then
 fi
 
 if binary_exists xmllint; then
+    # Format a JSON file in-place.
+    function jsonfmt {
+        jq . < ${1:?} | sponge ${1:?}
+    }
+fi
+
+if binary_exists xmllint; then
     # Format an XML file in-place.
     function xmlfmt {
         xmllint --format ${1:?} | sponge ${1:?}

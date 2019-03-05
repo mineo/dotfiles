@@ -356,6 +356,13 @@ if binary_exists exiv2; then
     }
 fi
 
+if binary_exists xmllint; then
+    # Format an XML file in-place.
+    function xmlfmt {
+        xmllint --format ${1:?} | sponge ${1:?}
+    }
+fi
+
 # Git clone $1 in /tmp and cd into the cloned folder
 function tmpclone {
     cd /tmp

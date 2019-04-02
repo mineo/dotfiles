@@ -1,6 +1,5 @@
 # To use:
 tap 'homebrew/bundle'
-tap 'homebrew/dupes'
 
 # Use GNU tools instead of the built-in ones
 brew 'coreutils'

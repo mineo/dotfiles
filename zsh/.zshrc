@@ -356,18 +356,20 @@ if binary_exists exiv2; then
     }
 fi
 
-if binary_exists jq; then
-    # Format a JSON file in-place.
-    function jsonfmt {
-        jq . < ${1:?} | sponge ${1:?}
-    }
-fi
+if binary_exists sponge; then
+    if binary_exists jq; then
+        # Format a JSON file in-place.
+        function jsonfmt {
+            jq . < ${1:?} | sponge ${1:?}
+        }
+    fi
 
-if binary_exists xmllint; then
-    # Format an XML file in-place.
-    function xmlfmt {
-        xmllint --format ${1:?} | sponge ${1:?}
-    }
+    if binary_exists xmllint; then
+        # Format an XML file in-place.
+        function xmlfmt {
+            xmllint --format ${1:?} | sponge ${1:?}
+        }
+    fi
 fi
 
 # Git clone $1 in /tmp and cd into the cloned folder

@@ -15,7 +15,7 @@
 (setq mineo-packages
     '(
       auctex
-      auth-password-store
+      (auth-source-pass :location built-in)
       beacon
       (bibtex :location built-in)
       (calc :location built-in)
@@ -88,11 +88,11 @@
     (setq calc-group-digits t
           calc-algebraic-mode t)))
 
-(defun mineo/init-auth-password-store ()
-  "Initialize auth-password-store."
-  (use-package auth-password-store
+(defun mineo/init-auth-source-pass ()
+  "Initialize auth-source-pass."
+  (use-package auth-source-pass
     :config
-    (auth-pass-enable)))
+    (auth-source-pass-enable)))
 
 (defun mineo/init-cask-mode ()
   "Initialize cask-mode."

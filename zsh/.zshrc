@@ -124,8 +124,8 @@ fi
 
 if binary_exists rg; then
     alias -g G='|\rg --smart-case'
-    alias -g GC='|\rg --smart-case --color=always'
-    alias rgc='rg --color=always'
+    alias -g GC='|\rg --smart-case --pretty'
+    alias rgc='rg --pretty'
 else
     alias -g G='|grep'
 fi

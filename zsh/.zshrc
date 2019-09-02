@@ -124,12 +124,16 @@ fi
 
 if binary_exists rg; then
     alias -g G='|\rg --smart-case'
+    alias -g GC='|\rg --smart-case --color=always'
+    alias rgc='rg --color=always'
 else
     alias -g G='|grep'
 fi
 
 if binary_exists jq; then
     alias -g J='|jq'
+    alias -g JC='|jq --color-output'
+    alias jqc='jq --color-output'
 else
     alias -g J='|python -m json.tool'
 fi

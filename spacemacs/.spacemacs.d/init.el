@@ -411,6 +411,8 @@ you should place your code here."
   (-when-let (frame (selected-frame))
     (mineo-configure-fonts frame))
 
+  (with-eval-after-load 'org
+    (org-defkey org-mode-map [(meta return)] 'org-meta-return))  ;; https://github.com/syl20bnr/spacemacs/issues/9603
   ;; Don't switch between projects by default.
   (spacemacs/set-leader-keys
     "bn" 'projectile-next-project-buffer

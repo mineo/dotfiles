@@ -13,8 +13,7 @@ default_orientation vertical
 xwayland enable
 
 output HDMI-A-1
-# Fullscreen (Mod4+f)
-bindcode Mod4+41 fullscreen
+bindsym Mod4+f fullscreen
 
 # Stacking (Mod4+r)
 bindsym Mod4+Shift+r layout stacking
@@ -33,17 +32,17 @@ bindsym Mod4+s split v
 bindsym Mod4+d layout toggle split
 
 # Toggle tiling/floating of the current window (Mod4+Shift+Space)
-bindcode Mod4+Shift+65 floating toggle
+bindsym Mod4+Shift+Space floating toggle
 
 # Go into the tiling layer / floating layer, depending on whether
 # the current window is tiling / floating (Mod4+t)
-bindcode Mod4+28 focus mode_toggle
+bindsym Mod4+t focus mode_toggle
 
 # Focus (Mod4+j/k/l/;)
-bindcode Mod4+43 focus left
-bindcode Mod4+44 focus down
-bindcode Mod4+45 focus up
-bindcode Mod4+46 focus right
+bindsym Mod4+h focus left
+bindsym Mod4+j focus down
+bindsym Mod4+k focus up
+bindsym Mod4+l focus right
 #
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -85,42 +84,42 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 # Focus Container (Mod3+j/k/l/;)
-bindcode Mod3+43 focus parent; focus left
-bindcode Mod3+44 focus parent; focus down
-bindcode Mod3+45 focus parent; focus up
-bindcode Mod3+46 focus parent; focus right
+bindsym Mod3+h focus parent; focus left
+bindsym Mod3+j focus parent; focus down
+bindsym Mod3+k focus parent; focus up
+bindsym Mod3+l focus parent; focus right
 
 
 # Move (Mod4+Shift+j/k/l/;)
-bindcode Mod4+Shift+43 move left
-bindcode Mod4+Shift+44 move down
-bindcode Mod4+Shift+45 move up
-bindcode Mod4+Shift+46 move right
+bindsym Mod4+Shift+h move left
+bindsym Mod4+Shift+j move down
+bindsym Mod4+Shift+k move up
+bindsym Mod4+Shift+l move right
 
 
 # Workspaces (Mod4+1/2/…)
-bindcode Mod4+10 workspace www
-bindcode Mod4+11 workspace msg
-bindcode Mod4+12 workspace dev
-bindcode Mod4+13 workspace 4
-bindcode Mod4+14 workspace 5
-bindcode Mod4+15 workspace 6
-bindcode Mod4+16 workspace 7
-bindcode Mod4+17 workspace 8
-bindcode Mod4+18 workspace 9
-bindcode Mod4+19 workspace 10
+bindsym Mod4+1 workspace www
+bindsym Mod4+2 workspace msg
+bindsym Mod4+3 workspace dev
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
 
 # Move to Workspaces
-bindcode Mod4+Shift+10 move container to workspace www
-bindcode Mod4+Shift+11 move container to workspace msg
-bindcode Mod4+Shift+12 move container to workspace dev
-bindcode Mod4+Shift+13 move container to workspace 4
-bindcode Mod4+Shift+14 move container to workspace 5
-bindcode Mod4+Shift+15 move container to workspace 6
-bindcode Mod4+Shift+16 move container to workspace 7
-bindcode Mod4+Shift+17 move container to workspace 8
-bindcode Mod4+Shift+18 move container to workspace 9
-bindcode Mod4+Shift+19 move container to workspace 10
+bindsym Mod4+Shift+1 move container to workspace www
+bindsym Mod4+Shift+2 move container to workspace msg
+bindsym Mod4+Shift+3 move container to workspace dev
+bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+5 move container to workspace 5
+bindsym Mod4+Shift+6 move container to workspace 6
+bindsym Mod4+Shift+7 move container to workspace 7
+bindsym Mod4+Shift+8 move container to workspace 8
+bindsym Mod4+Shift+9 move container to workspace 9
+bindsym Mod4+Shift+0 move container to workspace 10
 
 # Switching workspaces
 bindsym Mod4+Prior workspace prev_on_output
@@ -131,16 +130,16 @@ bindsym Mod4+Right move workspace to output right
 bindsym Mod4+Left move workspace to output left
 
 # Mod4+Enter starts a new terminal
-bindcode Mod4+36 exec urxvt
+bindsym Mod4+Return exec urxvt
 
 # Mod4+Shift+q kills the current client
-bindcode Mod4+Shift+24 kill
+bindsym Mod4+Shift+q kill
 
 # Mod4+Shift+e exits i3
 #bindcode Mod4+Shift+24 exit
 
 # Mod3+Shift+r restarts i3 inplace
-bindcode Mod3+Shift+27 restart
+bindsym Mod3+Shift+r restart
 
 # borders
 bindsym Mod4+b border toggle

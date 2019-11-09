@@ -168,9 +168,9 @@ bindsym Mod4+i exec $urxvt-irc
 
 exec for_window [instance="scratchpad"] move scratchpad
 
-assign [class="Firefox"] → www
+assign [window_role="browser"] → www
 assign [class="Chromium"] → www
-assign [class="irc"] → msg
+assign [title="irc"] → msg
 # Eclipses splash screen does not have class=Eclipse for some reason
 assign [title="Eclipse"] → dev
 # Regular Eclipse

@@ -353,7 +353,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
         monokai-height-plus-3 1.0
         monokai-height-plus-4 1.0
         monokai-height-minus-1 1.0
-        monokai-distinct-fringe-background t
         monokai-use-variable-pitch nil)
 
   (setq theming-modifications

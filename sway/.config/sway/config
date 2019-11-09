@@ -143,7 +143,7 @@ bindsym Mod3+Shift+r restart
 
 # borders
 bindsym Mod4+b border toggle
-default_border pixel 3
+default_border none
 
 workspace_auto_back_and_forth yes
 

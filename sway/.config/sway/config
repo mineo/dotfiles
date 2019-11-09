@@ -175,6 +175,7 @@ assign [title="irc"] → msg
 assign [title="Eclipse"] → dev
 # Regular Eclipse
 assign [class="Eclipse"] → dev
+assign [class="Emacs"] → dev
 assign [class="Gvim"] → dev
 assign [class="Gimp"] → 5
 assign [class="Steam"] → 6

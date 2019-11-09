@@ -362,7 +362,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
           (solarized-light (highlight-symbol-face :underline t)
                            (sp-show-pair-match-face :underline t))
           (solarized-dark (highlight-symbol-face :underline t)
-                          (sp-show-pair-match-face :underline t))))
+                          (sp-show-pair-match-face :underline t)))
+        monokai-background "#1B1D1E"
+        monokai-highlight "#293739"
+        monokai-highlight-line "#293739"
+        )
   )
 
 (defun dotspacemacs/user-config ()

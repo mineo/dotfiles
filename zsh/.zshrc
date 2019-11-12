@@ -251,7 +251,7 @@ zstyle ':completion:*' select-prompt '%m matches'
 zstyle ':completion:*:manuals' separate-sections true
 # from https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0'
-zstyle ':completion:*:*:kill:*:processes' command "ps -u `whoami` -o pid,comm -w -w"
+zstyle ':completion:*:*:kill:*:processes' command "ps -u `whoami` -o pid,cmd -w -w"
 zstyle :compinstall filename '/home/wieland/.zshrc'
 
 autoload -Uz compinit

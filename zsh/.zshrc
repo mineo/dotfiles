@@ -21,7 +21,6 @@ setopt correct_all
 setopt prompt_subst
 # Don't show a list of completions before letting me select one of them
 unsetopt AUTO_LIST
-setopt AUTO_MENU
 setopt MENU_COMPLETE
 
 if is-at-least 5.2.0; then

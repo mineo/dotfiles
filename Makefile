@@ -13,7 +13,7 @@ endif
 
 FOLDERS = $(shell find . -maxdepth 1 -mindepth 1 -type d -print)
 
-.PHONY: all all-linux all-osx homebrew osxupdate $(FOLDERS)
+.PHONY: all all-linux all-osx homebrew osxupdate $(FOLDERS) clean
 
 all: $(OS_TARGET)
 
@@ -36,3 +36,6 @@ osxupdate:
 
 $(FOLDERS):
 	$(STOW) $@
+
+clean:
+	$(STOW) -D $(FOLDERS)

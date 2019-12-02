@@ -21,7 +21,6 @@ setopt correct_all
 setopt prompt_subst
 # Don't show a list of completions before letting me select one of them
 unsetopt AUTO_LIST
-setopt AUTO_MENU
 setopt MENU_COMPLETE
 
 if is-at-least 5.2.0; then
@@ -250,8 +249,8 @@ zstyle ':completion:*' select-prompt '%m matches'
 # separate man pages into sections
 zstyle ':completion:*:manuals' separate-sections true
 # from https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+zstyle ':completion:*:*:*:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0'
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,cmd -w -w"
 zstyle :compinstall filename '/home/wieland/.zshrc'
 
 autoload -Uz compinit

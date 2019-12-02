@@ -26,7 +26,7 @@ archlinux: abs
 base: spacemacs tmux vim zsh
 devel: code db git
 linux: systemd_user
-ui: dunst gtk i3 tex rofi x11
+ui: dunst gtk i3 sway tex rofi x11
 
 homebrew:
 	$(BREW) bundle --file=osx/Brewfile

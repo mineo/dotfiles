@@ -1,0 +1,208 @@
+# Th configuration uses Mod4 and Mod3. Make sure they are mapped properly using xev(1)
+# and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
+
+# ISO 10646 = Unicode
+font pango:Liberation Sans bold 9
+
+# Use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+default_orientation vertical
+
+# Required by urxvt
+xwayland enable
+
+output HDMI-A-1
+bindsym Mod4+f fullscreen
+
+# Stacking (Mod4+r)
+bindsym Mod4+Shift+r layout stacking
+
+# Tabbed (Mod4+w)
+bindsym Mod4+Shift+w layout tabbed
+
+# Default (Mod4+e)
+bindsym Mod4+Shift+e layout default
+
+bindsym Mod4+p focus parent
+bindsym Mod4+c focus child
+
+bindsym Mod4+a split h
+bindsym Mod4+s split v
+bindsym Mod4+d layout toggle split
+
+# Toggle tiling/floating of the current window (Mod4+Shift+Space)
+bindsym Mod4+Shift+Space floating toggle
+
+# Go into the tiling layer / floating layer, depending on whether
+# the current window is tiling / floating (Mod4+t)
+bindsym Mod4+t focus mode_toggle
+
+# Focus (Mod4+j/k/l/;)
+bindsym Mod4+h focus left
+bindsym Mod4+j focus down
+bindsym Mod4+k focus up
+bindsym Mod4+l focus right
+#
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+        bindsym j               resize shrink left 5 px or 5 ppt
+        bindsym Shift+j         resize grow   left 5 px or 5 ppt
+
+        bindsym k               resize shrink down 5 px or 5 ppt
+        bindsym Shift+k         resize grow   down 5 px or 5 ppt
+
+        bindsym l               resize shrink up 5 px or 5 ppt
+        bindsym Shift+l         resize grow   up 5 px or 5 ppt
+
+        bindsym semicolon       resize shrink right 5 px or 5 ppt
+        bindsym Shift+semicolon resize grow   right 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink left 5 px or 5 ppt
+        bindsym Shift+Left  resize grow   left 5 px or 5 ppt
+
+        bindsym Down        resize shrink down 5 px or 5 ppt
+        bindsym Shift+Down  resize grow   down 5 px or 5 ppt
+
+        bindsym Up          resize shrink up 5 px or 5 ppt
+        bindsym Shift+Up    resize grow   up 5 px or 5 ppt
+
+        bindsym Right       resize shrink right 5 px or 5 ppt
+        bindsym Shift+Right resize grow   right 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+# Focus Container (Mod3+j/k/l/;)
+bindsym Mod3+h focus parent; focus left
+bindsym Mod3+j focus parent; focus down
+bindsym Mod3+k focus parent; focus up
+bindsym Mod3+l focus parent; focus right
+
+
+# Move (Mod4+Shift+j/k/l/;)
+bindsym Mod4+Shift+h move left
+bindsym Mod4+Shift+j move down
+bindsym Mod4+Shift+k move up
+bindsym Mod4+Shift+l move right
+
+
+# Workspaces (Mod4+1/2/…)
+bindsym Mod4+1 workspace www
+bindsym Mod4+2 workspace msg
+bindsym Mod4+3 workspace dev
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+
+# Move to Workspaces
+bindsym Mod4+Shift+1 move container to workspace www
+bindsym Mod4+Shift+2 move container to workspace msg
+bindsym Mod4+Shift+3 move container to workspace dev
+bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+5 move container to workspace 5
+bindsym Mod4+Shift+6 move container to workspace 6
+bindsym Mod4+Shift+7 move container to workspace 7
+bindsym Mod4+Shift+8 move container to workspace 8
+bindsym Mod4+Shift+9 move container to workspace 9
+bindsym Mod4+Shift+0 move container to workspace 10
+
+# Switching workspaces
+bindsym Mod4+Prior workspace prev_on_output
+bindsym Mod4+Next workspace next_on_output
+
+# Moving workspaces to other outputs
+bindsym Mod4+Right move workspace to output right
+bindsym Mod4+Left move workspace to output left
+
+# Mod4+Enter starts a new terminal
+bindsym Mod4+Return exec urxvt
+
+# Mod4+Shift+q kills the current client
+bindsym Mod4+Shift+q kill
+
+# Mod4+Shift+e exits i3
+#bindcode Mod4+Shift+24 exit
+
+# Mod3+Shift+r restarts i3 inplace
+bindsym Mod3+Shift+r restart
+
+# borders
+bindsym Mod4+b border toggle
+default_border none
+
+workspace_auto_back_and_forth yes
+
+bindcode 83 exec --no-startup-id mpc prev
+bindcode 84 exec --no-startup-id mpc toggle
+bindcode 85 exec --no-startup-id mpc next
+bindcode 180 exec firefox
+bindcode 121 exec --no-startup-id pulseaudio-ctl mute
+bindcode 122 exec --no-startup-id pulseaudio-ctl down
+bindcode 123 exec --no-startup-id pulseaudio-ctl up
+bindsym Mod4+e exec --no-startup-id emacsclient -a emacs -nc
+bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu'
+bindsym Mod4+g exec gvim
+bindsym Mod4+v exec pavucontrol
+bindsym XF86Launch1 exec firefox
+bindsym Mod4+Shift+m move scratchpad
+bindsym Mod4+m scratchpad show
+
+set $urxvt-irc urxvt -title irc -e bash -c "mosh -- pi tmux a -d -t irc"
+bindsym Mod4+i exec $urxvt-irc
+
+exec for_window [instance="scratchpad"] move scratchpad
+
+assign [window_role="browser"] → www
+assign [class="Chromium"] → www
+assign [title="irc"] → msg
+# Eclipses splash screen does not have class=Eclipse for some reason
+assign [title="Eclipse"] → dev
+# Regular Eclipse
+assign [class="Eclipse"] → dev
+assign [class="Emacs"] → dev
+assign [class="Gvim"] → dev
+assign [class="Gimp"] → 5
+assign [class="Steam"] → 6
+assign [class="Wine"] → 6
+
+for_window [instance="tk"] floating enable
+for_window [class="Toplevel"] floating enable
+for_window [class="org-antlr-v4-runtime-misc-TestRig"] floating disable
+for_window [class="jetbrains-idea" title="Commit Changes"] floating disable
+
+exec $urxvt-irc
+exec redshift -l 50:10 -t 6500:5000
+exec mako
+exec dropbox
+exec udiskie
+
+#class                   border  background text    indicator child_border
+client.focused           #2d2d2d #2d2d2d    #f9f9f9 #3ec2ff   #2d2d2d
+client.unfocused         #2d2d2d #000000    #a0a0a0 #f9f9f9   #222222
+client.focused_inactive  #2d2d2d #2f2f2f    #a0a0a0 #484e50   #5f676a
+
+bar {
+    mode hide
+    position top
+    status_command i3status
+}
+
+
+input * {
+    xkb_options ctrl:nocaps,compose:lctrl
+}

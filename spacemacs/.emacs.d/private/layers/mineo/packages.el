@@ -40,11 +40,7 @@
       (projectile-addons :location local)
       org
       sh-script
-      (ssh-config-mode :location (recipe
-                                  :fetcher github
-                                  :repo "mineo/ssh-config-mode-el"
-                                  :branch "imenu"
-                                  :files (:defaults "*.txt")))
+      ssh-config-mode
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode

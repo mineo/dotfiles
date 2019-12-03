@@ -44,7 +44,6 @@
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
-      writeroom-mode
       yaml-mode
       yatemplate))
 
@@ -217,12 +216,6 @@
     (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
       (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
         (add-hook hook mode)))))
-
-(defun mineo/init-writeroom-mode ()
-  "Initialize writeroom-mode."
-  (use-package writeroom-mode
-    :config
-    (setq writeroom-fullscreen-effect 'maximized)))
 
 (defun mineo/init-yatemplate ()
   "Initialize yatemplate."

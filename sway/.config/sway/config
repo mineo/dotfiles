@@ -99,10 +99,15 @@ bindsym Mod4+Shift+l move right
 
 # Workspaces (Mod4+1/2/…)
 bindsym Mod4+1 workspace www
+bindsym XF86Launch5 workspace www
 bindsym Mod4+2 workspace msg
+bindsym XF86Launch6 workspace msg
 bindsym Mod4+3 workspace dev
+bindsym XF86Launch7 workspace dev
 bindsym Mod4+4 workspace 4
+bindsym XF86Launch8 workspace 4
 bindsym Mod4+5 workspace 5
+bindsym XF86Launch9 workspace 5
 bindsym Mod4+6 workspace 6
 bindsym Mod4+7 workspace 7
 bindsym Mod4+8 workspace 8
@@ -131,6 +136,7 @@ bindsym Mod4+Left move workspace to output left
 
 # Mod4+Enter starts a new terminal
 bindsym Mod4+Return exec urxvt
+bindsym XF86Favorites exec urxvt
 
 # Mod4+Shift+q kills the current client
 bindsym Mod4+Shift+q kill

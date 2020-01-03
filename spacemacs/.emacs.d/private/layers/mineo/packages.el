@@ -39,8 +39,7 @@
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
-      yaml-mode
-      yatemplate))
+      yaml-mode))
 
 ;; List of packages to exclude.
 (setq mineo-excluded-packages '())
@@ -168,14 +167,6 @@
     (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
       (dolist (mode (list #'whitespace-mode #'whitespace-cleanup-mode))
         (add-hook hook mode)))))
-
-(defun mineo/init-yatemplate ()
-  "Initialize yatemplate."
-    (use-package yatemplate
-      :config
-      (setq yatemplate-dir (locate-user-emacs-file "private/templates"))
-      (yatemplate-fill-alist)
-      (auto-insert-mode 1)))
 
 (defun mineo/post-init-magit ()
   "Post-initialize magit."

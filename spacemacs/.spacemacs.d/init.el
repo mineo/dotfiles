@@ -70,6 +70,7 @@ This function should only modify configuration layer settings."
                    (syntax-checking
                     :variables syntax-checking-enable-tooltips nil)
                    systemd
+                   templates
                    theming
                    version-control
                    yaml

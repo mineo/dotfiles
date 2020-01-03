@@ -190,12 +190,6 @@
     ;; clickable.
     (add-hook 'magit-process-mode-hook 'goto-address-mode)))
 
-(defun mineo/post-init-neotree ()
-  "Initialize neotree."
-  (use-package neotree
-    :config
-    (setq neo-theme 'ascii)))
-
 (defun mineo/post-init-org ()
   "Post-initialize org."
   (setq mineo-org-babel-languages '(C python shell))

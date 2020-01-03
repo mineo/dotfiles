@@ -59,6 +59,7 @@ This function should only modify configuration layer settings."
                    mineo
                    org
                    (python :variables
+                           python-backend 'anaconda
                            python-test-runner 'pytest)
                    (rust :variables
                          rust-format-on-save t)

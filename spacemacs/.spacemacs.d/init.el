@@ -52,8 +52,6 @@ This function should only modify configuration layer settings."
                    helpful
                    html
                    javascript
-                   (latex
-                    :variables latex-build-command "LatexMk")
                    lsp
                    markdown
                    mineo

@@ -14,10 +14,8 @@
 ;; which require an initialization must be listed explicitly in the list.
 (setq mineo-packages
     '(
-      auctex
       (auth-source-pass :location built-in)
       beacon
-      (bibtex :location built-in)
       (calc :location built-in)
       cask-mode
       compact-docstrings
@@ -47,18 +45,6 @@
 ;; List of packages to exclude.
 (setq mineo-excluded-packages '())
 
-(defun mineo/post-init-auctex ()
-  "Post-initialize auctex."
-  ;; For zc etc.
-  (add-hook 'LaTeX-mode-hook 'outline-minor-mode)
-  ;; Enable fold mode
-  (add-hook 'LaTeX-mode-hook 'TeX-fold-mode)
-  ;; Fold automatically
-  (add-hook 'LaTeX-mode-hook 'TeX-fold-buffer t)
-  ;; Automatically insert braces for super and subscripts
-  (setq TeX-electric-sub-and-superscript t)
-  )
-
 (defun mineo/init-beacon ()
   "Initialize beacon."
   (use-package beacon
@@ -66,12 +52,6 @@
     (setq beacon-dont-blink-commands
           (delete 'recenter-top-bottom beacon-dont-blink-commands))
     (beacon-mode 1)))
-
-(defun mineo/init-bibtex ()
-  "Initialize bibtex"
-  (use-package bibtex
-    :config
-    (add-hook 'bibtex-mode-hook 'goto-address-mode)))
 
 (defun mineo/init-calc ()
   "Initialize calc."

@@ -24,14 +24,11 @@
       company
       company-emoji
       copyright
-      editorconfig
       flycheck
       flycheck-cask
-      flycheck-package
       git-commit
       github-clone
       go-mode
-      helpful
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -117,12 +114,6 @@
     (add-hook 'prog-mode-hook #'copyright-update)
     (setq copyright-names-regexp (user-full-name))))
 
-(defun mineo/init-editorconfig ()
-  "Initialize editorconfig."
-  (use-package editorconfig
-    :config
-    (editorconfig-mode 1)))
-
 (defun mineo/post-init-flycheck ()
   "Initialize flycheck."
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
@@ -135,12 +126,6 @@
   (use-package flycheck-cask
     :config
     (add-hook 'flycheck-mode-hook #'flycheck-cask-setup)))
-
-(defun mineo/init-flycheck-package ()
-  "Initialize flycheck-package."
-  (use-package flycheck-package
-    :config
-    (flycheck-package-setup)))
 
 (defun mineo/post-init-git-commit ()
   "Post-initialize git-commit."
@@ -157,19 +142,6 @@
   (spacemacs|use-package-add-hook go-mode
     :post-config (when (featurep 'whitespace)
                    (add-hook 'go-mode-hook #'spacemacs/toggle-whitespace-off))))
-
-(defun mineo/init-helpful ()
-  "Initialize helpful."
-  (use-package helpful
-    :config
-    (advice-add 'describe-function :override 'helpful-callable)
-    (advice-add 'describe-key :override 'helpful-key)
-    (advice-add 'describe-variable :override 'helpful-variable)
-    (spacemacs/set-leader-keys
-      "hdC" 'helpful-command
-      "hd*" 'helpful-at-point
-      )
-    (evilified-state-evilify helpful-mode helpful-mode-map)))
 
 (defun mineo/init-highlight-symbol ()
   "Initialize highlight-symbol."

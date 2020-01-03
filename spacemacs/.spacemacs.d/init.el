@@ -48,13 +48,13 @@ values."
                    git
                    github
                    go
+                   helpful
                    html
                    javascript
                    (latex
                     :variables latex-build-command "LatexMk")
                    markdown
                    mineo
-                   mineo-rtags
                    org
                    (python :variables
                            python-test-runner 'pytest)

@@ -37,7 +37,8 @@ This function should only modify configuration layer settings."
                    (auto-completion
                     :variables
                     auto-completion-enable-help-tooltip t)
-                   (c-c++)
+                   (c-c++
+                    :variables c-c++-backend 'lsp-ccls)
                    csv
                    docker
                    emacs-lisp
@@ -53,6 +54,7 @@ This function should only modify configuration layer settings."
                    javascript
                    (latex
                     :variables latex-build-command "LatexMk")
+                   lsp
                    markdown
                    mineo
                    org

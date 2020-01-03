@@ -95,7 +95,11 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(pyvenv)
+   dotspacemacs-excluded-packages '(
+                                    ;; importmagic generates tons of messages in
+                                    ;; *Messages* and the echo area
+                                    importmagic
+                                    pyvenv)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.

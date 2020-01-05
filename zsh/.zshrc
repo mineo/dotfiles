@@ -267,6 +267,9 @@ zle -N history-beginning-search-forward-end history-search-end
 
 bindkey "^[[A" history-beginning-search-backward-end # up
 bindkey "^[[B" history-beginning-search-forward-end # down
+# on C-p / C-n as well
+bindkey "^P" history-beginning-search-backward-end # up
+bindkey "^N" history-beginning-search-forward-end # down
 # tmux on my raspberry pi
 bindkey "^[OA" history-beginning-search-backward-end # up
 bindkey "^[OB" history-beginning-search-forward-end # down

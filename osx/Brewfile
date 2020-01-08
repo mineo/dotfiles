@@ -51,6 +51,7 @@ brew 'ansible-lint'
 brew 'go'
 brew 'godep'
 
+cask 'adoptopenjdk'
 brew 'maven'
 
 brew 'tox'

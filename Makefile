@@ -11,7 +11,7 @@ else
 	OS_TARGET = all-linux
 endif
 
-FOLDERS = $(shell find . -maxdepth 1 -mindepth 1 -type d -print)
+FOLDERS = $(shell find . -maxdepth 1 -mindepth 1 -type d -not -name osx -print)
 
 .PHONY: all all-linux all-osx homebrew osxupdate $(FOLDERS) clean
 

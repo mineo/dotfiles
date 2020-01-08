@@ -4,6 +4,13 @@ export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH=~/.local/bin:~/.cabal/bin:/opt/java/jre/bin:/home/wieland/dev/bin:$PATH
+
+if [[ "${VENDOR}" == apple ]]; then
+    for p in ~/Library/Python/*/bin(/N); do
+        export PATH=$p:$PATH
+    done
+fi
+
 export REPORTTIME=5
 export RUST_SRC_PATH=~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export WORKON_HOME="~/dev/virtualenvs/"

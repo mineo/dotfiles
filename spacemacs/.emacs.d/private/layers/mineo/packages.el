@@ -30,7 +30,6 @@
       highlight-symbol
       magit
       (midnight :location built-in)
-      neotree
       projectile
       (projectile-addons :location local)
       org

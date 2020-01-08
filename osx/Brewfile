@@ -55,6 +55,7 @@ brew 'godep'
 cask 'adoptopenjdk'
 brew 'maven'
 
+brew 'python'
 brew 'tox'
 
 cask 'firefox'

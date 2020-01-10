@@ -52,7 +52,8 @@ This function should only modify configuration layer settings."
                    helpful
                    html
                    javascript
-                   lsp
+                   (lsp :variables
+                         lsp-ui-sideline-enable nil)
                    markdown
                    mineo
                    org

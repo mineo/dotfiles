@@ -540,7 +540,12 @@ before packages are loaded."
         helm-ag-base-command "rg --smart-case --vimgrep --no-heading"
         tags-add-tables nil
         ;; When opening a man page, make it the current buffer
-        Man-notify-method 'aggressive)
+        Man-notify-method 'aggressive
+        ;; Prevent info+ from treating _underscores_ as italics because some
+        ;; info pages (for example completion functions in ZSH) heavily use
+        ;; leading underscores in names.
+        info-fontify-emphasis nil
+        Info-fontify-emphasis-flag nil)
 
   (spaceline-compile)
 

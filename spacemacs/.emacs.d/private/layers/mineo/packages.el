@@ -89,7 +89,6 @@
   "Initialize copyright."
   (use-package copyright
     :config
-    (add-hook 'prog-mode-hook #'copyright-update)
     (setq copyright-names-regexp (user-full-name))))
 
 (defun mineo/post-init-flycheck ()

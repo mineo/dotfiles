@@ -583,6 +583,8 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "bn" 'projectile-next-project-buffer
     "bp" 'projectile-previous-project-buffer)
+
+  (add-hook 'conf-mode-hook 'goto-address-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

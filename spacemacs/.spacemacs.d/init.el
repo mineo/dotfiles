@@ -53,7 +53,8 @@ This function should only modify configuration layer settings."
                    html
                    javascript
                    (lsp :variables
-                         lsp-ui-sideline-enable nil)
+                        lsp-enable-file-watchers nil
+                        lsp-ui-sideline-enable nil)
                    markdown
                    mineo
                    org

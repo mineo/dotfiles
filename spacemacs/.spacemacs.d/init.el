@@ -564,6 +564,7 @@ before packages are loaded."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
+  (spacemacs/toggle-version-control-margin-globally-off)
   (spacemacs/toggle-camel-case-motion-globally-on)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)

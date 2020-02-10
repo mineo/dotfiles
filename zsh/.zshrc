@@ -121,6 +121,8 @@ if binary_exists bat; then
     alias b='bat'
 fi
 
+alias fda='fd --no-ignore --hidden'
+
 if binary_exists fzf; then
     alias -g F='|fzf --multi'
 fi

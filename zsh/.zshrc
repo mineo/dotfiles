@@ -121,6 +121,10 @@ if binary_exists bat; then
     alias b='bat'
 fi
 
+if binary_exists fzf; then
+    alias -g F='|fzf --multi'
+fi
+
 if binary_exists rg; then
     alias -g G='|\rg --smart-case'
     alias -g GC='|\rg --smart-case --pretty'
@@ -356,6 +360,7 @@ if binary_exists exiv2; then
         exiv2 --Force --rename '%Y-%m-%d %H:%M:%S' mv "${@:?}"
     }
 fi
+
 
 if binary_exists sponge; then
     if binary_exists jq; then

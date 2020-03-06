@@ -325,6 +325,19 @@ for i in /usr/local/share/zsh-*/*.zsh(N); do
 done
 
 unset i
+
+if binary_exists fzf; then
+    # Arch Linux
+    if [[  -e /usr/share/fzf/completion.zsh ]]; then
+        source /usr/share/fzf/completion.zsh
+    fi
+
+    # macOS
+    if [[ -e /usr/local/opt/fzf/shell/completion.zsh ]]; then
+        source /usr/local/opt/fzf/shell/completion.zsh
+    fi
+fi
+
 # View the man page passed as the single argument in emacs.
 function eman () {
     emacsclient -nc -a "" -eval "(man \"$1\")"

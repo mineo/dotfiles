@@ -60,3 +60,4 @@ brew 'python'
 brew 'tox'
 
 cask 'firefox'
+cask 'sensiblesidebuttons'

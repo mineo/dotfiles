@@ -3,7 +3,7 @@ export EDITOR=vim
 export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-export PATH=~/.local/bin:~/.cabal/bin:/opt/java/jre/bin:/home/wieland/dev/bin:$PATH
+export PATH=~/.local/bin:~/.cabal/bin:~/.cargo/bin/:/opt/java/jre/bin:/home/wieland/dev/bin:$PATH
 
 if [[ "${VENDOR}" == apple ]]; then
     for p in ~/Library/Python/*/bin(/N); do

@@ -19,7 +19,7 @@ export XDG_DOWNLOAD_DIR="~/Downloads"
 
 export BAT_STYLE="plain"
 export BAT_THEME="Monokai Extended Light"
-export LESS="-R"
+export LESS="--RAW-CONTROL-CHARS --jump-target=.5"
 export RIPGREP_CONFIG_PATH="~/.config/ripgrep"
 
 export MOSH_TITLE_NOPREFIX=1

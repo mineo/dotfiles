@@ -31,7 +31,6 @@ brew 'zsh-syntax-highlighting'
 # Editing
 brew 'editorconfig'
 cask 'emacs'
-brew 'flake8'
 brew 'git'
 brew 'hub'
 brew 'jq'

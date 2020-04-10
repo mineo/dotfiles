@@ -100,7 +100,10 @@ This function should only modify configuration layer settings."
                                     ;; importmagic generates tons of messages in
                                     ;; *Messages* and the echo area
                                     importmagic
-                                    pyvenv)
+                                    pyvenv
+                                    ;; Workaround for
+                                    ;; https://github.com/syl20bnr/spacemacs/issues/12843
+                                    window-purpose)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.

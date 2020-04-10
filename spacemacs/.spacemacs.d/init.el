@@ -549,7 +549,9 @@ before packages are loaded."
         ;; info pages (for example completion functions in ZSH) heavily use
         ;; leading underscores in names.
         info-fontify-emphasis nil
-        Info-fontify-emphasis-flag nil)
+        Info-fontify-emphasis-flag nil
+
+        diff-default-read-only t)
 
   (spaceline-compile)
 

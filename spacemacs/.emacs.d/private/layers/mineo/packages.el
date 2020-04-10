@@ -214,7 +214,8 @@
       (add-to-list 'projectile-globally-ignored-directories dir)
       )
     (add-to-list 'projectile-globally-ignored-modes "tags-table-mode")
-    (setq projectile-project-search-path '("~/dev"))))
+    (when (file-directory-p "~/dev")
+       (setq projectile-project-search-path '("~/dev")))))
 
 (defun mineo/post-init-sh-script ()
   "Post-initialize sh-script."

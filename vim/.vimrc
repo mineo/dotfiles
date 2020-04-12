@@ -1,3 +1,6 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
 set runtimepath+=/usr/share/vim
 
 set t_Co=256

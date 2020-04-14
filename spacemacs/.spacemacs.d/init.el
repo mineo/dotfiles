@@ -74,7 +74,8 @@ This function should only modify configuration layer settings."
                    systemd
                    templates
                    theming
-                   version-control
+                   (version-control
+                    :variables version-control-global-margin nil)
                    yaml
                    )))
      (if (file-directory-p (configuration-layer//get-private-layer-dir "layers/mineo-private"))
@@ -570,7 +571,6 @@ before packages are loaded."
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)
   (spacemacs/toggle-mode-line-minor-modes-off)
-  (spacemacs/toggle-version-control-margin-globally-off)
   (spacemacs/toggle-camel-case-motion-globally-on)
   (spaceline-toggle-hud-off)
   (spacemacs/toggle-fringe-off)

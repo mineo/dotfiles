@@ -98,6 +98,8 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
+                                    ;; The standard keybindings are better
+                                    evil-magit
                                     ;; importmagic generates tons of messages in
                                     ;; *Messages* and the echo area
                                     importmagic

@@ -195,13 +195,15 @@
         org-default-notes-file (concat org-directory "/notes.org")
         ;; Open my notes file instead of the scratch buffer in new
         ;; emacs instances
-        initial-buffer-choice org-default-notes-file
         ;; Other stuff
         org-hide-emphasis-markers t
         org-ellipsis " ▾"
         org-agenda-files '("~/.org")
         org-refile-targets '((org-agenda-files :maxlevel . 3))
         org-bullets-bullet-list '("○"))
+
+  (when (file-exists-p org-default-notes-file)
+   (setq initial-buffer-choice org-default-notes-file))
 
   (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
   (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))

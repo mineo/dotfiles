@@ -106,9 +106,16 @@ This function should only modify configuration layer settings."
                                     pyvenv
                                     ;; Workaround for
                                     ;; https://github.com/syl20bnr/spacemacs/issues/12843
-                                    window-purpose)
+                                    window-purpose
+                                    ;; The following are only available from the
+                                    ;; org-mode ELPA, which is only available
+                                    ;; via HTTPS.
+                                    org-brain
+                                    orgit
+                                    org-plus-contrib
+                                    org-present
+                                    org-projectile)
 
-   ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and deletes any unused
    ;; packages as well as their unused dependencies. `used-but-keep-unused'

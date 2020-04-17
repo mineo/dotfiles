@@ -7,7 +7,7 @@
 
 [alias]
     ai = add --interactive
-    amend = commit --amend
+    amend = commit --amend --no-edit
     amenda = commit --all --amend --no-edit
     ap = add -p
     ci = commit

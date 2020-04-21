@@ -35,6 +35,7 @@
       org
       sh-script
       ssh-config-mode
+      (tar-mode :location built-in)
       virtualenvwrapper
       whitespace
       whitespace-cleanup-mode
@@ -224,6 +225,13 @@
   (use-package sh-script
     :config
     (sh-electric-here-document-mode -1)))
+
+
+(defun mineo/post-init-tar-mode()
+  "Post-initialize tar-mode."
+  (use-package tar-mode
+    :config
+    (evil-set-initial-state 'tar-mode 'emacs)))
 
 
 (defun mineo/post-init-whitespace ()

@@ -95,6 +95,8 @@
 (defun mineo/post-init-flycheck ()
   "Initialize flycheck."
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
+  ;; pylint with its default settings is much too strict.
+  (setq-default flycheck-disabled-checkers '(python-pylint))
   ;; I'm working with code bases where there's more than 400 warnings for a
   ;; single shell script, so bump this up :(
   (setq flycheck-checker-error-threshold 1000))

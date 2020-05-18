@@ -601,6 +601,10 @@ before packages are loaded."
     "bp" 'projectile-previous-project-buffer)
 
   (add-hook 'conf-mode-hook 'goto-address-mode)
+
+  ;; While it's nice to interact with terminal emacs with the mouse, it breaks
+  ;; 99% of what I actually use the mouse for - copy&paste.
+  (xterm-mouse-mode -1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

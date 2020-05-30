@@ -180,7 +180,10 @@
     ;; Some git remotes (for example GitHub) include direct links to pages for
     ;; opening pull requests etc. in their responses to pushes. Make them
     ;; clickable.
-    (add-hook 'magit-process-mode-hook 'goto-address-mode)))
+    (add-hook 'magit-process-mode-hook 'goto-address-mode)
+    ;; Make URLs in commit messages clickable.
+    (add-hook 'magit-revision-mode-hook 'goto-address-mode)
+    ))
 
 (defun mineo/post-init-org ()
   "Post-initialize org."

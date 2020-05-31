@@ -22,7 +22,7 @@ export BAT_THEME="Monokai Extended Light"
 export LESS="--RAW-CONTROL-CHARS --jump-target=.5 --ignore-case"
 
 
-[ -e "$HOME"/.config/ripgrep] && export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep"
+[ -e "$HOME"/.config/ripgrep ] && export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep"
 
 export MOSH_TITLE_NOPREFIX=1
 

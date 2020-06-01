@@ -279,6 +279,8 @@ bindkey "^N" history-beginning-search-forward-end # down
 # tmux on my raspberry pi
 bindkey "^[OA" history-beginning-search-backward-end # up
 bindkey "^[OB" history-beginning-search-forward-end # down
+bindkey "[D" backward-word # left
+bindkey "[C" forward-word # right
 
 bindkey "^[[7~" beginning-of-line # Home
 bindkey "^[[8~" end-of-line # End

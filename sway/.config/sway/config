@@ -2,7 +2,7 @@
 # and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
 
 # ISO 10646 = Unicode
-font pango:Liberation Sans bold 9
+font pango:Droid Sans bold 10
 
 # Use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4

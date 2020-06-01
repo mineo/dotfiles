@@ -96,7 +96,11 @@
   "Initialize flycheck."
   (evil-set-initial-state 'flycheck-error-list-mode 'emacs)
   ;; pylint with its default settings is much too strict.
-  (setq-default flycheck-disabled-checkers '(python-pylint))
+  (setq-default flycheck-disabled-checkers '(python-pylint)
+                ;; I don't install flake8 in all virtualenvs. Use the one
+                ;; installed globally. Tests cover project-specific settings and
+                ;; plugins.
+                flycheck-python-flake8-executable "/usr/bin/python3")
   ;; I'm working with code bases where there's more than 400 warnings for a
   ;; single shell script, so bump this up :(
   (setq flycheck-checker-error-threshold 1000))

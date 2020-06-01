@@ -137,7 +137,7 @@ fi
 
 if binary_exists jq; then
     alias -g J='|jq'
-    alias -g JC='|jq --color-output'
+    alias -g JL='|jq --color-output | less -R'
     alias jqc='jq --color-output'
 else
     alias -g J='|python -m json.tool'

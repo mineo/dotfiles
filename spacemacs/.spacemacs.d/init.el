@@ -91,7 +91,6 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(github-clone
                                       groovy-mode
                                       pkgbuild-mode
-                                      solarized-theme
                                       yasnippet-snippets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -246,8 +245,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '((monokai :location (recipe :fetcher github
                                                     :repo "mineo/monokai-emacs"
                                                     :branch "mod"))
-                         solarized-light
-                         solarized-dark)
+                         sanityinc-solarized-light
+                         sanityinc-solarized-dark
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The

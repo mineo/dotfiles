@@ -246,7 +246,7 @@ It should only modify the values of Spacemacs settings."
                                                     :repo "mineo/monokai-emacs"
                                                     :branch "mod"))
                          sanityinc-solarized-light
-                         sanityinc-solarized-dark
+                         sanityinc-solarized-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The

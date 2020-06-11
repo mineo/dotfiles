@@ -211,7 +211,7 @@
         org-ellipsis " ▾"
         org-agenda-files '("~/.org")
         org-refile-targets '((org-agenda-files :maxlevel . 3))
-        org-bullets-bullet-list '("○"))
+        org-superstar-headline-bullets-list '("○"))
 
   (when (file-exists-p org-default-notes-file)
    (setq initial-buffer-choice org-default-notes-file))

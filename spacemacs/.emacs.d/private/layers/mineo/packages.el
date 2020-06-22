@@ -20,7 +20,6 @@
       cask-mode
       compact-docstrings
       company
-      company-emoji
       copyright
       flycheck
       flycheck-cask
@@ -81,10 +80,6 @@
     :config
     (setq company-show-numbers t
           company-tooltip-align-annotations t)))
-
-(defun mineo/post-init-company-emoji ()
-  "Post-initialize company-emoji."
-  (setq company-emoji-insert-unicode t))
 
 (defun mineo/init-copyright ()
   "Initialize copyright."

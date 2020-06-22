@@ -1,6 +1,6 @@
 export BROWSER=firefox
 export EDITOR=vim
-export GOPATH="$HOME"dev/go
+export GOPATH="$HOME"/dev/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export PATH="$HOME"/.local/bin:"$HOME"/.cabal/bin:"$HOME"/.cargo/bin/:/opt/java/jre/bin:"$HOME"/dev/bin:$PATH

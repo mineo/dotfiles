@@ -90,6 +90,11 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(github-clone
                                       groovy-mode
+
+                                      ;; An outdated version is included with
+                                      ;; Emacs
+                                      leuven-theme
+
                                       pkgbuild-mode
                                       yasnippet-snippets)
    ;; A list of packages that cannot be updated.
@@ -246,7 +251,9 @@ It should only modify the values of Spacemacs settings."
                                                     :repo "mineo/monokai-emacs"
                                                     :branch "mod"))
                          sanityinc-solarized-light
-                         sanityinc-solarized-dark)
+                         sanityinc-solarized-dark
+                         leuven
+                         whiteboard)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The

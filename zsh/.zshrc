@@ -49,6 +49,7 @@ setopt RM_STAR_WAIT
 # the history
 setopt NOCLOBBER
 setopt HIST_ALLOW_CLOBBER
+setopt APPEND_CREATE
 
 [ -f ~/.dircolors ] && eval $(dircolors -b ~/.dircolors)
 if binary_exists virtualenvwrapper_lazy.sh; then

@@ -298,6 +298,8 @@ bindkey "^[/"  _history-complete-older # M-/
 # "ls /usr/bin/gcc|" (| being the point), backward-kill-word will kill the
 # whole path. vi-backward-kill-word only kills "gcc", which is much nicer.
 bindkey "^W" vi-backward-kill-word
+
+# Possibly rebound for fzf later on
 bindkey "^R" history-incremental-search-backward
 
 load_zle_widget edit-command-line
@@ -334,13 +336,15 @@ unset i
 
 if binary_exists fzf; then
     # Arch Linux
-    if [[  -e /usr/share/fzf/completion.zsh ]]; then
+    if [[  -d /usr/share/fzf/ ]]; then
         source /usr/share/fzf/completion.zsh
+        source /usr/share/fzf/key-bindings.zsh
     fi
 
     # macOS
-    if [[ -e /usr/local/opt/fzf/shell/completion.zsh ]]; then
+    if [[ -e /usr/local/opt/fzf/shell/ ]]; then
         source /usr/local/opt/fzf/shell/completion.zsh
+        source /usr/local/opt/fzf/shell/key-bindings.zsh
     fi
 fi
 

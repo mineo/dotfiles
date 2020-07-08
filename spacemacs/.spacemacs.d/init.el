@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
                    markdown
                    mineo
                    org
+                   perl5
                    (python :variables
                            python-backend 'anaconda
                            python-test-runner 'pytest)

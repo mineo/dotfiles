@@ -50,6 +50,10 @@ setopt RM_STAR_WAIT
 setopt NOCLOBBER
 setopt HIST_ALLOW_CLOBBER
 
+# See https://unix.stackexchange.com/questions/599439/zsh-file-tab-completion-path-preceded-by-non-space-character
+# This enabled path completion after =, ie. foo --bar=path<TAB>
+setopt MAGIC_EQUAL_SUBST
+
 if is-at-least 5.1.0; then
     setopt APPEND_CREATE
 fi

@@ -41,6 +41,9 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
 
+# Complete filenames after equals signs.
+setopt MAGIC_EQUAL_SUBST
+
 # Prevent me from doing stupid things with `rm *`
 unsetopt RM_STAR_SILENT
 setopt RM_STAR_WAIT

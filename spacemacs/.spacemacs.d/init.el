@@ -30,6 +30,8 @@ This function should only modify configuration layer settings."
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path (list
                                           (locate-user-emacs-file "private/layers"))
+
+   mineo-is-graphical-display (display-graphic-p)
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    (let ((layers '(
@@ -54,6 +56,11 @@ This function should only modify configuration layer settings."
                    javascript
                    (lsp :variables
                         lsp-enable-file-watchers nil
+                        ;; I'm running either all graphical or all terminal
+                        ;; frames, so this approximation is fine. lsp-ui-doc on
+                        ;; terminal frames makes the code jump around when
+                        ;; showing the doc popup.
+                        lsp-ui-doc-enable mineo-is-graphical-display
                         lsp-ui-sideline-enable nil)
                    markdown
                    mineo

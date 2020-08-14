@@ -265,6 +265,8 @@ zstyle ':completion:*' list-prompt 'Showing %l lines (%m matches)'
 zstyle ':completion:*' select-prompt '%m matches'
 # separate man pages into sections
 zstyle ':completion:*:manuals' separate-sections true
+# and insert the chosen section in case a man page is available in multiple
+zstyle ':completion:*:*' insert-sections true
 # from https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
 zstyle ':completion:*:*:*:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0'
 zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,cmd -w -w"

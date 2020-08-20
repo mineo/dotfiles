@@ -205,6 +205,10 @@ if binary_exists pacman; then
     alias pa='pacaur'
 fi
 
+if ! binary_exists tailf; then
+    alias tailf='tail -f'
+fi
+
 httphere() {
     printf "The current hostname is %s\n" $(hostname --fqdn)
     if binary_exists python3; then

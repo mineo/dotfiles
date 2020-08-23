@@ -70,3 +70,5 @@
 	showPatch = true
 [branch]
 	sort = authordate
+[pull]
+	rebase = false

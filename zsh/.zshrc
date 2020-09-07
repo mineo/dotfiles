@@ -1,8 +1,8 @@
-[ -e $HOME/.zshrc.local ] && . $HOME/.zshrc.local
-
 function binary_exists () {
     type $1 &> /dev/null
 }
+
+[ -e $HOME/.zshrc.local ] && . $HOME/.zshrc.local
 
 function load_zle_widget () {
     autoload -Uz $1

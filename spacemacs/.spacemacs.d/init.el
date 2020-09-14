@@ -68,7 +68,8 @@ This function should only modify configuration layer settings."
                         ;; terminal frames makes the code jump around when
                         ;; showing the doc popup.
                         lsp-ui-doc-enable mineo-is-graphical-display
-                        lsp-ui-sideline-enable nil)
+                        lsp-ui-sideline-enable nil
+                        lsp-enable-symbol-highlighting nil)
                    markdown
                    mineo
                    org

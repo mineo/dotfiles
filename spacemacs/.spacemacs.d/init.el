@@ -270,7 +270,9 @@ It should only modify the values of Spacemacs settings."
                                                     :branch "mod"))
                          sanityinc-solarized-light
                          sanityinc-solarized-dark
-                         leuven
+                         (leuven :location (recipe :fetcher github
+                                                   :repo "mineo/emacs-leuven-theme"
+                                                   :branch "mod"))
                          whiteboard)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',

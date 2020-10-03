@@ -272,8 +272,7 @@ It should only modify the values of Spacemacs settings."
                          sanityinc-solarized-dark
                          (leuven :location (recipe :fetcher github
                                                    :repo "mineo/emacs-leuven-theme"
-                                                   :branch "mod"))
-                         whiteboard)
+                                                   :branch "mod")))
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The

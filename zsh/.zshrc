@@ -345,6 +345,14 @@ for i in /usr/local/share/zsh-*/*.zsh(N); do
     source $i
 done
 
+# On some machines I manually manage extra files for zsh.
+if [[ -n "${ZSHEXTRADIR}" ]]; then
+    for i in "${ZSHEXTRADIR}"/*.zsh(N); do
+        source $i
+    done
+fi
+
+
 unset i
 
 if binary_exists fzf; then

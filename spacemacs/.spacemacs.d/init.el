@@ -606,7 +606,10 @@ before packages are loaded."
         info-fontify-emphasis nil
         Info-fontify-emphasis-flag nil
 
-        diff-default-read-only t)
+        diff-default-read-only t
+
+        ;; Just delete things in dired, don't hide them in the trash
+        delete-by-moving-to-trash nil)
 
   (spaceline-compile)
 

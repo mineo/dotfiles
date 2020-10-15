@@ -115,7 +115,7 @@ preexec() {
 }
 
 if is-at-least 5.0.0 && [[ ${TERM:-dumb} != "dumb" && ! ${TERM} =~ "eterm*" ]]; then
-    PROMPT='%2{↪%} '
+    PROMPT='%(V,%1v ,)%2{↪%} '
     RPROMPT='%F{yellow}%~${vcs_info_msg_0_}%f «%(0?.. [%?] «) %(!.%U%K{red}%F{black}.%F{yellow})%n%u%k %fon %F{magenta}%m%f'
 elif [[ $TERM == "dumb" ]]; then
     unsetopt zle

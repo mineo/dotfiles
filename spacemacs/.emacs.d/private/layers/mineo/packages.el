@@ -197,6 +197,9 @@
     (dolist (language mineo-org-babel-languages)
       (cl-pushnew `(,language . t) org-babel-load-languages)))
 
+  ;; org-tempo expands structure templates (`<s TAB' etc.)
+  (cl-pushnew 'org-tempo org-modules)
+
   (defalias
     'spacemacs/helm-jump-in-buffer
     'helm-semantic-or-imenu

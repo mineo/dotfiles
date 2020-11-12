@@ -609,7 +609,10 @@ before packages are loaded."
         diff-default-read-only t
 
         ;; Just delete things in dired, don't hide them in the trash
-        delete-by-moving-to-trash nil)
+        delete-by-moving-to-trash nil
+
+        ;; Do no truncate buffer names
+        helm-buffer-max-length nil)
 
   (spaceline-compile)
 

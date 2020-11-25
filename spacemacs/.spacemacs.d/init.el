@@ -626,7 +626,7 @@ before packages are loaded."
   ;; evil state hides many useful bindings in them.
   (dolist (buffer-name '(".*magit.*:.*" "\*Man.*\*" "\*Anaconda.*\*" "\*Paradox Report\*"))
     (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
-  (dolist (mode '(diff-mode Info-mode xref--xref-buffer-mode))
+  (dolist (mode '(archive-mode diff-mode Info-mode xref--xref-buffer-mode))
     (evil-set-initial-state mode 'emacs))
 
   ;; I don't find minor modes in the mode line useful, I don't even know what

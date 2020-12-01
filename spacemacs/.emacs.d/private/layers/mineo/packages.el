@@ -192,37 +192,39 @@
 
 (defun mineo/post-init-org ()
   "Post-initialize org."
-  (setq mineo-org-babel-languages '(C python shell))
-  (with-eval-after-load 'org
-    (dolist (language mineo-org-babel-languages)
-      (cl-pushnew `(,language . t) org-babel-load-languages)))
+  (use-package org
+    :config
+    (setq mineo-org-babel-languages '(C python shell))
+    (with-eval-after-load 'org
+      (dolist (language mineo-org-babel-languages)
+        (cl-pushnew `(,language . t) org-babel-load-languages)))
 
-  ;; org-tempo expands structure templates (`<s TAB' etc.)
-  (cl-pushnew 'org-tempo org-modules)
+    ;; org-tempo expands structure templates (`<s TAB' etc.)
+    (cl-pushnew 'org-tempo org-modules)
 
-  (defalias
-    'spacemacs/helm-jump-in-buffer
-    'helm-semantic-or-imenu
-    "Always use `helm-semantic-or-imenu' for jumping in the buffer, especially in org-mode.")
+    (defalias
+      'spacemacs/helm-jump-in-buffer
+      'helm-semantic-or-imenu
+      "Always use `helm-semantic-or-imenu' for jumping in the buffer, especially in org-mode.")
 
-  (setq org-directory "~/.org"
-        org-default-notes-file (concat org-directory "/notes.org")
-        ;; Open my notes file instead of the scratch buffer in new
-        ;; emacs instances
-        ;; Other stuff
-        org-hide-emphasis-markers t
-        org-ellipsis " ▾"
-        org-agenda-files '("~/.org")
-        org-refile-targets '((org-agenda-files :maxlevel . 3))
-        org-superstar-headline-bullets-list '("○")
+    (setq org-directory "~/.org"
+          org-default-notes-file (concat org-directory "/notes.org")
+          ;; Open my notes file instead of the scratch buffer in new
+          ;; emacs instances
+          ;; Other stuff
+          org-hide-emphasis-markers t
+          org-ellipsis " ▾"
+          org-agenda-files '("~/.org")
+          org-refile-targets '((org-agenda-files :maxlevel . 3))
+          org-superstar-headline-bullets-list '("○")
 
-        leuven-scale-outline-headlines nil)
+          leuven-scale-outline-headlines nil)
 
-  (when (file-exists-p org-default-notes-file)
-   (setq initial-buffer-choice org-default-notes-file))
+    (when (file-exists-p org-default-notes-file)
+      (setq initial-buffer-choice org-default-notes-file))
 
-  (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
-  (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off))
+    (add-hook 'org-mode-hook 'spacemacs-fixes//org-babel-do-load-languages)
+    (add-hook 'org-mode-hook 'spacemacs/toggle-whitespace-off)))
 
 (defun mineo/post-init-projectile ()
   "Post-initialize projectile."

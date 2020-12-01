@@ -19,7 +19,7 @@ export XDG_DOWNLOAD_DIR="$HOME/Downloads"
 
 export BAT_STYLE="plain"
 export BAT_THEME="Monokai Extended Light"
-export LESS="--RAW-CONTROL-CHARS --jump-target=.5 --ignore-case"
+export LESS="--RAW-CONTROL-CHARS --jump-target=.5 --ignore-case --chop-long-lines"
 
 
 [ -e "$HOME"/.config/ripgrep ] && export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep"

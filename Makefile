@@ -1,4 +1,4 @@
-STOWFLAGS =
+STOWFLAGS = --no-folding
 TARGET = $(HOME)
 BREW = brew
 PIP  = pip3

@@ -196,6 +196,7 @@ exec redshift -l 50:10 -t 6500:5000
 exec mako
 exec dropbox
 exec udiskie
+exec parcellite
 
 #class                   border  background text    indicator child_border
 client.focused           #2d2d2d #2d2d2d    #f9f9f9 #3ec2ff   #2d2d2d

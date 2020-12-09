@@ -280,7 +280,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator nil :separator-scale 1.0)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -593,7 +593,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq evil-escape-key-sequence "jk"
-        powerline-default-separator nil
         dotspacemacs-mode-line-unicode-symbols nil
         tags-revert-without-query t
         use-dialog-box nil

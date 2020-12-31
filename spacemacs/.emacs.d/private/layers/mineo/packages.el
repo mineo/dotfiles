@@ -26,6 +26,7 @@
       git-commit
       github-clone
       go-mode
+      (goto-addr :location built-in)
       highlight-symbol
       magit
       (midnight :location built-in)
@@ -121,6 +122,13 @@
 (defun mineo/init-github-clone ()
   "Initialize github-clone."
   (use-package github-clone))
+
+(defun mineo/init-goto-addr ()
+  "Initialize goto-addr."
+  (use-package goto-addr
+    :config
+    (dolist (hook '(conf-mode-hook Man-mode-hook woman-mode-hook))
+      (add-hook hook 'goto-address-mode))))
 
 (defun mineo/post-init-go-mode ()
   "Initialize go-mode."

@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
                    go
                    helpful
                    html
+                   ivy
                    javascript
                    (lsp :variables
                         lsp-enable-file-watchers nil

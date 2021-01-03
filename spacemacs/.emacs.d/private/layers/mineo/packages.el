@@ -28,6 +28,7 @@
       go-mode
       (goto-addr :location built-in)
       highlight-symbol
+      ivy
       magit
       (midnight :location built-in)
       projectile
@@ -143,6 +144,14 @@
     (add-hook 'prog-mode-hook 'highlight-symbol-mode)
     (setq highlight-symbol-on-navigation-p t
           highlight-symbol-idle-delay 0.4)))
+
+(defun mineo/post-init-ivy ()
+  "Initialize ivy."
+  ;; Highlight the whole line of candiates
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
+  ;; Hide the candidate count
+  (setq ivy-count-format ""
+        ivy-height 30))
 
 (defun mineo/init-midnight ()
   "Initialize midnight."

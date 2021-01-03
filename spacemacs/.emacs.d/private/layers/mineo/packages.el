@@ -149,9 +149,15 @@
   "Initialize ivy."
   ;; Highlight the whole line of candiates
   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-line)
-  ;; Hide the candidate count
-  (setq ivy-count-format ""
-        ivy-height 30))
+  ;; By default, `ivy-virtual' inherits from `font-lock-builtin-face'. This is
+  ;; not nice. I don't like the color in `projectile-find-file'.
+  (custom-set-faces '(ivy-virtual ((t . (:inherit unspecified))) t))
+  ;; Displaying completions in an overlay is not great.
+  (delete '(ivy-completion-in-region . ivy-display-function-overlay) ivy-display-functions-alist)
+  (setq ivy-height 30
+        ivy-fixed-height-minibuffer 30
+        ;; Tell me how many candidates there are
+        ivy-count-format "(%d/%d) "))
 
 (defun mineo/init-midnight ()
   "Initialize midnight."

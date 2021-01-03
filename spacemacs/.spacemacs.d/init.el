@@ -60,7 +60,10 @@ This function should only modify configuration layer settings."
                    go
                    helpful
                    html
-                   ivy
+                   (ivy :variables
+                        ;; Might be slow on macOS, see layer docs
+                        ivy-enable-advanced-buffer-information t
+                        ivy-wrap t)
                    javascript
                    (lsp :variables
                         lsp-enable-file-watchers nil

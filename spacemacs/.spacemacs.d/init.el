@@ -139,7 +139,14 @@ This function should only modify configuration layer settings."
                                     orgit
                                     org-plus-contrib
                                     org-present
-                                    org-projectile)
+                                    org-projectile
+                                    ;; The first time I use a new emacs
+                                    ;; version, vterm asks a lot of times
+                                    ;; whether it's allowed to compile some
+                                    ;; module. Yes, but not all my machines are
+                                    ;; able to compile that module (some lack
+                                    ;; cmake).
+                                    vterm)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.

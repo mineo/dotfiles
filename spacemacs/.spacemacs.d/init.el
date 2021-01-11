@@ -79,7 +79,13 @@ This function should only modify configuration layer settings."
                    markdown
                    mineo
                    org
-                   perl5
+                   (perl5 :variables
+                          ;; I usually do not have Perl::LanguageServer
+                          ;; installed. Since the lsp layer is enabled, opening
+                          ;; a perl file would try to start it, which fails.
+                          ;; Fall back to `company-plsense' which doesn't annoy
+                          ;; me with error messages and yes-no prompts.
+                          perl5-backend 'company-plsense)
                    (python :variables
                            python-backend 'anaconda
                            python-test-runner 'pytest)

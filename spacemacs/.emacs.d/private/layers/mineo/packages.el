@@ -154,6 +154,8 @@
   (custom-set-faces '(ivy-virtual ((t . (:inherit unspecified))) t))
   ;; Displaying completions in an overlay is not great.
   (delete '(ivy-completion-in-region . ivy-display-function-overlay) ivy-display-functions-alist)
+  ;; Like Helm, toggle follow mode with C-c C-f
+  (ivy-define-key ivy-minibuffer-map (kbd "C-c C-f") 'ivy-toggle-calling)
   (setq ivy-height 30
         ivy-fixed-height-minibuffer 30
         ;; Tell me how many candidates there are

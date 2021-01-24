@@ -149,7 +149,8 @@ bindsym Mod3+Shift+r restart
 
 # borders
 bindsym Mod4+b border toggle
-default_border none
+default_border pixel 2
+smart_borders on
 
 workspace_auto_back_and_forth yes
 
@@ -199,9 +200,9 @@ exec udiskie
 exec parcellite
 
 #class                   border  background text    indicator child_border
-client.focused           #2d2d2d #2d2d2d    #f9f9f9 #3ec2ff   #2d2d2d
+client.focused           #2d2d2d #2d2d2d    #f9f9f9 #3ec2ff   #5f676a
 client.unfocused         #2d2d2d #000000    #a0a0a0 #f9f9f9   #222222
-client.focused_inactive  #2d2d2d #2f2f2f    #a0a0a0 #484e50   #5f676a
+client.focused_inactive  #2d2d2d #2f2f2f    #a0a0a0 #484e50   #222222
 
 bar {
     mode hide

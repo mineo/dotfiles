@@ -67,6 +67,13 @@ This function should only modify configuration layer settings."
                    javascript
                    (lsp :variables
                         lsp-enable-file-watchers nil
+                        ;; The default value (`lsp-on-progress-modeline'
+                        ;; displays the progress as a percentage in a modeline -
+                        ;; with about 20 places after the comma. That's a bit
+                        ;; excessive and the constantly updating numbers in the
+                        ;; modeline are distracting. `lsp-on-progress-legacy'
+                        ;; shows a small spinner. That is OK.)
+                        lsp-progress-function 'lsp-on-progress-legacy
                         ;; I'm running either all graphical or all terminal
                         ;; frames, so this approximation is fine. lsp-ui-doc on
                         ;; terminal frames makes the code jump around when

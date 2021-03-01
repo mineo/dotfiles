@@ -637,7 +637,10 @@ before packages are loaded."
         delete-by-moving-to-trash nil
 
         ;; Do no truncate buffer names
-        helm-buffer-max-length nil)
+        helm-buffer-max-length nil
+
+        ;; There's no reason to truncate those names
+        imenu-max-item-length nil)
 
   (spaceline-compile)
 

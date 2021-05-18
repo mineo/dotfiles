@@ -33,9 +33,10 @@ This function should only modify configuration layer settings."
 
    mineo-is-graphical-display (display-graphic-p)
 
-   mineo-ccls-limit (if (eq system-type 'darwin)
+   mineo-c++-indexer-limit (if (eq system-type 'darwin)
                         0
-                      (/ (string-to-number (shell-command-to-string "nproc")) 4))
+                      (/ (string-to-number (shell-command-to-string "nproc")) 2))
+   mineo-clangd-args `(,(s-concat "-j=" (number-to-string mineo-c++-indexer-limit)) "--header-insertion-decorators=0")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    (let ((layers '(
@@ -45,9 +46,8 @@ This function should only modify configuration layer settings."
                     auto-completion-enable-help-tooltip t)
                    (c-c++
                     :variables
-                    c-c++-backend 'lsp-ccls
-                    ;; ccls really does not need the whole machine for itself.
-                    ccls-initialization-options `(:index (:threads ,mineo-ccls-limit)))
+                    c-c++-backend 'lsp-clangd
+                    lsp-clients-clangd-args mineo-clangd-args)
                    csv
                    docker
                    emacs-lisp

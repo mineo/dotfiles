@@ -575,11 +575,6 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq custom-file "~/.spacemacs.d/custom-file.el")
 
-  ;; See https://github.com/syl20bnr/spacemacs/issues/6614.
-  ;; This assumes that ~/dev/monokai-emacs contains a checked out version of my
-  ;; fork. If not, it'll end up using the standard monokai-emacs package from
-  ;; MELPA, which isn't too bad.
-
   (setq ;; solarized
    solarized-use-less-bold t
    solarized-use-variable-pitch nil

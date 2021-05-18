@@ -36,7 +36,7 @@ This function should only modify configuration layer settings."
    mineo-c++-indexer-limit (if (eq system-type 'darwin)
                         0
                       (/ (string-to-number (shell-command-to-string "nproc")) 2))
-   mineo-clangd-args `(,(s-concat "-j=" (number-to-string mineo-c++-indexer-limit)) "--header-insertion-decorators=0")
+   mineo-clangd-args `(,(format "-j=%d" mineo-c++-indexer-limit) "--header-insertion-decorators=0")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    (let ((layers '(

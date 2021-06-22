@@ -24,7 +24,6 @@
       flycheck
       flycheck-cask
       git-commit
-      github-clone
       go-mode
       (goto-addr :location built-in)
       highlight-symbol
@@ -119,11 +118,6 @@
   "Post-initialize git-commit."
   (remove-hook 'git-commit-finish-query-functions
                #'git-commit-check-style-conventions))
-
-;; Required for mineo-git-clone-tmp
-(defun mineo/init-github-clone ()
-  "Initialize github-clone."
-  (use-package github-clone))
 
 (defun mineo/init-goto-addr ()
   "Initialize goto-addr."

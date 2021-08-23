@@ -80,7 +80,8 @@ This function should only modify configuration layer settings."
                         ;; showing the doc popup.
                         lsp-ui-doc-enable mineo-is-graphical-display
                         lsp-ui-sideline-enable nil
-                        lsp-headerline-breadcrumb-enable nil
+                        lsp-headerline-breadcrumb-enable t
+                        lsp-headerline-breadcrumb-icons-enable nil
                         lsp-enable-symbol-highlighting nil
                         lsp-modeline-diagnostics-enable nil)
                    markdown

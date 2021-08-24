@@ -26,7 +26,6 @@
       git-commit
       go-mode
       (goto-addr :location built-in)
-      highlight-symbol
       ivy
       lsp-mode
       magit
@@ -131,14 +130,6 @@
   (spacemacs|use-package-add-hook go-mode
     :post-config (when (featurep 'whitespace)
                    (add-hook 'go-mode-hook #'spacemacs/toggle-whitespace-off))))
-
-(defun mineo/init-highlight-symbol ()
-  "Initialize highlight-symbol."
-  (use-package highlight-symbol
-    :config
-    (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-    (setq highlight-symbol-on-navigation-p t
-          highlight-symbol-idle-delay 0.4)))
 
 (defun mineo/post-init-ivy ()
   "Initialize ivy."

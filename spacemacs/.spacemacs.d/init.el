@@ -595,6 +595,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         monokai-highlight "#293739"
         monokai-highlight-line "#293739"
         )
+
   )
 
 (defun dotspacemacs/user-load ()
@@ -648,6 +649,13 @@ before packages are loaded."
     (add-to-list 'evil-buffer-regexps `(,buffer-name . emacs)))
   (dolist (mode '(archive-mode diff-mode Info-mode xref--xref-buffer-mode))
     (evil-set-initial-state mode 'emacs))
+
+  ;; This reverts most of the evilified keybindings in magit, except for mapping
+  ;; `g' to `magit-refresh':
+  (evil-collection-magit-revert)
+  ;; (dolist (mode '(magit))
+  ;;   (setq spacemacs-evil-collection-allowed-list (remove mode spacemacs-evil-collection-allowed-list))
+  ;;   (setq evil-collection-mode-list (remove mode evil-collection-mode-list)))
 
   ;; I don't find minor modes in the mode line useful, I don't even know what
   ;; most of them mean :-)

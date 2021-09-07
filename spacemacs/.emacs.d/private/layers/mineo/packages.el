@@ -27,7 +27,6 @@
       go-mode
       (goto-addr :location built-in)
       ivy
-      lsp-mode
       magit
       (midnight :location built-in)
       projectile
@@ -146,14 +145,6 @@
         ivy-fixed-height-minibuffer 30
         ;; Tell me how many candidates there are
         ivy-count-format "(%d/%d) "))
-
-(defun mineo/post-init-lsp-mode ()
-  "Initialize lsp-mode."
-  ;; Do not attempt to automatically install a language server, ever.
-  ;; (https://emacs-lsp.github.io/lsp-mode/page/faq/#how-do-i-disable-automatic-installation-for-particular-language-server)
-  (add-hook 'lsp-mode-hook
-            (lambda () (mapc (lambda (client) (setf (lsp-client-download-server-fn client) nil))
-                             (ht-values lsp-clients)))))
 
 (defun mineo/init-midnight ()
   "Initialize midnight."

@@ -190,7 +190,10 @@
     :config
     (add-to-list 'evil-buffer-regexps
                  '("COMMIT_EDITMSG" . insert))
-    (setq magit-revision-show-gravatars nil)
+    (setq magit-revision-show-gravatars nil
+          ;; When using C-SPC to highlight diffs in `magit-status' for staging,
+          ;; apply face `region' to those lines.
+          magit-section-keep-region-overlay t)
 
     ;; Some git remotes (for example GitHub) include direct links to pages for
     ;; opening pull requests etc. in their responses to pushes. Make them

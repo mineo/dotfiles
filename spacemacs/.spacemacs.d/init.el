@@ -93,7 +93,12 @@ This function should only modify configuration layer settings."
                           ;; a perl file would try to start it, which fails.
                           ;; Fall back to `company-plsense' which doesn't annoy
                           ;; me with error messages and yes-no prompts.
-                          perl5-backend 'company-plsense)
+                          perl5-backend 'company-plsense
+
+                          ;; See `cperl-speed'.
+                          cperl-pod-here-scan nil
+                          cperl-use-syntax-table-text-property nil
+                          cperl-syntaxify-unwind nil)
                    (python :variables
                            python-backend 'anaconda
                            python-test-runner 'pytest)

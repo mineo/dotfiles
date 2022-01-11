@@ -72,3 +72,5 @@
 	sort = authordate
 [pull]
 	rebase = false
+[am]
+	threeWay = true

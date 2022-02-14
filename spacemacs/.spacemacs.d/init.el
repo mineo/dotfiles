@@ -134,7 +134,8 @@ This function should only modify configuration layer settings."
 
                                       (leuven-theme :location (recipe :fetcher github
                                                                 :repo "mineo/emacs-leuven-theme"
-                                                                :branch "mod"))
+                                                                :branch "mod"
+                                                                :files ("lisp/*.el")))
                                       pkgbuild-mode
                                       yasnippet-snippets)
    ;; A list of packages that cannot be updated.

@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
                    javascript
                    (lsp :variables
                         lsp-enable-file-watchers nil
+                        lsp-enable-suggest-server-download nil
                         ;; The default value (`lsp-on-progress-modeline'
                         ;; displays the progress as a percentage in a modeline -
                         ;; with about 20 places after the comma. That's a bit

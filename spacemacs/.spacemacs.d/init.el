@@ -58,7 +58,8 @@ This function should only modify configuration layer settings."
                    git
                    github
                    go
-                   helpful
+                   ;; helpful - nice, but generates a lot of `(void-variable -)'
+                   ;; at the moment.
                    html
                    (ivy :variables
                         ;; Might be slow on macOS, see layer docs

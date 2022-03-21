@@ -642,7 +642,10 @@ before packages are loaded."
         helm-buffer-max-length nil
 
         ;; There's no reason to truncate those names
-        imenu-max-item-length nil)
+        imenu-max-item-length nil
+
+        ;; Ignore warnings from native compilation. I'm not going to fix them.
+        native-comp-async-report-warnings-errors nil)
 
   (spaceline-compile)
 

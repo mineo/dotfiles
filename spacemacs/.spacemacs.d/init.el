@@ -631,6 +631,8 @@ before packages are loaded."
         ;; leading underscores in names.
         info-fontify-emphasis nil
         Info-fontify-emphasis-flag nil
+        ;; Super annoying.
+        Info-fontify-isolated-quote-flag nil
 
         diff-default-read-only t
 

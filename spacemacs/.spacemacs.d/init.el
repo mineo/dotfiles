@@ -56,7 +56,6 @@ This function should only modify configuration layer settings."
                     :variables
                     evil-snipe-enable-alternate-f-and-t-behaviors t)
                    git
-                   github
                    go
                    ;; helpful - nice, but generates a lot of `(void-variable -)'
                    ;; at the moment.

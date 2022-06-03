@@ -646,7 +646,9 @@ before packages are loaded."
         imenu-max-item-length nil
 
         ;; Ignore warnings from native compilation. I'm not going to fix them.
-        native-comp-async-report-warnings-errors nil)
+        native-comp-async-report-warnings-errors nil
+
+        undo-tree-auto-save-history nil)
 
   (spaceline-compile)
 

@@ -136,10 +136,10 @@ fi
 
 if binary_exists rg; then
     if [[ $(systemd-detect-virt) == wsl ]]; then
-        alias -g G='|\rg --smart-case --hyperlink-format=vscode'
-        alias -g GC='|\rg --smart-case --pretty --hyperlink-format=vscode'
-        alias rgc='rg --pretty --hyperlink-format=vscode'
-        alias rg='rg --smart-case --hyperlink-format=vscode'
+        alias -g G='|\rg --smart-case --hyperlink-format=vscode://file//wsl.localhost/Ubuntu/{path}:{line}:{column}'
+        alias -g GC='|\rg --smart-case --pretty --hyperlink-format=vscode://file//wsl.localhost/Ubuntu/{path}:{line}:{column}'
+        alias rgc='rg --pretty --hyperlink-format=vscode://file//wsl.localhost/Ubuntu/{path}:{line}:{column}'
+        alias rg='rg --smart-case --hyperlink-format=vscode://file//wsl.localhost/Ubuntu/{path}:{line}:{column}'
     else
         alias -g G='|\rg --smart-case'
         alias -g GC='|\rg --smart-case --pretty'

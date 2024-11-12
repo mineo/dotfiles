@@ -135,9 +135,17 @@ if binary_exists fzf; then
 fi
 
 if binary_exists rg; then
-    alias -g G='|\rg --smart-case'
-    alias -g GC='|\rg --smart-case --pretty'
-    alias rgc='rg --pretty'
+    if [[ $(systemd-detect-virt) == wsl ]]; then
+        alias -g G='|\rg --smart-case --hyperlink-format=vscode'
+        alias -g GC='|\rg --smart-case --pretty --hyperlink-format=vscode'
+        alias rgc='rg --pretty --hyperlink-format=vscode'
+        alias rg='rg --smart-case --hyperlink-format=vscode'
+    else
+        alias -g G='|\rg --smart-case'
+        alias -g GC='|\rg --smart-case --pretty'
+        alias rgc='rg --pretty'
+        alias rg='rg --smart-case'
+    fi
 else
     alias -g G='|grep'
 fi
@@ -191,7 +199,6 @@ else
 fi
 
 alias grep='grep --color=auto'
-alias rg='rg --smart-case'
 
 if binary_exists pacman; then
     alias fu='sudo pacman -Rns'

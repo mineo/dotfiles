@@ -420,7 +420,7 @@ if binary_exists sponge; then
     if binary_exists jq; then
         # Format a JSON file in-place.
         function jsonfmt {
-            jq . < ${1:?} | sponge ${1:?}
+            jq . < ${1:?} | ifne sponge ${1:?}
         }
     fi
 

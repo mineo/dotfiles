@@ -1,5 +1,6 @@
 # Th configuration uses Mod4 and Mod3. Make sure they are mapped properly using xev(1)
 # and xmodmap(1). Usually, Mod4 is Alt (Alt_L) and Mod3 is Windows (Super_L)
+include /etc/sway/config.d/*
 
 # ISO 10646 = Unicode
 font pango:Droid Sans bold 10

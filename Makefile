@@ -22,8 +22,7 @@ all-linux: apps base devel linux ui
 
 all-osx: apps base devel osxsoftware
 
-apps: ipython irssi mpd mpv
-archlinux: abs
+apps: ipython irssi mpv
 base: spacemacs tmux vim zsh
 devel: code db git
 linux: systemd_user

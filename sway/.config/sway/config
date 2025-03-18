@@ -156,9 +156,9 @@ smart_borders on
 workspace_auto_back_and_forth yes
 
 bindcode 180 exec firefox
-bindcode 121 exec --no-startup-id pulseaudio-ctl mute
-bindcode 122 exec --no-startup-id pulseaudio-ctl down
-bindcode 123 exec --no-startup-id pulseaudio-ctl up
+bindcode 121 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindcode 122 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindcode 123 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym Mod4+e exec --no-startup-id emacsclient -a emacs -nc
 bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu'
 bindsym Mod4+g exec gvim

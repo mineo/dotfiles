@@ -206,7 +206,7 @@ client.focused_inactive  #2d2d2d #2f2f2f    #a0a0a0 #484e50   #222222
 bar {
     mode hide
     position top
-    status_command i3status
+    swaybar_command waybar
 }
 
 

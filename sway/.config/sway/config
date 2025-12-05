@@ -10,8 +10,8 @@ floating_modifier Mod4
 
 default_orientation vertical
 
-# Required by urxvt
 xwayland enable
+for_window [shell="xwayland"] title_format "[XWayland] %title"
 
 output HDMI-A-1
 bindsym Mod4+f fullscreen

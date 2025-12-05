@@ -1,5 +1,5 @@
-font-family = Consolas
-font-size = 13
+font-family = Fira Code
+font-size = 12
 theme = mine
 
 shell-integration-features = no-cursor

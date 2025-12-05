@@ -168,7 +168,7 @@ bindsym XF86Launch1 exec firefox
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
 
-set $terminal-irc terminal -title irc -e bash -c "mosh -- pi tmux a -d -t irc"
+set $terminal-irc $terminal --title=irc -e bash -c "mosh -- pi tmux a -d -t irc"
 bindsym Mod4+i exec $terminal-irc
 
 exec for_window [instance="scratchpad"] move scratchpad

@@ -1,0 +1,7 @@
+font-family = Consolas
+font-size = 13
+theme = mine
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = false

@@ -26,7 +26,7 @@ apps: ipython irssi mpv
 base: spacemacs tmux vim zsh
 devel: code db git
 linux: systemd_user
-ui: gtk i3 sway tex rofi x11
+ui: ghostty gtk i3 sway tex rofi x11
 
 osxsoftware:
 	$(BREW) bundle --file=osx/Brewfile

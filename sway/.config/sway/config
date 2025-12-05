@@ -135,9 +135,10 @@ bindsym Mod4+Next workspace next_on_output
 bindsym Mod4+Right move workspace to output right
 bindsym Mod4+Left move workspace to output left
 
+set $terminal ghostty
 # Mod4+Enter starts a new terminal
-bindsym Mod4+Return exec urxvt
-bindsym XF86Favorites exec urxvt
+bindsym Mod4+Return exec $terminal
+bindsym XF86Favorites exec $terminal
 
 # Mod4+Shift+q kills the current client
 bindsym Mod4+Shift+q kill
@@ -167,8 +168,8 @@ bindsym XF86Launch1 exec firefox
 bindsym Mod4+Shift+m move scratchpad
 bindsym Mod4+m scratchpad show
 
-set $urxvt-irc urxvt -title irc -e bash -c "mosh -- pi tmux a -d -t irc"
-bindsym Mod4+i exec $urxvt-irc
+set $terminal-irc terminal -title irc -e bash -c "mosh -- pi tmux a -d -t irc"
+bindsym Mod4+i exec $terminal-irc
 
 exec for_window [instance="scratchpad"] move scratchpad
 

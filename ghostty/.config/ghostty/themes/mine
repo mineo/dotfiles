@@ -1,0 +1,26 @@
+background =                                #171717
+foreground =                                #a0a0a0
+
+palette = 0=                            #292929
+palette = 8=                            #3d3d3d
+
+palette = 1=                            #DE6951
+palette = 9=                            #c56a47
+
+palette = 2=                            #bcda55
+palette = 10=                            #9dbf60
+
+palette = 3=                            #E2A564
+palette = 11=                            #EC8A25
+
+palette = 4=                            #2187F6
+palette = 12=                            #5495DC
+
+palette = 5=                            #875C8D
+palette = 13=                            #E41F66
+
+palette = 6=                            #4390B1
+palette = 14=                            #276CC2
+
+palette = 7=                            #D2D2D2
+palette = 15=                            #eeeeee

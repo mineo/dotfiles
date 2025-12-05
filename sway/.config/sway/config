@@ -161,7 +161,7 @@ bindcode 121 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindcode 122 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
 bindcode 123 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym Mod4+e exec --no-startup-id emacsclient -a emacs -nc
-bindsym Mod4+space exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -i -dmenu'
+bindsym Mod4+space exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -i -dmenu'
 bindsym Mod4+g exec gvim
 bindsym Mod4+v exec pavucontrol
 bindsym XF86Launch1 exec firefox
